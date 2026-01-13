@@ -78,3 +78,31 @@
 .po_item .content a:hover {
     text-decoration: none;
 }
+
+.po_item .content input[type="file"] {
+    margin: 8px 0;
+}
+.po_item .content textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    background: rgba(255,255,255,0.03);
+    color: var(--text-color);
+}
+.po_item .content .btn {
+    display: inline-block;
+    margin: 6px 0;
+}
+
+/* Project view specific button style: white background initially */
+.project-view .btn {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+.project-view .btn:hover {
+    background: #f0f0f0;
+}

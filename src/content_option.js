@@ -99,9 +99,12 @@ const services = [{
 ];
 
 const dataportfolio = [{
+        id: "project1",
         img: "https://picsum.photos/400/?grayscale",
         description: "Portfolio-Projekt 1",
         link: "#",
+        pdf: "/project1.pdf",
+        projectUrl: "https://www.gia.rwth-aachen.de/cms/~zppfj/gia/",
     },
     {
         img: "https://picsum.photos/400/800/?grayscale",
@@ -119,8 +122,13 @@ const contactConfig = {
     YOUR_EMAIL: "shaofei.liu.tum@gmail.com",
     YOUR_FONE: "+49 177-909-2448",
     description: "Ich bin offen für neue Möglichkeiten und Kooperationen. Kontaktieren Sie mich gerne, wenn Sie Projekte, Forschung oder potenzielle Zusammenarbeit in den Bereichen KI, maschinelles Lernen oder Robotik diskutieren möchten.",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
+    // To enable automatic email sending of comments, create an account at https://www.emailjs.com/
+    // Then set YOUR_SERVICE_ID, YOUR_TEMPLATE_ID and YOUR_USER_ID below.
+    // Example:
+    // YOUR_SERVICE_ID: "service_xxx",
+    // YOUR_TEMPLATE_ID: "template_xxx",
+    // YOUR_USER_ID: "user_xxx",
+
     YOUR_SERVICE_ID: "service_id",
     YOUR_TEMPLATE_ID: "template_id",
     YOUR_USER_ID: "user_id",
