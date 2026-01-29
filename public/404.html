@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <script>
+      // Redirect all non-existent routes to index.html
+      // Let React Router handle the routing
+      var segments = window.location.pathname.split('/').filter(Boolean);
+      
+      // If the path doesn't look like a file (no extension), redirect to home
+      if (segments.length > 0 && !segments[segments.length - 1].includes('.')) {
+        window.location.replace('/?route=' + window.location.pathname);
+      } else {
+        // It's a real 404 (file not found)
+        window.location.replace('/');
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
