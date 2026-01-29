@@ -39,6 +39,19 @@
     color: var(--text-color-2);
 }
 
+.lang__button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-color);
+    padding: 6px 8px;
+    margin-right: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.lang__button:hover {
+    background: rgba(255,255,255,0.04);
+}
+
 .br-top,
 .br-bottom,
 .br-right,
