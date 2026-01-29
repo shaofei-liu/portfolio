@@ -34,26 +34,64 @@ export default function ProjectView() {
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
     const iframeUrl = project.projectUrl;
-    const fullScreenUrl = project.projectUrl.split("?")[0]; // Remove query params for full screen
+    const fullScreenUrl = project.projectUrl.split("?")[0];
     
     return (
       <div className="project-view" style={{ padding: 16 }}>
-        <h2>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
         
-        <p style={{ marginBottom: 16 }}>
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en' 
-            ? "This is an AI-powered Retrieval-Augmented Generation (RAG) chatbot that can answer questions about my background, skills, and experience."
-            : "Dies ist ein KI-gestützter Retrieval-Augmented Generation (RAG)-Chatbot, der Fragen zu meinem Hintergrund, meinen Fähigkeiten und meiner Erfahrung beantworten kann."}
+            ? "Powered by advanced AI models (Gemini, Claude, GPT-4) with knowledge base indexing. Ask me anything about my professional background, technical skills, experience, education, and career interests."
+            : "Mit fortschrittlichen KI-Modellen (Gemini, Claude, GPT-4) und Wissensdatenbankindexierung betrieben. Fragen Sie mich alles über meinen beruflichen Hintergrund, technische Fähigkeiten, Erfahrung, Bildung und Karriereinteressen."}
         </p>
 
+        {/* Header Info Bar */}
         <div style={{ 
-          margin: "20px 0",
-          border: "1px solid #ddd",
+          display: "flex",
+          gap: "20px",
+          marginBottom: "24px",
+          padding: "16px",
+          backgroundColor: "#f8f9fa",
           borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Powered by" : "Betrieben von"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              Retrieval-Augmented Generation (RAG)
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Models" : "Modelle"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              Gemini, Claude, GPT-4
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Data Source" : "Datenquelle"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              Shaofei's Portfolio
+            </div>
+          </div>
+        </div>
+
+        {/* Chatbot Container */}
+        <div style={{ 
+          margin: "0 0 24px 0",
+          border: "1px solid #e0e0e0",
+          borderRadius: "12px",
           overflow: "hidden",
           height: "800px",
           position: "relative",
-          backgroundColor: "#f9f9f9"
+          backgroundColor: "#ffffff",
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
         }}>
           <iframe
             key={iframeUrl}
@@ -70,17 +108,77 @@ export default function ProjectView() {
           />
         </div>
 
-        <div style={{ marginTop: 16 }}>
+        {/* Features List */}
+        <div style={{ 
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0f4ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Chat Features" : "Chat-Funktionen"}
+          </h4>
+          <ul style={{ 
+            margin: 0, 
+            padding: "0 0 0 20px", 
+            color: "#555", 
+            fontSize: "14px",
+            lineHeight: "1.8"
+          }}>
+            <li>{lang === 'en' ? "Real-time responses from multiple AI models" : "Echtzeitantworten von mehreren KI-Modellen"}</li>
+            <li>{lang === 'en' ? "Ask about my professional background and experience" : "Fragen Sie nach meinem beruflichen Hintergrund und meiner Erfahrung"}</li>
+            <li>{lang === 'en' ? "Get insights on technical skills and expertise areas" : "Erhalten Sie Einblicke in technische Fähigkeiten und Expertenbereiche"}</li>
+            <li>{lang === 'en' ? "Bilingual support - English & Deutsch" : "Zweisprachig - English & Deutsch"}</li>
+          </ul>
+        </div>
+
+        {/* Action Buttons */}
+        <div style={{ 
+          display: "flex", 
+          gap: "12px",
+          alignItems: "center"
+        }}>
           <a 
             href={fullScreenUrl}
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn"
-            style={{ marginRight: 12 }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              backgroundColor: "#0066cc",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: "6px",
+              fontSize: "15px",
+              fontWeight: "500",
+              border: "none",
+              cursor: "pointer",
+              transition: "all 0.3s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "#0052a3";
+              e.target.style.boxShadow = "0 4px 12px rgba(0, 102, 204, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "#0066cc";
+              e.target.style.boxShadow = "none";
+            }}
           >
-            {lang === 'en' ? "Open in full screen" : "Vollbildmodus öffnen"}
+            🔗 {lang === 'en' ? "Open in Full Screen" : "Vollbild öffnen"}
           </a>
-          <Link to="/portfolio" className="btn">{translations[lang].projectView.back}</Link>
+          <Link 
+            to="/portfolio" 
+            className="btn"
+            style={{
+              padding: "12px 24px",
+              fontSize: "15px"
+            }}
+          >
+            ← {translations[lang].projectView.back}
+          </Link>
         </div>
       </div>
     );
