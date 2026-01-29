@@ -33,6 +33,8 @@ export default function ProjectView() {
 
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
+    const iframeUrl = project.projectUrl;
+    
     return (
       <div className="project-view" style={{ padding: 16 }}>
         <h2>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
@@ -44,68 +46,39 @@ export default function ProjectView() {
         </p>
 
         <div style={{ 
-          margin: "30px 0",
-          padding: "40px",
-          borderRadius: "12px",
-          backgroundColor: "#f0f4ff",
-          border: "2px solid #0066cc",
-          textAlign: "center"
+          margin: "20px 0",
+          border: "1px solid #ddd",
+          borderRadius: "8px",
+          overflow: "hidden",
+          height: "800px",
+          position: "relative",
+          backgroundColor: "#f9f9f9"
         }}>
-          <div style={{ marginBottom: "25px" }}>
-            <div style={{ fontSize: "48px", marginBottom: "15px" }}>💬</div>
-            <h3 style={{ margin: "0 0 10px 0", color: "#0066cc" }}>
-              {lang === 'en' ? "Interactive Chatbot" : "Interaktiver Chatbot"}
-            </h3>
-            <p style={{ margin: "10px 0", color: "#666", fontSize: "15px" }}>
-              {lang === 'en' 
-                ? "Click below to open the chatbot. It will open in a new tab for the best experience."
-                : "Klicken Sie unten, um den Chatbot zu öffnen. Er wird in einem neuen Tab geöffnet, um die beste Erfahrung zu bieten."}
-            </p>
-          </div>
+          <iframe
+            key={iframeUrl}
+            src={iframeUrl}
+            title="RAG Chatbot"
+            style={{
+              width: "100%",
+              height: "100%",
+              border: "none",
+              display: "block"
+            }}
+            allow="clipboard-read clipboard-write"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
 
+        <div style={{ marginTop: 16 }}>
           <a 
             href={project.projectUrl}
             target="_blank" 
             rel="noopener noreferrer" 
-            style={{
-              display: "inline-block",
-              padding: "14px 32px",
-              backgroundColor: "#0066cc",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "8px",
-              fontSize: "16px",
-              fontWeight: "600",
-              cursor: "pointer",
-              transition: "background-color 0.3s",
-              border: "none"
-            }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = "#0052a3"}
-            onMouseLeave={(e) => e.target.style.backgroundColor = "#0066cc"}
+            className="btn"
+            style={{ marginRight: 12 }}
           >
-            {lang === 'en' ? "Open Chatbot →" : "Chatbot öffnen →"}
+            {lang === 'en' ? "Open in full screen" : "Vollbildmodus öffnen"}
           </a>
-
-          <p style={{ marginTop: "20px", fontSize: "13px", color: "#999" }}>
-            {lang === 'en' 
-              ? "⏱️ Loading takes 10-15 seconds on first visit"
-              : "⏱️ Das erste Laden dauert 10-15 Sekunden"}
-          </p>
-        </div>
-
-        <div style={{ marginTop: "30px", backgroundColor: "#f9f9f9", padding: "20px", borderRadius: "8px" }}>
-          <h4 style={{ marginTop: 0 }}>
-            {lang === 'en' ? "About this Chatbot" : "Über diesen Chatbot"}
-          </h4>
-          <ul style={{ marginBottom: 0, color: "#666", lineHeight: "1.8" }}>
-            <li>{lang === 'en' ? "Powered by advanced AI models" : "Mit fortschrittlichen KI-Modellen betrieben"}</li>
-            <li>{lang === 'en' ? "Learn about my professional background" : "Erfahren Sie mehr über meinen beruflichen Hintergrund"}</li>
-            <li>{lang === 'en' ? "Ask about my skills and experience" : "Fragen Sie nach meinen Fähigkeiten und Erfahrungen"}</li>
-            <li>{lang === 'en' ? "Get recommendations and insights" : "Erhalten Sie Empfehlungen und Einblicke"}</li>
-          </ul>
-        </div>
-
-        <div style={{ marginTop: 24 }}>
           <Link to="/portfolio" className="btn">{translations[lang].projectView.back}</Link>
         </div>
       </div>
