@@ -34,6 +34,7 @@ export default function ProjectView() {
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
     const iframeUrl = project.projectUrl;
+    const fullScreenUrl = project.projectUrl.split("?")[0]; // Remove query params for full screen
     
     return (
       <div className="project-view" style={{ padding: 16 }}>
@@ -71,7 +72,7 @@ export default function ProjectView() {
 
         <div style={{ marginTop: 16 }}>
           <a 
-            href={project.projectUrl}
+            href={fullScreenUrl}
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn"
