@@ -42,8 +42,8 @@ export default function ProjectView() {
         
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en' 
-            ? "Powered by advanced AI models (Gemini, Claude, GPT-4) with knowledge base indexing. Ask me anything about my professional background, technical skills, experience, education, and career interests."
-            : "Mit fortschrittlichen KI-Modellen (Gemini, Claude, GPT-4) und Wissensdatenbankindexierung betrieben. Fragen Sie mich alles über meinen beruflichen Hintergrund, technische Fähigkeiten, Erfahrung, Bildung und Karriereinteressen."}
+            ? "A multilingual AI-powered chatbot built with Streamlit, LangChain, and Google Gemini API. Uses Retrieval-Augmented Generation (RAG) with vector database to answer questions about Shaofei's background, skills, and professional experience."
+            : "Ein mehrsprachiger KI-gestützter Chatbot, gebaut mit Streamlit, LangChain und Google Gemini API. Nutzt Retrieval-Augmented Generation (RAG) mit Vektordatenbank, um Fragen zu Shaofeis Hintergrund, Fähigkeiten und beruflicher Erfahrung zu beantworten."}
         </p>
 
         {/* Header Info Bar */}
@@ -58,26 +58,26 @@ export default function ProjectView() {
         }}>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
-              {lang === 'en' ? "Powered by" : "Betrieben von"}
+              {lang === 'en' ? "Framework" : "Framework"}
             </div>
             <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
-              Retrieval-Augmented Generation (RAG)
+              Streamlit + LangChain
             </div>
           </div>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
-              {lang === 'en' ? "Models" : "Modelle"}
+              {lang === 'en' ? "AI Model" : "KI-Modell"}
             </div>
             <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
-              Gemini, Claude, GPT-4
+              Google Gemini API
             </div>
           </div>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
-              {lang === 'en' ? "Data Source" : "Datenquelle"}
+              {lang === 'en' ? "Vector DB" : "Vektor-DB"}
             </div>
             <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
-              Shaofei's Portfolio
+              Chroma
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function ProjectView() {
           borderLeft: "4px solid #0066cc"
         }}>
           <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Chat Features" : "Chat-Funktionen"}
+            {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
           </h4>
           <ul style={{ 
             margin: 0, 
@@ -126,11 +126,39 @@ export default function ProjectView() {
             fontSize: "14px",
             lineHeight: "1.8"
           }}>
-            <li>{lang === 'en' ? "Real-time responses from multiple AI models" : "Echtzeitantworten von mehreren KI-Modellen"}</li>
-            <li>{lang === 'en' ? "Ask about my professional background and experience" : "Fragen Sie nach meinem beruflichen Hintergrund und meiner Erfahrung"}</li>
-            <li>{lang === 'en' ? "Get insights on technical skills and expertise areas" : "Erhalten Sie Einblicke in technische Fähigkeiten und Expertenbereiche"}</li>
             <li>{lang === 'en' ? "Bilingual support - English & Deutsch" : "Zweisprachig - English & Deutsch"}</li>
+            <li>{lang === 'en' ? "RAG with vector database for contextual answers" : "RAG mit Vektordatenbank für kontextbezogene Antworten"}</li>
+            <li>{lang === 'en' ? "Real-time responses with automatic model switching" : "Echtzeitantworten mit automatischem Modellwechsel"}</li>
+            <li>{lang === 'en' ? "Smart fallback system - tries alternative models if one fails" : "Smart Fallback - versucht alternative Modelle bei Fehlern"}</li>
+            <li>{lang === 'en' ? "Instant knowledge base initialization from PDFs" : "Sofortige KB-Initialisierung aus PDFs"}</li>
           </ul>
+        </div>
+
+        {/* Tech Stack */}
+        <div style={{ 
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f9f9f9",
+          borderRadius: "8px",
+          border: "1px solid #e0e0e0"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", fontWeight: "600" }}>
+            {lang === 'en' ? "Tech Stack" : "Technologie-Stack"}
+          </h4>
+          <div style={{ 
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "12px",
+            fontSize: "13px",
+            color: "#666"
+          }}>
+            <div>• <strong>Frontend:</strong> Streamlit</div>
+            <div>• <strong>LLM:</strong> Google Gemini</div>
+            <div>• <strong>Framework:</strong> LangChain</div>
+            <div>• <strong>Embeddings:</strong> HuggingFace</div>
+            <div>• <strong>Vector DB:</strong> Chroma</div>
+            <div>• <strong>Language:</strong> Python 3.9+</div>
+          </div>
         </div>
 
         {/* Action Buttons */}
