@@ -6,7 +6,7 @@ import chatbotImg from './assets/images/chatbot.jpg';
 const logotext = "SHAOFEI";
 const meta = {
     title: "Shaofei Liu",
-    description: "Ich bin Shaofei Liu, Ingenieur mit Mechatronik- und Robotik-Hintergrund, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Derzeit tätig in München, Deutschland",
+    description: "Ich bin Shaofei Liu, Ingenieur mit Mechatronik- und Robotik-Hintergrund, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Derzeit t?tig in M??nchen, Deutschland",
 };
 
 const introdata = {
@@ -14,65 +14,65 @@ const introdata = {
     animated: {
         first: "Ich entwickle KI-Modelle",
         second: "Ich baue Machine-Learning-Systeme",
-        third: "Ich erstelle intelligente Lösungen",
+        third: "Ich erstelle intelligente L?sungen",
     },
-    description: "Ingenieur mit Mechatronik- und Robotik-Hintergrund, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten sowie in der Entwicklung KI-basierter Modelle für Diagnose- und Assistenzsysteme.",
+    description: "Ingenieur mit Mechatronik- und Robotik-Hintergrund, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten sowie in der Entwicklung KI-basierter Modelle f??r Diagnose- und Assistenzsysteme.",
     your_img_url: background,
 };
 
 const dataabout = {
-    title: "Über mich",
+    title: "??ber mich",
     title_en: "About me",
-    aboutme: "Ich bin ein Ingenieur mit starkem Hintergrund in Mechatronik und Robotik, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Ich habe umfangreiche Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten sowie in der Entwicklung KI-basierter Modelle für Diagnose- und Assistenzsysteme. Mit starker Kompetenz in Modellierung, Algorithmik und Software-Engineering bin ich leidenschaftlich daran interessiert, intelligente Lösungen zu schaffen, die reale Auswirkungen haben. Ich habe einen Master of Science in Robotik, Kognition und Intelligenz von der Technischen Universität München und spreche fließend Chinesisch (Muttersprache), Deutsch (C1, TestDaF) und Englisch (C1, IELTS).",
+    aboutme: "Ich bin ein Ingenieur mit starkem Hintergrund in Mechatronik und Robotik, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Ich habe umfangreiche Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten sowie in der Entwicklung KI-basierter Modelle f??r Diagnose- und Assistenzsysteme. Mit starker Kompetenz in Modellierung, Algorithmik und Software-Engineering bin ich leidenschaftlich daran interessiert, intelligente L?sungen zu schaffen, die reale Auswirkungen haben. Ich habe einen Master of Science in Robotik, Kognition und Intelligenz von der Technischen Universit?t M??nchen und spreche flie?end Chinesisch (Muttersprache), Deutsch (C1, TestDaF) und Englisch (C1, IELTS).",
     aboutme_en: "I am an engineer with a strong background in mechatronics and robotics, specializing in data-driven analysis, machine learning and digital health. I have experience processing sensor and medical data and developing AI-based models for diagnosis and assistance systems. With expertise in modeling, algorithms and software engineering, I am passionate about building intelligent solutions with real-world impact. I hold an MSc in Robotics, Cognition and Intelligence from TU Munich and speak fluent Chinese (native), German (C1) and English (C1).",
 };
 const worktimeline = [{
         jobtitle: "Softwareentwickler",
         jobtitle_en: "Software Developer",
-        where: "The Pets Team GmbH & Co. KG, Grünwald, Deutschland",
-        where_en: "The Pets Team GmbH & Co. KG, Grünwald, Germany",
-        date: "03/2024 �?04/2025",
+        where: "The Pets Team GmbH & Co. KG, Gr??nwald, Deutschland",
+        where_en: "The Pets Team GmbH & Co. KG, Gr??nwald, Germany",
+        date: "03/2024 ??04/2025",
     },
     {
         jobtitle: "Praktikant im Bereich KI-Entwicklung",
         jobtitle_en: "Intern - AI Development",
         where: "Wisemed Medical Technology Co. Ltd, Peking, China",
         where_en: "Wisemed Medical Technology Co. Ltd, Beijing, China",
-        date: "03/2023 �?12/2023",
+        date: "03/2023 ??12/2023",
     },
     {
         jobtitle: "Praktikant im Bereich Algorithmusentwicklung",
         jobtitle_en: "Intern - Algorithm Development",
         where: "Continental Automotive GmbH, Regensburg, Deutschland",
         where_en: "Continental Automotive GmbH, Regensburg, Germany",
-        date: "03/2019 �?09/2019",
+        date: "03/2019 ??09/2019",
     },
 ];
 
 const education = [{
         degree: "Master of Science in Robotik, Kognition, Intelligenz",
         degree_en: "Master of Science in Robotics, Cognition and Intelligence",
-        where: "Technische Universität München, Deutschland",
+        where: "Technische Universit?t M??nchen, Deutschland",
         where_en: "Technical University of Munich, Germany",
-        date: "10/2019 �?03/2023",
+        date: "10/2019 ??03/2023",
         description: "Masterarbeit: RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
         description_en: "Thesis: RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
     },
     {
         degree: "Bachelor of Engineering in Mechatronik/Feinwerktechnik",
         degree_en: "Bachelor of Engineering in Mechatronics/Precision Engineering",
-        where: "Hochschule München, Deutschland",
+        where: "Hochschule M??nchen, Deutschland",
         where_en: "Munich University of Applied Sciences, Germany",
-        date: "10/2018 �?09/2019",
+        date: "10/2018 ??09/2019",
         description: "Sino-deutsches Doppelabschlussprogramm",
         description_en: "Sino-German double degree program",
     },
     {
         degree: "Bachelor of Engineering in Mechatronik",
         degree_en: "Bachelor of Engineering in Mechatronics",
-        where: "Tongji Universität, China",
+        where: "Tongji Universit?t, China",
         where_en: "Tongji University, China",
-        date: "09/2015 �?09/2019",
+        date: "09/2015 ??09/2019",
         description: "Bachelorarbeit: Entwicklung eines Algorithmus zur Hinderniserkennung mittels MIMO FMCW Radar",
         description_en: "Thesis: Development of an obstacle detection algorithm using MIMO FMCW radar",
     },
@@ -113,19 +113,19 @@ const skills = [{
 const services = [{
         title: "KI & Maschinelles Lernen",
         title_en: "AI & Machine Learning",
-        description: "Entwicklung und Evaluation datengetriebener Modelle für Diagnose- und Assistenzsysteme. Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten mit Deep-Learning-Frameworks.",
+        description: "Entwicklung und Evaluation datengetriebener Modelle f??r Diagnose- und Assistenzsysteme. Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten mit Deep-Learning-Frameworks.",
         description_en: "Development and evaluation of data-driven models for diagnosis and assistance systems. Experience processing sensor and medical data with deep learning frameworks.",
     },
     {
         title: "Softwareentwicklung",
         title_en: "Software Development",
-        description: "Entwicklung und Optimierung von Softwarearchitektur und Schnittstellen für Android-basierte Smart Devices mit OTA Update-Funktion. Konzeption und Integration KI-gesteuerter Anwendungen für automatisierte Inhaltserstellung.",
+        description: "Entwicklung und Optimierung von Softwarearchitektur und Schnittstellen f??r Android-basierte Smart Devices mit OTA Update-Funktion. Konzeption und Integration KI-gesteuerter Anwendungen f??r automatisierte Inhaltserstellung.",
         description_en: "Development and optimization of software architecture and interfaces for Android-based smart devices with OTA update capability. Design and integration of AI-driven apps for automated content creation.",
     },
     {
         title: "Algorithmusentwicklung",
         title_en: "Algorithm Development",
-        description: "Entwicklung von Hinderniserkennungsalgorithmen auf Basis von MIMO-FMCW-Radardaten. Durchführung von Systemintegration und Tests zur quantifizierbaren Steigerung der Erkennungsgenauigkeit.",
+        description: "Entwicklung von Hinderniserkennungsalgorithmen auf Basis von MIMO-FMCW-Radardaten. Durchf??hrung von Systemintegration und Tests zur quantifizierbaren Steigerung der Erkennungsgenauigkeit.",
         description_en: "Development of obstacle detection algorithms based on MIMO-FMCW radar data. System integration and testing for measurable improvements in detection accuracy.",
     },
 ];
@@ -149,22 +149,48 @@ const dataportfolio = [{
         link: "#",
         isComponent: true,
         componentName: "DogBreedClassifier",
-    },
-    {
+    }, {
         id: "project3",
-          category: "personal",
-          img: chatbotImg,
-        description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
+        category: "personal",
+        img: chatbotImg,
+        description: "RAG Chatbot - KI-gest??tztes Frage-Antwort-System",
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
         projectUrl: "https://portfolio-chatbot-k2apv4mklaemkakzx6zyir.streamlit.app/?embedded=true",
+    },
+    {
+        id: "project4",
+        category: "collaborative",
+        img: chatbotImg,
+        description: "Kollaboratives Projekt 4",
+        description_en: "Collaborative Project 4",
+        link: "#",
+        projectUrl: "#",
+    },
+    {
+        id: "project5",
+        category: "collaborative",
+        img: chatbotImg,
+        description: "Kollaboratives Projekt 5",
+        description_en: "Collaborative Project 5",
+        link: "#",
+        projectUrl: "#",
+    },
+    {
+        id: "project6",
+        category: "collaborative",
+        img: chatbotImg,
+        description: "Kollaboratives Projekt 6",
+        description_en: "Collaborative Project 6",
+        link: "#",
+        projectUrl: "#",
     },
 ];
 
 const contactConfig = {
     YOUR_EMAIL: "shaofei.liu.tum@gmail.com",
     YOUR_FONE: "+49 177-909-2448",
-    description: "Ich bin offen für neue Möglichkeiten und Kooperationen. Kontaktieren Sie mich gerne, wenn Sie Projekte, Forschung oder potenzielle Zusammenarbeit in den Bereichen KI, maschinelles Lernen oder Robotik diskutieren möchten.",
+    description: "Ich bin offen f??r neue M?glichkeiten und Kooperationen. Kontaktieren Sie mich gerne, wenn Sie Projekte, Forschung oder potenzielle Zusammenarbeit in den Bereichen KI, maschinelles Lernen oder Robotik diskutieren m?chten.",
     description_en: "I am open to new opportunities and collaborations. Feel free to contact me if you'd like to discuss projects, research or potential partnerships in AI, machine learning or robotics.",
     // To enable automatic email sending of comments, create an account at https://www.emailjs.com/
     // Then set YOUR_SERVICE_ID, YOUR_TEMPLATE_ID and YOUR_USER_ID below.
@@ -235,18 +261,18 @@ const translations = {
     },
     de: {
         menu: { home: "Home", portfolio: "Portfolio", about: "About", contact: "Kontakt" },
-        portfolio: { title: "Portfolio", viewProject: "Projekt ansehen", personal: "Pers?nliche Projekte", collaborative: "Collaborative Projekte" },
+        portfolio: { title: "Portfolio", viewProject: "Projekt ansehen", personal: "Pers?nliche Projekte", collaborative: "Kollaborative Projekte" },
         projectView: {
             website: "Webseite",
-            pdfOpen: "PDF öffnen",
+            pdfOpen: "PDF ?ffnen",
             yourComments: "Ihre Anmerkungen",
-            placeholder: "Schreiben Sie hier Ihre Änderungswünsche...",
+            placeholder: "Schreiben Sie hier Ihre ?nderungsw??nsche...",
             copy: "Kopieren",
             emailCreate: "E-Mail erstellen",
             copied: "In die Zwischenablage kopiert",
-            back: "Zurück",
+            back: "Zur??ck",
             notFound: "Projekt nicht gefunden.",
-            noDetail: "Für dieses Projekt gibt es keine Detailseite."
+            noDetail: "F??r dieses Projekt gibt es keine Detailseite."
         },
         home: {
             portfolioBtn: "Mein Portfolio",
@@ -260,10 +286,10 @@ const translations = {
             }
         },
         about: {
-            title: "Über mich",
+            title: "??ber mich",
             workTimeline: "Beruflicher Werdegang",
             education: "Bildung",
-            skills: "Fähigkeiten",
+            skills: "F?higkeiten",
             services: "Dienstleistungen"
         },
         contact: {
@@ -274,7 +300,7 @@ const translations = {
             message: "Nachricht",
             send: "Senden",
             sending: "Senden...",
-            success: "ERFOLG! Vielen Dank für Ihre Nachricht",
+            success: "ERFOLG! Vielen Dank f??r Ihre Nachricht",
             failure: "Senden fehlgeschlagen",
             phone: "Telefon",
             emailLabel: "E-Mail"
@@ -296,6 +322,8 @@ export {
     translations,
     logotext,
 };
+
+
 
 
 

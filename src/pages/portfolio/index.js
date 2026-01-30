@@ -50,7 +50,11 @@ export const Portfolio = () => {
     setTimeout(() => setSaved((s) => ({ ...s, [key]: false })), 1500);
   };
 
-  // Get all projects
+  // Get all projects separated by category
+  const personalProjects = dataportfolio.filter(p => p.category === "personal");
+  const collaborativeProjects = dataportfolio.filter(p => p.category === "collaborative");
+
+  // Get all projects (legacy variable for backward compatibility)
   const allProjects = dataportfolio;
 
   const renderProjectSection = (projects, categoryKey) => {
@@ -99,10 +103,13 @@ export const Portfolio = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        {renderProjectSection(allProjects, "personal")}
+        {renderProjectSection(personalProjects, "personal")}
+        {renderProjectSection(collaborativeProjects, "collaborative")}
       </Container>
     </HelmetProvider>
   );
 };
+
+
 
 
