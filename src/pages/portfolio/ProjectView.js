@@ -31,6 +31,104 @@ export default function ProjectView() {
     );
   }
 
+  // Project 2: Dog Breed Classifier
+  if (project.id === "project2") {
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en'
+            ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
+            : "KI-gest®πtzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) f®πr 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterst®πtzt Englisch und Deutsch."}
+        </p>
+        
+        <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <a 
+            href="https://huggingface.co/spaces/WilliamCass/dog-breed-classification" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#667eea',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#764ba2'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#667eea'}
+          >
+             HF Spaces Live Demo
+          </a>
+          <a 
+            href="https://github.com/YourGithub/dog-breed-classification" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#333',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
+          >
+             GitHub Repository
+          </a>
+        </div>
+
+        <DogBreedClassifier />
+
+        <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid #eee' }}>
+          <h3>{translations[lang]?.projectView?.yourComments || 'Your Comments'}</h3>
+          <textarea
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value);
+              localStorage.setItem(storageKey, e.target.value);
+            }}
+            placeholder={translations[lang]?.projectView?.placeholder || "Type your feedback here..."}
+            style={{
+              width: '100%',
+              height: '120px',
+              padding: '10px',
+              marginBottom: '10px',
+              borderRadius: '8px',
+              border: '1px solid #ddd',
+              fontFamily: 'inherit',
+              fontSize: '14px'
+            }}
+          />
+        </div>
+
+        <Link to="/portfolio" style={{
+          display: 'inline-block',
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#f0f0f0',
+          textDecoration: 'none',
+          borderRadius: '8px',
+          fontWeight: '600',
+          color: '#333',
+          transition: 'all 0.3s ease'
+        }}
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = '#e0e0e0';
+          e.target.style.transform = 'translateY(-2px)';
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = '#f0f0f0';
+          e.target.style.transform = 'translateY(0)';
+        }}>
+           {translations[lang]?.projectView?.back || 'Back'}
+        </Link>
+      </div>
+    );
+  }
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
     const iframeUrl = project.projectUrl;
@@ -152,12 +250,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>‚Ä¢ <strong>Frontend:</strong> Streamlit</div>
-            <div>‚Ä¢ <strong>LLM:</strong> Google Gemini</div>
-            <div>‚Ä¢ <strong>Framework:</strong> LangChain</div>
-            <div>‚Ä¢ <strong>Embeddings:</strong> HuggingFace</div>
-            <div>‚Ä¢ <strong>Vector DB:</strong> Chroma</div>
-            <div>‚Ä¢ <strong>Language:</strong> Python 3.9+</div>
+            <div>‚Ä?<strong>Frontend:</strong> Streamlit</div>
+            <div>‚Ä?<strong>LLM:</strong> Google Gemini</div>
+            <div>‚Ä?<strong>Framework:</strong> LangChain</div>
+            <div>‚Ä?<strong>Embeddings:</strong> HuggingFace</div>
+            <div>‚Ä?<strong>Vector DB:</strong> Chroma</div>
+            <div>‚Ä?<strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -205,7 +303,7 @@ export default function ProjectView() {
               fontSize: "15px"
             }}
           >
-            ‚Üê {translations[lang].projectView.back}
+            ‚Ü?{translations[lang].projectView.back}
           </Link>
         </div>
       </div>
@@ -291,3 +389,5 @@ export default function ProjectView() {
     </div>
   );
 }
+
+
