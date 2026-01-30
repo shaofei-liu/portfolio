@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { dataportfolio, contactConfig, translations } from "../../content_option";
 import RejectionLetters from "../../components/RejectionLetters";
+import DogBreedClassifier from "../../components/DogBreedClassifier";
 
 export default function ProjectView() {
   const { id } = useParams();
@@ -28,6 +29,121 @@ export default function ProjectView() {
     return (
       <div style={{ padding: 16 }}>
         {translations[lang].projectView.notFound} <Link to="/portfolio">{translations[lang].projectView.back}</Link>
+      </div>
+    );
+  }
+
+  // Project 2: Dog Breed Classifier
+  if (project.id === "project2") {
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' 
+            ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
+            : "KI-gestützter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) für 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstützt Englisch und Deutsch."}
+        </p>
+
+        {/* Header Info Bar */}
+        <div style={{ 
+          display: "flex",
+          gap: "20px",
+          marginBottom: "24px",
+          padding: "16px",
+          backgroundColor: "#f8f9fa",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "AI Model" : "KI-Modell"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              Vision Transformer (ViT-B/16)
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Framework" : "Framework"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              PyTorch 2.1.0 + FastAPI
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Dataset" : "Datensatz"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              120 Dog Breeds
+            </div>
+          </div>
+        </div>
+
+        {/* Demo Container */}
+        <div style={{ 
+          margin: "0 0 24px 0",
+          border: "1px solid #e0e0e0",
+          borderRadius: "12px",
+          overflow: "hidden",
+          padding: "20px",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
+        }}>
+          <DogBreedClassifier />
+        </div>
+
+        {/* Features List */}
+        <div style={{ 
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0f4ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+          </h4>
+          <ul style={{ 
+            margin: 0, 
+            padding: "0 0 0 20px", 
+            color: "#555", 
+            fontSize: "14px",
+            lineHeight: "1.8"
+          }}>
+            <li>{lang === 'en' ? "Real-time breed classification with confidence scores" : "Echtzeit-Rassenklassifizierung mit Konfidenzwerten"}</li>
+            <li>{lang === 'en' ? "Top-5 predictions for each image" : "Top-5-Vorhersagen für jedes Bild"}</li>
+            <li>{lang === 'en' ? "Support for 120 dog breeds" : "Unterstützung für 120 Hunderassen"}</li>
+            <li>{lang === 'en' ? "Bilingual interface (English & German)" : "Zweisprachige Schnittstelle (Englisch & Deutsch)"}</li>
+            <li>{lang === 'en' ? "Drag-and-drop image upload" : "Drag-and-Drop-Bild-Upload"}</li>
+            <li>{lang === 'en' ? "Local and cloud API support" : "Lokale und Cloud-API-Unterstützung"}</li>
+          </ul>
+        </div>
+
+        {/* Tech Stack */}
+        <div style={{ 
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f9f9f9",
+          borderRadius: "8px",
+          border: "1px solid #e0e0e0"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", fontWeight: "600" }}>
+            {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            <li><strong>Backend:</strong> Python 3.11, FastAPI, PyTorch 2.1.0</li>
+            <li><strong>Frontend:</strong> React 18+ with React Bootstrap</li>
+            <li><strong>Model:</strong> Vision Transformer (ViT-B/16) with pre-training</li>
+            <li><strong>Deployment:</strong> Hugging Face Spaces (Docker)</li>
+            <li><strong>API:</strong> RESTful API with CORS support</li>
+          </ul>
+        </div>
+
+        <Link to="/portfolio" style={{ marginLeft: 0 }}>
+          {translations[lang].projectView.back}
+        </Link>
       </div>
     );
   }
@@ -213,11 +329,40 @@ export default function ProjectView() {
     );
   }
 
-  // Only project1 has the detail page content
-  if (project.id !== "project1") {
+  // Only project1, project2 and project3 have detailed page content
+  // Other projects show a simple project view
+  if (project.id !== "project1" && project.id !== "project2" && project.id !== "project3") {
     return (
-      <div style={{ padding: 16 }}>
-        {translations[lang].projectView.noDetail} <Link to="/portfolio">{translations[lang].projectView.back}</Link>
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        
+        {project.projectUrl && (
+          <div>
+            <p>
+              {translations[lang].projectView.website}:
+              <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 6 }}>
+                {project.projectUrl}
+              </a>
+            </p>
+            <div style={{ margin: "12px 0" }}>
+              <a className="btn" href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+                {lang === 'en' ? "Visit Project" : "Projekt besuchen"}
+              </a>
+            </div>
+          </div>
+        )}
+
+        {project.pdf && (
+          <div style={{ margin: "12px 0" }}>
+            <a className="btn" href={project.pdf} target="_blank" rel="noopener noreferrer">
+              {translations[lang].projectView.pdfOpen}
+            </a>
+          </div>
+        )}
+
+        <Link to="/portfolio" style={{ marginLeft: 12 }}>
+          {translations[lang].projectView.back}
+        </Link>
       </div>
     );
   }
