@@ -1,4 +1,7 @@
 import background from './assets/images/background.jpg';
+import reactPortfolioImg from './assets/images/react-porfolio.png';
+import dogBreedImg from './assets/images/dog-breed-recognition.png';
+import chatbotImg from './assets/images/chatbot.jpg';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -130,7 +133,7 @@ const services = [{
 const dataportfolio = [{
         id: "project1",
           category: "personal",
-          img: "/images/react-porfolio.png",
+          img: reactPortfolioImg,
         description: "Portfolio-Projekt 1",
         description_en: "Portfolio Project 1",
         link: "#",
@@ -140,7 +143,7 @@ const dataportfolio = [{
     {
         id: "project2",
           category: "personal",
-          img: "/images/dog-breed-recognition.png",
+          img: dogBreedImg,
         description: " Hunderasse-Klassifizierer",
         description_en: " Dog Breed Classifier",
         link: "#",
@@ -150,7 +153,7 @@ const dataportfolio = [{
     {
         id: "project3",
           category: "collaborative",
-          img: "/images/chatbot.jpg",
+          img: chatbotImg,
         description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
@@ -293,6 +296,10 @@ export {
     translations,
     logotext,
 };
+
+
+
+
 
 
 
