@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import './DogBreedClassifier.css';
-import { dogBreedLang, getBreedName } from './dogBreedData';
+﻿import React, { useState, useEffect } from "react";
+import "./DogBreedClassifier.css";
+import { dogBreedLang, getBreedName } from "./dogBreedData";
 
 export default function DogBreedClassifier() {
-  const [language, setLanguage] = useState('de');
+  const [language, setLanguage] = useState("de");
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [result, setResult] = useState(null);
@@ -55,19 +55,23 @@ export default function DogBreedClassifier() {
 
     try {
       const formData = new FormData();
-      formData.append('file', image);
+      formData.append("file", image);
 
-      // 使用HF Spaces API
       const response = await fetch(
-        'https://williamcass-dog-breed-classification.hf.space/api/predict',
+        "https://williamcass-dog-breed-classification.hf.space/api/predict",
         {
-          method: 'POST',
+          method: "POST",
           body: formData,
+          headers: {
+            Accept: "application/json",
+          },
         }
       );
 
       if (!response.ok) {
-        throw new Error(t.predictError);
+        const errorData = await response.text();
+        console.error("API Error:", errorData);
+        throw new Error(`Server error: ${response.status}`);
       }
 
       const data = await response.json();
@@ -76,22 +80,22 @@ export default function DogBreedClassifier() {
         throw new Error(data.error || t.predictError);
       }
 
-      // 转换品种名称为本地语言
       const localizedResult = {
-        ...data,
         breed: getBreedName(data.breed, language),
-        top_5: data.top_5 ?
-          Object.fromEntries(
-            Object.entries(data.top_5).map(([breed, conf]) => [
-              getBreedName(breed, language),
-              conf
-            ])
-          ) : null
+        confidence: data.confidence,
+        top_5: {},
       };
+
+      if (data.top_5) {
+        for (const [breed, conf] of Object.entries(data.top_5)) {
+          localizedResult.top_5[getBreedName(breed, language)] = conf;
+        }
+      }
+
       setResult(localizedResult);
     } catch (err) {
+      console.error("Prediction error:", err);
       setError(err.message || t.predictError);
-      console.error('预测错误:', err);
     } finally {
       setLoading(false);
     }
@@ -104,119 +108,112 @@ export default function DogBreedClassifier() {
     setError(null);
   };
 
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("dogBreedLang", lang);
+  };
+
   return (
-    <div className="dog-breed-classifier">
-      {/* 语言切换 */}
-      <div className="language-toggle">
-        <button
-          className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-          onClick={() => setLanguage('en')}
-        >
-          English
-        </button>
-        <button
-          className={`lang-btn ${language === 'de' ? 'active' : ''}`}
-          onClick={() => setLanguage('de')}
-        >
-          Deutsch
-        </button>
+    <div className="dog-breed-classifier-container">
+      <div className="dog-breed-classifier-header">
+        <h2 className="dog-breed-classifier-title">{t.title}</h2>
+        <div className="language-toggle">
+          <button
+            className={`lang-btn ${language === "de" ? "active" : ""}`}
+            onClick={() => handleLanguageChange("de")}
+          >
+            DE
+          </button>
+          <button
+            className={`lang-btn ${language === "en" ? "active" : ""}`}
+            onClick={() => handleLanguageChange("en")}
+          >
+            EN
+          </button>
+        </div>
       </div>
 
-      <div className="classifier-header">
-        <h2>{t.title}</h2>
-        <p>{t.description}</p>
-      </div>
+      <div className="dog-breed-classifier-content">
+        <div className="upload-section">
+          <div
+            className="upload-area"
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+          >
+            {preview ? (
+              <img src={preview} alt="Preview" className="preview-image" />
+            ) : (
+              <div className="upload-placeholder">
+                <div className="upload-icon"></div>
+                <p>{t.dragDropText}</p>
+              </div>
+            )}
+          </div>
 
-      <div className="classifier-container">
-        {/* 上传区域 */}
-        <div className="upload-section"
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-        >
-          <div className="upload-input-wrapper">
-            <label htmlFor="image-input" className="upload-label">
-              <span className="upload-icon">🖼️</span>
-              <span>{t.selectImage}</span>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="file-input"
+            id="image-input"
+            style={{ display: "none" }}
+          />
+
+          <div className="button-group">
+            <label htmlFor="image-input" className="btn btn-primary">
+              {t.selectButton}
             </label>
-            <input
-              id="image-input"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              disabled={loading}
-              className="upload-input"
-            />
+            {image && (
+              <button
+                className="btn btn-secondary"
+                onClick={handlePredict}
+                disabled={loading}
+              >
+                {loading ? t.predicting : t.predictButton}
+              </button>
+            )}
+            {image && (
+              <button className="btn btn-tertiary" onClick={handleClear}>
+                {t.clearButton}
+              </button>
+            )}
           </div>
+
+          {error && <div className="error-message">{error}</div>}
         </div>
 
-        {/* 图片预览和结果 */}
-        <div className="content-section">
-          <div className="preview-container">
-            {preview && (
-              <div className="image-preview">
-                <img src={preview} alt="preview" />
+        {result && (
+          <div className="result-section">
+            <h3>{t.resultTitle}</h3>
+            <div className="result-card">
+              <div className="breed-info">
+                <span className="breed-label">{t.breed}:</span>
+                <span className="breed-name">{result.breed}</span>
               </div>
-            )}
-          </div>
-
-          <div className="result-container">
-            {error && (
-              <div className="error-message">
-                <span className="error-icon">⚠️</span>
-                <span>{error}</span>
+              <div className="confidence-info">
+                <span className="confidence-label">{t.confidence}:</span>
+                <span className="confidence-value">
+                  {result.confidence.toFixed(2)}%
+                </span>
               </div>
-            )}
+            </div>
 
-            {result && (
-              <div className="result-box">
-                <div className="breed-result">
-                  <span className="breed-label">{t.breed}</span>
-                  <span className="breed-name">{result.breed}</span>
-                  <span className="confidence">{result.confidence.toFixed(2)}%</span>
+            {result.top_5 && Object.keys(result.top_5).length > 0 && (
+              <div className="top5-section">
+                <h4>{t.top5Title}</h4>
+                <div className="top5-list">
+                  {Object.entries(result.top_5).map(([breed, conf], idx) => (
+                    <div key={idx} className="top5-item">
+                      <span className="top5-rank">{idx + 1}.</span>
+                      <span className="top5-breed">{breed}</span>
+                      <span className="top5-confidence">{conf.toFixed(2)}%</span>
+                    </div>
+                  ))}
                 </div>
-
-                {result.top_5 && (
-                  <div className="top-5-section">
-                    <h4>{t.top5}</h4>
-                    <ul className="top-5-list">
-                      {Object.entries(result.top_5).map(([breed, conf], index) => (
-                        <li key={index}>
-                          <span className="rank">{index + 1}</span>
-                          <span className="breed-name-small">{breed}</span>
-                          <span className="confidence-small">{conf.toFixed(2)}%</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {!result && !error && (
-              <div className="placeholder">
-                <span>{t.uploadHint}</span>
               </div>
             )}
           </div>
-        </div>
-
-        {/* 操作按钮 */}
-        <div className="button-group">
-          <button
-            className="btn btn-primary"
-            onClick={handlePredict}
-            disabled={!image || loading}
-          >
-            {loading ? t.predicting : t.predict}
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={handleClear}
-            disabled={!image && !result}
-          >
-            {t.clear}
-          </button>
-        </div>
+        )}
       </div>
     </div>
   );
