@@ -17,6 +17,7 @@
     transition: 0.3s ease;
     font-size: 0;
     min-height: 300px;
+    overflow: hidden;
 }
 
 .po_item img {
@@ -25,8 +26,8 @@
 
 .po_item .content {
     position: absolute;
-    height: 0;
-    width: 0;
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -36,17 +37,9 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 100%;
     transition: 0.3s ease-in-out;
-    opacity: 0;
+    opacity: 0.95;
     border: 1px solid black;
-}
-
-.po_item .content {
-    opacity: 0;
-    transition-delay: 1s;
-    transition: 0.3s ease;
     font-size: 20px;
 }
 
