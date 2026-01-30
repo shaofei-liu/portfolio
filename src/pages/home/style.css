@@ -109,6 +109,7 @@ section {
     cursor: pointer;
     border-radius: 0;
     margin-right: 20px;
+    background-color: #cc6600;
 }
 
 .ac_btn a {

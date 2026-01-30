@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { dataportfolio, contactConfig, translations } from "../../content_option";
 import DogBreedClassifier from "../../components/DogBreedClassifier";
+import RejectionLetters from "../../components/RejectionLetters";
 
 export default function ProjectView() {
   const { id } = useParams();
@@ -40,7 +41,7 @@ export default function ProjectView() {
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en'
             ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
-            : "KI-gest¨¹tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) f¨¹r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterst¨¹tzt Englisch und Deutsch."}
+            : "KI-gestï¿½ï¿½tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) fï¿½ï¿½r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstï¿½ï¿½tzt Englisch und Deutsch."}
         </p>
 
         {/* Header Info Bar */}
@@ -105,11 +106,11 @@ export default function ProjectView() {
           </h4>
           <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
             <li>{lang === 'en' ? "Real-time breed classification with confidence scores" : "Echtzeit-Rassenklassifizierung mit Konfidenzwerten"}</li>
-            <li>{lang === 'en' ? "Top-5 predictions for each image" : "Top-5-Vorhersagen f¨¹r jedes Bild"}</li>
-            <li>{lang === 'en' ? "Support for 120 dog breeds" : "Unterst¨¹tzung f¨¹r 120 Hunderassen"}</li>
+            <li>{lang === 'en' ? "Top-5 predictions for each image" : "Top-5-Vorhersagen fï¿½ï¿½r jedes Bild"}</li>
+            <li>{lang === 'en' ? "Support for 120 dog breeds" : "Unterstï¿½ï¿½tzung fï¿½ï¿½r 120 Hunderassen"}</li>
             <li>{lang === 'en' ? "Bilingual interface (English & German)" : "Zweisprachige Schnittstelle (Englisch & Deutsch)"}</li>
             <li>{lang === 'en' ? "Drag-and-drop image upload" : "Drag-and-Drop-Bild-Upload"}</li>
-            <li>{lang === 'en' ? "Local and cloud API support" : "Lokale und Cloud-API-Unterst¨¹tzung"}</li>
+            <li>{lang === 'en' ? "Local and cloud API support" : "Lokale und Cloud-API-Unterstï¿½ï¿½tzung"}</li>
           </ul>
         </div>
 
@@ -340,12 +341,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>ï¿?<strong>Frontend:</strong> Streamlit</div>
-            <div>ï¿?<strong>LLM:</strong> Google Gemini</div>
-            <div>ï¿?<strong>Framework:</strong> LangChain</div>
-            <div>ï¿?<strong>Embeddings:</strong> HuggingFace</div>
-            <div>ï¿?<strong>Vector DB:</strong> Chroma</div>
-            <div>ï¿?<strong>Language:</strong> Python 3.9+</div>
+            <div>ï¿½?<strong>Frontend:</strong> Streamlit</div>
+            <div>ï¿½?<strong>LLM:</strong> Google Gemini</div>
+            <div>ï¿½?<strong>Framework:</strong> LangChain</div>
+            <div>ï¿½?<strong>Embeddings:</strong> HuggingFace</div>
+            <div>ï¿½?<strong>Vector DB:</strong> Chroma</div>
+            <div>ï¿½?<strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -393,7 +394,7 @@ export default function ProjectView() {
               fontSize: "15px"
             }}
           >
-            ï¿?{translations[lang].projectView.back}
+            ï¿½?{translations[lang].projectView.back}
           </Link>
         </div>
       </div>
