@@ -93,7 +93,7 @@ export const About = () => {
               {skills.map((data, i) => {
                 return (
                   <li key={i} style={{ marginBottom: '10px', fontSize: '16px' }}>
-                    • {data.name}
+                    �? {(lang === 'en' && data.name_en) ? data.name_en : data.name}
                   </li>
                 );
               })}
@@ -108,8 +108,8 @@ export const About = () => {
             {services.map((data, i) => {
               return (
                 <div className="service_ py-4" key={i}>
-                  <h5 className="service__title">{data.title}</h5>
-                  <p className="service_desc">{data.description}</p>
+                  <h5 className="service__title">{(lang === 'en' && data.title_en) ? data.title_en : data.title}</h5>
+                  <p className="service_desc">{(lang === 'en' && data.description_en) ? data.description_en : data.description}</p>
                 </div>
               );
             })}
