@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
@@ -12,7 +12,7 @@ export const Portfolio = () => {
   const [lang, setLang] = useState(localStorage.getItem("lang") || "de");
 
   useEffect(() => {
-    const onLang = (e) => setLang(e.detail || localStorage.getItem("lang") || "de");
+    const onLang = (e) => setLang(e.detail || localStorage.getItem("lang") || "de");        
     window.addEventListener("langChange", onLang);
     return () => window.removeEventListener("langChange", onLang);
   }, []);
@@ -34,7 +34,6 @@ export const Portfolio = () => {
   }, []);
 
   const storageKey = (d, i) => (d.id ? `portfolio_comment_${d.id}` : `portfolio_comment_${i}`);
-
   const handleFile = (key, file) => {
     if (!file) return;
     const url = URL.createObjectURL(file);
@@ -51,6 +50,42 @@ export const Portfolio = () => {
     setTimeout(() => setSaved((s) => ({ ...s, [key]: false })), 1500);
   };
 
+  // Group projects by category
+  const personalProjects = dataportfolio.filter(d => d.category === "personal");
+  const collaborativeProjects = dataportfolio.filter(d => d.category === "collaborative");
+
+  const renderProjectSection = (projects, categoryKey) => {
+    return projects.length > 0 && (
+      <div className="mb-5">
+        <h2 className="portfolio-section-title">
+          {categoryKey === "personal" 
+            ? translations[lang].portfolio.personal
+            : translations[lang].portfolio.collaborative
+          }
+        </h2>
+        <div className="mb-5 po_items_ho">
+          {projects.map((data, i) => {
+            const key = storageKey(data, i);
+            const desc = ((typeof data.description_en !== 'undefined') && lang === 'en') ? data.description_en : data.description;
+            return (
+              <div key={i} className="po_item">
+                <img src={data.img} alt={desc} />
+                <div className="content">
+                  <p>{desc}</p>
+                  {(data.id === "project1" || data.id === "project2" || data.id === "project3") ? (
+                    <Link to={`/portfolio/${data.id}`} className="btn">{translations[lang].portfolio.viewProject}</Link>
+                  ) : (
+                    <a href={data.link}>{translations[lang].portfolio.viewProject}</a>      
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <HelmetProvider>
       <Container className="About-header">
@@ -61,29 +96,12 @@ export const Portfolio = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4"> {translations[lang].portfolio.title} </h1>{" "}
+            <h1 className="display-4 mb-4"> {translations[lang].portfolio.title} </h1>{" "} 
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <div className="mb-5 po_items_ho">
-          {dataportfolio.map((data, i) => {
-            const key = storageKey(data, i);
-            const desc = ( (typeof data.description_en !== 'undefined') && lang === 'en') ? data.description_en : data.description;
-            return (
-              <div key={i} className="po_item">
-                <img src={data.img} alt="" />
-                <div className="content">
-                  <p>{desc}</p>
-                  {(data.id === "project1" || data.id === "project3") ? (
-                    <Link to={`/portfolio/${data.id}`} className="btn">{translations[lang].portfolio.viewProject}</Link>
-                  ) : (
-                    <a href={data.link}>{translations[lang].portfolio.viewProject}</a>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {renderProjectSection(personalProjects, "personal")}
+        {renderProjectSection(collaborativeProjects, "collaborative")}
       </Container>
     </HelmetProvider>
   );

@@ -129,7 +129,8 @@ const services = [{
 
 const dataportfolio = [{
         id: "project1",
-        img: "https://picsum.photos/400/?grayscale",
+          category: "personal",
+          img: "/images/react-porfolio.png",
         description: "Portfolio-Projekt 1",
         description_en: "Portfolio Project 1",
         link: "#",
@@ -138,7 +139,8 @@ const dataportfolio = [{
     },
     {
         id: "project2",
-        img: "https://picsum.photos/400/800/?grayscale",
+          category: "personal",
+          img: "/images/dog-breed-recognition.png",
         description: " Hunderasse-Klassifizierer",
         description_en: " Dog Breed Classifier",
         link: "#",
@@ -147,7 +149,8 @@ const dataportfolio = [{
     },
     {
         id: "project3",
-        img: "https://picsum.photos/400/?grayscale",
+          category: "collaborative",
+          img: "/images/chatbot.jpg",
         description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
@@ -182,7 +185,7 @@ const socialprofils = {
 const translations = {
     en: {
         menu: { home: "Home", portfolio: "Portfolio", about: "About", contact: "Contact" },
-        portfolio: { title: "Portfolio", viewProject: "View project" },
+        portfolio: { title: "Portfolio", viewProject: "View project", personal: "Personal Projects", collaborative: "Collaborative Projects" },
         projectView: {
             website: "Website",
             pdfOpen: "Open PDF",
@@ -229,7 +232,7 @@ const translations = {
     },
     de: {
         menu: { home: "Home", portfolio: "Portfolio", about: "About", contact: "Kontakt" },
-        portfolio: { title: "Portfolio", viewProject: "Projekt ansehen" },
+        portfolio: { title: "Portfolio", viewProject: "Projekt ansehen", personal: "Pers?nliche Projekte", collaborative: "Collaborative Projekte" },
         projectView: {
             website: "Webseite",
             pdfOpen: "PDF öffnen",
@@ -290,3 +293,8 @@ export {
     translations,
     logotext,
 };
+
+
+
+
+
