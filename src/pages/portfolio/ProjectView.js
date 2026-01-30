@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { dataportfolio, contactConfig, translations } from "../../content_option";
+import DogBreedClassifier from "../../components/DogBreedClassifier";
 
 export default function ProjectView() {
   const { id } = useParams();
@@ -39,7 +40,7 @@ export default function ProjectView() {
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en'
             ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
-            : "KI-gest¨¹tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) f¨¹r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterst¨¹tzt Englisch und Deutsch."}
+            : "KI-gestï¿½ï¿½tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) fï¿½ï¿½r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstï¿½ï¿½tzt Englisch und Deutsch."}
         </p>
         
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -250,12 +251,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>â€?<strong>Frontend:</strong> Streamlit</div>
-            <div>â€?<strong>LLM:</strong> Google Gemini</div>
-            <div>â€?<strong>Framework:</strong> LangChain</div>
-            <div>â€?<strong>Embeddings:</strong> HuggingFace</div>
-            <div>â€?<strong>Vector DB:</strong> Chroma</div>
-            <div>â€?<strong>Language:</strong> Python 3.9+</div>
+            <div>ï¿½?<strong>Frontend:</strong> Streamlit</div>
+            <div>ï¿½?<strong>LLM:</strong> Google Gemini</div>
+            <div>ï¿½?<strong>Framework:</strong> LangChain</div>
+            <div>ï¿½?<strong>Embeddings:</strong> HuggingFace</div>
+            <div>ï¿½?<strong>Vector DB:</strong> Chroma</div>
+            <div>ï¿½?<strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -303,7 +304,7 @@ export default function ProjectView() {
               fontSize: "15px"
             }}
           >
-            â†?{translations[lang].projectView.back}
+            ï¿½?{translations[lang].projectView.back}
           </Link>
         </div>
       </div>

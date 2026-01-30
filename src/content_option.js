@@ -152,7 +152,7 @@ const dataportfolio = [{
     },
     {
         id: "project3",
-          category: "collaborative",
+          category: "personal",
           img: chatbotImg,
         description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
         description_en: "RAG Chatbot - AI-powered Q&A System",
@@ -296,6 +296,7 @@ export {
     translations,
     logotext,
 };
+
 
 
 

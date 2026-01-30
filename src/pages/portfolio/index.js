@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
@@ -50,9 +50,8 @@ export const Portfolio = () => {
     setTimeout(() => setSaved((s) => ({ ...s, [key]: false })), 1500);
   };
 
-  // Group projects by category
-  const personalProjects = dataportfolio.filter(d => d.category === "personal");
-  const collaborativeProjects = dataportfolio.filter(d => d.category === "collaborative");
+  // Get all projects
+  const allProjects = dataportfolio;
 
   const renderProjectSection = (projects, categoryKey) => {
     return projects.length > 0 && (
@@ -100,9 +99,10 @@ export const Portfolio = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        {renderProjectSection(personalProjects, "personal")}
-        {renderProjectSection(collaborativeProjects, "collaborative")}
+        {renderProjectSection(allProjects, "personal")}
       </Container>
     </HelmetProvider>
   );
 };
+
+
