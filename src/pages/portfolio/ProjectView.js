@@ -40,13 +40,104 @@ export default function ProjectView() {
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en'
             ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
-            : "KI-gestï¿½ï¿½tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) fï¿½ï¿½r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstï¿½ï¿½tzt Englisch und Deutsch."}
+            : "KI-gest¨¹tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) f¨¹r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterst¨¹tzt Englisch und Deutsch."}
         </p>
-        
+
+        {/* Header Info Bar */}
+        <div style={{
+          display: "flex",
+          gap: "20px",
+          marginBottom: "24px",
+          padding: "16px",
+          backgroundColor: "#f8f9fa",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "AI Model" : "KI-Modell"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              Vision Transformer (ViT-B/16)
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Framework" : "Framework"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              PyTorch 2.10 + FastAPI
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Dataset" : "Datensatz"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              120 Dog Breeds
+            </div>
+          </div>
+        </div>
+
+        {/* Demo Container */}
+        <div style={{
+          margin: "0 0 24px 0",
+          border: "1px solid #e0e0e0",
+          borderRadius: "12px",
+          overflow: "hidden",
+          padding: "20px",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
+        }}>
+          <DogBreedClassifier />
+        </div>
+
+        {/* Features List */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0f4ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            <li>{lang === 'en' ? "Real-time breed classification with confidence scores" : "Echtzeit-Rassenklassifizierung mit Konfidenzwerten"}</li>
+            <li>{lang === 'en' ? "Top-5 predictions for each image" : "Top-5-Vorhersagen f¨¹r jedes Bild"}</li>
+            <li>{lang === 'en' ? "Support for 120 dog breeds" : "Unterst¨¹tzung f¨¹r 120 Hunderassen"}</li>
+            <li>{lang === 'en' ? "Bilingual interface (English & German)" : "Zweisprachige Schnittstelle (Englisch & Deutsch)"}</li>
+            <li>{lang === 'en' ? "Drag-and-drop image upload" : "Drag-and-Drop-Bild-Upload"}</li>
+            <li>{lang === 'en' ? "Local and cloud API support" : "Lokale und Cloud-API-Unterst¨¹tzung"}</li>
+          </ul>
+        </div>
+
+        {/* Technical Stack */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#fff0f5",
+          borderRadius: "8px",
+          borderLeft: "4px solid #d946a0"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            <li><strong>Backend:</strong> Python 3.11, FastAPI, PyTorch 2.10</li>
+            <li><strong>Frontend:</strong> React 18+, Gradio UI</li>
+            <li><strong>Model:</strong> Vision Transformer (ViT-B/16) with pre-training</li>
+            <li><strong>Deployment:</strong> Hugging Face Spaces (Docker)</li>
+            <li><strong>API:</strong> RESTful API with CORS support</li>
+          </ul>
+        </div>
+
+        {/* Links */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <a 
-            href="https://huggingface.co/spaces/WilliamCass/dog-breed-classification" 
-            target="_blank" 
+          <a
+            href="https://huggingface.co/spaces/WilliamCass/dog-breed-classification"
+            target="_blank"
             rel="noopener noreferrer"
             style={{
               padding: '10px 20px',
@@ -60,11 +151,11 @@ export default function ProjectView() {
             onMouseOver={(e) => e.target.style.backgroundColor = '#764ba2'}
             onMouseOut={(e) => e.target.style.backgroundColor = '#667eea'}
           >
-             HF Spaces Live Demo
+            HF Spaces Live Demo
           </a>
-          <a 
-            href="https://github.com/YourGithub/dog-breed-classification" 
-            target="_blank" 
+          <a
+            href="https://github.com/shaofei-liu/dog-breed-classification"
+            target="_blank"
             rel="noopener noreferrer"
             style={{
               padding: '10px 20px',
@@ -78,11 +169,9 @@ export default function ProjectView() {
             onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
             onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
           >
-             GitHub Repository
+            GitHub Repository
           </a>
         </div>
-
-        <DogBreedClassifier />
 
         <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid #eee' }}>
           <h3>{translations[lang]?.projectView?.yourComments || 'Your Comments'}</h3>
@@ -125,7 +214,7 @@ export default function ProjectView() {
           e.target.style.backgroundColor = '#f0f0f0';
           e.target.style.transform = 'translateY(0)';
         }}>
-           {translations[lang]?.projectView?.back || 'Back'}
+          {translations[lang]?.projectView?.back || 'Back'}
         </Link>
       </div>
     );
@@ -251,12 +340,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>ï¿½?<strong>Frontend:</strong> Streamlit</div>
-            <div>ï¿½?<strong>LLM:</strong> Google Gemini</div>
-            <div>ï¿½?<strong>Framework:</strong> LangChain</div>
-            <div>ï¿½?<strong>Embeddings:</strong> HuggingFace</div>
-            <div>ï¿½?<strong>Vector DB:</strong> Chroma</div>
-            <div>ï¿½?<strong>Language:</strong> Python 3.9+</div>
+            <div>ï¿?<strong>Frontend:</strong> Streamlit</div>
+            <div>ï¿?<strong>LLM:</strong> Google Gemini</div>
+            <div>ï¿?<strong>Framework:</strong> LangChain</div>
+            <div>ï¿?<strong>Embeddings:</strong> HuggingFace</div>
+            <div>ï¿?<strong>Vector DB:</strong> Chroma</div>
+            <div>ï¿?<strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -304,7 +393,7 @@ export default function ProjectView() {
               fontSize: "15px"
             }}
           >
-            ï¿½?{translations[lang].projectView.back}
+            ï¿?{translations[lang].projectView.back}
           </Link>
         </div>
       </div>
@@ -390,5 +479,6 @@ export default function ProjectView() {
     </div>
   );
 }
+
 
 
