@@ -54,8 +54,8 @@ export const About = () => {
                 {worktimeline.map((data, i) => {
                   return (
                     <tr key={i}>
-                      <th scope="row">{data.jobtitle}</th>
-                      <td>{data.where}</td>
+                      <th scope="row">{lang === 'en' && data.jobtitle_en ? data.jobtitle_en : data.jobtitle}</th>
+                      <td>{lang === 'en' && data.where_en ? data.where_en : data.where}</td>
                       <td>{data.date}</td>
                     </tr>
                   );
@@ -74,8 +74,8 @@ export const About = () => {
                 {education.map((data, i) => {
                   return (
                     <tr key={i}>
-                      <th scope="row">{data.degree}</th>
-                      <td>{data.where}</td>
+                      <th scope="row">{lang === 'en' && data.degree_en ? data.degree_en : data.degree}</th>
+                      <td>{lang === 'en' && data.where_en ? data.where_en : data.where}</td>
                       <td>{data.date}</td>
                     </tr>
                   );
