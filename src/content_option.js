@@ -1,4 +1,6 @@
 ﻿import background from './assets/images/background.jpg';
+import dogBreedImg from './assets/images/dog-breed-recognition.png';
+import chatbotImg from './assets/images/chatbot.jpg';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -129,26 +131,27 @@ const services = [{
 
 const dataportfolio = [{
         id: "project1",
-        img: "https://picsum.photos/400/?grayscale",
-        description: "Portfolio-Projekt 1",
-        description_en: "Portfolio Project 1",
+        img: background,
+        description: "Rejection Letters - HR Application Records",
+        description_en: "Rejection Letters - HR Application Records",
         link: "#",
-        pdf: "/project1.pdf",
-        projectUrl: "https://www.gia.rwth-aachen.de/cms/~zppfj/gia/",
+        type: "personal",
     },
     {
         id: "project2",
-        img: "https://picsum.photos/400/800/?grayscale",
+        img: dogBreedImg,
         description: "Dog Breed Classifier - KI-gestützte Hunderassenidentifikation",
         description_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
         link: "#",
+        type: "personal",
     },
     {
         id: "project3",
-        img: "https://picsum.photos/400/?grayscale",
+        img: chatbotImg,
         description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
+        type: "personal",
         projectUrl: "https://portfolio-chatbot-k2apv4mklaemkakzx6zyir.streamlit.app/?embedded=true",
     },
 ];
