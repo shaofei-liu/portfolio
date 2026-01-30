@@ -154,6 +154,30 @@ const dataportfolio = [{
         type: "personal",
         projectUrl: "https://portfolio-chatbot-k2apv4mklaemkakzx6zyir.streamlit.app/?embedded=true",
     },
+    {
+        id: "project4",
+        img: background,
+        description: "Kooperationsprojekt 1",
+        description_en: "Collaboration Project 1",
+        link: "#",
+        type: "collaboration",
+    },
+    {
+        id: "project5",
+        img: background,
+        description: "Kooperationsprojekt 2",
+        description_en: "Collaboration Project 2",
+        link: "#",
+        type: "collaboration",
+    },
+    {
+        id: "project6",
+        img: background,
+        description: "Arbeitsprojekt",
+        description_en: "Work Project",
+        link: "#",
+        type: "work",
+    },
 ];
 
 const contactConfig = {

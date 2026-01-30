@@ -148,6 +148,63 @@ export default function ProjectView() {
     );
   }
 
+  // Project 4: Collaboration Project 1
+  if (project.id === "project4") {
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' 
+            ? "This project details coming soon. This is a placeholder for collaboration project 1."
+            : "Projektdetails folgen in Kürze. Dies ist ein Platzhalter für Kooperationsprojekt 1."}
+        </p>
+
+        <Link to="/portfolio" style={{ marginLeft: 0 }}>
+          {translations[lang].projectView.back}
+        </Link>
+      </div>
+    );
+  }
+
+  // Project 5: Collaboration Project 2
+  if (project.id === "project5") {
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' 
+            ? "This project details coming soon. This is a placeholder for collaboration project 2."
+            : "Projektdetails folgen in Kürze. Dies ist ein Platzhalter für Kooperationsprojekt 2."}
+        </p>
+
+        <Link to="/portfolio" style={{ marginLeft: 0 }}>
+          {translations[lang].projectView.back}
+        </Link>
+      </div>
+    );
+  }
+
+  // Project 6: Work Project
+  if (project.id === "project6") {
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
+        
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' 
+            ? "This project details coming soon. This is a placeholder for work project."
+            : "Projektdetails folgen in Kürze. Dies ist ein Platzhalter für Arbeitsprojekt."}
+        </p>
+
+        <Link to="/portfolio" style={{ marginLeft: 0 }}>
+          {translations[lang].projectView.back}
+        </Link>
+      </div>
+    );
+  }
+
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
     const iframeUrl = project.projectUrl;
