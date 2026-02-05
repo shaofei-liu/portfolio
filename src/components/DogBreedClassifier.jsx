@@ -268,6 +268,14 @@ export default function DogBreedClassifier() {
                     boxSizing: "border-box"
                   }}
                 />
+                <div style={{
+                  marginTop: "8px",
+                  fontSize: "12px",
+                  color: "#666",
+                  fontStyle: "italic"
+                }}>
+                  💡 {t.urlHint || (language === "en" ? "Use direct image links (e.g., from upload.wikimedia.org)" : "Verwenden Sie direkte Bild-Links (z.B. von upload.wikimedia.org)")}
+                </div>
               </div>
 
               {preview && (
