@@ -174,31 +174,9 @@ export default function ProjectView() {
           </a>
         </div>
 
-        <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid #eee' }}>
-          <h3>{translations[lang]?.projectView?.yourComments || 'Your Comments'}</h3>
-          <textarea
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value);
-              localStorage.setItem(storageKey, e.target.value);
-            }}
-            placeholder={translations[lang]?.projectView?.placeholder || "Type your feedback here..."}
-            style={{
-              width: '100%',
-              height: '120px',
-              padding: '10px',
-              marginBottom: '10px',
-              borderRadius: '8px',
-              border: '1px solid #ddd',
-              fontFamily: 'inherit',
-              fontSize: '14px'
-            }}
-          />
-        </div>
-
         <Link to="/portfolio" style={{
           display: 'inline-block',
-          marginTop: '20px',
+          marginTop: '40px',
           padding: '10px 20px',
           backgroundColor: '#f0f0f0',
           textDecoration: 'none',
@@ -417,7 +395,7 @@ export default function ProjectView() {
         <p style={{ marginBottom: 4, color: "#0066cc", fontSize: "16px", fontWeight: "600" }}>
           {subtitle}
         </p>
-        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+        <p style={{ marginBottom: 24, color: "#555", fontSize: "15px", lineHeight: "1.6" }}>
           {desc}
         </p>
 
@@ -484,24 +462,6 @@ export default function ProjectView() {
           </ul>
         </div>
 
-        {/* Code Architecture */}
-        <div style={{
-          marginBottom: "24px",
-          padding: "20px",
-          backgroundColor: "#fff0f5",
-          borderRadius: "8px",
-          borderLeft: "4px solid #d946a0"
-        }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Code Architecture" : "Code-Architektur"}
-          </h4>
-          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
-            {codeFeatures.map((feature, idx) => (
-              <li key={idx}>{feature}</li>
-            ))}
-          </ul>
-        </div>
-
         {/* Technical Stack */}
         <div style={{
           marginBottom: "24px",
@@ -535,12 +495,12 @@ export default function ProjectView() {
           borderLeft: "4px solid #10b981"
         }}>
           <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Master's Thesis" : "Masterarbeit"}
+            {lang === 'en' ? "Research Paper" : "Forschungspublikation"}
           </h4>
           <p style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "The original thesis 'RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning' is approximately 80 pages and covers comprehensive research on efficient RNN architectures. A related research paper is available below for your reference."
-              : "Die ursprüngliche Masterarbeit 'RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning' umfasst etwa 80 Seiten und behandelt umfassende Forschung zu effizienten RNN-Architekturen. Ein verwandtes Forschungspapier steht unten zur Verfügung."}
+              ? "A peer-reviewed scientific paper is available for review below."
+              : "Ein wissenschaftliches Forschungspapier steht unten zur Verfügung."}
           </p>
         </div>
 
@@ -586,31 +546,9 @@ export default function ProjectView() {
           )}
         </div>
 
-        <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid #eee' }}>
-          <h3>{translations[lang]?.projectView?.yourComments || 'Your Comments'}</h3>
-          <textarea
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value);
-              localStorage.setItem(storageKey, e.target.value);
-            }}
-            placeholder={translations[lang]?.projectView?.placeholder || "Type your feedback here..."}
-            style={{
-              width: '100%',
-              height: '120px',
-              padding: '10px',
-              marginBottom: '10px',
-              borderRadius: '8px',
-              border: '1px solid #ddd',
-              fontFamily: 'inherit',
-              fontSize: '14px'
-            }}
-          />
-        </div>
-
         <Link to="/portfolio" style={{
           display: 'inline-block',
-          marginTop: '20px',
+          marginTop: '40px',
           padding: '10px 20px',
           backgroundColor: '#f0f0f0',
           textDecoration: 'none',

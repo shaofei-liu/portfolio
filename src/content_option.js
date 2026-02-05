@@ -323,8 +323,8 @@ const projectDetails = {
         title_en: "RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
         subtitle_de: "Masterarbeit an der Technischen Universität München",
         subtitle_en: "Master's Thesis at Technical University of Munich",
-        description_de: "Eine umfassende Masterarbeit (ca. 80 Seiten) über recurrent neural networks mit Unabhängigkeitsannahmen. Diese Arbeit untersucht, wie RNNs durch strukturelle Vereinfachungen effizienter und skalierbarer werden können. Die Forschung behandelt sowohl theoretische Grundlagen als auch praktische Implementierungen mit GPU-Beschleunigung.",
-        description_en: "A comprehensive master's thesis (approximately 80 pages) on recurrent neural networks with independence assumptions. This work investigates how RNNs can become more efficient and scalable through structural simplifications. The research covers both theoretical foundations and practical implementations with GPU acceleration.",
+        description_de: "Eine Masterarbeit über RNNs mit Unabhängigkeitsannahmen, die Methoden zur Speichereffizienz und skalierbaren Sequenzverarbeitung mit GPU-Beschleunigung untersucht.",
+        description_en: "A master's thesis on RNNs with independence assumptions, investigating methods for memory efficiency and scalable sequence processing with GPU acceleration.",
         keyFeatures_de: [
             "Unabhängigkeitsannahmen in RNN-Architekturen zur Speichereffizienz",
             "Theorie und Implementierung reversibler RNN-Schichten",
@@ -368,7 +368,7 @@ const projectDetails = {
         github: "https://github.com/shaofei-liu/irevrnn",
         paperUrl: "/irevrnn_paper.pdf",
         fileInfo: {
-            pages: "~80",
+            pages: "76",
             lines_python: "2000+",
             lines_cuda: "500+",
             models_trained: "3",
