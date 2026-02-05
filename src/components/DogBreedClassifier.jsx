@@ -47,71 +47,6 @@ export default function DogBreedClassifier() {
     }
   };
 
-  // 检查URL是否指向有效的图片
-  const validateImageUrl = async (url) => {
-    try {
-      const response = await fetch(url, {
-        method: "HEAD",
-        mode: "cors",
-      });
-      
-      if (!response.ok) {
-        return { valid: false, reason: `HTTP ${response.status}` };
-      }
-      
-      const contentType = response.headers.get("content-type");
-      if (!contentType) {
-        return { valid: false, reason: "unknown_type" };
-      }
-      
-      // 明确检查是否为HTML（网页）- 这意味着没有图片
-      if (contentType.toLowerCase().includes("text/html")) {
-        return { valid: false, reason: "not_image" };
-      }
-      
-      if (!contentType.toLowerCase().includes("image")) {
-        return { valid: false, reason: "not_image" };
-      }
-      
-      return { valid: true };
-    } catch (err) {
-      // HEAD请求失败，尝试用GET请求 + blob fetch
-      try {
-        const response = await fetch(url, {
-          method: "GET",
-        });
-        
-        if (!response.ok) {
-          return { valid: false, reason: `HTTP ${response.status}` };
-        }
-        
-        const contentType = response.headers.get("content-type");
-        if (!contentType) {
-          return { valid: false, reason: "unknown_type" };
-        }
-        
-        // 明确检查是否为HTML（网页）
-        if (contentType.toLowerCase().includes("text/html")) {
-          return { valid: false, reason: "not_image" };
-        }
-        
-        if (!contentType.toLowerCase().includes("image")) {
-          return { valid: false, reason: "not_image" };
-        }
-        
-        // 尝试加载为blob以验证是否真的是图片
-        const blob = await response.blob();
-        if (!blob.type.includes("image")) {
-          return { valid: false, reason: "not_image" };
-        }
-        
-        return { valid: true };
-      } catch {
-        return { valid: false, reason: "network_error" };
-      }
-    }
-  };
-
   const handlePredict = async () => {
     if (!image && !imageUrl) {
       setError(t.selectImageError);
@@ -164,10 +99,7 @@ export default function DogBreedClassifier() {
         setWebpageImages(data.images);
         setError(null);
         setLoading(false); // 重要：设置加载状态为false
-        // 自动选择第一个图片并进行分类
-        if (data.images.length > 0) {
-          await predictSelectedImage(data.images[0]);
-        }
+        // 不自动选择第一个图片，让用户自己点击选择
         return;
       }
 
