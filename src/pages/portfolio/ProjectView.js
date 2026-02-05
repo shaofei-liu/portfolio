@@ -512,7 +512,7 @@ export default function ProjectView() {
               onMouseOver={(e) => e.target.style.backgroundColor = '#764ba2'}
               onMouseOut={(e) => e.target.style.backgroundColor = '#667eea'}
             >
-              📄 {lang === 'en' ? "View Paper" : "Arbeit ansehen"}
+              📄 {lang === 'en' ? "View Sample Conference Paper" : "查看样品会议论文"}
             </a>
           )}
         </div>
