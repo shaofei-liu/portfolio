@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.7de8d1e1.css",
-    "main.js": "/static/js/main.1804248e.js",
+    "main.css": "/static/css/main.5924c3c5.css",
+    "main.js": "/static/js/main.6516ae54.js",
+    "static/media/dog-breed-recognition.png": "/static/media/dog-breed-recognition.333732e99f395dc8ce26.png",
+    "static/media/chatbot.jpg": "/static/media/chatbot.9314070c80b3e4944842.jpg",
     "static/media/background.jpg": "/static/media/background.d7f819b3b5e6cedca5dc.jpg",
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.7de8d1e1.css",
-    "static/js/main.1804248e.js"
+    "static/css/main.5924c3c5.css",
+    "static/js/main.6516ae54.js"
   ]
 }
