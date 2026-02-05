@@ -41,7 +41,7 @@ export default function ProjectView() {
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en'
             ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
-            : "KI-gest��tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) f��r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterst��tzt Englisch und Deutsch."}
+            : "KI-gestützter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) für 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstützt Englisch und Deutsch."}
         </p>
 
         {/* Header Info Bar */}
