@@ -124,22 +124,7 @@ export default function DogBreedClassifier() {
     setWebpageImages([]);
 
     try {
-      // 如果是URL模式，先验证URL是否指向有效的图片
-      if (inputMode === "url" && imageUrl) {
-        // 检查是否是直接图片URL（以图片扩展名结尾）
-        const isDirectImageUrl = imageUrl.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/i);
-        
-        // 只对直接图片URL做前端验证
-        // 网页URL（如Wikipedia）应该发送到后端处理
-        if (isDirectImageUrl) {
-          const validation = await validateImageUrl(imageUrl);
-          if (!validation.valid) {
-            setLoading(false);
-            setError("No image found at this URL. Please provide a direct link to an image file.");
-            return;
-          }
-        }
-      }
+      // 不做前端验证，所有URL都发送到后端处理
 
       // 开发环境使用本地 API，生产环境使用 Hugging Face Spaces
       let apiUrl = process.env.NODE_ENV === 'development' 
@@ -168,7 +153,8 @@ export default function DogBreedClassifier() {
       if (!response.ok) {
         const errorData = await response.text();
         console.error("API Error:", errorData);
-        throw new Error(`Server error: ${response.status}`);
+        // 后端返回错误 -> 用户提供的URL不是有效的图片
+        throw new Error(language === "en" ? "No image found at this URL. Please provide a valid image URL." : "Keine Bilder gefunden. Bitte geben Sie eine gültige Bild-URL ein.");
       }
 
       const data = await response.json();
@@ -186,7 +172,13 @@ export default function DogBreedClassifier() {
       }
 
       if (!data.success) {
-        throw new Error(data.error || t.predictError);
+        // 后端返回的错误信息
+        const errorMsg = data.error || t.predictError;
+        // 如果是"未找到图片"类型的错误，用用户选择的语言提示
+        if (errorMsg.toLowerCase().includes("no image") || errorMsg.toLowerCase().includes("not_image") || errorMsg.toLowerCase().includes("keine bilder")) {
+          throw new Error(language === "en" ? "No image found at this URL. Please provide a valid image URL." : "Keine Bilder gefunden. Bitte geben Sie eine gültige Bild-URL ein.");
+        }
+        throw new Error(errorMsg);
       }
 
       const localizedResult = {
