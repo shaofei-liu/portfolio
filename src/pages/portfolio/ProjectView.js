@@ -83,11 +83,11 @@ export default function ProjectView() {
         {/* Demo Container */}
         <div style={{
           margin: "0 0 24px 0",
-          border: "1px solid #1a2a3a",
+          border: "1px solid #2a3f5a",
           borderRadius: "12px",
           overflow: "hidden",
           padding: "20px",
-          backgroundColor: "#0a1628",
+          backgroundColor: "#1a2f4a",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
         }}>
           <DogBreedClassifier />

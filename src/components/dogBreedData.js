@@ -138,7 +138,7 @@ export const dogBreedLang = {
     imageSizeError: "Image size cannot exceed 10MB",
     imageTypeError: "Please select an image file",
     predictError: "Prediction failed, please try again",
-    urlHint: "Use direct image links (e.g., from upload.wikimedia.org)"
+    urlHint: "You can use image URLs or paste a webpage URL to auto-extract images"
   },
   de: {
     title: "Hunderassen-Klassifizierung",
@@ -156,7 +156,7 @@ export const dogBreedLang = {
     imageSizeError: "Bildgröße darf 10MB nicht überschreiten",
     imageTypeError: "Bitte wählen Sie eine Bilddatei",
     predictError: "Vorhersage fehlgeschlagen, versuchen Sie es später erneut",
-    urlHint: "Verwenden Sie direkte Bild-Links (z.B. von upload.wikimedia.org)"
+    urlHint: "Sie können Bild-URLs verwenden oder eine Webseiten-URL einfügen, um Bilder automatisch zu extrahieren"
   }
 };
 
