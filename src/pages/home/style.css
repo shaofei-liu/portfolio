@@ -168,12 +168,17 @@ section {
 }
 
 #button_p {
-    background: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+#button_h {
+    background-color: #0066cc !important;
+    color: #fff !important;
 }
 
 #button_h:hover {
-    color: var(--primary-color)
+    color: #fff !important;
 }
 
 .intro_sec .h_bg-image .block {

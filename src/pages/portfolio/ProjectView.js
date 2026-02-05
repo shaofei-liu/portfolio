@@ -154,32 +154,31 @@ export default function ProjectView() {
           >
             📊 GitHub Repository
           </a>
+          <Link to="/portfolio" style={{
+            display: 'inline-block',
+            padding: '10px 20px',
+            backgroundColor: '#f0f0f0',
+            textDecoration: 'none',
+            borderRadius: '8px',
+            fontWeight: '600',
+            color: '#333',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = '#e0e0e0';
+            e.target.style.transform = 'translateY(-2px)';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = '#f0f0f0';
+            e.target.style.transform = 'translateY(0)';
+          }}>
+            {translations[lang]?.projectView?.back || 'Back'}
+          </Link>
         </div>
-
-        <Link to="/portfolio" style={{
-          display: 'inline-block',
-          marginTop: '40px',
-          padding: '10px 20px',
-          backgroundColor: '#f0f0f0',
-          textDecoration: 'none',
-          borderRadius: '8px',
-          fontWeight: '600',
-          color: '#333',
-          transition: 'all 0.3s ease'
-        }}
-        onMouseOver={(e) => {
-          e.target.style.backgroundColor = '#e0e0e0';
-          e.target.style.transform = 'translateY(-2px)';
-        }}
-        onMouseOut={(e) => {
-          e.target.style.backgroundColor = '#f0f0f0';
-          e.target.style.transform = 'translateY(0)';
-        }}>
-          {translations[lang]?.projectView?.back || 'Back'}
-        </Link>
       </div>
     );
   }
+
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
     const iframeUrl = project.projectUrl;
@@ -470,8 +469,8 @@ export default function ProjectView() {
           </h4>
           <p style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "The code is available on GitHub with complete implementation of the reversible RNN layers, CUDA kernels, and training pipelines."
-              : "Der Code ist auf GitHub mit einer vollständigen Implementierung der reversiblen RNN-Schichten, CUDA-Kernels und Trainings-Pipelines verfügbar."}
+              ? "The code is available on GitHub with complete implementation of the reversible RNN layers, CUDA kernels, and training pipelines. The original master's thesis manuscript can be provided upon request. Additionally, an unpublished sample conference paper is available below."
+              : "Der Code ist auf GitHub mit einer vollständigen Implementierung der reversiblen RNN-Schichten, CUDA-Kernels und Trainings-Pipelines verfügbar. Das Original-Manuskript der Masterarbeit kann auf Anfrage bereitgestellt werden. Zusätzlich folgt ein unveröffentlichtes Beispiel einer Konferenzpapier."}
           </p>
         </div>
 
@@ -515,29 +514,18 @@ export default function ProjectView() {
               📄 {lang === 'en' ? "View Sample Conference Paper" : "Beispielkonferenzarbeit anzeigen"}
             </a>
           )}
+          <Link 
+            to="/portfolio" 
+            className="btn"
+            style={{
+              padding: "10px 20px",
+              fontSize: "14px",
+              marginLeft: "12px"
+            }}
+          >
+            {translations[lang].projectView.back}
+          </Link>
         </div>
-
-        <Link to="/portfolio" style={{
-          display: 'inline-block',
-          marginTop: '40px',
-          padding: '10px 20px',
-          backgroundColor: '#f0f0f0',
-          textDecoration: 'none',
-          borderRadius: '8px',
-          fontWeight: '600',
-          color: '#333',
-          transition: 'all 0.3s ease'
-        }}
-        onMouseOver={(e) => {
-          e.target.style.backgroundColor = '#e0e0e0';
-          e.target.style.transform = 'translateY(-2px)';
-        }}
-        onMouseOut={(e) => {
-          e.target.style.backgroundColor = '#f0f0f0';
-          e.target.style.transform = 'translateY(0)';
-        }}>
-          {translations[lang]?.projectView?.back || 'Back'}
-        </Link>
       </div>
     );
   }
