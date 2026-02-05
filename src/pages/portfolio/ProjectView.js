@@ -319,12 +319,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>�?<strong>Frontend:</strong> Streamlit</div>
-            <div>�?<strong>LLM:</strong> Google Gemini</div>
-            <div>�?<strong>Framework:</strong> LangChain</div>
-            <div>�?<strong>Embeddings:</strong> HuggingFace</div>
-            <div>�?<strong>Vector DB:</strong> Chroma</div>
-            <div>�?<strong>Language:</strong> Python 3.9+</div>
+            <div>• <strong>Frontend:</strong> Streamlit</div>
+            <div>• <strong>LLM:</strong> Google Gemini</div>
+            <div>• <strong>Framework:</strong> LangChain</div>
+            <div>• <strong>Embeddings:</strong> HuggingFace</div>
+            <div>• <strong>Vector DB:</strong> Chroma</div>
+            <div>• <strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
