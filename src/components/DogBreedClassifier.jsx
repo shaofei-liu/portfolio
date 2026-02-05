@@ -197,6 +197,14 @@ export default function DogBreedClassifier() {
     localStorage.setItem("dogBreedLang", lang);
   };
 
+  const isImageUrl = (url) => {
+    // 检查URL是否指向直接图片而不是网页
+    if (!url) return false;
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg'];
+    const lowerUrl = url.toLowerCase();
+    return imageExtensions.some(ext => lowerUrl.includes(ext));
+  };
+
   return (
     <div className="dog-breed-classifier-container">
       <div className="dog-breed-classifier-header">
@@ -324,10 +332,17 @@ export default function DogBreedClassifier() {
                   type="url"
                   value={imageUrl}
                   onChange={(e) => {
-                    setImageUrl(e.target.value);
-                    setPreview(e.target.value);
+                    const url = e.target.value;
+                    setImageUrl(url);
+                    // 只有直接图片URL才显示预览
+                    if (isImageUrl(url)) {
+                      setPreview(url);
+                    } else {
+                      setPreview(null);
+                    }
                     setResult(null);
                     setError(null);
+                    setWebpageImages([]);
                   }}
                   placeholder={language === "en" ? "Enter image URL..." : "Bild-URL eingeben..."}
                   style={{
@@ -420,6 +435,25 @@ export default function DogBreedClassifier() {
                     onError={() => setError(language === "en" ? "Failed to load image from URL" : "Fehler beim Laden des Bildes von der URL")}
                     style={{ maxHeight: "300px", maxWidth: "100%", borderRadius: "6px" }}
                   />
+                </div>
+              )}
+
+              {/* 显示网页URL输入状态 */}
+              {imageUrl && !isImageUrl(imageUrl) && !webpageImages.length && (
+                <div style={{
+                  marginBottom: "16px",
+                  padding: "12px",
+                  backgroundColor: "#e3f2fd",
+                  borderRadius: "6px",
+                  border: "1px solid #90caf9",
+                  color: "#1976d2",
+                  fontSize: "13px"
+                }}>
+                  {loading ? (
+                    <>⏳ {language === "en" ? "Extracting images from webpage..." : "Bilder von der Webseite extrahieren..."}</>
+                  ) : (
+                    <>✓ {language === "en" ? "Webpage URL detected. Click 'Identify' to extract and classify images." : "Webseiten-URL erkannt. Klicken Sie auf 'Identifizieren', um Bilder zu extrahieren und zu klassifizieren."}</>
+                  )}
                 </div>
               )}
 
