@@ -323,8 +323,8 @@ const projectDetails = {
         title_en: "RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
         subtitle_de: "Masterarbeit an der Technischen Universität München",
         subtitle_en: "Master's Thesis at Technical University of Munich",
-        description_de: "Eine Masterarbeit über RNNs mit Unabhängigkeitsannahmen, die Methoden zur Speichereffizienz und skalierbaren Sequenzverarbeitung mit GPU-Beschleunigung untersucht.",
-        description_en: "A master's thesis on RNNs with independence assumptions, investigating methods for memory efficiency and scalable sequence processing with GPU acceleration.",
+        description_de: "Eine Masterarbeit über RNNs mit Unabhängigkeitsannahmen, die Methoden zur Speichereffizienz und skalierbaren Sequenzverarbeitung mit GPU-Beschleunigung untersucht. Die Arbeit wurde nicht veröffentlicht und hat keinen Peer-Review-Prozess durchlaufen. Originaltext verfügbar auf Anfrage.",
+        description_en: "A master's thesis on RNNs with independence assumptions, investigating methods for memory efficiency and scalable sequence processing with GPU acceleration. The thesis has not been published and has not undergone peer review. Original text available upon request.",
         keyFeatures_de: [
             "Unabhängigkeitsannahmen in RNN-Architekturen zur Speichereffizienz",
             "Theorie und Implementierung reversibler RNN-Schichten",

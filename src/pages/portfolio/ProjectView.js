@@ -38,7 +38,7 @@ export default function ProjectView() {
     return (
       <div className="project-view" style={{ padding: 16 }}>
         <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
-        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+        <p style={{ marginBottom: 24, color: "#777", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en'
             ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
             : "KI-gestützter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) für 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstützt Englisch und Deutsch."}
@@ -137,25 +137,7 @@ export default function ProjectView() {
         {/* Links */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <a
-            href="https://huggingface.co/spaces/WilliamCass/dog-breed-classification"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#667eea',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: '600',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#764ba2'}
-            onMouseOut={(e) => e.target.style.backgroundColor = '#667eea'}
-          >
-            HF Spaces Live Demo
-          </a>
-          <a
-            href="https://github.com/shaofei-liu/dog-breed-classification"
+            href="https://github.com/shaofei-liu/dog-breed-classifier-github"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -170,7 +152,7 @@ export default function ProjectView() {
             onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
             onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
           >
-            GitHub Repository
+            📊 GitHub Repository
           </a>
         </div>
 
@@ -207,7 +189,7 @@ export default function ProjectView() {
       <div className="project-view" style={{ padding: 16 }}>
         <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
         
-        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+        <p style={{ marginBottom: 24, color: "#777", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en' 
             ? "A multilingual AI-powered chatbot built with Streamlit, LangChain, and Google Gemini API. Uses Retrieval-Augmented Generation (RAG) with vector database to answer questions about Shaofei's background, skills, and professional experience."
             : "Ein mehrsprachiger KI-gestützter Chatbot, gebaut mit Streamlit, LangChain und Google Gemini API. Nutzt Retrieval-Augmented Generation (RAG) mit Vektordatenbank, um Fragen zu Shaofeis Hintergrund, Fähigkeiten und beruflicher Erfahrung zu beantworten."}
@@ -305,11 +287,11 @@ export default function ProjectView() {
         <div style={{ 
           marginBottom: "24px",
           padding: "20px",
-          backgroundColor: "#f9f9f9",
+          backgroundColor: "#fff0f5",
           borderRadius: "8px",
-          border: "1px solid #e0e0e0"
+          borderLeft: "4px solid #d946a0"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", fontWeight: "600" }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600" }}>
             {lang === 'en' ? "Tech Stack" : "Technologie-Stack"}
           </h4>
           <div style={{ 
@@ -319,12 +301,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>• <strong>Frontend:</strong> Streamlit</div>
-            <div>• <strong>LLM:</strong> Google Gemini</div>
-            <div>• <strong>Framework:</strong> LangChain</div>
-            <div>• <strong>Embeddings:</strong> HuggingFace</div>
-            <div>• <strong>Vector DB:</strong> Chroma</div>
-            <div>• <strong>Language:</strong> Python 3.9+</div>
+            <div>�?<strong>Frontend:</strong> Streamlit</div>
+            <div>�?<strong>LLM:</strong> Google Gemini</div>
+            <div>�?<strong>Framework:</strong> LangChain</div>
+            <div>�?<strong>Embeddings:</strong> HuggingFace</div>
+            <div>�?<strong>Vector DB:</strong> Chroma</div>
+            <div>�?<strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -332,44 +314,33 @@ export default function ProjectView() {
         <div style={{ 
           display: "flex", 
           gap: "12px",
-          alignItems: "center"
+          alignItems: "center",
+          flexWrap: "wrap"
         }}>
-          <a 
-            href={fullScreenUrl}
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://github.com/shaofei-liu/rag-chatbot-github"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "12px 24px",
-              backgroundColor: "#0066cc",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "6px",
-              fontSize: "15px",
-              fontWeight: "500",
-              border: "none",
-              cursor: "pointer",
-              transition: "all 0.3s ease"
+              padding: '10px 20px',
+              backgroundColor: '#333',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
             }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#0052a3";
-              e.target.style.boxShadow = "0 4px 12px rgba(0, 102, 204, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "#0066cc";
-              e.target.style.boxShadow = "none";
-            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
           >
-            🔗 {lang === 'en' ? "Open in Full Screen" : "Vollbild öffnen"}
+            📊 GitHub Repository
           </a>
           <Link 
             to="/portfolio" 
             className="btn"
             style={{
-              padding: "12px 24px",
-              fontSize: "15px"
+              padding: "10px 20px",
+              fontSize: "14px"
             }}
           >
             {translations[lang].projectView.back}
@@ -450,9 +421,9 @@ export default function ProjectView() {
           padding: "20px",
           backgroundColor: "#f0f4ff",
           borderRadius: "8px",
-          borderLeft: "4px solid #667eea"
+          borderLeft: "4px solid #0066cc"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#667eea", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
           </h4>
           <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
@@ -466,11 +437,11 @@ export default function ProjectView() {
         <div style={{
           marginBottom: "24px",
           padding: "20px",
-          backgroundColor: "#f5f5f5",
+          backgroundColor: "#fff0f5",
           borderRadius: "8px",
-          borderLeft: "4px solid #f59e0b"
+          borderLeft: "4px solid #d946a0"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
           </h4>
           <div style={{
@@ -481,7 +452,7 @@ export default function ProjectView() {
             color: "#666"
           }}>
             {techStack.map((tech, idx) => (
-              <div key={idx} style={{ paddingLeft: "8px" }}>• {tech}</div>
+              <div key={idx} style={{ paddingLeft: "8px" }}>�?{tech}</div>
             ))}
           </div>
         </div>
@@ -495,12 +466,12 @@ export default function ProjectView() {
           borderLeft: "4px solid #10b981"
         }}>
           <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Research Paper" : "Forschungspublikation"}
+            {lang === 'en' ? "Master's Thesis" : "Masterarbeit"}
           </h4>
           <p style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "A peer-reviewed scientific paper is available for review below."
-              : "Ein wissenschaftliches Forschungspapier steht unten zur Verfügung."}
+              ? "The original thesis document is available upon request. A summary of the key research findings is presented below."
+              : "Der Originaltext der Masterarbeit ist auf Anfrage erhältlich. Eine Zusammenfassung der wichtigsten Forschungsergebnisse wird unten präsentiert."}
           </p>
         </div>
 
@@ -650,6 +621,7 @@ export default function ProjectView() {
     </div>
   );
 }
+
 
 
 
