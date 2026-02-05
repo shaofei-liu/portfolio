@@ -142,19 +142,19 @@ export const dogBreedLang = {
   de: {
     title: "Hunderassen-Klassifizierung",
     description: "Laden Sie ein Hunderfoto hoch und die KI identifiziert die Rasse",
-    dragDropText: "Ziehen Sie ein Hundefoto hierher, oder klicken Sie zum Auswahlen",
-    selectButton: "Bild auswahlen",
+    dragDropText: "Ziehen Sie ein Hundefoto hierher, oder klicken Sie zum Auswählen",
+    selectButton: "Bild auswählen",
     predictButton: "Rasse identifizieren",
     predicting: "Wird identifiziert...",
-    clearButton: "Loschen",
+    clearButton: "Löschen",
     resultTitle: "Klassifizierungsergebnis",
     breed: "Rasse",
     confidence: "Konfidenz",
     top5Title: "Top 5 Vorhersagen",
-    selectImageError: "Bitte wahlen Sie zuerst ein Bild",
-    imageSizeError: "Bildgrosse darf 10MB nicht uberschreiten",
-    imageTypeError: "Bitte wahlen Sie eine Bilddatei",
-    predictError: "Vorhersage fehlgeschlagen, versuchen Sie es spater erneut"
+    selectImageError: "Bitte wählen Sie zuerst ein Bild",
+    imageSizeError: "Bildgröße darf 10MB nicht überschreiten",
+    imageTypeError: "Bitte wählen Sie eine Bilddatei",
+    predictError: "Vorhersage fehlgeschlagen, versuchen Sie es später erneut"
   }
 };
 

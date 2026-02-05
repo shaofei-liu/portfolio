@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { dataportfolio, contactConfig, translations } from "../../content_option";
-import RejectionLetters from "../../components/RejectionLetters";
 import DogBreedClassifier from "../../components/DogBreedClassifier";
+import RejectionLetters from "../../components/RejectionLetters";
 
 export default function ProjectView() {
   const { id } = useParams();
@@ -38,15 +38,14 @@ export default function ProjectView() {
     return (
       <div className="project-view" style={{ padding: 16 }}>
         <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
-        
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
-          {lang === 'en' 
+          {lang === 'en'
             ? "AI-powered dog breed classifier using Vision Transformer (ViT-B/16) trained on 120 dog breeds. Upload a dog photo and get instant breed identification with confidence scores and top-5 predictions. Supports English and German."
-            : "KI-gestützter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) für 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterstützt Englisch und Deutsch."}
+            : "KI-gest��tzter Hunderassen-Klassifizierer mit Vision Transformer (ViT-B/16) f��r 120 Hunderassen. Laden Sie ein Hundefoto hoch und erhalten Sie eine sofortige Rassenidentifizierung mit Konfidenzscores und den Top-5-Vorhersagen. Unterst��tzt Englisch und Deutsch."}
         </p>
 
         {/* Header Info Bar */}
-        <div style={{ 
+        <div style={{
           display: "flex",
           gap: "20px",
           marginBottom: "24px",
@@ -68,7 +67,7 @@ export default function ProjectView() {
               {lang === 'en' ? "Framework" : "Framework"}
             </div>
             <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
-              PyTorch 2.1.0 + FastAPI
+              PyTorch 2.10 + FastAPI
             </div>
           </div>
           <div style={{ flex: 1 }}>
@@ -82,7 +81,7 @@ export default function ProjectView() {
         </div>
 
         {/* Demo Container */}
-        <div style={{ 
+        <div style={{
           margin: "0 0 24px 0",
           border: "1px solid #e0e0e0",
           borderRadius: "12px",
@@ -95,7 +94,7 @@ export default function ProjectView() {
         </div>
 
         {/* Features List */}
-        <div style={{ 
+        <div style={{
           marginBottom: "24px",
           padding: "20px",
           backgroundColor: "#f0f4ff",
@@ -105,13 +104,7 @@ export default function ProjectView() {
           <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
           </h4>
-          <ul style={{ 
-            margin: 0, 
-            padding: "0 0 0 20px", 
-            color: "#555", 
-            fontSize: "14px",
-            lineHeight: "1.8"
-          }}>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
             <li>{lang === 'en' ? "Real-time breed classification with confidence scores" : "Echtzeit-Rassenklassifizierung mit Konfidenzwerten"}</li>
             <li>{lang === 'en' ? "Top-5 predictions for each image" : "Top-5-Vorhersagen für jedes Bild"}</li>
             <li>{lang === 'en' ? "Support for 120 dog breeds" : "Unterstützung für 120 Hunderassen"}</li>
@@ -121,90 +114,112 @@ export default function ProjectView() {
           </ul>
         </div>
 
-        {/* Tech Stack */}
-        <div style={{ 
+        {/* Technical Stack */}
+        <div style={{
           marginBottom: "24px",
           padding: "20px",
-          backgroundColor: "#f9f9f9",
+          backgroundColor: "#fff0f5",
           borderRadius: "8px",
-          border: "1px solid #e0e0e0"
+          borderLeft: "4px solid #d946a0"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", fontWeight: "600" }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
           </h4>
           <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
-            <li><strong>Backend:</strong> Python 3.11, FastAPI, PyTorch 2.1.0</li>
-            <li><strong>Frontend:</strong> React 18+ with React Bootstrap</li>
+            <li><strong>Backend:</strong> Python 3.11, FastAPI, PyTorch 2.10</li>
+            <li><strong>Frontend:</strong> React 18+, Gradio UI</li>
             <li><strong>Model:</strong> Vision Transformer (ViT-B/16) with pre-training</li>
             <li><strong>Deployment:</strong> Hugging Face Spaces (Docker)</li>
             <li><strong>API:</strong> RESTful API with CORS support</li>
           </ul>
         </div>
 
-        <Link to="/portfolio" style={{ marginLeft: 0 }}>
-          {translations[lang].projectView.back}
+        {/* Links */}
+        <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <a
+            href="https://huggingface.co/spaces/WilliamCass/dog-breed-classification"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#667eea',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#764ba2'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#667eea'}
+          >
+            HF Spaces Live Demo
+          </a>
+          <a
+            href="https://github.com/shaofei-liu/dog-breed-classification"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#333',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
+          >
+            GitHub Repository
+          </a>
+        </div>
+
+        <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid #eee' }}>
+          <h3>{translations[lang]?.projectView?.yourComments || 'Your Comments'}</h3>
+          <textarea
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value);
+              localStorage.setItem(storageKey, e.target.value);
+            }}
+            placeholder={translations[lang]?.projectView?.placeholder || "Type your feedback here..."}
+            style={{
+              width: '100%',
+              height: '120px',
+              padding: '10px',
+              marginBottom: '10px',
+              borderRadius: '8px',
+              border: '1px solid #ddd',
+              fontFamily: 'inherit',
+              fontSize: '14px'
+            }}
+          />
+        </div>
+
+        <Link to="/portfolio" style={{
+          display: 'inline-block',
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#f0f0f0',
+          textDecoration: 'none',
+          borderRadius: '8px',
+          fontWeight: '600',
+          color: '#333',
+          transition: 'all 0.3s ease'
+        }}
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = '#e0e0e0';
+          e.target.style.transform = 'translateY(-2px)';
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = '#f0f0f0';
+          e.target.style.transform = 'translateY(0)';
+        }}>
+          {translations[lang]?.projectView?.back || 'Back'}
         </Link>
       </div>
     );
   }
-
-  // Project 4: Collaboration Project 1
-  if (project.id === "project4") {
-    return (
-      <div className="project-view" style={{ padding: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
-        
-        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
-          {lang === 'en' 
-            ? "This project details coming soon. This is a placeholder for collaboration project 1."
-            : "Projektdetails folgen in Kürze. Dies ist ein Platzhalter für Kooperationsprojekt 1."}
-        </p>
-
-        <Link to="/portfolio" style={{ marginLeft: 0 }}>
-          {translations[lang].projectView.back}
-        </Link>
-      </div>
-    );
-  }
-
-  // Project 5: Collaboration Project 2
-  if (project.id === "project5") {
-    return (
-      <div className="project-view" style={{ padding: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
-        
-        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
-          {lang === 'en' 
-            ? "This project details coming soon. This is a placeholder for collaboration project 2."
-            : "Projektdetails folgen in Kürze. Dies ist ein Platzhalter für Kooperationsprojekt 2."}
-        </p>
-
-        <Link to="/portfolio" style={{ marginLeft: 0 }}>
-          {translations[lang].projectView.back}
-        </Link>
-      </div>
-    );
-  }
-
-  // Project 6: Work Project
-  if (project.id === "project6") {
-    return (
-      <div className="project-view" style={{ padding: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
-        
-        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
-          {lang === 'en' 
-            ? "This project details coming soon. This is a placeholder for work project."
-            : "Projektdetails folgen in Kürze. Dies ist ein Platzhalter für Arbeitsprojekt."}
-        </p>
-
-        <Link to="/portfolio" style={{ marginLeft: 0 }}>
-          {translations[lang].projectView.back}
-        </Link>
-      </div>
-    );
-  }
-
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
     const iframeUrl = project.projectUrl;
@@ -326,12 +341,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>• <strong>Frontend:</strong> Streamlit</div>
-            <div>• <strong>LLM:</strong> Google Gemini</div>
-            <div>• <strong>Framework:</strong> LangChain</div>
-            <div>• <strong>Embeddings:</strong> HuggingFace</div>
-            <div>• <strong>Vector DB:</strong> Chroma</div>
-            <div>• <strong>Language:</strong> Python 3.9+</div>
+            <div>�?<strong>Frontend:</strong> Streamlit</div>
+            <div>�?<strong>LLM:</strong> Google Gemini</div>
+            <div>�?<strong>Framework:</strong> LangChain</div>
+            <div>�?<strong>Embeddings:</strong> HuggingFace</div>
+            <div>�?<strong>Vector DB:</strong> Chroma</div>
+            <div>�?<strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -379,47 +394,18 @@ export default function ProjectView() {
               fontSize: "15px"
             }}
           >
-            ← {translations[lang].projectView.back}
+            �?{translations[lang].projectView.back}
           </Link>
         </div>
       </div>
     );
   }
 
-  // Only project1, project2 and project3 have detailed page content
-  // Other projects show a simple project view
-  if (project.id !== "project1" && project.id !== "project2" && project.id !== "project3") {
+  // Only project1 has the detail page content
+  if (project.id !== "project1") {
     return (
-      <div className="project-view" style={{ padding: 16 }}>
-        <h2>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
-        
-        {project.projectUrl && (
-          <div>
-            <p>
-              {translations[lang].projectView.website}:
-              <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 6 }}>
-                {project.projectUrl}
-              </a>
-            </p>
-            <div style={{ margin: "12px 0" }}>
-              <a className="btn" href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-                {lang === 'en' ? "Visit Project" : "Projekt besuchen"}
-              </a>
-            </div>
-          </div>
-        )}
-
-        {project.pdf && (
-          <div style={{ margin: "12px 0" }}>
-            <a className="btn" href={project.pdf} target="_blank" rel="noopener noreferrer">
-              {translations[lang].projectView.pdfOpen}
-            </a>
-          </div>
-        )}
-
-        <Link to="/portfolio" style={{ marginLeft: 12 }}>
-          {translations[lang].projectView.back}
-        </Link>
+      <div style={{ padding: 16 }}>
+        {translations[lang].projectView.noDetail} <Link to="/portfolio">{translations[lang].projectView.back}</Link>
       </div>
     );
   }
@@ -471,18 +457,7 @@ export default function ProjectView() {
         </a>
       </div>
 
-      <h3 style={{ marginTop: 24, marginBottom: 12 }}>
-        {lang === 'en' ? "Rejection Letters Collection" : "Sammlung von Ablehnungsschreiben"}
-      </h3>
-      <p style={{ color: "#666", fontSize: "14px", marginBottom: 16 }}>
-        {lang === 'en' 
-          ? "Click the buttons to view the rejection letters from various institutions."
-          : "Klicken Sie auf die Schaltflächen, um die Ablehnungsschreiben von verschiedenen Instituten anzuzeigen."}
-      </p>
-
-      <RejectionLetters lang={lang} />
-
-      <label htmlFor="comment" style={{ display: "block", marginTop: 24 }}>{translations[lang].projectView.yourComments}</label>
+      <label htmlFor="comment" style={{ display: "block", marginTop: 12 }}>{translations[lang].projectView.yourComments}</label>
       <textarea
         id="comment"
         aria-label={translations[lang].projectView.yourComments}
@@ -505,3 +480,6 @@ export default function ProjectView() {
     </div>
   );
 }
+
+
+

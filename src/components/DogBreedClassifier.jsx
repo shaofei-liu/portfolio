@@ -6,9 +6,11 @@ export default function DogBreedClassifier() {
   const [language, setLanguage] = useState("de");
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [inputMode, setInputMode] = useState("file"); // "file" or "url"
 
   const t = dogBreedLang[language];
 
@@ -44,7 +46,7 @@ export default function DogBreedClassifier() {
   };
 
   const handlePredict = async () => {
-    if (!image) {
+    if (!image && !imageUrl) {
       setError(t.selectImageError);
       return;
     }
@@ -54,19 +56,29 @@ export default function DogBreedClassifier() {
     setResult(null);
 
     try {
-      const formData = new FormData();
-      formData.append("file", image);
+      // 开发环境使用本地 API，生产环境使用 Hugging Face Spaces
+      let apiUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:7860/api/predict'
+        : 'https://williamcass-dog-breed-classification.hf.space/api/predict';
 
-      const response = await fetch(
-        "https://williamcass-dog-breed-classification.hf.space/api/predict",
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
+      const formData = new FormData();
+      
+      // For URL input, add as query parameter
+      if (inputMode === "url" && imageUrl) {
+        const urlParams = new URLSearchParams();
+        urlParams.append('url', imageUrl);
+        apiUrl += '?' + urlParams.toString();
+      } else if (inputMode === "file" && image) {
+        formData.append("file", image);
+      }
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        body: inputMode === "file" ? formData : null,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
       if (!response.ok) {
         const errorData = await response.text();
@@ -103,6 +115,7 @@ export default function DogBreedClassifier() {
 
   const handleClear = () => {
     setImage(null);
+    setImageUrl("");
     setPreview(null);
     setResult(null);
     setError(null);
@@ -135,49 +148,159 @@ export default function DogBreedClassifier() {
 
       <div className="dog-breed-classifier-content">
         <div className="upload-section">
-          <div
-            className="upload-area"
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            {preview ? (
-              <img src={preview} alt="Preview" className="preview-image" />
-            ) : (
-              <div className="upload-placeholder">
-                <div className="upload-icon"></div>
-                <p>{t.dragDropText}</p>
-              </div>
-            )}
+          {/* Input Mode Toggle */}
+          <div className="input-mode-toggle" style={{
+            display: "flex",
+            gap: "10px",
+            marginBottom: "16px",
+            justifyContent: "center"
+          }}>
+            <button
+              onClick={() => setInputMode("file")}
+              className={`mode-btn ${inputMode === "file" ? "active" : ""}`}
+              style={{
+                padding: "8px 16px",
+                border: inputMode === "file" ? "2px solid #0066cc" : "1px solid #ccc",
+                backgroundColor: inputMode === "file" ? "#e6f0ff" : "#f5f5f5",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontSize: "14px",
+                fontWeight: inputMode === "file" ? "600" : "400",
+                color: inputMode === "file" ? "#0066cc" : "#666"
+              }}
+            >
+              {language === "en" ? "📁 Upload" : "📁 Hochladen"}
+            </button>
+            <button
+              onClick={() => setInputMode("url")}
+              className={`mode-btn ${inputMode === "url" ? "active" : ""}`}
+              style={{
+                padding: "8px 16px",
+                border: inputMode === "url" ? "2px solid #0066cc" : "1px solid #ccc",
+                backgroundColor: inputMode === "url" ? "#e6f0ff" : "#f5f5f5",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontSize: "14px",
+                fontWeight: inputMode === "url" ? "600" : "400",
+                color: inputMode === "url" ? "#0066cc" : "#666"
+              }}
+            >
+              {language === "en" ? "🔗 URL" : "🔗 URL"}
+            </button>
           </div>
 
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="file-input"
-            id="image-input"
-            style={{ display: "none" }}
-          />
-
-          <div className="button-group">
-            <label htmlFor="image-input" className="btn btn-primary">
-              {t.selectButton}
-            </label>
-            {image && (
-              <button
-                className="btn btn-secondary"
-                onClick={handlePredict}
-                disabled={loading}
+          {inputMode === "file" ? (
+            <>
+              <div
+                className="upload-area"
+                onDragOver={handleDragOver}
+                onDrop={handleDrop}
               >
-                {loading ? t.predicting : t.predictButton}
-              </button>
-            )}
-            {image && (
-              <button className="btn btn-tertiary" onClick={handleClear}>
-                {t.clearButton}
-              </button>
-            )}
-          </div>
+                {preview ? (
+                  <img src={preview} alt="Preview" className="preview-image" />
+                ) : (
+                  <div className="upload-placeholder">
+                    <div className="upload-icon"></div>
+                    <p>{t.dragDropText}</p>
+                  </div>
+                )}
+              </div>
+
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="file-input"
+                id="image-input"
+                style={{ display: "none" }}
+              />
+
+              <div className="button-group">
+                <label htmlFor="image-input" className="btn btn-primary">
+                  {t.selectButton}
+                </label>
+                {image && (
+                  <button
+                    className="btn btn-secondary"
+                    onClick={handlePredict}
+                    disabled={loading}
+                  >
+                    {loading ? t.predicting : t.predictButton}
+                  </button>
+                )}
+                {image && (
+                  <button className="btn btn-tertiary" onClick={handleClear}>
+                    {t.clearButton}
+                  </button>
+                )}
+              </div>
+            </>
+          ) : (
+            <>
+              <div style={{
+                marginBottom: "16px"
+              }}>
+                <label style={{
+                  display: "block",
+                  marginBottom: "8px",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                  color: "#333"
+                }}>
+                  {language === "en" ? "Image URL" : "Bild-URL"}
+                </label>
+                <input
+                  type="url"
+                  value={imageUrl}
+                  onChange={(e) => {
+                    setImageUrl(e.target.value);
+                    setPreview(e.target.value);
+                    setResult(null);
+                    setError(null);
+                  }}
+                  placeholder={language === "en" ? "Enter image URL..." : "Bild-URL eingeben..."}
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    borderRadius: "6px",
+                    border: "1px solid #ddd",
+                    fontSize: "14px",
+                    boxSizing: "border-box"
+                  }}
+                />
+              </div>
+
+              {preview && (
+                <div style={{
+                  marginBottom: "16px",
+                  textAlign: "center"
+                }}>
+                  <img
+                    src={preview}
+                    alt="URL Preview"
+                    className="preview-image"
+                    onError={() => setError(language === "en" ? "Failed to load image from URL" : "Fehler beim Laden des Bildes von der URL")}
+                    style={{ maxHeight: "300px", maxWidth: "100%", borderRadius: "6px" }}
+                  />
+                </div>
+              )}
+
+              <div className="button-group">
+                <button
+                  className="btn btn-secondary"
+                  onClick={handlePredict}
+                  disabled={loading || !imageUrl}
+                >
+                  {loading ? t.predicting : t.predictButton}
+                </button>
+                {imageUrl && (
+                  <button className="btn btn-tertiary" onClick={handleClear}>
+                    {t.clearButton}
+                  </button>
+                )}
+              </div>
+            </>
+          )}
 
           {error && <div className="error-message">{error}</div>}
         </div>

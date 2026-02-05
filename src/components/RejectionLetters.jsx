@@ -100,7 +100,7 @@ Vorsitzender des Aufsichtsrats: Hans Dieter Pötsch | Vorstand: Oliver Blume (Vo
         </div>
         <div className="letter-text">
           {letters[selectedLetter].content.split('\n').map((line, idx) => (
-            line.trim() ? <p key={idx}>{line}</p> : <br key={idx} />
+            <p key={idx}>{line || <br />}</p>
           ))}
         </div>
       </div>
