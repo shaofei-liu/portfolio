@@ -129,17 +129,15 @@ export default function DogBreedClassifier() {
         // 检查是否是直接图片URL（以图片扩展名结尾）
         const isDirectImageUrl = imageUrl.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/i);
         
-        // 对于所有URL（无论是否是直接图片链接），都验证一遍
-        // validateImageUrl会检查HTML vs Image
-        const validation = await validateImageUrl(imageUrl);
-        if (!validation.valid) {
-          setLoading(false);
-          if (validation.reason === "not_image") {
-            setError("No image found at this URL. Please provide a direct link to an image file or a webpage with dog images.");
-          } else {
-            setError("Unable to access the URL. Please check it and try again.");
+        // 只对直接图片URL做前端验证
+        // 网页URL（如Wikipedia）应该发送到后端处理
+        if (isDirectImageUrl) {
+          const validation = await validateImageUrl(imageUrl);
+          if (!validation.valid) {
+            setLoading(false);
+            setError("No image found at this URL. Please provide a direct link to an image file.");
+            return;
           }
-          return;
         }
       }
 
