@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { dataportfolio, contactConfig, translations } from "../../content_option";
+import { dataportfolio, projectDetails, contactConfig, translations } from "../../content_option";
 import DogBreedClassifier from "../../components/DogBreedClassifier";
 import RejectionLetters from "../../components/RejectionLetters";
 
@@ -397,6 +397,230 @@ export default function ProjectView() {
             �?{translations[lang].projectView.back}
           </Link>
         </div>
+      </div>
+    );
+  }
+
+  // Project 4: IRevRNN Thesis
+  if (project.id === "project4") {
+    const details = projectDetails.project4;
+    const title = lang === 'en' ? details.title_en : details.title_de;
+    const subtitle = lang === 'en' ? details.subtitle_en : details.subtitle_de;
+    const desc = lang === 'en' ? details.description_en : details.description_de;
+    const features = lang === 'en' ? details.keyFeatures_en : details.keyFeatures_de;
+    const codeFeatures = lang === 'en' ? details.codeFeatures_en : details.codeFeatures_de;
+    const techStack = details.techStack_en;
+
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{title}</h2>
+        <p style={{ marginBottom: 4, color: "#0066cc", fontSize: "16px", fontWeight: "600" }}>
+          {subtitle}
+        </p>
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {desc}
+        </p>
+
+        {/* Header Info Bar */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+          gap: "16px",
+          marginBottom: "24px",
+          padding: "16px",
+          backgroundColor: "#f8f9fa",
+          borderRadius: "8px",
+          borderLeft: "4px solid #667eea"
+        }}>
+          <div>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Code Lines" : "Code-Zeilen"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {details.fileInfo.lines_python + " Python"}
+            </div>
+          </div>
+          <div>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "CUDA Kernels" : "CUDA-Kernel"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {details.fileInfo.lines_cuda}
+            </div>
+          </div>
+          <div>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Datasets" : "Datensätze"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {details.fileInfo.datasets}
+            </div>
+          </div>
+        </div>
+
+        {/* Key Features */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0f4ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #667eea"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#667eea", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            {features.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Code Architecture */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#fff0f5",
+          borderRadius: "8px",
+          borderLeft: "4px solid #d946a0"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Code Architecture" : "Code-Architektur"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            {codeFeatures.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Technical Stack */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f5f5f5",
+          borderRadius: "8px",
+          borderLeft: "4px solid #f59e0b"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
+          </h4>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "12px",
+            fontSize: "13px",
+            color: "#666"
+          }}>
+            {techStack.map((tech, idx) => (
+              <div key={idx} style={{ paddingLeft: "8px" }}>• {tech}</div>
+            ))}
+          </div>
+        </div>
+
+        {/* Paper and Source */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#e8f5e9",
+          borderRadius: "8px",
+          borderLeft: "4px solid #10b981"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Thesis & Publication" : "Abschlussarbeit & Veröffentlichung"}
+          </h4>
+          <p style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", lineHeight: "1.6" }}>
+            {lang === 'en' 
+              ? "This project is the master thesis work completed at TU Munich. The paper details the novel approach of using reversibility in RNNs to reduce memory consumption while maintaining performance."
+              : "Dieses Projekt ist die an der TU München abgeschlossene Masterarbeit. Die Arbeit beschreibt detailliert den neuartigen Ansatz, Reversibilität in RNNs zu nutzen, um Speicherverbrauch zu reduzieren und gleichzeitig die Leistung zu erhalten."}
+          </p>
+        </div>
+
+        {/* Action Links */}
+        <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <a
+            href={details.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#333',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
+          >
+            📊 GitHub Repository
+          </a>
+          {details.paperUrl && (
+            <a
+              href={details.paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#667eea',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#764ba2'}
+              onMouseOut={(e) => e.target.style.backgroundColor = '#667eea'}
+            >
+              📄 {lang === 'en' ? "View Paper" : "Arbeit ansehen"}
+            </a>
+          )}
+        </div>
+
+        <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid #eee' }}>
+          <h3>{translations[lang]?.projectView?.yourComments || 'Your Comments'}</h3>
+          <textarea
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value);
+              localStorage.setItem(storageKey, e.target.value);
+            }}
+            placeholder={translations[lang]?.projectView?.placeholder || "Type your feedback here..."}
+            style={{
+              width: '100%',
+              height: '120px',
+              padding: '10px',
+              marginBottom: '10px',
+              borderRadius: '8px',
+              border: '1px solid #ddd',
+              fontFamily: 'inherit',
+              fontSize: '14px'
+            }}
+          />
+        </div>
+
+        <Link to="/portfolio" style={{
+          display: 'inline-block',
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#f0f0f0',
+          textDecoration: 'none',
+          borderRadius: '8px',
+          fontWeight: '600',
+          color: '#333',
+          transition: 'all 0.3s ease'
+        }}
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = '#e0e0e0';
+          e.target.style.transform = 'translateY(-2px)';
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = '#f0f0f0';
+          e.target.style.transform = 'translateY(0)';
+        }}>
+          {translations[lang]?.projectView?.back || 'Back'}
+        </Link>
       </div>
     );
   }

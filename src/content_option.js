@@ -1,6 +1,7 @@
 ﻿import background from './assets/images/background.jpg';
 import dogBreedImg from './assets/images/dog-breed-recognition.png';
 import chatbotImg from './assets/images/chatbot.jpg';
+import officeImg from './assets/images/office.jpg';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -129,7 +130,9 @@ const services = [{
     },
 ];
 
-const dataportfolio = [{
+const dataportfolio = [
+    // Personal Projects
+    {
         id: "project1",
         img: background,
         description: "Rejection Letters - HR Application Records",
@@ -156,6 +159,17 @@ const dataportfolio = [{
     },
     {
         id: "project4",
+        img: officeImg,
+        description: "Inverse Reversible RNN - Hardwareeffiziente Sequenzmodellierung",
+        description_en: "Inverse Reversible RNN - Hardware-Efficient Sequence Modeling",
+        link: "#",
+        type: "personal",
+        thesis: true,
+    },
+    
+    // Collaborative and Work Projects
+    {
+        id: "project5",
         img: background,
         description: "Kooperationsprojekt 1",
         description_en: "Collaboration Project 1",
@@ -163,7 +177,7 @@ const dataportfolio = [{
         type: "collaboration",
     },
     {
-        id: "project5",
+        id: "project6",
         img: background,
         description: "Kooperationsprojekt 2",
         description_en: "Collaboration Project 2",
@@ -171,7 +185,7 @@ const dataportfolio = [{
         type: "collaboration",
     },
     {
-        id: "project6",
+        id: "project7",
         img: background,
         description: "Arbeitsprojekt",
         description_en: "Work Project",
@@ -301,10 +315,71 @@ const translations = {
     }
 };
 
+// Project-specific details for rendering
+const projectDetails = {
+    project4: {
+        title_de: "Inverse Reversible RNN - Hardwareeffiziente Sequenzmodellierung",
+        title_en: "Inverse Reversible RNN - Hardware-Efficient Sequence Modeling",
+        subtitle_de: "Masterarbeit an der Technischen Universität München",
+        subtitle_en: "Master's Thesis at Technical University of Munich",
+        description_de: "Ein neuartiger RNN-Ansatz, der durch Reversibilität Speicher und Rechenzeit reduziert. Die IRevRNN-Architektur kombiniert LSTM-basierte Gates mit individuellen (Independent) Aktivierungen und Reversibilität für effiziente Sequenzverarbeitung.",
+        description_en: "A novel RNN approach that reduces memory and computation through reversibility. The IRevRNN architecture combines LSTM-based gates with independent activations and reversibility for efficient sequence processing.",
+        keyFeatures_de: [
+            "Reversible LSTM-Architektur mit Speichereffizienz",
+            "Individuelle Aktivierungsfunktionen pro Neuron",
+            "Implementierung in PyTorch mit CUDA-Optimierung",
+            "Evaluierung auf Bildreihenklassifizierung (Action Recognition)",
+            "Skalierbar für tiefe Netzwerke ohne Speicherüberlauf"
+        ],
+        keyFeatures_en: [
+            "Reversible LSTM architecture with memory efficiency",
+            "Independent activation functions per neuron",
+            "PyTorch implementation with CUDA optimization",
+            "Evaluation on action recognition from image sequences",
+            "Scalable for deep networks without memory overflow"
+        ],
+        techStack_de: [
+            "Python 3.7+",
+            "PyTorch 1.9+",
+            "CUDA C++ (GPU acceleration)",
+            "NumPy, Matplotlib"
+        ],
+        techStack_en: [
+            "Python 3.7+",
+            "PyTorch 1.9+",
+            "CUDA C++ (GPU acceleration)",
+            "NumPy, Matplotlib"
+        ],
+        codeFeatures_de: [
+            "irevrnn.py: Haupt-RNN-Implementierung mit Forward/Backward-Passes",
+            "irevrnn_cuda_kernel.cu: CUDA-Kernel für GPU-beschleunigte Operationen",
+            "irevrnn_mnist_action_model.py: Modellarchitektur für Action Recognition",
+            "action_main.py: Training und Evaluierung Pipeline",
+            "Unterstützt sowohl Python- als auch C++/CUDA-Backend"
+        ],
+        codeFeatures_en: [
+            "irevrnn.py: Main RNN implementation with forward/backward passes",
+            "irevrnn_cuda_kernel.cu: CUDA kernel for GPU-accelerated operations",
+            "irevrnn_mnist_action_model.py: Model architecture for action recognition",
+            "action_main.py: Training and evaluation pipeline",
+            "Supports both Python and C++/CUDA backends"
+        ],
+        github: "https://github.com/shaofei-liu/irevrnn",
+        paperUrl: "/irevrnn_paper.pdf",
+        fileInfo: {
+            lines_python: "2000+",
+            lines_cuda: "500+",
+            models_trained: "3",
+            datasets: "Action Recognition, MNIST"
+        }
+    }
+};
+
 export {
     meta,
     dataabout,
     dataportfolio,
+    projectDetails,
     worktimeline,
     education,
     skills,

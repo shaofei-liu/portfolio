@@ -51,6 +51,44 @@ export const Portfolio = () => {
     setTimeout(() => setSaved((s) => ({ ...s, [key]: false })), 1500);
   };
 
+  // Separate projects by type
+  const personalProjects = dataportfolio.filter(p => p.type === "personal");
+  const collaborativeProjects = dataportfolio.filter(p => p.type === "collaboration" || p.type === "work");
+
+  const renderProjectSection = (title, projects) => (
+    <div key={title} style={{ marginBottom: "60px" }}>
+      <h2 style={{
+        fontSize: "28px",
+        fontWeight: "700",
+        marginBottom: "30px",
+        paddingBottom: "15px",
+        borderBottom: "2px solid #0066cc",
+        color: "#333"
+      }}>
+        {title}
+      </h2>
+      <div className="mb-5 po_items_ho">
+        {projects.map((data, i) => {
+          const key = storageKey(data, i);
+          const desc = ( (typeof data.description_en !== 'undefined') && lang === 'en') ? data.description_en : data.description;
+          return (
+            <div key={i} className="po_item">
+              <img src={data.img} alt="" />
+              <div className="content">
+                <p>{desc}</p>
+                {(data.id === "project1" || data.id === "project2" || data.id === "project3" || data.id === "project4" || data.id === "project5" || data.id === "project6" || data.id === "project7") ? (
+                  <Link to={`/portfolio/${data.id}`} className="btn">{translations[lang].portfolio.viewProject}</Link>
+                ) : (
+                  <a href={data.link}>{translations[lang].portfolio.viewProject}</a>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
   return (
     <HelmetProvider>
       <Container className="About-header">
@@ -65,25 +103,18 @@ export const Portfolio = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <div className="mb-5 po_items_ho">
-          {dataportfolio.map((data, i) => {
-            const key = storageKey(data, i);
-            const desc = ( (typeof data.description_en !== 'undefined') && lang === 'en') ? data.description_en : data.description;
-            return (
-              <div key={i} className="po_item">
-                <img src={data.img} alt="" />
-                <div className="content">
-                  <p>{desc}</p>
-                  {(data.id === "project1" || data.id === "project2" || data.id === "project3" || data.id === "project4" || data.id === "project5" || data.id === "project6") ? (
-                    <Link to={`/portfolio/${data.id}`} className="btn">{translations[lang].portfolio.viewProject}</Link>
-                  ) : (
-                    <a href={data.link}>{translations[lang].portfolio.viewProject}</a>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        
+        {/* Personal Projects Section */}
+        {renderProjectSection(
+          lang === 'en' ? "Personal Projects" : "Persönliche Projekte",
+          personalProjects
+        )}
+        
+        {/* Collaborative and Work Projects Section */}
+        {collaborativeProjects.length > 0 && renderProjectSection(
+          lang === 'en' ? "Collaborative & Work Projects" : "Kooperations- und Arbeitsprojekte",
+          collaborativeProjects
+        )}
       </Container>
     </HelmetProvider>
   );
