@@ -95,6 +95,7 @@ export default function DogBreedClassifier() {
       if (data.type === "image_selection") {
         setWebpageImages(data.images);
         setError(null);
+        setLoading(false); // 重要：设置加载状态为false
         // 自动选择第一个图片并进行分类
         if (data.images.length > 0) {
           await predictSelectedImage(data.images[0]);
