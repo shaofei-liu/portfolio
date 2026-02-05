@@ -2,6 +2,7 @@
 import dogBreedImg from './assets/images/dog-breed-recognition.png';
 import chatbotImg from './assets/images/chatbot.jpg';
 import officeImg from './assets/images/office.jpg';
+import irevrnnImg from './assets/images/irevrnn.jpg';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -159,9 +160,9 @@ const dataportfolio = [
     },
     {
         id: "project4",
-        img: officeImg,
-        description: "Inverse Reversible RNN - Hardwareeffiziente Sequenzmodellierung",
-        description_en: "Inverse Reversible RNN - Hardware-Efficient Sequence Modeling",
+        img: irevrnnImg,
+        description: "Masterarbeit: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
+        description_en: "Master's Thesis: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
         link: "#",
         type: "personal",
         thesis: true,
@@ -318,55 +319,56 @@ const translations = {
 // Project-specific details for rendering
 const projectDetails = {
     project4: {
-        title_de: "Inverse Reversible RNN - Hardwareeffiziente Sequenzmodellierung",
-        title_en: "Inverse Reversible RNN - Hardware-Efficient Sequence Modeling",
+        title_de: "RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
+        title_en: "RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
         subtitle_de: "Masterarbeit an der Technischen Universität München",
         subtitle_en: "Master's Thesis at Technical University of Munich",
-        description_de: "Ein neuartiger RNN-Ansatz, der durch Reversibilität Speicher und Rechenzeit reduziert. Die IRevRNN-Architektur kombiniert LSTM-basierte Gates mit individuellen (Independent) Aktivierungen und Reversibilität für effiziente Sequenzverarbeitung.",
-        description_en: "A novel RNN approach that reduces memory and computation through reversibility. The IRevRNN architecture combines LSTM-based gates with independent activations and reversibility for efficient sequence processing.",
+        description_de: "Eine umfassende Masterarbeit (ca. 80 Seiten) über recurrent neural networks mit Unabhängigkeitsannahmen. Diese Arbeit untersucht, wie RNNs durch strukturelle Vereinfachungen effizienter und skalierbarer werden können. Die Forschung behandelt sowohl theoretische Grundlagen als auch praktische Implementierungen mit GPU-Beschleunigung.",
+        description_en: "A comprehensive master's thesis (approximately 80 pages) on recurrent neural networks with independence assumptions. This work investigates how RNNs can become more efficient and scalable through structural simplifications. The research covers both theoretical foundations and practical implementations with GPU acceleration.",
         keyFeatures_de: [
-            "Reversible LSTM-Architektur mit Speichereffizienz",
-            "Individuelle Aktivierungsfunktionen pro Neuron",
-            "Implementierung in PyTorch mit CUDA-Optimierung",
-            "Evaluierung auf Bildreihenklassifizierung (Action Recognition)",
-            "Skalierbar für tiefe Netzwerke ohne Speicherüberlauf"
+            "Unabhängigkeitsannahmen in RNN-Architekturen zur Speichereffizienz",
+            "Theorie und Implementierung reversibler RNN-Schichten",
+            "CUDA-optimierte Implementierung für GPU-Beschleunigung",
+            "Evaluierung auf Sequenzklassifizierungsaufgaben",
+            "Skalierbar für tiefe Netzwerke mit reduzierten Speicheranforderungen"
         ],
         keyFeatures_en: [
-            "Reversible LSTM architecture with memory efficiency",
-            "Independent activation functions per neuron",
-            "PyTorch implementation with CUDA optimization",
-            "Evaluation on action recognition from image sequences",
-            "Scalable for deep networks without memory overflow"
+            "Independence assumptions in RNN architectures for memory efficiency",
+            "Theory and implementation of reversible RNN layers",
+            "CUDA-optimized implementation for GPU acceleration",
+            "Evaluation on sequence classification tasks",
+            "Scalable for deep networks with reduced memory requirements"
         ],
         techStack_de: [
             "Python 3.7+",
             "PyTorch 1.9+",
-            "CUDA C++ (GPU acceleration)",
-            "NumPy, Matplotlib"
+            "CUDA C++ (GPU-Beschleunigung)",
+            "NumPy, Matplotlib, TensorBoard"
         ],
         techStack_en: [
             "Python 3.7+",
             "PyTorch 1.9+",
             "CUDA C++ (GPU acceleration)",
-            "NumPy, Matplotlib"
+            "NumPy, Matplotlib, TensorBoard"
         ],
         codeFeatures_de: [
-            "irevrnn.py: Haupt-RNN-Implementierung mit Forward/Backward-Passes",
-            "irevrnn_cuda_kernel.cu: CUDA-Kernel für GPU-beschleunigte Operationen",
-            "irevrnn_mnist_action_model.py: Modellarchitektur für Action Recognition",
-            "action_main.py: Training und Evaluierung Pipeline",
-            "Unterstützt sowohl Python- als auch C++/CUDA-Backend"
+            "irevrnn.py: Kernimplementierung mit Forward/Backward-Pässen",
+            "irevrnn_cuda_kernel.cu: CUDA-Kernels für GPU-beschleunigte Operationen",
+            "irevrnn_mnist_action_model.py: Modellarchitekturen für Experimente",
+            "action_main.py: Komplettes Training und Evaluierungs-Pipeline",
+            "Hybride Python/C++/CUDA-Implementierung für maximale Performance"
         ],
         codeFeatures_en: [
-            "irevrnn.py: Main RNN implementation with forward/backward passes",
-            "irevrnn_cuda_kernel.cu: CUDA kernel for GPU-accelerated operations",
-            "irevrnn_mnist_action_model.py: Model architecture for action recognition",
-            "action_main.py: Training and evaluation pipeline",
-            "Supports both Python and C++/CUDA backends"
+            "irevrnn.py: Core implementation with forward/backward passes",
+            "irevrnn_cuda_kernel.cu: CUDA kernels for GPU-accelerated operations",
+            "irevrnn_mnist_action_model.py: Model architectures for experiments",
+            "action_main.py: Complete training and evaluation pipeline",
+            "Hybrid Python/C++/CUDA implementation for maximum performance"
         ],
         github: "https://github.com/shaofei-liu/irevrnn",
         paperUrl: "/irevrnn_paper.pdf",
         fileInfo: {
+            pages: "~80",
             lines_python: "2000+",
             lines_cuda: "500+",
             models_trained: "3",

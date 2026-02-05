@@ -63,7 +63,7 @@ export const Portfolio = () => {
         marginBottom: "30px",
         paddingBottom: "15px",
         borderBottom: "2px solid #0066cc",
-        color: "#333"
+        color: "#0066cc"
       }}>
         {title}
       </h2>

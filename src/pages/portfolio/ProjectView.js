@@ -394,7 +394,7 @@ export default function ProjectView() {
               fontSize: "15px"
             }}
           >
-            �?{translations[lang].projectView.back}
+            {translations[lang].projectView.back}
           </Link>
         </div>
       </div>
@@ -432,6 +432,14 @@ export default function ProjectView() {
           borderRadius: "8px",
           borderLeft: "4px solid #667eea"
         }}>
+          <div>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Pages" : "Seiten"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {details.fileInfo.pages}
+            </div>
+          </div>
           <div>
             <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
               {lang === 'en' ? "Code Lines" : "Code-Zeilen"}
@@ -527,12 +535,12 @@ export default function ProjectView() {
           borderLeft: "4px solid #10b981"
         }}>
           <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Thesis & Publication" : "Abschlussarbeit & Veröffentlichung"}
+            {lang === 'en' ? "Master's Thesis" : "Masterarbeit"}
           </h4>
           <p style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "This project is the master thesis work completed at TU Munich. The paper details the novel approach of using reversibility in RNNs to reduce memory consumption while maintaining performance."
-              : "Dieses Projekt ist die an der TU München abgeschlossene Masterarbeit. Die Arbeit beschreibt detailliert den neuartigen Ansatz, Reversibilität in RNNs zu nutzen, um Speicherverbrauch zu reduzieren und gleichzeitig die Leistung zu erhalten."}
+              ? "The original thesis 'RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning' is approximately 80 pages and covers comprehensive research on efficient RNN architectures. A related research paper is available below for your reference."
+              : "Die ursprüngliche Masterarbeit 'RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning' umfasst etwa 80 Seiten und behandelt umfassende Forschung zu effizienten RNN-Architekturen. Ein verwandtes Forschungspapier steht unten zur Verfügung."}
           </p>
         </div>
 
