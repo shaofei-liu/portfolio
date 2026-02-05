@@ -466,12 +466,12 @@ export default function ProjectView() {
           borderLeft: "4px solid #10b981"
         }}>
           <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Master's Thesis" : "Masterarbeit"}
+            {lang === 'en' ? "Implementation" : "Implementierung"}
           </h4>
           <p style={{ margin: "0 0 12px 0", color: "#333", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "The original thesis document is available upon request. A summary of the key research findings is presented below."
-              : "Der Originaltext der Masterarbeit ist auf Anfrage erhältlich. Eine Zusammenfassung der wichtigsten Forschungsergebnisse wird unten präsentiert."}
+              ? "The code is available on GitHub with complete implementation of the reversible RNN layers, CUDA kernels, and training pipelines."
+              : "Der Code ist auf GitHub mit einer vollständigen Implementierung der reversiblen RNN-Schichten, CUDA-Kernels und Trainings-Pipelines verfügbar."}
           </p>
         </div>
 
