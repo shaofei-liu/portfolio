@@ -156,7 +156,7 @@ export const dogBreedLang = {
     imageSizeError: "Bildgröße darf 10MB nicht überschreiten",
     imageTypeError: "Bitte wählen Sie eine Bilddatei",
     predictError: "Vorhersage fehlgeschlagen, versuchen Sie es später erneut",
-    urlHint: "Sie können Bild-URLs verwenden oder eine Webseiten-URL einfügen, um Bilder automatisch zu extrahieren"
+    urlHint: "URL eingeben"
   }
 };
 

@@ -66,7 +66,7 @@ export default function DogBreedClassifier() {
       
       return { valid: true };
     } catch (err) {
-      // 如果CORS失败，尝试用GET请求
+      // HEAD请求失败，尝试用GET请求 + blob fetch
       try {
         const response = await fetch(url, {
           method: "GET",
@@ -78,6 +78,12 @@ export default function DogBreedClassifier() {
         
         const contentType = response.headers.get("content-type");
         if (!contentType || !contentType.toLowerCase().includes("image")) {
+          return { valid: false, reason: "not_image" };
+        }
+        
+        // 尝试加载为blob以验证是否真的是图片
+        const blob = await response.blob();
+        if (!blob.type.includes("image")) {
           return { valid: false, reason: "not_image" };
         }
         
@@ -388,7 +394,7 @@ export default function DogBreedClassifier() {
                   fontWeight: "500",
                   color: "#333"
                 }}>
-                  {language === "en" ? "Image URL" : "Bild-URL"}
+                  {language === "en" ? "Image URL" : "URL"}
                 </label>
                 <input
                   type="url"
@@ -406,7 +412,7 @@ export default function DogBreedClassifier() {
                     setError(null);
                     setWebpageImages([]);
                   }}
-                  placeholder={language === "en" ? "Enter image URL..." : "Bild-URL eingeben..."}
+                  placeholder={language === "en" ? "Enter image URL..." : "URL eingeben..."}
                   style={{
                     width: "100%",
                     padding: "10px",
@@ -416,14 +422,6 @@ export default function DogBreedClassifier() {
                     boxSizing: "border-box"
                   }}
                 />
-                <div style={{
-                  marginTop: "8px",
-                  fontSize: "12px",
-                  color: "#666",
-                  fontStyle: "italic"
-                }}>
-                  💡 {t.urlHint || (language === "en" ? "Use direct image links or paste a webpage URL to auto-extract images" : "Verwenden Sie direkte Bild-Links oder geben Sie eine Webseiten-URL ein, um Bilder automatisch zu extrahieren")}
-                </div>
               </div>
 
               {/* 网页图片选择网格 */}
