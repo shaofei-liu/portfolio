@@ -60,7 +60,16 @@ export default function DogBreedClassifier() {
       }
       
       const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.toLowerCase().includes("image")) {
+      if (!contentType) {
+        return { valid: false, reason: "unknown_type" };
+      }
+      
+      // 明确检查是否为HTML（网页）- 这意味着没有图片
+      if (contentType.toLowerCase().includes("text/html")) {
+        return { valid: false, reason: "not_image" };
+      }
+      
+      if (!contentType.toLowerCase().includes("image")) {
         return { valid: false, reason: "not_image" };
       }
       
@@ -77,7 +86,16 @@ export default function DogBreedClassifier() {
         }
         
         const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.toLowerCase().includes("image")) {
+        if (!contentType) {
+          return { valid: false, reason: "unknown_type" };
+        }
+        
+        // 明确检查是否为HTML（网页）
+        if (contentType.toLowerCase().includes("text/html")) {
+          return { valid: false, reason: "not_image" };
+        }
+        
+        if (!contentType.toLowerCase().includes("image")) {
           return { valid: false, reason: "not_image" };
         }
         
@@ -388,15 +406,6 @@ export default function DogBreedClassifier() {
               <div style={{
                 marginBottom: "16px"
               }}>
-                <label style={{
-                  display: "block",
-                  marginBottom: "8px",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  color: "#333"
-                }}>
-                  {language === "en" ? "Image URL" : "URL"}
-                </label>
                 <input
                   type="url"
                   value={imageUrl}
