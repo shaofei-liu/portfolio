@@ -11,6 +11,8 @@ export default function DogBreedClassifier() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [inputMode, setInputMode] = useState("file"); // "file" or "url"
+  const [webpageImages, setWebpageImages] = useState([]); // 从网页提取的图片列表
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null); // 用户选择的图片索引
 
   const t = dogBreedLang[language];
 
@@ -54,6 +56,7 @@ export default function DogBreedClassifier() {
     setLoading(true);
     setError(null);
     setResult(null);
+    setWebpageImages([]);
 
     try {
       // 开发环境使用本地 API，生产环境使用 Hugging Face Spaces
@@ -75,6 +78,72 @@ export default function DogBreedClassifier() {
       const response = await fetch(apiUrl, {
         method: "POST",
         body: inputMode === "file" ? formData : null,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.text();
+        console.error("API Error:", errorData);
+        throw new Error(`Server error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // 检查是否是网页图片选择响应
+      if (data.type === "image_selection") {
+        setWebpageImages(data.images);
+        setError(null);
+        // 自动选择第一个图片并进行分类
+        if (data.images.length > 0) {
+          await predictSelectedImage(data.images[0]);
+        }
+        return;
+      }
+
+      if (!data.success) {
+        throw new Error(data.error || t.predictError);
+      }
+
+      const localizedResult = {
+        breed: getBreedName(data.breed, language),
+        confidence: data.confidence,
+        top_5: {},
+      };
+
+      if (data.top_5) {
+        for (const [breed, conf] of Object.entries(data.top_5)) {
+          localizedResult.top_5[getBreedName(breed, language)] = conf;
+        }
+      }
+
+      setResult(localizedResult);
+    } catch (err) {
+      console.error("Prediction error:", err);
+      setError(err.message || t.predictError);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const predictSelectedImage = async (imageUrl) => {
+    // 预测网页中选择的特定图片
+    setLoading(true);
+    setError(null);
+    setResult(null);
+
+    try {
+      let apiUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:7860/api/predict-selected-image'
+        : 'https://williamcass-dog-breed-classification.hf.space/api/predict-selected-image';
+
+      const urlParams = new URLSearchParams();
+      urlParams.append('image_url', imageUrl);
+      apiUrl += '?' + urlParams.toString();
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
         headers: {
           Accept: "application/json",
         },
@@ -119,6 +188,8 @@ export default function DogBreedClassifier() {
     setPreview(null);
     setResult(null);
     setError(null);
+    setWebpageImages([]);
+    setSelectedImageIndex(null);
   };
 
   const handleLanguageChange = (lang) => {
@@ -274,11 +345,70 @@ export default function DogBreedClassifier() {
                   color: "#666",
                   fontStyle: "italic"
                 }}>
-                  💡 {t.urlHint || (language === "en" ? "Use direct image links (e.g., from upload.wikimedia.org)" : "Verwenden Sie direkte Bild-Links (z.B. von upload.wikimedia.org)")}
+                  💡 {t.urlHint || (language === "en" ? "Use direct image links or paste a webpage URL to auto-extract images" : "Verwenden Sie direkte Bild-Links oder geben Sie eine Webseiten-URL ein, um Bilder automatisch zu extrahieren")}
                 </div>
               </div>
 
-              {preview && (
+              {/* 网页图片选择网格 */}
+              {webpageImages.length > 0 && (
+                <div style={{
+                  marginBottom: "16px",
+                  padding: "12px",
+                  backgroundColor: "#f9f9f9",
+                  borderRadius: "8px",
+                  border: "1px solid #e0e0e0"
+                }}>
+                  <div style={{
+                    fontSize: "12px",
+                    fontWeight: "600",
+                    marginBottom: "12px",
+                    color: "#333"
+                  }}>
+                    {language === "en" ? `Found ${webpageImages.length} images on the webpage:` : `${webpageImages.length} Bilder auf der Webseite gefunden:`}
+                  </div>
+                  <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
+                    gap: "8px"
+                  }}>
+                    {webpageImages.map((imgUrl, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => predictSelectedImage(imgUrl)}
+                        style={{
+                          cursor: "pointer",
+                          border: selectedImageIndex === idx ? "3px solid #0066cc" : "1px solid #ddd",
+                          borderRadius: "6px",
+                          overflow: "hidden",
+                          height: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          backgroundColor: "#fff",
+                          transition: "all 0.2s ease"
+                        }}
+                        title={imgUrl}
+                      >
+                        <img
+                          src={imgUrl}
+                          alt={`Option ${idx + 1}`}
+                          style={{
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            objectFit: "contain"
+                          }}
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.parentElement.textContent = `${idx + 1}`;
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {preview && !webpageImages.length && (
                 <div style={{
                   marginBottom: "16px",
                   textAlign: "center"
