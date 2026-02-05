@@ -87,7 +87,7 @@ export default function ProjectView() {
           borderRadius: "12px",
           overflow: "hidden",
           padding: "20px",
-          backgroundColor: "#1a2f4a",
+          backgroundColor: "#0f1419",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
         }}>
           <DogBreedClassifier />

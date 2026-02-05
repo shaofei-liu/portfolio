@@ -108,11 +108,12 @@ export default function DogBreedClassifier() {
     try {
       // 如果是URL模式，先验证URL是否指向有效的图片
       if (inputMode === "url" && imageUrl) {
-        // 对于明显的网页URL（不是直接图片链接），跳过验证，由后端处理
-        const isWebpageUrl = !imageUrl.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/i);
+        // 检查是否是网页URL（例如Google搜索、维基百科等）
+        const webpageKeywords = /google|wikipedia|reddit|twitter|facebook|youtube|instagram|pinterest|imgur|site:/i;
+        const isWebpageUrl = webpageKeywords.test(imageUrl) || !imageUrl.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/i);
         
-        if (!isWebpageUrl) {
-          // 对于直接图片URL，进行前端验证
+        // 只对直接图片URL做前端验证（不是网页URL）
+        if (!isWebpageUrl && imageUrl.match(/^https?:\/\//)) {
           const validation = await validateImageUrl(imageUrl);
           if (!validation.valid) {
             setLoading(false);
