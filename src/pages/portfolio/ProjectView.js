@@ -275,7 +275,7 @@ export default function ProjectView() {
             fontSize: "14px",
             lineHeight: "1.8"
           }}>
-            <li>{lang === 'en' ? "Bilingual support - English & Deutsch" : "Zweisprachig - English & Deutsch"}</li>
+            <li>{lang === 'en' ? "Bilingual support - English and German" : "Zweisprachig - Englisch und Deutsch"}</li>
             <li>{lang === 'en' ? "RAG with vector database for contextual answers" : "RAG mit Vektordatenbank für kontextbezogene Antworten"}</li>
             <li>{lang === 'en' ? "Real-time responses with automatic model switching" : "Echtzeitantworten mit automatischem Modellwechsel"}</li>
             <li>{lang === 'en' ? "Smart fallback system - tries alternative models if one fails" : "Smart Fallback - versucht alternative Modelle bei Fehlern"}</li>
@@ -301,12 +301,12 @@ export default function ProjectView() {
             fontSize: "13px",
             color: "#666"
           }}>
-            <div>�?<strong>Frontend:</strong> Streamlit</div>
-            <div>�?<strong>LLM:</strong> Google Gemini</div>
-            <div>�?<strong>Framework:</strong> LangChain</div>
-            <div>�?<strong>Embeddings:</strong> HuggingFace</div>
-            <div>�?<strong>Vector DB:</strong> Chroma</div>
-            <div>�?<strong>Language:</strong> Python 3.9+</div>
+            <div><strong>Frontend:</strong> Streamlit</div>
+            <div><strong>LLM:</strong> Google Gemini</div>
+            <div><strong>Framework:</strong> LangChain</div>
+            <div><strong>Embeddings:</strong> HuggingFace</div>
+            <div><strong>Vector DB:</strong> Chroma</div>
+            <div><strong>Language:</strong> Python 3.9+</div>
           </div>
         </div>
 
@@ -366,7 +366,7 @@ export default function ProjectView() {
         <p style={{ marginBottom: 4, color: "#0066cc", fontSize: "16px", fontWeight: "600" }}>
           {subtitle}
         </p>
-        <p style={{ marginBottom: 24, color: "#555", fontSize: "15px", lineHeight: "1.6" }}>
+        <p style={{ marginBottom: 24, color: "#777", fontSize: "15px", lineHeight: "1.6" }}>
           {desc}
         </p>
 
@@ -452,7 +452,7 @@ export default function ProjectView() {
             color: "#666"
           }}>
             {techStack.map((tech, idx) => (
-              <div key={idx} style={{ paddingLeft: "8px" }}>�?{tech}</div>
+              <div key={idx} style={{ paddingLeft: "8px" }}>{tech}</div>
             ))}
           </div>
         </div>
