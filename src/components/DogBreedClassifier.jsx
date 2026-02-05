@@ -47,6 +47,47 @@ export default function DogBreedClassifier() {
     }
   };
 
+  // 检查URL是否指向有效的图片
+  const validateImageUrl = async (url) => {
+    try {
+      const response = await fetch(url, {
+        method: "HEAD",
+        mode: "cors",
+      });
+      
+      if (!response.ok) {
+        return { valid: false, reason: `HTTP ${response.status}` };
+      }
+      
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.toLowerCase().includes("image")) {
+        return { valid: false, reason: "not_image" };
+      }
+      
+      return { valid: true };
+    } catch (err) {
+      // 如果CORS失败，尝试用GET请求
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+        });
+        
+        if (!response.ok) {
+          return { valid: false, reason: `HTTP ${response.status}` };
+        }
+        
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.toLowerCase().includes("image")) {
+          return { valid: false, reason: "not_image" };
+        }
+        
+        return { valid: true };
+      } catch {
+        return { valid: false, reason: "network_error" };
+      }
+    }
+  };
+
   const handlePredict = async () => {
     if (!image && !imageUrl) {
       setError(t.selectImageError);
@@ -59,6 +100,26 @@ export default function DogBreedClassifier() {
     setWebpageImages([]);
 
     try {
+      // 如果是URL模式，先验证URL是否指向有效的图片
+      if (inputMode === "url" && imageUrl) {
+        // 对于明显的网页URL（不是直接图片链接），跳过验证，由后端处理
+        const isWebpageUrl = !imageUrl.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/i);
+        
+        if (!isWebpageUrl) {
+          // 对于直接图片URL，进行前端验证
+          const validation = await validateImageUrl(imageUrl);
+          if (!validation.valid) {
+            setLoading(false);
+            if (validation.reason === "not_image") {
+              setError("No image found at this URL. Please provide a direct link to an image file.");
+            } else {
+              setError("Unable to access the image URL. Please check it and try again.");
+            }
+            return;
+          }
+        }
+      }
+
       // 开发环境使用本地 API，生产环境使用 Hugging Face Spaces
       let apiUrl = process.env.NODE_ENV === 'development' 
         ? 'http://localhost:7860/api/predict'
