@@ -7,6 +7,8 @@ import museumImg from './assets/images/museum.png';
 import museum1Img from './assets/images/museum-1.png';
 import cookerImg from './assets/images/cooker.png';
 import cooker1Img from './assets/images/cooker-1.png';
+import digitalTwinImg from './assets/images/digital-twin.png';
+import digitalTwin1Img from './assets/images/digital-twin-1.png';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -191,9 +193,9 @@ const dataportfolio = [
     },
     {
         id: "project7",
-        img: background,
-        description: "Arbeitsprojekt",
-        description_en: "Work Project",
+        img: digitalTwinImg,
+        description: "Digital Twin - KI-gestützte medizinische Diagnoseverfahren und Patientendatensystem",
+        description_en: "Digital Twin - AI-powered Medical Diagnosis System and Patient Data Analytics",
         link: "#",
         type: "work",
     },
@@ -322,6 +324,50 @@ const translations = {
 
 // Project-specific details for rendering
 const projectDetails = {
+    project7: {
+        title_de: "Digital Twin - KI-gestützte medizinische Diagnoseverfahren",
+        title_en: "Digital Twin - AI-powered Medical Diagnosis and Healthcare Analytics",
+        subtitle_de: "Ein fortgeschrittenes digitales Zwillings-System zur Analyse und Vorhersage krankheitsrelevanter Merkmale auf Basis von Patientendaten und medizinischen Bildern. Entwicklung und Evaluation von KI-gestützten Diagnosewerkzeugen mit Unterstützung für bildgeführte Klassifikationssysteme zur Verbesserung klinischer Entscheidungsprozesse.",
+        subtitle_en: "An advanced digital twin system for analyzing and predicting disease-relevant characteristics based on patient data and medical imaging. Development and evaluation of AI-powered diagnostic tools with support for image-guided classification systems to enhance clinical decision-making processes.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Aufbau und Evaluation von KI-gestützten Diagnosewerkzeugen zur umfassenden Analyse und Vorhersage krankheitsrelevanter Merkmale auf der Grundlage von Patientendaten und medizinischen Bildern. Aktive Mitarbeit bei bildgeführten Klassifikationssystemen zur Unterstützung klinischer Entscheidungsprozesse. Das System nutzt digitale Zwillings-Konzepte, um Patienten-Phänotypen zu modellieren und präzisere Diagnosen sowie Behandlungsempfehlungen zu ermöglichen.",
+        introduction_en: "Development and evaluation of AI-powered diagnostic tools for comprehensive analysis and prediction of disease-relevant characteristics based on patient data and medical imaging. Active participation in image-guided classification systems to support clinical decision-making processes. The system leverages digital twin concepts to model patient phenotypes and enable more precise diagnoses and treatment recommendations.",
+        keyFeatures_de: [
+            "KI-gestützte Analyse von Patientendaten und medizinischen Bildern",
+            "Bildgeführte Klassifikationssysteme für Diagnoseerkennung",
+            "Digital Twin Modellierung für individuelle Patienten-Phänotypisierung",
+            "Vorhersage krankheitsrelevanter Merkmale und Prognosen",
+            "Integration mit klinischen Entscheidungsunterstützungssystemen"
+        ],
+        keyFeatures_en: [
+            "AI-powered analysis of patient data and medical imaging",
+            "Image-guided classification systems for diagnosis detection",
+            "Digital twin modeling for personalized patient phenotyping",
+            "Prediction of disease-relevant characteristics and prognoses",
+            "Integration with clinical decision support systems"
+        ],
+        codeFeatures_de: [
+            "Deep Learning Modelle für medizinische Bildanalyse (CNN, Transformer)",
+            "Patient-Daten-Pipeline mit DICOM und strukturierten EHR-Daten",
+            "Multi-modale Fusion von Bildgebung und klinischen Daten",
+            "Explainbare KI Methoden für klinische Akzeptanz",
+            "Robuste Validierung und klinische Evaluationsprotokolle"
+        ],
+        codeFeatures_en: [
+            "Deep learning models for medical image analysis (CNN, Transformer)",
+            "Patient data pipeline with DICOM and structured EHR data",
+            "Multi-modal fusion of imaging and clinical data",
+            "Explainable AI methods for clinical acceptance",
+            "Robust validation and clinical evaluation protocols"
+        ],
+        internalImg: digitalTwin1Img,
+        fileInfo: {
+            pages: "",
+            description: "Technische Details aufgrund der Zusammenarbeit mit Partnern nicht verfügbar",
+            description_en: "Technical details not available due to collaborative partnership"
+        }
+    },
     project6: {
         title_de: "SmartCooker - KI-gestützte Haustier-Kochmaschine",
         title_en: "SmartCooker - AI-powered Pet Food Cooking Machine",
