@@ -323,37 +323,23 @@ const projectDetails = {
     project5: {
         title_de: "Museum Intelligence - KI-gestützte Optimierung von Ausstellungsanordnung und Besuchererlebnis",
         title_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",
-        subtitle_de: "Kooperationsprojekt zur optimalen Museumsgestaltung",
-        subtitle_en: "Collaborative Project for Optimal Museum Design",
-        description_de: "Die besten Ausstellungsstücke an der prominentesten Stelle zu platzieren, ist nicht immer die beste Idee. Durch die Aggregation von Besucherwegdaten aus verschiedenen Museen und das Verständnis der Architekturstruktur optimieren Deep-Learning-Modelle die Platzierung von Artefakten und empfehlen optimale Besucherwege, um ein narratives Erlebnis zu schaffen – Einleitung, Entwicklung, Höhepunkt und Auflösung – ähnlich wie in einem Roman. Beschädigte Artefakte können auch virtuell durch spezialisierte VR-Brillen, die vom Museum bereitgestellt werden, restauriert werden, sodass Besucher die Stücke in ihrem ursprünglichen makellosen Zustand betrachten können. Aufgrund der gemeinsamen Entwicklung mit Partnern können technische Details nicht online geteilt werden. Gerne diskutiere ich persönlich weitere Details.",
-        description_en: "Placing the best exhibits in the most prominent location is not always the best idea. By aggregating visitor path data from various museums and understanding the building's architectural structure, deep learning models optimize artifact placement and recommend optimal visitor routes to create a narrative experience—introduction, development, climax, and resolution—much like a novel. Damaged artifacts can also be restored virtually through specialized VR glasses provided by the museum, allowing visitors to observe pieces in their pristine condition. Due to collaborative development with partners, technical details cannot be shared online. Interested in discussing further in person.",
+        subtitle_de: "Ein kooperatives KI-System, das durch Aggregation von Besucherwegdaten aus verschiedenen Museen und Verständnis der Architekturstruktur die optimale Platzierung von Ausstellungsstücken bestimmt und personalisierte Besucherwege vorschlägt, um narratives Erlebnis wie in einem Roman zu schaffen – mit Einleitung, Entwicklung, Höhepunkt und Auflösung. Beschädigte Artefakte können auch virtuell durch spezialisierte VR-Brillen betrachtet werden, um sie in ihrem ursprünglichen makellosen Zustand zu sehen.",
+        subtitle_en: "A collaborative AI system that aggregates visitor path data from multiple museums and understands architectural structure to determine optimal placement of exhibits and suggest personalized visitor routes to create a novel-like narrative experience with introduction, development, climax, and resolution. Damaged artifacts can also be viewed in pristine condition through specialized VR glasses provided by the museum.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Die besten Ausstellungsstücke an der prominentesten Stelle zu platzieren, ist nicht immer die beste Idee. Durch die Aggregation von Besucherwegdaten aus verschiedenen Museen und das Verständnis der Architekturstruktur optimieren Deep-Learning-Modelle die Platzierung von Artefakten und empfehlen optimale Besucherwege, um ein narratives Erlebnis zu schaffen – Einleitung, Entwicklung, Höhepunkt und Auflösung – ähnlich wie in einem Roman. Beschädigte Artefakte können auch virtuell durch spezialisierte VR-Brillen, die vom Museum bereitgestellt werden, restauriert werden, sodass Besucher die Stücke in ihrem ursprünglichen makellosen Zustand betrachten können. Aufgrund der gemeinsamen Entwicklung mit Partnern können technische Details nicht online geteilt werden. Gerne diskutiere ich persönlich weitere Details.",
+        introduction_en: "Placing the best exhibits in the most prominent location is not always the best idea. By aggregating visitor path data from various museums and understanding the building's architectural structure, deep learning models optimize artifact placement and recommend optimal visitor routes to create a narrative experience—introduction, development, climax, and resolution—much like a novel. Damaged artifacts can also be viewed in pristine condition through specialized VR glasses provided by the museum, allowing visitors to observe pieces in their original condition. Due to collaborative development with partners, technical details cannot be shared online. Interested in discussing further in person.",
         keyFeatures_de: [
             "Deep Learning basierte Optimierung der Ausstellungsanordnung",
             "Analyse und Aggregation von Besucherwegdaten",
             "Architekturgerechte Wegplanung für optimale Narrative",
-            "VR-gestützte Restauration beschädigter Artefakte",
-            "Personalisierte Besuchererlebnis-Generierung"
+            "Beschädigte Artefakte können in ihrem ursprünglichen Zustand durch VR-Brillen betrachtet werden"
         ],
         keyFeatures_en: [
             "Deep learning-based optimization of exhibit placement",
             "Analysis and aggregation of visitor path data",
             "Architecture-aware navigation planning for optimal narratives",
-            "VR-assisted restoration of damaged artifacts",
-            "Personalized visitor experience generation"
-        ],
-        techStack_de: [
-            "Python 3.8+",
-            "TensorFlow / PyTorch (Deep Learning)",
-            "Computer Vision (OpenCV)",
-            "Graphenalgorithmen für Pfadoptimierung",
-            "VR Framework Integration"
-        ],
-        techStack_en: [
-            "Python 3.8+",
-            "TensorFlow / PyTorch (Deep Learning)",
-            "Computer Vision (OpenCV)",
-            "Graph algorithms for path optimization",
-            "VR Framework integration"
+            "Damaged artifacts can be viewed in their pristine condition through VR glasses"
         ],
         codeFeatures_de: [
             "Pfadanalyse-Engine für Besucherdatensätze",

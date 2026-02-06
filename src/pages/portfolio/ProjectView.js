@@ -353,28 +353,28 @@ export default function ProjectView() {
   if (project.id === "project5") {
     const details = projectDetails.project5 || {};
     const keyFeatures = lang === 'en' ? details.keyFeatures_en : details.keyFeatures_de;
-    const techStack = lang === 'en' ? details.techStack_en : details.techStack_de;
     const codeFeatures = lang === 'en' ? details.codeFeatures_en : details.codeFeatures_de;
+    const introduction = lang === 'en' ? details.introduction_en : details.introduction_de;
 
     return (
       <div className="project-view" style={{ padding: 16 }}>
         <h2 style={{ marginBottom: 8 }}>{lang === 'en' ? details.title_en : details.title_de}</h2>
-        <p style={{ marginBottom: 12, color: "#999", fontSize: "14px" }}>
-          {lang === 'en' ? details.subtitle_en : details.subtitle_de}
-        </p>
-        
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
-          {lang === 'en' ? details.description_en : details.description_de}
+          {lang === 'en' ? details.subtitle_en : details.subtitle_de}
         </p>
 
         {/* Internal Image with Blur */}
         {details.internalImg && (
           <div style={{
-            margin: "24px 0",
+            margin: "0 0 24px 0",
             borderRadius: "8px",
             overflow: "hidden",
-            maxHeight: "400px",
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
+            maxHeight: "300px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#f5f5f5"
           }}>
             <img 
               src={details.internalImg} 
@@ -382,11 +382,29 @@ export default function ProjectView() {
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: "cover",
-                filter: "blur(3px)",
+                objectFit: "contain",
+                filter: "blur(12px)",
                 display: "block"
               }}
             />
+          </div>
+        )}
+
+        {/* Introduction Section */}
+        {introduction && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#f9f3ee",
+            borderRadius: "8px",
+            borderLeft: "4px solid #b45309"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#b45309", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Introduction" : "Einführung"}
+            </h4>
+            <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.8" }}>
+              {introduction}
+            </p>
           </div>
         )}
 
@@ -408,47 +426,25 @@ export default function ProjectView() {
           </ul>
         </div>
 
-        {/* Technical Stack */}
-        <div style={{
-          marginBottom: "24px",
-          padding: "20px",
-          backgroundColor: "#f3e8ff",
-          borderRadius: "8px",
-          borderLeft: "4px solid #d946a0"
-        }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
-          </h4>
+        {/* System Components */}
+        {codeFeatures && codeFeatures.length > 0 && (
           <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "12px",
-            fontSize: "13px",
-            color: "#666"
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#fef3c7",
+            borderRadius: "8px",
+            borderLeft: "4px solid #f59e0b"
           }}>
-            {techStack && techStack.map((tech, idx) => (
-              <div key={idx} style={{ paddingLeft: "8px" }}>{tech}</div>
-            ))}
+            <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "System Components" : "Systemkomponenten"}
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+              {codeFeatures.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ul>
           </div>
-        </div>
-
-        {/* Code Features */}
-        <div style={{
-          marginBottom: "24px",
-          padding: "20px",
-          backgroundColor: "#fef3c7",
-          borderRadius: "8px",
-          borderLeft: "4px solid #f59e0b"
-        }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "System Components" : "Systemkomponenten"}
-          </h4>
-          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
-            {codeFeatures && codeFeatures.map((feature, idx) => (
-              <li key={idx}>{feature}</li>
-            ))}
-          </ul>
-        </div>
+        )}
 
         {/* Confidentiality Notice */}
         <div style={{
