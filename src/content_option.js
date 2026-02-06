@@ -3,6 +3,8 @@ import dogBreedImg from './assets/images/dog-breed-recognition.png';
 import chatbotImg from './assets/images/chatbot.jpg';
 import officeImg from './assets/images/office.jpg';
 import irevrnnImg from './assets/images/irevrnn.jpg';
+import museumImg from './assets/images/museum.png';
+import museum1Img from './assets/images/museum-1.png';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -171,9 +173,9 @@ const dataportfolio = [
     // Collaborative and Work Projects
     {
         id: "project5",
-        img: background,
-        description: "Kooperationsprojekt 1",
-        description_en: "Collaboration Project 1",
+        img: museumImg,
+        description: "Museum Intelligence - KI-gestützte Optimierung von Ausstellungsanordnung und Besuchererlebnis",
+        description_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",
         link: "#",
         type: "collaboration",
     },
@@ -318,6 +320,62 @@ const translations = {
 
 // Project-specific details for rendering
 const projectDetails = {
+    project5: {
+        title_de: "Museum Intelligence - KI-gestützte Optimierung von Ausstellungsanordnung und Besuchererlebnis",
+        title_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",
+        subtitle_de: "Kooperationsprojekt zur optimalen Museumsgestaltung",
+        subtitle_en: "Collaborative Project for Optimal Museum Design",
+        description_de: "Die besten Ausstellungsstücke an der prominentesten Stelle zu platzieren, ist nicht immer die beste Idee. Durch die Aggregation von Besucherwegdaten aus verschiedenen Museen und das Verständnis der Architekturstruktur optimieren Deep-Learning-Modelle die Platzierung von Artefakten und empfehlen optimale Besucherwege, um ein narratives Erlebnis zu schaffen – Einleitung, Entwicklung, Höhepunkt und Auflösung – ähnlich wie in einem Roman. Beschädigte Artefakte können auch virtuell durch spezialisierte VR-Brillen, die vom Museum bereitgestellt werden, restauriert werden, sodass Besucher die Stücke in ihrem ursprünglichen makellosen Zustand betrachten können. Aufgrund der gemeinsamen Entwicklung mit Partnern können technische Details nicht online geteilt werden. Gerne diskutiere ich persönlich weitere Details.",
+        description_en: "Placing the best exhibits in the most prominent location is not always the best idea. By aggregating visitor path data from various museums and understanding the building's architectural structure, deep learning models optimize artifact placement and recommend optimal visitor routes to create a narrative experience—introduction, development, climax, and resolution—much like a novel. Damaged artifacts can also be restored virtually through specialized VR glasses provided by the museum, allowing visitors to observe pieces in their pristine condition. Due to collaborative development with partners, technical details cannot be shared online. Interested in discussing further in person.",
+        keyFeatures_de: [
+            "Deep Learning basierte Optimierung der Ausstellungsanordnung",
+            "Analyse und Aggregation von Besucherwegdaten",
+            "Architekturgerechte Wegplanung für optimale Narrative",
+            "VR-gestützte Restauration beschädigter Artefakte",
+            "Personalisierte Besuchererlebnis-Generierung"
+        ],
+        keyFeatures_en: [
+            "Deep learning-based optimization of exhibit placement",
+            "Analysis and aggregation of visitor path data",
+            "Architecture-aware navigation planning for optimal narratives",
+            "VR-assisted restoration of damaged artifacts",
+            "Personalized visitor experience generation"
+        ],
+        techStack_de: [
+            "Python 3.8+",
+            "TensorFlow / PyTorch (Deep Learning)",
+            "Computer Vision (OpenCV)",
+            "Graphenalgorithmen für Pfadoptimierung",
+            "VR Framework Integration"
+        ],
+        techStack_en: [
+            "Python 3.8+",
+            "TensorFlow / PyTorch (Deep Learning)",
+            "Computer Vision (OpenCV)",
+            "Graph algorithms for path optimization",
+            "VR Framework integration"
+        ],
+        codeFeatures_de: [
+            "Pfadanalyse-Engine für Besucherdatensätze",
+            "Deep Learning Modell für optimale Kunstwerk-Platzierung",
+            "3D-Rekonstruktion und VR-Visualisierung",
+            "Multi-Museen-Daten-Pipeline",
+            "Interaktive Besuchererlebnis-Konfigurator"
+        ],
+        codeFeatures_en: [
+            "Path analysis engine for visitor datasets",
+            "Deep learning model for optimal artifact placement",
+            "3D reconstruction and VR visualization",
+            "Multi-museum data pipeline",
+            "Interactive visitor experience configurator"
+        ],
+        internalImg: museum1Img,
+        fileInfo: {
+            pages: "",
+            description: "Technische Details aufgrund der Zusammenarbeit mit Partnern nicht verfügbar",
+            description_en: "Technical details not available due to collaborative partnership"
+        }
+    },
     project4: {
         title_de: "RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",
         title_en: "RNNs with Independency Assumptions: Scalable and Efficient Sequence Learning",

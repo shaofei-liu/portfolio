@@ -349,6 +349,159 @@ export default function ProjectView() {
     );
   }
 
+  // Project 5: Museum Intelligence
+  if (project.id === "project5") {
+    const details = projectDetails.project5 || {};
+    const keyFeatures = lang === 'en' ? details.keyFeatures_en : details.keyFeatures_de;
+    const techStack = lang === 'en' ? details.techStack_en : details.techStack_de;
+    const codeFeatures = lang === 'en' ? details.codeFeatures_en : details.codeFeatures_de;
+
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{lang === 'en' ? details.title_en : details.title_de}</h2>
+        <p style={{ marginBottom: 12, color: "#999", fontSize: "14px" }}>
+          {lang === 'en' ? details.subtitle_en : details.subtitle_de}
+        </p>
+        
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' ? details.description_en : details.description_de}
+        </p>
+
+        {/* Internal Image with Blur */}
+        {details.internalImg && (
+          <div style={{
+            margin: "24px 0",
+            borderRadius: "8px",
+            overflow: "hidden",
+            maxHeight: "400px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
+          }}>
+            <img 
+              src={details.internalImg} 
+              alt="Museum Interior" 
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "blur(3px)",
+                display: "block"
+              }}
+            />
+          </div>
+        )}
+
+        {/* Key Features */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0f4ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            {keyFeatures && keyFeatures.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Technical Stack */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f3e8ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #d946a0"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Technical Stack" : "Technischer Stack"}
+          </h4>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "12px",
+            fontSize: "13px",
+            color: "#666"
+          }}>
+            {techStack && techStack.map((tech, idx) => (
+              <div key={idx} style={{ paddingLeft: "8px" }}>{tech}</div>
+            ))}
+          </div>
+        </div>
+
+        {/* Code Features */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#fef3c7",
+          borderRadius: "8px",
+          borderLeft: "4px solid #f59e0b"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "System Components" : "Systemkomponenten"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            {codeFeatures && codeFeatures.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Confidentiality Notice */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#fee2e2",
+          borderRadius: "8px",
+          borderLeft: "4px solid #ef4444"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#ef4444", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Collaboration" : "Zusammenarbeit"}
+          </h4>
+          <p style={{ margin: 0, color: "#663", fontSize: "14px", lineHeight: "1.6" }}>
+            {lang === 'en' 
+              ? "This project is developed in collaboration with partners. Technical implementation details cannot be shared publicly. I am happy to discuss the project in detail during a personal meeting."
+              : "Dieses Projekt wird in Zusammenarbeit mit Partnern entwickelt. Technische Implementierungsdetails können nicht öffentlich geteilt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
+          </p>
+        </div>
+
+        {/* Contact and Back */}
+        <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <a
+            href={`mailto:${contactConfig.YOUR_EMAIL}?subject=${lang === 'en' ? 'Museum Intelligence Project Discussion' : 'Diskussion des Museum Intelligence Projekts'}`}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#10b981',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#059669'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#10b981'}
+          >
+            ✉️ {lang === 'en' ? "Discuss in Person" : "Persönlich Diskutieren"}
+          </a>
+          <Link 
+            to="/portfolio" 
+            className="btn"
+            style={{
+              padding: "10px 20px",
+              fontSize: "14px",
+              marginLeft: "12px"
+            }}
+          >
+            {translations[lang].projectView.back}
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   // Project 4: IRevRNN Thesis
   if (project.id === "project4") {
     const details = projectDetails.project4;
