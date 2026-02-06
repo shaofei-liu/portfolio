@@ -457,10 +457,10 @@ export default function ProjectView() {
           <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Work Experience" : "Berufserfahrung"}
           </h4>
-          <p style={{ margin: 0, color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
+          <p style={{ margin: "0 0 12px 0", color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "This project was developed during my internship at Wisemed Medical Technology. I actively contributed to AI-driven diagnostic tool development and image-guided classification systems, gaining hands-on experience in healthcare AI and medical image analysis."
-              : "Dieses Projekt wurde während meines Praktikums bei Wisemed Medical Technology entwickelt. Ich habe aktiv bei der Entwicklung von KI-gestützten Diagnosewerkzeugen und bildgeführten Klassifikationssystemen mitgewirkt und wertvolle praktische Erfahrung in Healthcare AI und medizinischer Bildanalyse gesammelt."}
+              ? "This project was developed during my internship at Wisemed Medical Technology. Since it was developed during my internship, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
+              : "Dieses Projekt wurde während meines Praktikums bei Wisemed Medical Technology entwickelt. Da es während meines Praktikums entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
           </p>
         </div>
 
@@ -607,10 +607,10 @@ export default function ProjectView() {
           <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Work Experience" : "Berufserfahrung"}
           </h4>
-          <p style={{ margin: 0, color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
+          <p style={{ margin: "0 0 12px 0", color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "This project was developed during my employment at The Pets Team. I contributed to the user interface software and OTA update functionality, gaining valuable experience in smart device development and firmware management."
-              : "Dieses Projekt wurde während meiner Tätigkeit bei The Pets Team entwickelt. Ich habe zur Benutzeroberflächensoftware und OTA-Update-Funktionalität beigetragen und wertvolle Erfahrungen in der Smart-Device-Entwicklung und Firmware-Verwaltung gesammelt."}
+              ? "This project was developed during my employment at The Pets Team. Since it was developed during my employment, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
+              : "Dieses Projekt wurde während meiner Tätigkeit bei The Pets Team entwickelt. Da es während meiner Tätigkeit entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
           </p>
         </div>
 
