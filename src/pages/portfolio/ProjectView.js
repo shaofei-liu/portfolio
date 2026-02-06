@@ -466,22 +466,23 @@ export default function ProjectView() {
 
         {/* Contact and Back */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <a
-            href={`mailto:${contactConfig.YOUR_EMAIL}?subject=${lang === 'en' ? 'Museum Intelligence Project Discussion' : 'Diskussion des Museum Intelligence Projekts'}`}
+          <Link
+            to="/contact"
             style={{
               padding: '10px 20px',
-              backgroundColor: '#10b981',
+              backgroundColor: '#0066cc',
               color: 'white',
               textDecoration: 'none',
               borderRadius: '8px',
               fontWeight: '600',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              display: 'inline-block'
             }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#059669'}
-            onMouseOut={(e) => e.target.style.backgroundColor = '#10b981'}
+            onMouseOver={(e) => e.style.backgroundColor = '#0052a3'}
+            onMouseOut={(e) => e.style.backgroundColor = '#0066cc'}
           >
-            ✉️ {lang === 'en' ? "Discuss in Person" : "Persönlich Diskutieren"}
-          </a>
+            ✉️ {lang === 'en' ? "Contact Me" : "Kontakt"}
+          </Link>
           <Link 
             to="/portfolio" 
             className="btn"
