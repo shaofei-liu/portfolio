@@ -446,21 +446,21 @@ export default function ProjectView() {
           </div>
         )}
 
-        {/* Confidentiality Notice */}
+        {/* Work Project Info */}
         <div style={{
           marginBottom: "24px",
           padding: "20px",
-          backgroundColor: "#fee2e2",
+          backgroundColor: "#f0fdf4",
           borderRadius: "8px",
-          borderLeft: "4px solid #ef4444"
+          borderLeft: "4px solid #10b981"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#ef4444", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Healthcare Project" : "Gesundheitsprojekt"}
+          <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Work Experience" : "Berufserfahrung"}
           </h4>
-          <p style={{ margin: 0, color: "#663", fontSize: "14px", lineHeight: "1.6" }}>
+          <p style={{ margin: 0, color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "This is a confidential healthcare and research project developed with medical institutions and industry partners. Detailed technical specifications, patient data handling procedures, and research outcomes cannot be shared online for privacy and confidentiality reasons. I would be happy to discuss the project, my specific contributions, and research outcomes during a confidential meeting or interview."
-              : "Dies ist ein vertrauliches Gesundheits- und Forschungsprojekt, das mit medizinischen Institutionen und Industriepartnern entwickelt wurde. Detaillierte technische Spezifikationen, Verfahren zur Patientendatenbehandlung und Forschungsergebnisse können aus Datenschutz- und Vertraulichkeitsgründen online nicht geteilt werden. Ich freue mich darauf, das Projekt, meine spezifischen Beiträge und Forschungsergebnisse während eines vertraulichen Gesprächs oder Vorstellungsgesprächs zu diskutieren."}
+              ? "This project was developed during my internship at Wisemed Medical Technology. I actively contributed to AI-driven diagnostic tool development and image-guided classification systems, gaining hands-on experience in healthcare AI and medical image analysis."
+              : "Dieses Projekt wurde während meines Praktikums bei Wisemed Medical Technology entwickelt. Ich habe aktiv bei der Entwicklung von KI-gestützten Diagnosewerkzeugen und bildgeführten Klassifikationssystemen mitgewirkt und wertvolle praktische Erfahrung in Healthcare AI und medizinischer Bildanalyse gesammelt."}
           </p>
         </div>
 
@@ -596,21 +596,21 @@ export default function ProjectView() {
           </div>
         )}
 
-        {/* Confidentiality Notice */}
+        {/* Work Project Info */}
         <div style={{
           marginBottom: "24px",
           padding: "20px",
-          backgroundColor: "#fee2e2",
+          backgroundColor: "#f0fdf4",
           borderRadius: "8px",
-          borderLeft: "4px solid #ef4444"
+          borderLeft: "4px solid #10b981"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#ef4444", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-            {lang === 'en' ? "Work Project" : "Arbeitsprojekt"}
+          <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Work Experience" : "Berufserfahrung"}
           </h4>
-          <p style={{ margin: 0, color: "#663", fontSize: "14px", lineHeight: "1.6" }}>
+          <p style={{ margin: 0, color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "This is a work project developed with corporate partners. Detailed technical specifications and proprietary implementations cannot be shared online. I would be happy to discuss the project and my specific contributions in person during a meeting or interview."
-              : "Dies ist ein Arbeitsprojekt, das mit Unternehmenspartnern entwickelt wurde. Detaillierte technische Spezifikationen und proprietäre Implementierungen können nicht online geteilt werden. Ich freue mich darauf, das Projekt und meine spezifischen Beiträge persönlich während eines Gesprächs oder Vorstellungsgesprächs zu diskutieren."}
+              ? "This project was developed during my employment at The Pets Team. I contributed to the user interface software and OTA update functionality, gaining valuable experience in smart device development and firmware management."
+              : "Dieses Projekt wurde während meiner Tätigkeit bei The Pets Team entwickelt. Ich habe zur Benutzeroberflächensoftware und OTA-Update-Funktionalität beigetragen und wertvolle Erfahrungen in der Smart-Device-Entwicklung und Firmware-Verwaltung gesammelt."}
           </p>
         </div>
 
