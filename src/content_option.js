@@ -5,6 +5,8 @@ import officeImg from './assets/images/office.jpg';
 import irevrnnImg from './assets/images/irevrnn.jpg';
 import museumImg from './assets/images/museum.png';
 import museum1Img from './assets/images/museum-1.png';
+import cookerImg from './assets/images/cooker.png';
+import cooker1Img from './assets/images/cooker-1.png';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -181,11 +183,11 @@ const dataportfolio = [
     },
     {
         id: "project6",
-        img: background,
-        description: "Kooperationsprojekt 2",
-        description_en: "Collaboration Project 2",
+        img: cookerImg,
+        description: "SmartCooker - KI-gestützte Haustier-Kochmaschine mit 20+ Funktionen",
+        description_en: "SmartCooker - AI-powered Pet Food Cooking Machine with 20+ Functions",
         link: "#",
-        type: "collaboration",
+        type: "work",
     },
     {
         id: "project7",
@@ -320,6 +322,50 @@ const translations = {
 
 // Project-specific details for rendering
 const projectDetails = {
+    project6: {
+        title_de: "SmartCooker - KI-gestützte Haustier-Kochmaschine",
+        title_en: "SmartCooker - AI-powered Pet Food Cooking Machine",
+        subtitle_de: "Eine spezialisierte Kochmaschine für hochwertige Haustierfutterproduktion mit über 20 intelligenten Funktionen wie Heizen, Rühren, Zerkleinern, Wiegen und Kneten – ähnlich wie der Vorwerk Thermomix. Kooperativ entwickelt mit fortgeschrittener Benutzeroberflächensoftware und OTA-Update-Funktionalität.",
+        subtitle_en: "A specialized cooking machine for premium pet food production with over 20 intelligent functions including heating, stirring, chopping, weighing, and kneading – comparable to Vorwerk Thermomix. Co-developed with advanced user interface software and OTA update functionality.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Eine spezialisierte Kochmaschine, die speziell für die Herstellung von hochwertigem Haustierfutter entwickelt wurde. Mit über 20 Funktionen wie Heizen, Rühren, Zerkleinern, Wiegen und Kneten sowie vielen mehr bietet diese Maschine vergleichbare Funktionalität zum Vorwerk Thermomix, aber optimiert für Haustierfutter. Ich habe an der Entwicklung der Benutzeroberflächensoftware und der OTA-Update-Funktionalität mitgearbeitet, um eine nahtlose und sichere Produkterfahrung zu gewährleisten.",
+        introduction_en: "A specialized cooking machine designed specifically for producing high-quality pet food. With over 20 functions including heating, stirring, chopping, weighing, and kneading, plus many more, this machine offers comparable functionality to the Vorwerk Thermomix but optimized for pet food production. I collaborated on developing the user interface software and OTA update functionality to ensure a seamless and secure product experience.",
+        keyFeatures_de: [
+            "Über 20 intelligente Funktionen für flexible Rezepte",
+            "Benutzerfreundliche mobile und Web-Oberfläche",
+            "OTA-Update-Funktionalität für kontinuierliche Verbesserungen",
+            "Sichere IoT-Kommunikation für Geräteverwaltung",
+            "Erweiterte Sensoren für präzise Kontrolle"
+        ],
+        keyFeatures_en: [
+            "Over 20 intelligent functions for flexible recipes",
+            "User-friendly mobile and web interface",
+            "OTA update functionality for continuous improvements",
+            "Secure IoT communication for device management",
+            "Advanced sensors for precise control"
+        ],
+        codeFeatures_de: [
+            "Responsive UI mit React für iOS/Android Anwendungen",
+            "Cloud-basierte OTA-Update-Verwaltung und Versionskontrolle",
+            "Echtzeit-Gerätesteuerung und Datenerfassung",
+            "Sichere Authentifizierung und verschlüsselte Kommunikation",
+            "Benutzerfreundliche Rezeptverwaltung und Erfolgsloggen"
+        ],
+        codeFeatures_en: [
+            "Responsive UI with React for iOS/Android applications",
+            "Cloud-based OTA update management and version control",
+            "Real-time device control and data collection",
+            "Secure authentication and encrypted communication",
+            "User-friendly recipe management and success logging"
+        ],
+        internalImg: cooker1Img,
+        fileInfo: {
+            pages: "",
+            description: "Technische Details aufgrund der Zusammenarbeit mit Partnern nicht verfügbar",
+            description_en: "Technical details not available due to collaborative partnership"
+        }
+    },
     project5: {
         title_de: "Museum Intelligence - KI-gestützte Optimierung von Ausstellungsanordnung und Besuchererlebnis",
         title_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",

@@ -91,7 +91,7 @@ export const Portfolio = () => {
 
   return (
     <HelmetProvider>
-      <Container className="About-header">
+      <Container className="About-header" style={{ paddingBottom: "60px" }}>
         <Helmet>
           <meta charSet="utf-8" />
           <title> {translations[lang].portfolio.title} | {meta.title} </title>{" "}
