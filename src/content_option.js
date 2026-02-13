@@ -31,10 +31,17 @@ const introdata = {
 const dataabout = {
     title: "Über mich",
     title_en: "About me",
-    aboutme: "Ich bin ein Ingenieur mit starkem Hintergrund in Mechatronik und Robotik, spezialisiert auf datengetriebene Analyse, maschinelles Lernen und digitale Gesundheit. Ich habe umfangreiche Erfahrung in der Verarbeitung von Sensor- und medizinischen Daten sowie in der Entwicklung KI-basierter Modelle für Diagnose- und Assistenzsysteme. Mit starker Kompetenz in Modellierung, Algorithmik und Software-Engineering bin ich leidenschaftlich daran interessiert, intelligente Lösungen zu schaffen, die reale Auswirkungen haben. Ich habe einen Master of Science in Robotik, Kognition und Intelligenz von der Technischen Universität München und spreche fließend Chinesisch (Muttersprache), Deutsch (C1, TestDaF) und Englisch (C1, IELTS).",
-    aboutme_en: "I am an engineer with a strong background in mechatronics and robotics, specializing in data-driven analysis, machine learning and digital health. I have experience processing sensor and medical data and developing AI-based models for diagnosis and assistance systems. With expertise in modeling, algorithms and software engineering, I am passionate about building intelligent solutions with real-world impact. I hold an MSc in Robotics, Cognition and Intelligence from TU Munich and speak fluent Chinese (native), German (C1) and English (C1).",
+    aboutme: "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik. Fundierte Kenntnisse in Künstlicher Intelligenz, Sensorfusion und Signalverarbeitung mit Erfahrung in der Entwicklung und Simulation intelligenter Systeme im Bereich Radar, Embedded Systems und Robotik. Internationale Ausbildung (Deutschland/China) mit Fokus auf datengetriebene Methoden und modellbasierte Ansätze für adaptive technische Systeme. Spezialisiert auf die Entwicklung prototypischer Anwendungen zur Datenverarbeitung und Machine-Learning-Integration mit Python, PyTorch und C++. Ich schaffe intelligente Lösungen, die reale Auswirkungen haben.",
+    aboutme_en: "AI Engineer with research-oriented background in robotics and mechatronics. Proficient in Artificial Intelligence, sensor fusion and signal processing with experience developing and simulating intelligent systems in radar, embedded systems and robotics. International education (Germany/China) with focus on data-driven methods and model-based approaches for adaptive technical systems. Specialized in developing prototypical applications for data processing and machine learning integration with Python, PyTorch and C++. I create intelligent solutions with real-world impact.",
 };
 const worktimeline = [{
+        jobtitle: "KI-Softwareentwickler (projektbasiert)",
+        jobtitle_en: "AI Software Developer (Project-based)",
+        where: "München, Deutschland",
+        where_en: "Munich, Germany",
+        date: "05/2025 – heute",
+    },
+    {
         jobtitle: "Softwareentwickler",
         jobtitle_en: "Software Developer",
         where: "The Pets Team GmbH & Co. KG, Grünwald, Deutschland",
