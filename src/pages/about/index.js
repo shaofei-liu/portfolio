@@ -43,7 +43,8 @@ export const About = () => {
               <p>{lang === 'en' && dataabout.aboutme_en ? dataabout.aboutme_en : dataabout.aboutme}</p>
               <a 
                 href="/ShaofeiLiu_Resume.pdf" 
-                download="ShaofeiLiu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: 'inline-block',
                   padding: '10px 20px',
@@ -61,7 +62,7 @@ export const About = () => {
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#0052a3'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#0066cc'}
               >
-                {lang === 'en' ? '📥 Download Resume' : '📥 CV herunterladen'}
+                {lang === 'en' ? '📄 View Resume' : '📄 CV anschauen'}
               </a>
             </div>
           </Col>

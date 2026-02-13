@@ -54,6 +54,14 @@ export const Home = () => {
                       <div className="ring three"></div>
                     </div>
                   </Link>
+                  <Link to="/about">
+                    <div id="button_a" className="ac_btn btn">
+                      {translations[lang].home.aboutBtn}
+                      <div className="ring one"></div>
+                      <div className="ring two"></div>
+                      <div className="ring three"></div>
+                    </div>
+                  </Link>
                   <Link to="/contact">
                     <div id="button_h" className="ac_btn btn">
                       {translations[lang].home.contactBtn}

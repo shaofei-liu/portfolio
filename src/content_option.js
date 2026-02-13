@@ -253,6 +253,7 @@ const translations = {
         },
         home: {
             portfolioBtn: "My Portfolio",
+            aboutBtn: "About Me",
             contactBtn: "Contact Me",
             introTitle: "I'm Shaofei Liu",
             introDesc: "Engineer with background in mechatronics and robotics, specialized in data-driven analysis, machine learning and digital health. Experience in processing sensor and medical data and building AI models for diagnosis and assistance.",
@@ -284,7 +285,7 @@ const translations = {
         }
     },
     de: {
-        menu: { home: "Home", portfolio: "Portfolio", about: "About", contact: "Kontakt" },
+        menu: { home: "Home", portfolio: "Portfolio", about: "Über mich", contact: "Kontakt" },
         portfolio: { title: "Portfolio", viewProject: "Projekt ansehen" },
         projectView: {
             website: "Webseite",
@@ -300,6 +301,7 @@ const translations = {
         },
         home: {
             portfolioBtn: "Mein Portfolio",
+            aboutBtn: "Über mich",
             contactBtn: "Kontakt",
             introTitle: introdata.title,
             introDesc: introdata.description,
