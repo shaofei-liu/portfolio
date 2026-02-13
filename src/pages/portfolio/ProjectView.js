@@ -38,8 +38,6 @@ export default function ProjectView() {
   if (project.id === "project1") {
     const details = projectDetails.project1 || {};
     const keyFeatures = lang === 'en' ? details.keyFeatures_en : details.keyFeatures_de;
-    const codeFeatures = lang === 'en' ? details.codeFeatures_en : details.codeFeatures_de;
-    const introduction = lang === 'en' ? details.introduction_en : details.introduction_de;
 
     return (
       <div className="project-view" style={{ padding: 16 }}>
@@ -84,24 +82,6 @@ export default function ProjectView() {
           </div>
         </div>
 
-        {/* Introduction Section */}
-        {introduction && (
-          <div style={{
-            marginBottom: "24px",
-            padding: "20px",
-            backgroundColor: "#f9f3ee",
-            borderRadius: "8px",
-            borderLeft: "4px solid #b45309"
-          }}>
-            <h4 style={{ margin: "0 0 12px 0", color: "#b45309", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "Introduction" : "Einführung"}
-            </h4>
-            <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.8" }}>
-              {introduction}
-            </p>
-          </div>
-        )}
-
         {/* Voice Synthesis App Container */}
         <div style={{
           margin: "0 0 24px 0",
@@ -128,26 +108,6 @@ export default function ProjectView() {
             </h4>
             <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
               {keyFeatures.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Code Features */}
-        {codeFeatures && codeFeatures.length > 0 && (
-          <div style={{
-            marginBottom: "24px",
-            padding: "20px",
-            backgroundColor: "#fef3c7",
-            borderRadius: "8px",
-            borderLeft: "4px solid #f59e0b"
-          }}>
-            <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "Technical Implementation" : "Technische Umsetzung"}
-            </h4>
-            <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
-              {codeFeatures.map((feature, idx) => (
                 <li key={idx}>{feature}</li>
               ))}
             </ul>
