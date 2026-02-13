@@ -99,8 +99,8 @@ export default function VoiceSynthesis() {
       formData.append('language', language);
 
       if (selectedVoice === "sample") {
-        // For sample voices, pass the filename to the API
-        formData.append('sample_audio', SAMPLE_VOICES[language].file);
+        // For sample voices, pass the language code (en or de)
+        formData.append('sample_audio', language);
       } else {
         // For custom voices, upload the file
         formData.append('reference_audio', uploadedFile);
