@@ -1,6 +1,7 @@
 ﻿import background from './assets/images/background.jpg';
 import dogBreedImg from './assets/images/dog-breed-recognition.png';
 import chatbotImg from './assets/images/chatbot.jpg';
+import voiceSynthesisImg from './assets/images/voice-synthesis.png';
 import officeImg from './assets/images/office.jpg';
 import irevrnnImg from './assets/images/irevrnn.jpg';
 import museumImg from './assets/images/museum.png';
@@ -141,11 +142,12 @@ const dataportfolio = [
     // Personal Projects
     {
         id: "project1",
-        img: background,
-        description: "Rejection Letters - HR Application Records",
-        description_en: "Rejection Letters - HR Application Records",
+        img: voiceSynthesisImg,
+        description: "Voice Synthesis - KI-gestützte Sprachsynthese mit Stimmenklonung",
+        description_en: "Voice Synthesis - AI-powered Text-to-Speech with Voice Cloning",
         link: "#",
         type: "personal",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/voice-synthesis?embedded=true",
     },
     {
         id: "project2",
@@ -154,6 +156,7 @@ const dataportfolio = [
         description_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
         link: "#",
         type: "personal",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/dog-breed-classifier?embedded=true",
     },
     {
         id: "project3",
@@ -324,6 +327,202 @@ const translations = {
 
 // Project-specific details for rendering
 const projectDetails = {
+    project1: {
+        title_de: "Voice Synthesis - KI-gestützte Sprachsynthese mit Stimmenklonung",
+        title_en: "Voice Synthesis - AI-powered Text-to-Speech with Voice Cloning",
+        subtitle_de: "Eine fortschrittliche Text-in-Sprache-Anwendung mit Zero-Shot-Stimmenklonung, die kohärente, natürliche Sprachsynthese in mehreren Sprachen mit benutzerdefinierter Stimmauswahl ermöglicht.",
+        subtitle_en: "An advanced text-to-speech application with zero-shot voice cloning that enables coherent, natural speech synthesis in multiple languages with custom voice selection.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Eine Web-basierte Text-zu-Sprache-Anwendung mit erweiterbarer Stimmenklonung, die präzise, natürliche Sprachsynthese mit niedrigem Latenzzeitalter ermöglicht. Die Anwendung unterstützt Multi-Sprachen-Eingaben mit kontinuierlicher Textverarbeitung (split_sentences=False) zur Erzeugung flüssiger, narrativer Ausgaben. Benutzer können entweder vordefinierte Stimmsamples (z.B. Trump und Merkel für englische und deutsche Sprachsamples) verwenden oder benutzerdefinierte Referenzaudio-Dateien hochladen, um einzigartige Stimmklone zu erstellen.",
+        introduction_en: "A web-based text-to-speech application with extensible voice cloning that enables precise, natural speech synthesis with low latency. The application supports multi-language input with continuous text processing (split_sentences=False) to produce fluid, narrative output. Users can either use predefined voice samples (e.g., Trump and Merkel for English and German voice samples) or upload custom reference audio files to create unique voice clones.",
+        keyFeatures_de: [
+            "Zero-Shot Stimmenklonung mit XTTS v2 Modell",
+            "Multi-Language Unterstützung (Englisch, Deutsch und mehr)",
+            "Vordefinierte Stimmsamples für schnelle Prototypisierung",
+            "Benutzerdefinierte Referenzaudio-Upload für einzigartige Stimmklone",
+            "Natürliche kontinuierliche Sprachsynthese mit flüssigen Übergängen",
+            "REST API für Batch-Synthesierung",
+            "WebSocket-basierte Echtzeit-Audiostreaming (Optional)"
+        ],
+        keyFeatures_en: [
+            "Zero-shot voice cloning with XTTS v2 model",
+            "Multi-language support (English, German, and more)",
+            "Predefined voice samples for quick prototyping",
+            "Custom reference audio upload for unique voice clones",
+            "Natural continuous speech synthesis with smooth transitions",
+            "REST API for batch synthesis",
+            "WebSocket-based real-time audio streaming (Optional)"
+        ],
+        codeFeatures_de: [
+            "FastAPI Backend mit Uvicorn Server für hohe Performance",
+            "XTTS v2 Multilingual Speech Synthesis Engine",
+            "librosa basierte Audio-Preprocessing und Normalisierung",
+            "FFmpeg Integration für flexible Audioformat-Konvertierung",
+            "Responsive React Frontend mit intuitiver Benutzeroberfläche",
+            "CORS-aktiviert für einfache Frontend-Integration",
+            "Docker-Containerisierung für nahtlose Bereitstellung"
+        ],
+        codeFeatures_en: [
+            "FastAPI backend with Uvicorn server for high performance",
+            "XTTS v2 multilingual speech synthesis engine",
+            "librosa-based audio preprocessing and normalization",
+            "FFmpeg integration for flexible audio format conversion",
+            "Responsive React frontend with intuitive user interface",
+            "CORS-enabled for easy frontend integration",
+            "Docker containerization for seamless deployment"
+        ],
+        techStack_de: [
+            "FastAPI 0.104.1",
+            "PyTorch 2.10+",
+            "TTS (Coqui) 0.22.0",
+            "librosa 0.10.0",
+            "Python 3.11"
+        ],
+        techStack_en: [
+            "FastAPI 0.104.1",
+            "PyTorch 2.10+",
+            "TTS (Coqui) 0.22.0",
+            "librosa 0.10.0",
+            "Python 3.11"
+        ],
+        github: "https://github.com/shaofei-liu/voice-synthesis",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/voice-synthesis",
+        fileInfo: {
+            pages: "",
+            description: "Live-Demo auf HuggingFace Spaces verfügbar",
+            description_en: "Live demo available on HuggingFace Spaces"
+        }
+    },
+    project2: {
+        title_de: "Dog Breed Classifier - KI-gestützte Hunderassenidentifikation",
+        title_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
+        subtitle_de: "Eine hochgenaue Deep-Learning-Anwendung zur automatischen Identifizierung und Klassifizierung von Hunderassen mit fortgeschrittenen CNN-Modellen und Echtzeit-Bildverarbeitung.",
+        subtitle_en: "A highly accurate deep learning application for automated identification and classification of dog breeds using advanced CNN models and real-time image processing.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Eine leistungsstarke Web-Anwendung zur automatischen Identifizierung von Hunderassen mittels State-of-the-art Deep-Learning-Modellen. Die Anwendung akzeptiert Bilder von Hunden und liefert genaue Rasse-Klassifikationen zusammen mit Konfidenzwerten und detaillierten Rasse-Informationen. Das System wurde mit einem großen Datensatz von Hunderassen trainiert und bietet eine benutzerfreundliche Schnittstelle für schnelle und zuverlässige Rassen-Identifikation.",
+        introduction_en: "A powerful web application for automated dog breed identification using state-of-the-art deep learning models. The application accepts images of dogs and delivers accurate breed classifications along with confidence scores and detailed breed information. The system was trained on a large dataset of dog breeds and offers a user-friendly interface for quick and reliable breed identification.",
+        keyFeatures_de: [
+            "Hochgenaue Rassen-Klassifikation mit CNN-Modellen",
+            "Unterstützung für 130+ Hunderassen",
+            "Echtzeit-Bildverarbeitung mit sofortigen Ergebnissen",
+            "Konfidenzwerte für Klassifikationssicherheit",
+            "Detaillierte Rasse-Informationen und Charakteristiken",
+            "URL-basierter und Datei-Upload-Unterstützung",
+            "Responsive Mobile und Desktop-Oberfläche"
+        ],
+        keyFeatures_en: [
+            "Highly accurate breed classification with CNN models",
+            "Support for 130+ dog breeds",
+            "Real-time image processing with instant results",
+            "Confidence scores for classification certainty",
+            "Detailed breed information and characteristics",
+            "URL-based and file upload support",
+            "Responsive mobile and desktop interface"
+        ],
+        codeFeatures_de: [
+            "PyTorch-basierte pre-trained CNN Modelle (EfficientNet, ResNet)",
+            "Effiziente Bildpre-Processing und Augmentation",
+            "FastAPI REST API für flexible Integration",
+            "Batch-Vorhersagen für skalierbare Verarbeitung",
+            "Docker-Containerisierung für einfache Bereitstellung",
+            "Streamlit Frontend für interaktive Benutzeroberfläche"
+        ],
+        codeFeatures_en: [
+            "PyTorch-based pre-trained CNN models (EfficientNet, ResNet)",
+            "Efficient image pre-processing and augmentation",
+            "FastAPI REST API for flexible integration",
+            "Batch predictions for scalable processing",
+            "Docker containerization for easy deployment",
+            "Streamlit frontend for interactive user interface"
+        ],
+        techStack_de: [
+            "PyTorch 2.0+",
+            "Python 3.9+",
+            "Streamlit",
+            "PIL/Pillow",
+            "NumPy, Scikit-learning"
+        ],
+        techStack_en: [
+            "PyTorch 2.0+",
+            "Python 3.9+",
+            "Streamlit",
+            "PIL/Pillow",
+            "NumPy, Scikit-learn"
+        ],
+        github: "https://github.com/shaofei-liu/dog-breed-classifier",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/dog-breed-classifier",
+        fileInfo: {
+            pages: "",
+            description: "Live-Demo auf HuggingFace Spaces verfügbar",
+            description_en: "Live demo available on HuggingFace Spaces"
+        }
+    },
+    project3: {
+        title_de: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
+        title_en: "RAG Chatbot - AI-powered Q&A System",
+        subtitle_de: "Ein intelligentes Retrieval-Augmented-Generation (RAG) basiertes Chatbot-System, das präzise Antworten auf Fragen durch Kombination von semantischer Suche und großen Sprachmodellen liefert.",
+        subtitle_en: "An intelligent Retrieval-Augmented-Generation (RAG) based chatbot system that delivers precise answers to questions by combining semantic search and large language models.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Ein fortgeschrittenes RAG-Chatbot-System, das Benutzer-Fragen mit hochrelevanten Dokumenten verbindet und intelligente, kontextbewusste Antworten generiert. Das System nutzt moderne Embeddings und Sprachmodelle zur Verbesserung der Antwortqualität und Zuverlässigkeit. Die Architektur unterstützt mehrere Wissensquellen und bietet flexible Konfiguration für verschiedene Anwendungsfälle.",
+        introduction_en: "An advanced RAG chatbot system that combines user questions with highly relevant documents and generates intelligent, context-aware answers. The system leverages modern embeddings and language models to improve answer quality and reliability. The architecture supports multiple knowledge sources and offers flexible configuration for various use cases.",
+        keyFeatures_de: [
+            "Retrieval-Augmented-Generation (RAG) Architektur",
+            "Semantische Ähnlichkeitssuche auf großen Dokumentbeständen",
+            "Large Language Model Integration für präzise Antwortgenerierung",
+            "Multi-Source Wissensintegration",
+            "Kontextbewusste Konversation mit Speicher",
+            "Echtzeit-Streaming-Antworten",
+            "Flexible Dokumenten-Management-Schnittstelle"
+        ],
+        keyFeatures_en: [
+            "Retrieval-Augmented-Generation (RAG) architecture",
+            "Semantic similarity search on large document collections",
+            "Large language model integration for precise answer generation",
+            "Multi-source knowledge integration",
+            "Context-aware conversation with memory",
+            "Real-time streaming responses",
+            "Flexible document management interface"
+        ],
+        codeFeatures_de: [
+            "Vector Database für effiziente Embedding-Speicherung (FAISS, Weaviate)",
+            "OpenAI/Local LLM Integration für Antwortgenerierung",
+            "LangChain Framework für RAG-Pipeline-Orchestrierung",
+            "Streamlit-basiertes Interactive Frontend",
+            "Echtzeit-Konversationshistorie und Session-Verwaltung",
+            "Batch-Processing für großformatige Dokumentationen"
+        ],
+        codeFeatures_en: [
+            "Vector database for efficient embedding storage (FAISS, Weaviate)",
+            "OpenAI/Local LLM integration for answer generation",
+            "LangChain framework for RAG pipeline orchestration",
+            "Streamlit-based interactive frontend",
+            "Real-time conversation history and session management",
+            "Batch processing for large-scale documentations"
+        ],
+        techStack_de: [
+            "LangChain 0.1+",
+            "FAISS / Vector DB",
+            "OpenAI API / Local LLM",
+            "Streamlit",
+            "Python 3.9+"
+        ],
+        techStack_en: [
+            "LangChain 0.1+",
+            "FAISS / Vector DB",
+            "OpenAI API / Local LLM",
+            "Streamlit",
+            "Python 3.9+"
+        ],
+        projectUrl: "https://portfolio-chatbot-k2apv4mklaemkakzx6zyir.streamlit.app/?embedded=true",
+        fileInfo: {
+            pages: "",
+            description: "Live-Demo auf Streamlit Cloud verfügbar",
+            description_en: "Live demo available on Streamlit Cloud"
+        }
+    },
     project7: {
         title_de: "Digital Twin - KI-gestützte medizinische Diagnoseverfahren",
         title_en: "Digital Twin - AI-powered Medical Diagnosis and Healthcare Analytics",
