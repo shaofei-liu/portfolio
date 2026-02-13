@@ -41,6 +41,28 @@ export const About = () => {
           <Col lg="7" className="d-flex align-items-center">
             <div>
               <p>{lang === 'en' && dataabout.aboutme_en ? dataabout.aboutme_en : dataabout.aboutme}</p>
+              <a 
+                href="/ShaofeiLiu_Resume.pdf" 
+                download="ShaofeiLiu_Resume.pdf"
+                style={{
+                  display: 'inline-block',
+                  padding: '10px 20px',
+                  backgroundColor: '#0066cc',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                  marginTop: '15px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#0052a3'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#0066cc'}
+              >
+                {lang === 'en' ? '📥 Download Resume' : '📥 CV herunterladen'}
+              </a>
             </div>
           </Col>
         </Row>
