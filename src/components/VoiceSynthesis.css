@@ -1,0 +1,263 @@
+.voice-synthesis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.vs-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vs-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vs-control-group label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+}
+
+.vs-language-buttons,
+.vs-radio-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vs-lang-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 16px;
+  border: 2px solid #374151;
+  background: #1f2937;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.vs-lang-btn:hover {
+  border-color: #60a5fa;
+  background: #263645;
+}
+
+.vs-lang-btn.active {
+  border-color: #3b82f6;
+  background: #1e40af;
+  color: #fff;
+}
+
+.vs-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.vs-radio-label:hover {
+  background: #374151;
+}
+
+.vs-radio-label input[type="radio"] {
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.vs-textarea {
+  padding: 12px;
+  border: 1px solid #374151;
+  background: #1f2937;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.vs-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.vs-char-count {
+  font-size: 12px;
+  color: #6b7280;
+  text-align: right;
+}
+
+.vs-sample-voices {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vs-voice-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vs-voice-card:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #60a5fa;
+}
+
+.vs-voice-flag {
+  font-size: 20px;
+}
+
+.vs-voice-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.vs-file-input-wrapper {
+  position: relative;
+  border: 2px dashed #374151;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vs-file-input-wrapper:hover {
+  border-color: #60a5fa;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.vs-file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vs-file-name {
+  padding: 8px 12px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.vs-error {
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vs-synthesize-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.vs-synthesize-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.vs-synthesize-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vs-result {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 12px;
+}
+
+.vs-result-header {
+  margin-bottom: 16px;
+}
+
+.vs-result-header h4 {
+  margin: 0;
+  color: #10b981;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.vs-audio-player {
+  margin-bottom: 16px;
+}
+
+.vs-audio-player audio {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.vs-download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.vs-download-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .vs-language-buttons,
+  .vs-radio-group {
+    flex-direction: column;
+  }
+
+  .vs-lang-btn {
+    min-width: unset;
+  }
+
+  .voice-synthesis-container {
+    padding: 12px;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { dataportfolio, projectDetails, contactConfig, translations } from "../../content_option";
 import DogBreedClassifier from "../../components/DogBreedClassifier";
+import VoiceSynthesis from "../../components/VoiceSynthesis";
 import RejectionLetters from "../../components/RejectionLetters";
 
 export default function ProjectView() {
@@ -29,6 +30,194 @@ export default function ProjectView() {
     return (
       <div style={{ padding: 16 }}>
         {translations[lang].projectView.notFound} <Link to="/portfolio">{translations[lang].projectView.back}</Link>
+      </div>
+    );
+  }
+
+  // Project 1: Voice Synthesis
+  if (project.id === "project1") {
+    const details = projectDetails.project1 || {};
+    const keyFeatures = lang === 'en' ? details.keyFeatures_en : details.keyFeatures_de;
+    const codeFeatures = lang === 'en' ? details.codeFeatures_en : details.codeFeatures_de;
+    const introduction = lang === 'en' ? details.introduction_en : details.introduction_de;
+
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{lang === 'en' ? details.title_en : details.title_de}</h2>
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' ? details.subtitle_en : details.subtitle_de}
+        </p>
+
+        {/* Header Info Bar */}
+        <div style={{
+          display: "flex",
+          gap: "20px",
+          marginBottom: "24px",
+          padding: "16px",
+          backgroundColor: "#f8f9fa",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "AI Model" : "KI-Modell"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {lang === 'en' ? details.ki_modell_en : details.ki_modell_de}
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Framework" : "Framework"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {lang === 'en' ? details.framework_en : details.framework_de}
+            </div>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#999", textTransform: "uppercase", fontWeight: "600", marginBottom: "4px" }}>
+              {lang === 'en' ? "Dataset" : "Datensatz"}
+            </div>
+            <div style={{ fontSize: "14px", color: "#333", fontWeight: "500" }}>
+              {lang === 'en' ? details.datensatz_en : details.datensatz_de}
+            </div>
+          </div>
+        </div>
+
+        {/* Introduction Section */}
+        {introduction && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#f9f3ee",
+            borderRadius: "8px",
+            borderLeft: "4px solid #b45309"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#b45309", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Introduction" : "Einführung"}
+            </h4>
+            <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.8" }}>
+              {introduction}
+            </p>
+          </div>
+        )}
+
+        {/* Voice Synthesis App Container */}
+        <div style={{
+          margin: "0 0 24px 0",
+          border: "1px solid #2a3f5a",
+          borderRadius: "12px",
+          overflow: "hidden",
+          backgroundColor: "#0f1419",
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
+        }}>
+          <VoiceSynthesis />
+        </div>
+
+        {/* Key Features */}
+        {keyFeatures && keyFeatures.length > 0 && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#f0f4ff",
+            borderRadius: "8px",
+            borderLeft: "4px solid #0066cc"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+              {keyFeatures.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Code Features */}
+        {codeFeatures && codeFeatures.length > 0 && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#fef3c7",
+            borderRadius: "8px",
+            borderLeft: "4px solid #f59e0b"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Technical Implementation" : "Technische Umsetzung"}
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+              {codeFeatures.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Tech Stack */}
+        {details.techStack_de && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#fff0f5",
+            borderRadius: "8px",
+            borderLeft: "4px solid #d946a0"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#d946a0", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Tech Stack" : "Technologie-Stack"}
+            </h4>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "12px",
+              fontSize: "13px",
+              color: "#666"
+            }}>
+              {(lang === 'en' ? details.techStack_en : details.techStack_de).map((tech, idx) => (
+                <div key={idx}>{tech}</div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        <div style={{
+          display: "flex",
+          gap: "12px",
+          alignItems: "center",
+          flexWrap: "wrap"
+        }}>
+          {details.github && (
+            <a
+              href={details.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#333',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
+              onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
+            >
+              📊 GitHub
+            </a>
+          )}
+          <Link
+            to="/portfolio"
+            className="btn"
+            style={{
+              padding: "10px 20px",
+              fontSize: "14px"
+            }}
+          >
+            {translations[lang].projectView.back}
+          </Link>
+        </div>
       </div>
     );
   }
