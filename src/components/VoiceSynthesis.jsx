@@ -99,24 +99,31 @@ export default function VoiceSynthesis() {
       formData.append('language', language);
 
       if (selectedVoice === "sample") {
+        // For sample voices, pass the filename to the API
         formData.append('sample_audio', SAMPLE_VOICES[language].file);
       } else {
-        formData.append('speaker_wav', uploadedFile);
+        // For custom voices, upload the file
+        formData.append('reference_audio', uploadedFile);
       }
 
       const response = await fetch(apiUrl, {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          // Don't set Content-Type, let browser set it for FormData
+        }
       });
 
       if (!response.ok) {
-        throw new Error(texts.errorMessage);
+        const errorText = await response.text();
+        throw new Error(`API Error (${response.status}): ${errorText.substring(0, 100)}`);
       }
 
       const audioBlob = await response.blob();
       const audioUrl = URL.createObjectURL(audioBlob);
       setResult(audioUrl);
     } catch (err) {
+      console.error('Synthesis error:', err);
       setError(err.message || texts.errorMessage);
     } finally {
       setLoading(false);
