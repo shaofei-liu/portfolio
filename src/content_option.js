@@ -327,6 +327,81 @@ const translations = {
 
 // Project-specific details for rendering
 const projectDetails = {
+    project1: {
+        title_de: "Voice Synthesis - KI-gestützte Sprachsynthese mit Stimmenklonung",
+        title_en: "Voice Synthesis - AI-powered Text-to-Speech with Voice Cloning",
+        subtitle_de: "Eine fortschrittliche Text-zu-Sprache-Anwendung mit Zero-Shot-Stimmenklonung für natürliche mehresprachige Sprachsynthese mit benutzerdefinierter Stimmauswahl.",
+        subtitle_en: "An advanced text-to-speech application with zero-shot voice cloning for natural multilingual speech synthesis with custom voice selection.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Eine leistungsstarke Web-Anwendung zur natürlichen Text-zu-Sprache-Synthese mit erweiterbarer Stimmenklonung. Das System nutzt fortgeschrittene KI-Modelle zur Erzeugung hochwertiger synthetischer Sprachausgaben in mehreren Sprachen. Benutzer können vordefinierte Stimmsamples verwenden oder benutzerdefinierte Referenzaudios hochladen, um einzigartige, natürliche Stimmklone zu erstellen. Die kontinuierliche Textverarbeitung erzeugt flüssige, narrative Ausgaben ohne unnatürliche Pausen.",
+        introduction_en: "A powerful web application for natural text-to-speech synthesis with extensible voice cloning capabilities. The system leverages advanced AI models to produce high-quality synthetic speech output in multiple languages. Users can either use predefined voice samples or upload custom reference audio files to create unique, natural voice clones. Continuous text processing generates fluid, narrative output without unnatural pauses.",
+        keyFeatures_de: [
+            "Zero-Shot Stimmenklonung mit fortgeschrittenen TTS-Modellen",
+            "Multi-Language Unterstützung (Englisch, Deutsch und mehr)",
+            "Vordefinierte Stimmsamples für schnelle Prototypisierung",
+            "Benutzerdefinierte Referenzaudio-Upload für einzigartige Stimmklone",
+            "Natürliche kontinuierliche Sprachsynthese mit flüssigen Übergängen",
+            "REST API für Batch-Synthesierung und Integration",
+            "Responsive Web-Interface mit Echtzeit-Audio-Preview"
+        ],
+        keyFeatures_en: [
+            "Zero-shot voice cloning with advanced TTS models",
+            "Multi-language support (English, German, and more)",
+            "Predefined voice samples for quick prototyping",
+            "Custom reference audio upload for unique voice clones",
+            "Natural continuous speech synthesis with smooth transitions",
+            "REST API for batch synthesis and integration",
+            "Responsive web interface with real-time audio preview"
+        ],
+        codeFeatures_de: [
+            "XTTS v2 Multilingual Speech Synthesis Engine (Coqui AI)",
+            "FastAPI Backend mit asynchroner Verarbeitung",
+            "librosa-basierte Audio-Preprocessing und Normalisierung",
+            "FFmpeg Integration für flexible Audioformat-Konvertierung",
+            "React Frontend mit responsiver Benutzeroberflächendesign",
+            "Docker-Containerisierung für nahtlose Cloud-Bereitstellung",
+            "Uvicorn ASGI Server für hochperformante Anfragen"
+        ],
+        codeFeatures_en: [
+            "XTTS v2 multilingual speech synthesis engine (Coqui AI)",
+            "FastAPI backend with asynchronous processing",
+            "librosa-based audio preprocessing and normalization",
+            "FFmpeg integration for flexible audio format conversion",
+            "React frontend with responsive interface design",
+            "Docker containerization for seamless cloud deployment",
+            "Uvicorn ASGI server for high-performance request handling"
+        ],
+        ki_modell_de: "XTTS v2 (Zero-Shot Text-to-Speech Modell)",
+        ki_modell_en: "XTTS v2 (Zero-Shot Text-to-Speech Model)",
+        framework_de: "PyTorch 2.10+ + FastAPI 0.104.1",
+        framework_en: "PyTorch 2.10+ + FastAPI 0.104.1",
+        datensatz_de: "Multilingual Sprachsamples (Englisch, Deutsch, 8+ weitere Sprachen)",
+        datensatz_en: "Multilingual voice samples (English, German, 8+ additional languages)",
+        techStack_de: [
+            "Python 3.11",
+            "FastAPI 0.104.1",
+            "PyTorch 2.10+",
+            "Coqui TTS 0.22.0",
+            "librosa 0.10.0",
+            "soundfile 0.13.1"
+        ],
+        techStack_en: [
+            "Python 3.11",
+            "FastAPI 0.104.1",
+            "PyTorch 2.10+",
+            "Coqui TTS 0.22.0",
+            "librosa 0.10.0",
+            "soundfile 0.13.1"
+        ],
+        github: "https://github.com/shaofei-liu/voice-synthesis",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/voice-synthesis",
+        fileInfo: {
+            pages: "",
+            description: "Live-Demo auf HuggingFace Spaces verfügbar",
+            description_en: "Live demo available on HuggingFace Spaces"
+        }
+    },
     project2: {
         title_de: "Dog Breed Classifier - KI-gestützte Hunderassenidentifikation",
         title_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
