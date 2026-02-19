@@ -15,6 +15,7 @@ export default function VoiceSynthesis() {
   const [sampleVoices, setSampleVoices] = useState({});
   const [samplesLoading, setSamplesLoading] = useState(true);
   const audioRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   // Fetch available sample voices on component mount
   useEffect(() => {
@@ -25,15 +26,22 @@ export default function VoiceSynthesis() {
           : 'https://williamcass-voice-synthesis.hf.space/samples';
         
         const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Failed to fetch samples');
+        
         const data = await response.json();
         setSampleVoices(data);
         
-        // Set default sample voice for English
-        if (data.en && data.en.voices && data.en.voices.length > 0) {
+        // Set default sample voice for English (first available)
+        if (data.en?.voices?.length > 0) {
           setSelectedSampleFile(data.en.voices[0].filename);
+        } else if (data.de?.voices?.length > 0) {
+          // Fallback to German if English not available
+          setSelectedSampleFile(data.de.voices[0].filename);
+          setLanguage('de');
         }
       } catch (err) {
         console.error('Failed to fetch sample voices:', err);
+        setSampleVoices({ en: { language: "English", voices: [] }, de: { language: "German", voices: [] } });
       } finally {
         setSamplesLoading(false);
       }
@@ -63,7 +71,8 @@ export default function VoiceSynthesis() {
       playPreview: "Vorschau abspielen",
       stopPreview: "Stoppen",
       previewLoading: "Lädt...",
-      errorMessage: "Fehler bei der Sprachsynthese"
+      errorMessage: "Fehler bei der Sprachsynthese",
+      noCustomUpload: "Bitte laden Sie eine Audiodatei hoch"
     },
     en: {
       title: "Speech Synthesis with Voice Cloning",
@@ -85,7 +94,8 @@ export default function VoiceSynthesis() {
       playPreview: "Play Preview",
       stopPreview: "Stop",
       previewLoading: "Loading...",
-      errorMessage: "Error during speech synthesis"
+      errorMessage: "Error during speech synthesis",
+      noCustomUpload: "Please upload an audio file"
     }
   };
 
@@ -111,9 +121,16 @@ export default function VoiceSynthesis() {
       return;
     }
 
-    if (selectedVoice === "sample" && !selectedSampleFile) {
-      setError(texts.selectAudio);
-      return;
+    if (selectedVoice === "sample") {
+      // Check if sample file is actually available
+      const currentLanguageSamples = sampleVoices[language]?.voices || [];
+      if (!selectedSampleFile || currentLanguageSamples.length === 0) {
+        const message = language === 'de'
+          ? 'Beispielstimmen sind nicht verfügbar. Bitte laden Sie stattdessen Ihre eigene Audiodatei hoch.'
+          : 'No sample voices available. Please upload your own audio file instead.';
+        setError(message);
+        return;
+      }
     }
 
     setLoading(true);
@@ -181,10 +198,12 @@ export default function VoiceSynthesis() {
               className={`vs-lang-btn ${language === 'de' ? 'active' : ''}`}
               onClick={() => {
                 setLanguage('de');
-                setSelectedVoice('sample');
-                // Set default sample voice for German
-                if (sampleVoices.de && sampleVoices.de.voices && sampleVoices.de.voices.length > 0) {
+                // Only switch to sample mode if samples are available
+                if (sampleVoices.de?.voices?.length > 0) {
+                  setSelectedVoice('sample');
                   setSelectedSampleFile(sampleVoices.de.voices[0].filename);
+                } else if (sampleVoices.en?.voices?.length > 0) {
+                  // Keep current mode if no DE samples
                 }
               }}
             >
@@ -194,9 +213,9 @@ export default function VoiceSynthesis() {
               className={`vs-lang-btn ${language === 'en' ? 'active' : ''}`}
               onClick={() => {
                 setLanguage('en');
-                setSelectedVoice('sample');
-                // Set default sample voice for English
-                if (sampleVoices.en && sampleVoices.en.voices && sampleVoices.en.voices.length > 0) {
+                // Only switch to sample mode if samples are available
+                if (sampleVoices.en?.voices?.length > 0) {
+                  setSelectedVoice('sample');
                   setSelectedSampleFile(sampleVoices.en.voices[0].filename);
                 }
               }}
@@ -249,6 +268,19 @@ export default function VoiceSynthesis() {
         </div>
 
         {/* Voice Selection */}
+        {selectedVoice === 'sample' && !samplesLoading && (!sampleVoices[language]?.voices || sampleVoices[language].voices.length === 0) && (
+          <div className="vs-control-group">
+            <div className="vs-warning">
+              <div className="vs-warning-title">⚠️ No Sample Voices Available</div>
+              <div className="vs-warning-text">
+                {language === 'de' 
+                  ? 'Beispielstimmen sind noch nicht konfiguriert. Bitte verwenden Sie den "Benutzerdefinierte Stimme" Modus und laden Sie Ihre eigene Audiodatei hoch.' 
+                  : 'Sample voices are not yet configured. Please use the "Custom Voice" mode and upload your own audio file.'}
+              </div>
+            </div>
+          </div>
+        )}
+
         {selectedVoice === 'sample' && (
           <div className="vs-control-group">
             <label>{texts.voiceSelect}</label>
@@ -273,7 +305,11 @@ export default function VoiceSynthesis() {
                 ))}
               </div>
             ) : (
-              <div className="vs-error">No sample voices available</div>
+              <div className="vs-no-samples">
+                {language === 'de'
+                  ? 'Für diese Sprache sind keine Beispielstimmen verfügbar.'
+                  : 'No sample voices available for this language.'}
+              </div>
             )}
           </div>
         )}
@@ -282,17 +318,26 @@ export default function VoiceSynthesis() {
         {selectedVoice === 'custom' && (
           <div className="vs-control-group">
             <label>{texts.uploadAudio}</label>
-            <div className="vs-file-input-wrapper">
+            <label className="vs-file-input-wrapper">
               <input
+                ref={fileInputRef}
                 type="file"
                 accept="audio/*"
                 onChange={handleFileUpload}
                 className="vs-file-input"
               />
               <div className="vs-file-name">
-                {uploadedFileName || texts.uploadAudio}
+                {uploadedFileName ? (
+                  <>
+                    ✓ {uploadedFileName}
+                  </>
+                ) : (
+                  <>
+                    📁 {texts.uploadAudio}
+                  </>
+                )}
               </div>
-            </div>
+            </label>
           </div>
         )}
 
