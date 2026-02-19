@@ -233,9 +233,9 @@ const contactConfig = {
     // YOUR_TEMPLATE_ID: "template_xxx",
     // YOUR_USER_ID: "user_xxx",
 
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
+    YOUR_SERVICE_ID: "service_pkbdt9t",
+    YOUR_TEMPLATE_ID: "template_90tycgn",
+    YOUR_USER_ID: "Z1suAQc_8M6UV0e-M",
 };
 
 const socialprofils = {
