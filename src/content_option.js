@@ -738,47 +738,47 @@ const projectDetails = {
         }
     },
     project8: {
-        title_de: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmusentwicklung",
+        title_de: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmenentwicklung",
         title_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development",
-        subtitle_de: "Algorithmusentwicklung für Hinderniserkennung basierend auf MIMO-FMCW-Radardaten während eines Praktikums bei Continental Automotive GmbH. Schwerpunkt lag auf der Signal- und Bildverarbeitung zur Verbesserung der Erkennungsgenauigkeit in verschiedenen Fahrbedingungen und Umgebungsszenarios.",
-        subtitle_en: "Algorithm development for obstacle detection based on MIMO-FMCW radar data during an internship at Continental Automotive GmbH. Focus on signal and image processing to improve detection accuracy across various driving conditions and environmental scenarios.",
+        subtitle_de: "Algorithmenentwicklung für Hinderniserkennung und Klassifikation basierend auf MIMO-FMCW-Radardaten. Fokus auf Signal- und Bildverarbeitung zur Verbesserung der Erkennungsgenauigkeit in verschiedenen Fahrbedingungen. Entwicklung einer robusten Erkennungspipeline von der Rohdatenverarbeitung bis zur Zielklassifikation mit Optimierung für Echtzeit-Automotive-Anwendungen.",
+        subtitle_en: "Algorithm development for obstacle detection and classification based on MIMO-FMCW radar data. Focus on signal and image processing to improve detection accuracy across various driving conditions. Development of a robust detection pipeline from raw data processing to target classification with optimization for real-time automotive applications.",
         description_de: "",
         description_en: "",
-        introduction_de: "Entwicklung von Hinderniserkennungsalgorithmen mit MIMO-FMCW-Radardaten während eines sechsmonatigen Praktikums bei Continental. Die Arbeit umfasste die komplette Signal- und Bildverarbeitungspipeline, von der Rohdatenverarbeitung bis zur Zielklassifikation. Besonderer Fokus lag auf der Robustheit gegenüber verschiedenen Umgebungsbedingungen und der Optimierung der Recheneffizienz für Echtzeit-Automotive-Anwendungen.",
-        introduction_en: "Development of obstacle detection algorithms using MIMO-FMCW radar data during a six-month internship at Continental. Work included the complete signal and image processing pipeline from raw data processing to target classification. Special focus on robustness across various environmental conditions and optimization of computational efficiency for real-time automotive applications.",
+        introduction_de: "Aufbau und Evaluation von Hinderniserkennungsalgorithmen zur umfassenden Analyse von MIMO-FMCW-Radardaten und Vorhersage von Zielerkennungen in komplexen Fahrsituationen. Aktive Mitarbeit bei der Entwicklung bildgeführter Erkennungssysteme zur Unterstützung automatisierter Fahrassistenzsysteme. Das System nutzt fortgeschrittene Signal- und Bildverarbeitungstechniken, um robuste Hinderniserkennung unter verschiedenen Umgebungsbedingungen zu ermöglichen und präzise Zielklassifikation sowie Sicherheitsempfehlungen zu liefern.",
+        introduction_en: "Development and evaluation of obstacle detection algorithms for comprehensive analysis of MIMO-FMCW radar data and prediction of target detections in complex driving situations. Active participation in the development of image-guided detection systems to support automated driver assistance systems. The system leverages advanced signal and image processing techniques to enable robust obstacle detection under various environmental conditions and provide precise target classification and safety recommendations.",
         keyFeatures_de: [
-            "MIMO-FMCW Radar Signalverarbeitung und Datenerfassung",
-            "Hinderniserkennung und -klassifikation in komplexen Fehler-Szenarios",
-            "Robuste Algorithmen für verschiedene Fahrbedingungen",
-            "Echtzeit-Verarbeitung für Automotive-Integration",
-            "Quantifizierbare Steigerung der Erkennungsgenauigkeit"
+            "MIMO-FMCW Radar Signalverarbeitung und Multi-dimensionale Datenerfassung",
+            "Robuste Hinderniserkennung und Klassifikation in komplexen Szenarien",
+            "Adaptive Algorithmen für verschiedene Fahrbedingungen und Wetterverhältnisse",
+            "Echtzeit-Verarbeitung und Optimierung für Automotive-Integration",
+            "Quantifizierbare Steigerung der Erkennungsgenauigkeit und Reduktion von Fehlalarm-Raten"
         ],
         keyFeatures_en: [
-            "MIMO-FMCW radar signal processing and data acquisition",
-            "Obstacle detection and classification in complex error scenarios",
-            "Robust algorithms for various driving conditions",
-            "Real-time processing for automotive integration",
-            "Measurable improvements in detection accuracy"
+            "MIMO-FMCW radar signal processing and multi-dimensional data acquisition",
+            "Robust obstacle detection and classification in complex scenarios",
+            "Adaptive algorithms for various driving conditions and weather",
+            "Real-time processing and optimization for automotive integration",
+            "Measurable improvement in detection accuracy and false alarm reduction"
         ],
         codeFeatures_de: [
-            "MATLAB Signalverarbeitung für Radar-Rohdaten",
-            "FFT und Clutter-Unterdrückung für Signal-Bereinigung",
-            "2D-Detektion und Zielklassifikation Algorithmen",
-            "Integration mit Vehicle Control Systemen",
-            "Testframeworks für Verschiedene Fahrbedingungen"
+            "MATLAB/Python Signalverarbeitung für Radar-Rohdaten und spektrale Analyse",
+            "FFT, Clutter-Unterdrückung und Signal-Reinigung Algorithmen",
+            "2D-Detektion, Zieltracking und Klassifikation Methoden",
+            "Integration mit Vehicle Control und Safety Systems",
+            "Validierungs- und Test-Frameworks für robuste Evaluation"
         ],
         codeFeatures_en: [
-            "MATLAB signal processing for radar raw data",
-            "FFT and clutter suppression for signal cleaning",
-            "2D detection and target classification algorithms",
-            "Integration with vehicle control systems",
-            "Test frameworks for various driving conditions"
+            "MATLAB/Python signal processing for radar raw data and spectral analysis",
+            "FFT, clutter suppression and signal cleaning algorithms",
+            "2D detection, target tracking and classification methods",
+            "Integration with vehicle control and safety systems",
+            "Validation and test frameworks for robust evaluation"
         ],
         internalImg: radar1Img,
         fileInfo: {
             pages: "",
-            description: "Technische Details aufgrund der Zusammenarbeit mit Continental nicht verfügbar",
-            description_en: "Technical details not available due to collaborative work with Continental"
+            description: "Technische Details aufgrund der Zusammenarbeit nicht verfügbar",
+            description_en: "Technical details not available due to partnership"
         }
     }
 };

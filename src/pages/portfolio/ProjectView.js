@@ -848,17 +848,35 @@ export default function ProjectView() {
             borderRadius: "8px",
             borderLeft: "4px solid #b45309"
           }}>
-            <h4 style={{ margin: "0 0 12px 0", color: "#92400e", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "Project Overview" : "Projektübersicht"}
+            <h4 style={{ margin: "0 0 12px 0", color: "#b45309", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Introduction" : "Einführung"}
             </h4>
-            <p style={{ margin: "0", color: "#92400e", fontSize: "14px", lineHeight: "1.6" }}>
+            <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.8" }}>
               {introduction}
             </p>
           </div>
         )}
 
         {/* Key Features */}
-        {keyFeatures && keyFeatures.length > 0 && (
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0f4ff",
+          borderRadius: "8px",
+          borderLeft: "4px solid #0066cc"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#0066cc", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+            {keyFeatures && keyFeatures.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Implementation */}
+        {codeFeatures && codeFeatures.length > 0 && (
           <div style={{
             marginBottom: "24px",
             padding: "20px",
@@ -866,52 +884,34 @@ export default function ProjectView() {
             borderRadius: "8px",
             borderLeft: "4px solid #f59e0b"
           }}>
-            <h4 style={{ margin: "0 0 12px 0", color: "#a16207", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+            <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Technical Implementation" : "Technische Umsetzung"}
             </h4>
-            <ul style={{ margin: "0", paddingLeft: "20px", color: "#a16207", fontSize: "14px" }}>
-              {keyFeatures.map((feature, idx) => <li key={idx}>{feature}</li>)}
+            <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
+              {codeFeatures.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
             </ul>
           </div>
         )}
 
-        {/* Code & Technical Features */}
-        {codeFeatures && codeFeatures.length > 0 && (
-          <div style={{
-            marginBottom: "24px",
-            padding: "20px",
-            backgroundColor: "#e0f2fe",
-            borderRadius: "8px",
-            borderLeft: "4px solid #0284c7"
-          }}>
-            <h4 style={{ margin: "0 0 12px 0", color: "#0c4a6e", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "Technical Features" : "Technische Merkmale"}
-            </h4>
-            <ul style={{ margin: "0", paddingLeft: "20px", color: "#0c4a6e", fontSize: "14px" }}>
-              {codeFeatures.map((feature, idx) => <li key={idx}>{feature}</li>)}
-            </ul>
-          </div>
-        )}
-
-        {/* File Info / Details */}
-        {details.fileInfo && (
-          <div style={{
-            marginBottom: "24px",
-            padding: "20px",
-            backgroundColor: "#f0fdf4",
-            borderRadius: "8px",
-            borderLeft: "4px solid #10b981"
-          }}>
-            <h4 style={{ margin: "0 0 12px 0", color: "#059669", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "Internship Experience" : "Praktikumserfahrung"}
-            </h4>
-            <p style={{ margin: "0 0 12px 0", color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
-              {lang === 'en' 
-                ? "This project was developed during my internship at Continental Automotive GmbH in Regensburg, Germany (03/2019 - 09/2019). Since it was developed during my partnership with Continental, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
-                : "Dieses Projekt wurde während meines Praktikums bei Continental Automotive GmbH in Regensburg, Deutschland (03/2019 - 09/2019) entwickelt. Da es während meiner Partnerschaft mit Continental entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
-            </p>
-          </div>
-        )}
+        {/* Work Experience */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#f0fdf4",
+          borderRadius: "8px",
+          borderLeft: "4px solid #10b981"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#10b981", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Work Experience" : "Berufserfahrung"}
+          </h4>
+          <p style={{ margin: "0 0 12px 0", color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
+            {lang === 'en' 
+              ? "This project was developed during my internship at Continental Automotive GmbH in Regensburg, Germany (03/2019 - 09/2019). Since it was developed during my partnership with Continental, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
+              : "Dieses Projekt wurde während meines Praktikums bei Continental Automotive GmbH in Regensburg, Deutschland (03/2019 - 09/2019) entwickelt. Da es während meiner Partnerschaft mit Continental entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
+          </p>
+        </div>
 
         {/* Contact and Back */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
