@@ -106,7 +106,7 @@ export const Portfolio = () => {
         
         {/* Personal Projects Section */}
         {renderProjectSection(
-          lang === 'en' ? "Personal Projects" : "Persönliche Projekte",
+          lang === 'en' ? "Personal & Interest Projects" : "Persönliche und Interessenprojekte",
           personalProjects
         )}
         
