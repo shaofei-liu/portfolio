@@ -10,6 +10,8 @@ import cookerImg from './assets/images/cooker.png';
 import cooker1Img from './assets/images/cooker-1.png';
 import digitalTwinImg from './assets/images/digital-twin.png';
 import digitalTwin1Img from './assets/images/digital-twin-1.png';
+import radarImg from './assets/images/radar.png';
+import radar1Img from './assets/images/radar-1.png';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -206,6 +208,14 @@ const dataportfolio = [
         img: digitalTwinImg,
         description: "Digital Twin - KI-gestützte medizinische Diagnoseverfahren und Patientendatensystem",
         description_en: "Digital Twin - AI-powered Medical Diagnosis System and Patient Data Analytics",
+        link: "#",
+        type: "work",
+    },
+    {
+        id: "project8",
+        img: radarImg,
+        description: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmusentwicklung bei Continental",
+        description_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development at Continental",
         link: "#",
         type: "work",
     },
@@ -725,6 +735,50 @@ const projectDetails = {
             lines_cuda: "500+",
             models_trained: "3",
             datasets: "Action Recognition, MNIST"
+        }
+    },
+    project8: {
+        title_de: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmusentwicklung",
+        title_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development",
+        subtitle_de: "Algorithmusentwicklung für Hinderniserkennung basierend auf MIMO-FMCW-Radardaten während eines Praktikums bei Continental Automotive GmbH. Schwerpunkt lag auf der Signal- und Bildverarbeitung zur Verbesserung der Erkennungsgenauigkeit in verschiedenen Fahrbedingungen und Umgebungsszenarios.",
+        subtitle_en: "Algorithm development for obstacle detection based on MIMO-FMCW radar data during an internship at Continental Automotive GmbH. Focus on signal and image processing to improve detection accuracy across various driving conditions and environmental scenarios.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Entwicklung von Hinderniserkennungsalgorithmen mit MIMO-FMCW-Radardaten während eines sechsmonatigen Praktikums bei Continental. Die Arbeit umfasste die komplette Signal- und Bildverarbeitungspipeline, von der Rohdatenverarbeitung bis zur Zielklassifikation. Besonderer Fokus lag auf der Robustheit gegenüber verschiedenen Umgebungsbedingungen und der Optimierung der Recheneffizienz für Echtzeit-Automotive-Anwendungen.",
+        introduction_en: "Development of obstacle detection algorithms using MIMO-FMCW radar data during a six-month internship at Continental. Work included the complete signal and image processing pipeline from raw data processing to target classification. Special focus on robustness across various environmental conditions and optimization of computational efficiency for real-time automotive applications.",
+        keyFeatures_de: [
+            "MIMO-FMCW Radar Signalverarbeitung und Datenerfassung",
+            "Hinderniserkennung und -klassifikation in komplexen Fehler-Szenarios",
+            "Robuste Algorithmen für verschiedene Fahrbedingungen",
+            "Echtzeit-Verarbeitung für Automotive-Integration",
+            "Quantifizierbare Steigerung der Erkennungsgenauigkeit"
+        ],
+        keyFeatures_en: [
+            "MIMO-FMCW radar signal processing and data acquisition",
+            "Obstacle detection and classification in complex error scenarios",
+            "Robust algorithms for various driving conditions",
+            "Real-time processing for automotive integration",
+            "Measurable improvements in detection accuracy"
+        ],
+        codeFeatures_de: [
+            "MATLAB Signalverarbeitung für Radar-Rohdaten",
+            "FFT und Clutter-Unterdrückung für Signal-Bereinigung",
+            "2D-Detektion und Zielklassifikation Algorithmen",
+            "Integration mit Vehicle Control Systemen",
+            "Testframeworks für Verschiedene Fahrbedingungen"
+        ],
+        codeFeatures_en: [
+            "MATLAB signal processing for radar raw data",
+            "FFT and clutter suppression for signal cleaning",
+            "2D detection and target classification algorithms",
+            "Integration with vehicle control systems",
+            "Test frameworks for various driving conditions"
+        ],
+        internalImg: radar1Img,
+        fileInfo: {
+            pages: "",
+            description: "Technische Details aufgrund der Zusammenarbeit mit Continental nicht verfügbar",
+            description_en: "Technical details not available due to collaborative work with Continental"
         }
     }
 };

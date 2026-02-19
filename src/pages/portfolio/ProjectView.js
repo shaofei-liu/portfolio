@@ -798,6 +798,156 @@ export default function ProjectView() {
     );
   }
 
+  // Project 8: Radar Obstacle Detection
+  if (project.id === "project8") {
+    const details = projectDetails.project8 || {};
+    const keyFeatures = lang === 'en' ? details.keyFeatures_en : details.keyFeatures_de;
+    const codeFeatures = lang === 'en' ? details.codeFeatures_en : details.codeFeatures_de;
+    const introduction = lang === 'en' ? details.introduction_en : details.introduction_de;
+
+    return (
+      <div className="project-view" style={{ padding: 16 }}>
+        <h2 style={{ marginBottom: 8 }}>{lang === 'en' ? details.title_en : details.title_de}</h2>
+        <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
+          {lang === 'en' ? details.subtitle_en : details.subtitle_de}
+        </p>
+
+        {/* Internal Image with Blur */}
+        {details.internalImg && (
+          <div style={{
+            margin: "0 0 24px 0",
+            borderRadius: "8px",
+            overflow: "hidden",
+            maxHeight: "300px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#f5f5f5"
+          }}>
+            <img 
+              src={details.internalImg} 
+              alt="Radar System" 
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                filter: "blur(12px)",
+                display: "block"
+              }}
+            />
+          </div>
+        )}
+
+        {/* Introduction Section */}
+        {introduction && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#f9f3ee",
+            borderRadius: "8px",
+            borderLeft: "4px solid #b45309"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#92400e", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Project Overview" : "Projektübersicht"}
+            </h4>
+            <p style={{ margin: "0", color: "#92400e", fontSize: "14px", lineHeight: "1.6" }}>
+              {introduction}
+            </p>
+          </div>
+        )}
+
+        {/* Key Features */}
+        {keyFeatures && keyFeatures.length > 0 && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#fef3c7",
+            borderRadius: "8px",
+            borderLeft: "4px solid #f59e0b"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#a16207", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Key Features" : "Hauptmerkmale"}
+            </h4>
+            <ul style={{ margin: "0", paddingLeft: "20px", color: "#a16207", fontSize: "14px" }}>
+              {keyFeatures.map((feature, idx) => <li key={idx}>{feature}</li>)}
+            </ul>
+          </div>
+        )}
+
+        {/* Code & Technical Features */}
+        {codeFeatures && codeFeatures.length > 0 && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#e0f2fe",
+            borderRadius: "8px",
+            borderLeft: "4px solid #0284c7"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#0c4a6e", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Technical Features" : "Technische Merkmale"}
+            </h4>
+            <ul style={{ margin: "0", paddingLeft: "20px", color: "#0c4a6e", fontSize: "14px" }}>
+              {codeFeatures.map((feature, idx) => <li key={idx}>{feature}</li>)}
+            </ul>
+          </div>
+        )}
+
+        {/* File Info / Details */}
+        {details.fileInfo && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#f0fdf4",
+            borderRadius: "8px",
+            borderLeft: "4px solid #10b981"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#059669", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Internship Experience" : "Praktikumserfahrung"}
+            </h4>
+            <p style={{ margin: "0 0 12px 0", color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
+              {lang === 'en' 
+                ? "This project was developed during my internship at Continental Automotive GmbH in Regensburg, Germany (03/2019 - 09/2019). Since it was developed during my partnership with Continental, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
+                : "Dieses Projekt wurde während meines Praktikums bei Continental Automotive GmbH in Regensburg, Deutschland (03/2019 - 09/2019) entwickelt. Da es während meiner Partnerschaft mit Continental entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
+            </p>
+          </div>
+        )}
+
+        {/* Contact and Back */}
+        <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Link
+            to="/contact"
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#0066cc',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.3s ease',
+              display: 'inline-block'
+            }}
+            onMouseOver={(e) => e.style.backgroundColor = '#0052a3'}
+            onMouseOut={(e) => e.style.backgroundColor = '#0066cc'}
+          >
+            ✉️ {lang === 'en' ? "Contact Me" : "Kontakt"}
+          </Link>
+          <Link 
+            to="/portfolio" 
+            className="btn"
+            style={{
+              padding: "10px 20px",
+              fontSize: "14px",
+              marginLeft: "12px"
+            }}
+          >
+            {translations[lang].projectView.back}
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   // Project 5: Museum Intelligence
   if (project.id === "project5") {
     const details = projectDetails.project5 || {};
