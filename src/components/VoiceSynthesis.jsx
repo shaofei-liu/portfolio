@@ -1,22 +1,46 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./VoiceSynthesis.css";
-
-const SAMPLE_VOICES = {
-  en: { name: "Trump", file: "trump.wav" },
-  de: { name: "Merkel", file: "merkel.wav" }
-};
 
 export default function VoiceSynthesis() {
   const [language, setLanguage] = useState("en");
   const [text, setText] = useState("");
   const [selectedVoice, setSelectedVoice] = useState("sample");
+  const [selectedSampleFile, setSelectedSampleFile] = useState("");
   const [uploadedFile, setUploadedFile] = useState(null);
   const [uploadedFileName, setUploadedFileName] = useState("");
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [voicePreviewUrl, setVoicePreviewUrl] = useState(null);
+  const [sampleVoices, setSampleVoices] = useState({});
+  const [samplesLoading, setSamplesLoading] = useState(true);
   const audioRef = useRef(null);
+
+  // Fetch available sample voices on component mount
+  useEffect(() => {
+    const fetchSamples = async () => {
+      try {
+        const apiUrl = process.env.NODE_ENV === 'development'
+          ? 'http://localhost:7860/samples'
+          : 'https://williamcass-voice-synthesis.hf.space/samples';
+        
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        setSampleVoices(data);
+        
+        // Set default sample voice for English
+        if (data.en && data.en.voices && data.en.voices.length > 0) {
+          setSelectedSampleFile(data.en.voices[0].filename);
+        }
+      } catch (err) {
+        console.error('Failed to fetch sample voices:', err);
+      } finally {
+        setSamplesLoading(false);
+      }
+    };
+    
+    fetchSamples();
+  }, []);
 
   const t = {
     de: {
@@ -30,6 +54,7 @@ export default function VoiceSynthesis() {
       uploadAudio: "Audio hochladen (.wav, .mp3, etc.)",
       synthesize: "Synthesieren",
       synthesizing: "Wird synthetisiert...",
+      processing: "⏳ Verarbeitung läuft... Dies kann etwa 1 Minute dauern.",
       success: "Erfolgreich generiert!",
       error: "Fehler",
       selectText: "Bitte geben Sie Text ein",
@@ -51,6 +76,7 @@ export default function VoiceSynthesis() {
       uploadAudio: "Upload Audio (.wav, .mp3, etc.)",
       synthesize: "Synthesize",
       synthesizing: "Synthesizing...",
+      processing: "⏳ Processing... This may take about 1 minute.",
       success: "Successfully generated!",
       error: "Error",
       selectText: "Please enter some text",
@@ -85,6 +111,11 @@ export default function VoiceSynthesis() {
       return;
     }
 
+    if (selectedVoice === "sample" && !selectedSampleFile) {
+      setError(texts.selectAudio);
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setResult(null);
@@ -99,8 +130,8 @@ export default function VoiceSynthesis() {
       formData.append('language', language);
 
       if (selectedVoice === "sample") {
-        // For sample voices, pass the language code (en or de)
-        formData.append('sample_audio', language);
+        // For sample voices, pass the actual filename
+        formData.append('sample_audio', selectedSampleFile);
       } else {
         // For custom voices, upload the file
         formData.append('reference_audio', uploadedFile);
@@ -151,6 +182,10 @@ export default function VoiceSynthesis() {
               onClick={() => {
                 setLanguage('de');
                 setSelectedVoice('sample');
+                // Set default sample voice for German
+                if (sampleVoices.de && sampleVoices.de.voices && sampleVoices.de.voices.length > 0) {
+                  setSelectedSampleFile(sampleVoices.de.voices[0].filename);
+                }
               }}
             >
               🇩🇪 Deutsch
@@ -160,6 +195,10 @@ export default function VoiceSynthesis() {
               onClick={() => {
                 setLanguage('en');
                 setSelectedVoice('sample');
+                // Set default sample voice for English
+                if (sampleVoices.en && sampleVoices.en.voices && sampleVoices.en.voices.length > 0) {
+                  setSelectedSampleFile(sampleVoices.en.voices[0].filename);
+                }
               }}
             >
               🇺🇸 English
@@ -213,16 +252,29 @@ export default function VoiceSynthesis() {
         {selectedVoice === 'sample' && (
           <div className="vs-control-group">
             <label>{texts.voiceSelect}</label>
-            <div className="vs-sample-voices">
-              <div className="vs-voice-card">
-                <span className="vs-voice-flag">
-                  {language === 'de' ? '🇩🇪' : '🇺🇸'}
-                </span>
-                <span className="vs-voice-name">
-                  {SAMPLE_VOICES[language].name}
-                </span>
+            {samplesLoading ? (
+              <div className="vs-loading">{texts.previewLoading}</div>
+            ) : sampleVoices[language]?.voices && sampleVoices[language].voices.length > 0 ? (
+              <div className="vs-sample-voices">
+                {sampleVoices[language].voices.map((voice) => (
+                  <button
+                    key={voice.filename}
+                    className={`vs-voice-card ${selectedSampleFile === voice.filename ? 'active' : ''}`}
+                    onClick={() => setSelectedSampleFile(voice.filename)}
+                    title={voice.name}
+                  >
+                    <span className="vs-voice-flag">
+                      {language === 'de' ? '🇩🇪' : '🇺🇸'}
+                    </span>
+                    <span className="vs-voice-name">
+                      {voice.name}
+                    </span>
+                  </button>
+                ))}
               </div>
-            </div>
+            ) : (
+              <div className="vs-error">No sample voices available</div>
+            )}
           </div>
         )}
 
@@ -259,6 +311,13 @@ export default function VoiceSynthesis() {
         >
           {loading ? texts.synthesizing : texts.synthesize}
         </button>
+
+        {/* Processing Notification */}
+        {loading && (
+          <div className="vs-processing-notification">
+            {texts.processing}
+          </div>
+        )}
       </div>
 
       {/* Result Section */}
