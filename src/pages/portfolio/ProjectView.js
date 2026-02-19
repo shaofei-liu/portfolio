@@ -164,7 +164,7 @@ export default function ProjectView() {
               onMouseOver={(e) => e.target.style.backgroundColor = '#555'}
               onMouseOut={(e) => e.target.style.backgroundColor = '#333'}
             >
-              📊 GitHub
+              📊 GitHub Repository
             </a>
           )}
           <Link
