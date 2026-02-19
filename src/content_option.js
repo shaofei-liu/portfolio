@@ -214,8 +214,8 @@ const dataportfolio = [
     {
         id: "project8",
         img: radarImg,
-        description: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmusentwicklung bei Continental",
-        description_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development at Continental",
+        description: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmusentwicklung",
+        description_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development",
         link: "#",
         type: "work",
     },
