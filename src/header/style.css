@@ -2,6 +2,7 @@
     top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    z-index: 10000;
 }
 
 .menu__button {
@@ -32,7 +33,7 @@
     line-height: 2;
     height: 50px;
     font-weight: bold;
-    z-index: 1000;
+    z-index: 10001;
 }
 
 .nav_ac:hover {
@@ -106,6 +107,7 @@
     top: 0;
     width: 100%;
     visibility: hidden;
+    z-index: 9999;
 }
 
 .menu__opend {
