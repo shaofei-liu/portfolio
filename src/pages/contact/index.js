@@ -17,6 +17,7 @@ export const ContactUs = () => {
   const [formData, setFormdata] = useState({
     email: "",
     name: "",
+    subject: "",
     message: "",
     loading: false,
     show: false,
@@ -34,6 +35,7 @@ export const ContactUs = () => {
       from_name: formData.email,
       user_name: formData.name,
       to_name: contactConfig.YOUR_EMAIL,
+      subject: formData.subject,
       message: formData.message,
     };
 
@@ -150,6 +152,17 @@ export const ContactUs = () => {
                   />
                 </Col>
               </Row>
+              <div className="form-group">
+                <input
+                  className="form-control rounded-0"
+                  id="subject"
+                  name="subject"
+                  placeholder={lang === 'en' ? "Subject" : "Betreff"}
+                  type="text"
+                  value={formData.subject || ""}
+                  onChange={handleChange}
+                />
+              </div>
               <textarea
                 className="form-control rounded-0"
                 id="message"
