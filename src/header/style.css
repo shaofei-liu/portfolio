@@ -41,18 +41,11 @@
 }
 
 .lang__button {
-    background: transparent !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    color: var(--text-color);
-    padding: 6px 8px !important;
+    border: none;
+    color: var(--text-color-2);
+    padding: 0 8px;
     margin-right: 8px;
-    border-radius: 4px;
     cursor: pointer;
-    height: auto !important;
-    line-height: normal !important;
-}
-.lang__button:hover {
-    background: rgba(255,255,255,0.04) !important;
 }
 
 .br-top,
