@@ -908,8 +908,8 @@ export default function ProjectView() {
           </h4>
           <p style={{ margin: "0 0 12px 0", color: "#166534", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en' 
-              ? "This project was developed during my internship at Continental Automotive GmbH in Regensburg, Germany (03/2019 - 09/2019). Since it was developed during my partnership with Continental, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
-              : "Dieses Projekt wurde während meines Praktikums bei Continental Automotive GmbH in Regensburg, Deutschland (03/2019 - 09/2019) entwickelt. Da es während meiner Partnerschaft mit Continental entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
+              ? "This project was developed during my internship at Continental Automotive. Since it was developed during my internship, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
+              : "Dieses Projekt wurde während meines Praktikums bei Continental Automotive entwickelt. Da es während meines Praktikums entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
           </p>
         </div>
 

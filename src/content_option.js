@@ -740,38 +740,40 @@ const projectDetails = {
     project8: {
         title_de: "Radar Hinderniserkennung - MIMO FMCW Radar Algorithmenentwicklung",
         title_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development",
-        subtitle_de: "Algorithmenentwicklung für Hinderniserkennung und Klassifikation basierend auf MIMO-FMCW-Radardaten. Fokus auf Signal- und Bildverarbeitung zur Verbesserung der Erkennungsgenauigkeit in verschiedenen Fahrbedingungen. Entwicklung einer robusten Erkennungspipeline von der Rohdatenverarbeitung bis zur Zielklassifikation mit Optimierung für Echtzeit-Automotive-Anwendungen.",
-        subtitle_en: "Algorithm development for obstacle detection and classification based on MIMO-FMCW radar data. Focus on signal and image processing to improve detection accuracy across various driving conditions. Development of a robust detection pipeline from raw data processing to target classification with optimization for real-time automotive applications.",
+        subtitle_de: "Algorithmenentwicklung für Hinderniserkennung und Klassifikation basierend auf MIMO-FMCW-Radardaten. Fokus auf Signal- und Bildverarbeitung zur Verbesserung der Erkennungsgenauigkeit und Robustheit unter verschiedenen Umgebungsbedingungen. Entwicklung einer umfassenden Erkennungspipeline von der Rohdatenverarbeitung bis zur Zielklassifikation mit Optimierung für Echtzeit-Systeme.",
+        subtitle_en: "Algorithm development for obstacle detection and classification based on MIMO-FMCW radar data. Focus on signal and image processing to improve detection accuracy and robustness under various environmental conditions. Development of a comprehensive detection pipeline from raw data processing to target classification with optimization for real-time system applications.",
         description_de: "",
         description_en: "",
-        introduction_de: "Aufbau und Evaluation von Hinderniserkennungsalgorithmen zur umfassenden Analyse von MIMO-FMCW-Radardaten und Vorhersage von Zielerkennungen in komplexen Fahrsituationen. Aktive Mitarbeit bei der Entwicklung bildgeführter Erkennungssysteme zur Unterstützung automatisierter Fahrassistenzsysteme. Das System nutzt fortgeschrittene Signal- und Bildverarbeitungstechniken, um robuste Hinderniserkennung unter verschiedenen Umgebungsbedingungen zu ermöglichen und präzise Zielklassifikation sowie Sicherheitsempfehlungen zu liefern.",
-        introduction_en: "Development and evaluation of obstacle detection algorithms for comprehensive analysis of MIMO-FMCW radar data and prediction of target detections in complex driving situations. Active participation in the development of image-guided detection systems to support automated driver assistance systems. The system leverages advanced signal and image processing techniques to enable robust obstacle detection under various environmental conditions and provide precise target classification and safety recommendations.",
+        introduction_de: "Aufbau und Evaluation von Hinderniserkennungsalgorithmen zur umfassenden Analyse von MIMO-FMCW-Radardaten und Vorhersage von Zielen in komplexen Umgebungen. Aktive Mitarbeit bei der Entwicklung bildgeführter Erkennungssysteme zur Unterstützung automatisierter Erkennungsanwendungen. Das System nutzt fortgeschrittene Signal- und Bildverarbeitungstechniken, um robuste Hinderniserkennung unter verschiedenen Umgebungsbedingungen zu ermöglichen und präzise Zielklassifikation sowie Vorhersagen zu liefern.",
+        introduction_en: "Development and evaluation of obstacle detection algorithms for comprehensive analysis of MIMO-FMCW radar data and prediction of targets in complex environments. Active participation in the development of image-guided detection systems to support automated detection applications. The system leverages advanced signal and image processing techniques to enable robust obstacle detection under various environmental conditions and provide precise target classification and predictions.",
         keyFeatures_de: [
             "MIMO-FMCW Radar Signalverarbeitung und Multi-dimensionale Datenerfassung",
             "Robuste Hinderniserkennung und Klassifikation in komplexen Szenarien",
-            "Adaptive Algorithmen für verschiedene Fahrbedingungen und Wetterverhältnisse",
-            "Echtzeit-Verarbeitung und Optimierung für Automotive-Integration",
+            "Adaptive Algorithmen für verschiedene Umgebungsbedingungen und Wetterverhältnisse",
+            "Echtzeit-Verarbeitung und Optimierung für System-Integration",
             "Quantifizierbare Steigerung der Erkennungsgenauigkeit und Reduktion von Fehlalarm-Raten"
         ],
         keyFeatures_en: [
             "MIMO-FMCW radar signal processing and multi-dimensional data acquisition",
             "Robust obstacle detection and classification in complex scenarios",
-            "Adaptive algorithms for various driving conditions and weather",
-            "Real-time processing and optimization for automotive integration",
+            "Adaptive algorithms for various environmental conditions and weather",
+            "Real-time processing and optimization for system integration",
             "Measurable improvement in detection accuracy and false alarm reduction"
         ],
         codeFeatures_de: [
             "MATLAB/Python Signalverarbeitung für Radar-Rohdaten und spektrale Analyse",
             "FFT, Clutter-Unterdrückung und Signal-Reinigung Algorithmen",
             "2D-Detektion, Zieltracking und Klassifikation Methoden",
-            "Integration mit Vehicle Control und Safety Systems",
+            "Integr
+
+ation mit Kontrollsystemen und Sicherheits-Pipelines",
             "Validierungs- und Test-Frameworks für robuste Evaluation"
         ],
         codeFeatures_en: [
             "MATLAB/Python signal processing for radar raw data and spectral analysis",
             "FFT, clutter suppression and signal cleaning algorithms",
             "2D detection, target tracking and classification methods",
-            "Integration with vehicle control and safety systems",
+            "Integration with control systems and safety pipelines",
             "Validation and test frameworks for robust evaluation"
         ],
         internalImg: radar1Img,
