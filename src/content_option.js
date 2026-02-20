@@ -764,9 +764,7 @@ const projectDetails = {
             "MATLAB/Python Signalverarbeitung für Radar-Rohdaten und spektrale Analyse",
             "FFT, Clutter-Unterdrückung und Signal-Reinigung Algorithmen",
             "2D-Detektion, Zieltracking und Klassifikation Methoden",
-            "Integr
-
-ation mit Kontrollsystemen und Sicherheits-Pipelines",
+            "Integration mit Kontrollsystemen und Sicherheits-Pipelines",
             "Validierungs- und Test-Frameworks für robuste Evaluation"
         ],
         codeFeatures_en: [
