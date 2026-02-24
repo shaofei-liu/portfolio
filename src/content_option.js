@@ -174,7 +174,7 @@ const dataportfolio = [
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
         type: "personal",
-        projectUrl: "https://portfolio-chatbot-k2apv4mklaemkakzx6zyir.streamlit.app/?embedded=true",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot",
     },
     {
         id: "project4",
@@ -514,40 +514,48 @@ const projectDetails = {
             "Flexible document management interface"
         ],
         codeFeatures_de: [
-            "Vector Database für effiziente Embedding-Speicherung (FAISS, Weaviate)",
-            "OpenAI/Local LLM Integration für Antwortgenerierung",
-            "LangChain Framework für RAG-Pipeline-Orchestrierung",
-            "Streamlit-basiertes Interactive Frontend",
-            "Echtzeit-Konversationshistorie und Session-Verwaltung",
-            "Batch-Processing für großformatige Dokumentationen"
+            "Chroma Vector Database für hocheffiziente Embedding-Speicherung",
+            "Google Gemini API Integration mit automatischem Fallback-System",
+            "LangChain Framework für RAG-Pipeline-Orchestrierung (semantic search)",
+            "FastAPI Backend mit WebSocket-Support für Echtzeit-Streaming",
+            "HTML5/CSS3/JavaScript Frontend ohne Abhängigkeiten",
+            "Professionelle Session-Verwaltung mit localStorage Persistence",
+            "Multi-Language Support (EN, DE, ZH, FR, ES)",
+            "Multi-Model Support (Flash Lite, Flash, Pro)"
         ],
         codeFeatures_en: [
-            "Vector database for efficient embedding storage (FAISS, Weaviate)",
-            "OpenAI/Local LLM integration for answer generation",
-            "LangChain framework for RAG pipeline orchestration",
-            "Streamlit-based interactive frontend",
-            "Real-time conversation history and session management",
-            "Batch processing for large-scale documentations"
+            "Chroma vector database for highly efficient embedding storage",
+            "Google Gemini API integration with automatic fallback system",
+            "LangChain framework for RAG pipeline orchestration (semantic search)",
+            "FastAPI backend with WebSocket support for real-time streaming",
+            "HTML5/CSS3/JavaScript frontend without dependencies",
+            "Professional session management with localStorage persistence",
+            "Multi-language support (EN, DE, ZH, FR, ES)",
+            "Multi-model support (Flash Lite, Flash, Pro)"
         ],
         techStack_de: [
-            "LangChain 0.1+",
-            "FAISS / Vector DB",
-            "OpenAI API / Local LLM",
-            "Streamlit",
+            "FastAPI 0.104+",
+            "Chroma Vector Database",
+            "LangChain 0.2+",
+            "Google Gemini API",
+            "WebSocket (Real-time Streaming)",
+            "Docker + HuggingFace Spaces",
             "Python 3.9+"
         ],
         techStack_en: [
-            "LangChain 0.1+",
-            "FAISS / Vector DB",
-            "OpenAI API / Local LLM",
-            "Streamlit",
+            "FastAPI 0.104+",
+            "Chroma Vector Database",
+            "LangChain 0.2+",
+            "Google Gemini API",
+            "WebSocket (Real-time Streaming)",
+            "Docker + HuggingFace Spaces",
             "Python 3.9+"
         ],
-        projectUrl: "https://portfolio-chatbot-k2apv4mklaemkakzx6zyir.streamlit.app/?embedded=true",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot",
         fileInfo: {
             pages: "",
-            description: "Live-Demo auf Streamlit Cloud verfügbar",
-            description_en: "Live demo available on Streamlit Cloud"
+            description: "Live-Demo auf HuggingFace Spaces mit FastAPI Backend",
+            description_en: "Live demo on HuggingFace Spaces with FastAPI backend"
         }
     },
     project7: {
