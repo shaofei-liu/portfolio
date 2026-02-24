@@ -174,7 +174,7 @@ const dataportfolio = [
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
         type: "personal",
-        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot?embedded=true",
     },
     {
         id: "project4",
@@ -551,7 +551,7 @@ const projectDetails = {
             "Docker + HuggingFace Spaces",
             "Python 3.9+"
         ],
-        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot?embedded=true",
         fileInfo: {
             pages: "",
             description: "Live-Demo auf HuggingFace Spaces mit FastAPI Backend",
