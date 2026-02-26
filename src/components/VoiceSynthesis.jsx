@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./VoiceSynthesis.css";
 
 const MIN_CHARS = 30;
-const MAX_CHARS = 600;
+const MAX_CHARS = 250; // Limited to 250 to prevent truncation in backend
 
 export default function VoiceSynthesis() {
   const [language, setLanguage] = useState("en");
