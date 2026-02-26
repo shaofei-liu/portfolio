@@ -2,8 +2,10 @@
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0;
-  background-color: #0f1419;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .dog-breed-classifier-header {
@@ -11,14 +13,16 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #1a2a3a;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .dog-breed-classifier-title {
   font-size: 28px;
   font-weight: 600;
-  color: #fff;
+  color: #333;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -30,10 +34,10 @@
 
 .lang-btn {
   padding: 8px 16px;
-  border: 2px solid #1a2a3a;
-  background: #0f1419;
-  color: #aaa;
-  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f0f0f0;
+  color: #555;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
@@ -41,20 +45,23 @@
 }
 
 .lang-btn:hover {
-  border-color: #3a4a5a;
-  color: #fff;
+  border-color: #667eea;
+  background: #e0e0e0;
 }
 
 .lang-btn.active {
-  background: #fff;
-  color: #0a1628;
-  border-color: #fff;
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
 }
 
 .dog-breed-classifier-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
 }
 
 .upload-section {
@@ -62,13 +69,13 @@
 }
 
 .upload-area {
-  border: 2px dashed #1a2a3a;
-  border-radius: 12px;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
   padding: 40px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: #0f1419;
+  background: white;
   min-height: 250px;
   display: flex;
   align-items: center;
@@ -76,8 +83,8 @@
 }
 
 .upload-area:hover {
-  border-color: #3a4a5a;
-  background: #142038;
+  border-color: #667eea;
+  background: #f9f9f9;
 }
 
 .preview-image {
@@ -99,7 +106,7 @@
 }
 
 .upload-placeholder p {
-  color: #aaa;
+  color: #999;
   font-size: 16px;
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -125,25 +132,25 @@
 }
 
 .btn-primary {
-  background: #fff;
-  color: #0a1628;
+  background: #667eea;
+  color: white;
 }
 
 .btn-primary:hover {
-  background: #ddd;
+  background: #5568d3;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .btn-secondary {
-  background: #4285f4;
+  background: #667eea;
   color: #fff;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: #357ae8;
+  background: #5568d3;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .btn-secondary:disabled {
@@ -152,24 +159,24 @@
 }
 
 .btn-tertiary {
-  background: #0f1419;
-  color: #aaa;
-  border: 1px solid #1a2a3a;
+  background: white;
+  color: #555;
+  border: 1px solid #ddd;
 }
 
 .btn-tertiary:hover {
-  background: #142038;
-  border-color: #3a4a5a;
+  background: #f0f0f0;
+  border-color: #667eea;
   transform: translateY(-2px);
 }
 
 .error-message {
   margin-top: 15px;
   padding: 12px 16px;
-  background: #2a1a1a;
-  color: #ff6b6b;
+  background: #ffebee;
+  color: #d32f2f;
   border-radius: 8px;
-  border-left: 4px solid #ff6b6b;
+  border-left: 4px solid #d32f2f;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
@@ -193,14 +200,14 @@
 .result-section h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #fff;
+  color: #333;
   margin: 0 0 20px 0;
   font-family: "Poppins", sans-serif;
 }
 
 .result-card {
-  background: #0f1419;
-  border: 1px solid #1a2a3a;
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
@@ -222,7 +229,7 @@
 
 .breed-label,
 .confidence-label {
-  color: #aaa;
+  color: #999;
   font-weight: 500;
   font-size: 15px;
 }
@@ -231,7 +238,7 @@
 .confidence-value {
   font-weight: 600;
   font-size: 18px;
-  color: #fff;
+  color: #333;
 }
 
 .top5-section {
@@ -241,7 +248,7 @@
 .top5-section h4 {
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: #333;
   margin: 0 0 15px 0;
   font-family: "Poppins", sans-serif;
 }
@@ -258,25 +265,25 @@
   gap: 15px;
   align-items: center;
   padding: 12px 15px;
-  background: #142038;
+  background: white;
   border-radius: 8px;
-  border-left: 3px solid #4285f4;
+  border-left: 3px solid #667eea;
   font-family: "Poppins", sans-serif;
 }
 
 .top5-rank {
   font-weight: 600;
-  color: #4285f4;
+  color: #667eea;
   text-align: center;
 }
 
 .top5-breed {
-  color: #fff;
+  color: #333;
   font-weight: 500;
 }
 
 .top5-confidence {
-  color: #aaa;
+  color: #999;
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
