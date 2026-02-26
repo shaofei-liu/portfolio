@@ -236,7 +236,7 @@ export default function ProjectView() {
           border: "1px solid #2a3f5a",
           borderRadius: "12px",
           overflow: "hidden",
-          backgroundColor: "#0f1419",
+          background: "linear-gradient(135deg, #0f1419 0%, #1a2332 100%)",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
         }}>
           <DogBreedClassifier />
