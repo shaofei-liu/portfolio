@@ -78,8 +78,8 @@ export default function RAGChatbot() {
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
 
     try {
-      // Use /api/chat with JSON payload for better cross-origin compatibility
-      const apiUrl = `${RAG_CHATBOT_API}/api/chat`;
+      // Use /v1/chat with JSON payload
+      const apiUrl = `${RAG_CHATBOT_API}/v1/chat`;
       console.log("📤 Sending request to:", apiUrl);
 
       const payload = {
