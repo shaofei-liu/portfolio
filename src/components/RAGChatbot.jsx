@@ -74,6 +74,7 @@ export default function RAGChatbot() {
       const formData = new FormData();
       formData.append("session_id", sessionId);
       formData.append("message", userMessage);
+      formData.append("language", language === "de" ? "de" : "en");
       formData.append("use_streaming", "false");
 
       const response = await fetch(`${RAG_CHATBOT_API}/chat`, {
