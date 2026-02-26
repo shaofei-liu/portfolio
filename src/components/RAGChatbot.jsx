@@ -49,11 +49,32 @@ export default function RAGChatbot() {
 
   const labels = t[language] || t.en;
 
-  // Initialize session on mount
+  // Initialize session on mount and test connection
   useEffect(() => {
     const newSessionId = Math.random().toString(36).substring(7);
     setSessionId(newSessionId);
+    
+    // Test health check on mount
+    testConnection();
   }, []);
+
+  const testConnection = async () => {
+    try {
+      const testUrl = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:7860/health'
+        : 'https://huggingface.co/spaces/WilliamCass/rag-chatbot/health';
+      
+      const response = await fetch(testUrl);
+      if (response.ok) {
+        console.log("✅ Chatbot API is reachable");
+      } else {
+        console.warn("⚠️ Chatbot API returned status:", response.status);
+      }
+    } catch (err) {
+      console.warn("⚠️ Chatbot API not reachable:", err.message);
+      // Don't show error yet - wait for user to send message
+    }
+  };
 
   // Scroll to bottom of messages
   useEffect(() => {
@@ -71,29 +92,56 @@ export default function RAGChatbot() {
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
 
     try {
+      const apiUrl = `${RAG_CHATBOT_API}/chat`;
+      console.log("📤 Sending request to:", apiUrl);
+
       const formData = new FormData();
       formData.append("session_id", sessionId);
       formData.append("message", userMessage);
       formData.append("language", language === "de" ? "de" : "en");
       formData.append("use_streaming", "false");
 
-      const response = await fetch(`${RAG_CHATBOT_API}/chat`, {
+      const response = await fetch(apiUrl, {
         method: "POST",
         body: formData,
+        headers: {
+          // Don't set Content-Type, let browser set it with boundary for FormData
+        },
       });
 
+      console.log("📨 Response status:", response.status);
+
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        const errorText = await response.text();
+        console.error("❌ API Error:", response.status, errorText);
+        throw new Error(
+          `API Error ${response.status}: ${response.statusText}\n${errorText}`
+        );
       }
 
       const data = await response.json();
+      console.log("✅ API Response:", data);
+
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: data.assistant_message },
       ]);
     } catch (err) {
-      console.error("Error sending message:", err);
-      setError(labels.errorMessage);
+      console.error("❌ Error sending message:", err);
+      let errorMsg = labels.errorMessage;
+      
+      if (err.message.includes("Failed to fetch")) {
+        errorMsg = "❌ 无法连接到 Chatbot API - 请检查 HuggingFace Space 是否在运行 (CORS 或网络问题)";
+      } else if (err.message.includes("JSON")) {
+        errorMsg = "❌ API 返回了无效的 JSON 响应";
+      } else {
+        errorMsg = `❌ ${err.message}`;
+      }
+      
+      setError(errorMsg);
+      setMessages((prev) =>
+        prev.slice(0, -1) // 移除发送失败的用户消息
+      );
     } finally {
       setLoading(false);
     }
