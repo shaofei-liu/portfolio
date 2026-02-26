@@ -78,19 +78,16 @@ export default function RAGChatbot() {
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
 
     try {
-      // Use /chat with FormData for broader compatibility
-      const apiUrl = `${RAG_CHATBOT_API}/chat`;
+      // Build query string instead of FormData (to match HuggingFace proxy requirements)
+      const params = new URLSearchParams();
+      params.append('session_id', sessionId);
+      params.append('message', userMessage);
+      params.append('language', language === "de" ? "de" : "en");
+      const apiUrl = `${RAG_CHATBOT_API}/chat?${params.toString()}`;
       console.log("📤 Sending request to:", apiUrl);
-
-      const formData = new FormData();
-      formData.append("session_id", sessionId);
-      formData.append("message", userMessage);
-      formData.append("language", language === "de" ? "de" : "en");
-      formData.append("use_streaming", "false");
 
       const response = await fetch(apiUrl, {
         method: "POST",
-        body: formData,
       });
 
       console.log("📨 Response status:", response.status);
