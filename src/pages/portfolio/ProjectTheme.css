@@ -1,0 +1,119 @@
+/* Project Theme Variables */
+:root {
+  --project-bg-start: #0f1419;
+  --project-bg-end: #1a2332;
+  --project-border-color: #2a3f5a;
+  --project-text-color: #fff;
+  --project-text-secondary: #9ca3af;
+  --project-header-bg: rgba(0, 0, 0, 0.3);
+  --project-input-bg: #1f2937;
+  --project-input-border: #374151;
+  --project-label-color: #9ca3af;
+}
+
+[data-theme="light"] {
+  --project-bg-start: #f5f7fa;
+  --project-bg-end: #e8ecf1;
+  --project-border-color: #d0d8e0;
+  --project-text-color: #1a1a1a;
+  --project-text-secondary: #666666;
+  --project-header-bg: rgba(255, 255, 255, 0.95);
+  --project-input-bg: #ffffff;
+  --project-input-border: #d0d0d0;
+  --project-label-color: #666666;
+}
+
+/* Apply to project containers */
+.project-voice-synthesis-wrapper,
+.project-dog-breed-wrapper,
+.project-rag-chatbot-wrapper {
+  background: linear-gradient(135deg, var(--project-bg-start) 0%, var(--project-bg-end) 100%) !important;
+  border-color: var(--project-border-color) !important;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+/* VoiceSynthesis Theme */
+.voice-synthesis-container {
+  color: var(--project-text-color);
+}
+
+.voice-synthesis-container .vs-control-group label {
+  color: var(--project-label-color);
+}
+
+.voice-synthesis-container .vs-lang-btn {
+  color: var(--project-text-color);
+  background: var(--project-input-bg);
+  border-color: var(--project-input-border);
+}
+
+.voice-synthesis-container .vs-textarea {
+  color: var(--project-text-color);
+  background: var(--project-input-bg);
+  border-color: var(--project-input-border);
+}
+
+.voice-synthesis-container .vs-char-count {
+  color: var(--project-text-secondary);
+}
+
+/* DogBreedClassifier Theme */
+.dog-breed-classifier-container {
+  color: var(--project-text-color);
+}
+
+.dog-breed-classifier-container .dog-breed-classifier-title {
+  color: var(--project-text-color);
+}
+
+.dog-breed-classifier-container .lang-btn {
+  color: var(--project-text-secondary);
+  border-color: var(--project-input-border);
+}
+
+/* RAGChatbot Theme */
+.rag-chatbot-container {
+  color: var(--project-text-color);
+}
+
+.rag-chatbot-header {
+  background: var(--project-header-bg);
+  border-bottom-color: var(--project-input-border);
+}
+
+.rag-chatbot-header .rag-title {
+  color: var(--project-text-color);
+}
+
+.rag-language-select {
+  color: var(--project-text-color);
+  background: var(--project-input-bg);
+  border-color: var(--project-input-border);
+}
+
+.rag-clear-btn {
+  color: var(--project-text-color);
+  border-color: var(--project-input-border);
+}
+
+.rag-messages-container {
+  color: var(--project-text-color);
+}
+
+.rag-welcome-message {
+  color: var(--project-text-color);
+}
+
+.rag-welcome-message p:last-child {
+  color: var(--project-text-secondary);
+}
+
+.rag-input-field {
+  color: var(--project-text-color);
+  background: var(--project-input-bg);
+  border-color: var(--project-input-border);
+}
+
+.rag-message-content {
+  color: var(--project-text-color);
+}

@@ -5,6 +5,7 @@ import DogBreedClassifier from "../../components/DogBreedClassifier";
 import VoiceSynthesis from "../../components/VoiceSynthesis";
 import RAGChatbot from "../../components/RAGChatbot";
 import RejectionLetters from "../../components/RejectionLetters";
+import "./ProjectTheme.css";
 
 export default function ProjectView() {
   const { id } = useParams();
@@ -91,7 +92,7 @@ export default function ProjectView() {
           overflow: "hidden",
           background: "linear-gradient(135deg, #0f1419 0%, #1a2332 100%)",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
-        }}>
+        }} className="project-voice-synthesis-wrapper">
           <VoiceSynthesis />
         </div>
 
@@ -238,7 +239,7 @@ export default function ProjectView() {
           overflow: "hidden",
           background: "linear-gradient(135deg, #0f1419 0%, #1a2332 100%)",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
-        }}>
+        }} className="project-dog-breed-wrapper">
           <DogBreedClassifier />
         </div>
 
@@ -384,7 +385,7 @@ export default function ProjectView() {
           overflow: "hidden",
           background: "linear-gradient(135deg, #0f1419 0%, #1a2332 100%)",
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
-        }}>
+        }} className="project-rag-chatbot-wrapper">
           <RAGChatbot />
         </div>
 

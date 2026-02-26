@@ -6,7 +6,7 @@
   border-radius: 0;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  color: #fff;
+  color: var(--project-text-color, #fff);
 }
 
 /* Header */

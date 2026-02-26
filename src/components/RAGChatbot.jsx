@@ -175,23 +175,19 @@ export default function RAGChatbot() {
             </button>
           </div>
         </div>
-        <div className={`rag-connection-status connected`}>
-          <span className="rag-status-indicator"></span>
-          {labels.connected}
-        </div>
       </div>
 
       {/* Messages Area */}
       <div className="rag-messages-container">
         {messages.length === 0 && (
           <div className="rag-welcome-message">
-            <p style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "12px" }}>
+            <p style={{ fontSize: "20px", fontWeight: "600", marginBottom: "16px", fontFamily: '"Poppins", sans-serif' }}>
               {labels.welcomeTitle}
             </p>
-            <p style={{ fontSize: "14px", lineHeight: "1.6", marginBottom: "12px" }}>
+            <p style={{ fontSize: "15px", lineHeight: "1.7", marginBottom: "16px", fontFamily: '"Poppins", sans-serif', color: "#e0e0e0" }}>
               {labels.welcomeText}
             </p>
-            <p style={{ fontSize: "14px", color: "#666", fontStyle: "italic" }}>
+            <p style={{ fontSize: "14px", color: "#a0a0a0", fontStyle: "italic", fontFamily: '"Poppins", sans-serif' }}>
               {labels.welcomeExample}
             </p>
           </div>
