@@ -78,22 +78,19 @@ export default function RAGChatbot() {
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
 
     try {
-      // Use /v1/chat with JSON payload
-      const apiUrl = `${RAG_CHATBOT_API}/v1/chat`;
+      // Use /chat with FormData for broader compatibility
+      const apiUrl = `${RAG_CHATBOT_API}/chat`;
       console.log("📤 Sending request to:", apiUrl);
 
-      const payload = {
-        session_id: sessionId,
-        message: userMessage,
-        language: language === "de" ? "de" : "en",
-      };
+      const formData = new FormData();
+      formData.append("session_id", sessionId);
+      formData.append("message", userMessage);
+      formData.append("language", language === "de" ? "de" : "en");
+      formData.append("use_streaming", "false");
 
       const response = await fetch(apiUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+        body: formData,
       });
 
       console.log("📨 Response status:", response.status);
