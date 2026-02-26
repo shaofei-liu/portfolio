@@ -97,9 +97,6 @@ section {
     background-repeat: no-repeat;
     min-height: 700px;
     position: relative;
-    /* Darken the background image for better visual appearance */
-    filter: brightness(0.85) contrast(1.1);
-    background-blend-mode: multiply;
 }
 
 .ac_btn {
