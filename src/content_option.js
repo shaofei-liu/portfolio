@@ -175,6 +175,7 @@ const dataportfolio = [
         link: "#",
         type: "personal",
         projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot?embedded=true",
+        openInNewWindow: true,
     },
     {
         id: "project4",

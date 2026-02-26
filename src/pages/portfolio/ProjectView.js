@@ -379,29 +379,25 @@ export default function ProjectView() {
           </div>
         </div>
 
-        {/* Chatbot Container */}
+        {/* Chatbot Container with iframe */}
         <div style={{ 
           margin: "0 0 24px 0",
-          border: "1px solid #e0e0e0",
+          border: "1px solid #2a3f5a",
           borderRadius: "12px",
           overflow: "hidden",
-          height: "800px",
-          position: "relative",
-          backgroundColor: "#ffffff",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
+          backgroundColor: "#0f1419",
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
         }}>
-          <iframe
-            key={iframeUrl}
+          <iframe 
             src={iframeUrl}
-            title="RAG Chatbot"
             style={{
               width: "100%",
-              height: "100%",
+              height: "600px",
               border: "none",
-              display: "block"
+              borderRadius: "12px"
             }}
-            allow="clipboard-read clipboard-write"
-            referrerPolicy="no-referrer-when-downgrade"
+            title="RAG Chatbot"
+            allow="microphone; camera"
           />
         </div>
 
