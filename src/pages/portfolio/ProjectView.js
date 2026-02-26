@@ -385,42 +385,24 @@ export default function ProjectView() {
           border: "1px solid #e0e0e0",
           borderRadius: "12px",
           overflow: "hidden",
-          padding: "40px 20px",
-          minHeight: "300px",
+          height: "800px",
           position: "relative",
-          backgroundColor: "#f8f9fa",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center"
+          backgroundColor: "#ffffff",
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
         }}>
-          <p style={{ fontSize: "16px", color: "#666", marginBottom: "20px", textAlign: "center" }}>
-            {lang === 'en' 
-              ? "Click the button below to open the chatbot in a new window"
-              : "Klicke auf den Button unten, um den Chatbot in einem neuen Fenster zu öffnen"}
-          </p>
-          <a 
-            href={fullScreenUrl}
-            target="_blank" 
-            rel="noopener noreferrer"
+          <iframe
+            key={iframeUrl}
+            src={iframeUrl}
+            title="RAG Chatbot"
             style={{
-              display: "inline-block",
-              padding: "12px 32px",
-              backgroundColor: "#0066cc",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "6px",
-              fontSize: "14px",
-              fontWeight: "600",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease"
+              width: "100%",
+              height: "100%",
+              border: "none",
+              display: "block"
             }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = "#0052a3"}
-            onMouseLeave={(e) => e.target.style.backgroundColor = "#0066cc"}
-          >
-            {lang === 'en' ? "Open Chatbot" : "Chatbot öffnen"}
-          </a>
+            allow="clipboard-read clipboard-write"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         {/* Features List */}
