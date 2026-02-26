@@ -52,34 +52,14 @@ export default function RAGChatbot() {
 
   const labels = t[language] || t.en;
 
-  // Initialize session on mount and test connection
+  // Initialize session on mount
   useEffect(() => {
     const newSessionId = Math.random().toString(36).substring(7);
     setSessionId(newSessionId);
-    
-    // Test health check on mount
-    testConnection();
   }, []);
 
   const testConnection = async () => {
-    try {
-      const pingUrl = process.env.NODE_ENV === 'development'
-        ? 'http://localhost:7860/'
-        : `${RAG_CHATBOT_API}/`;
-      
-      console.log("🔍 Testing connection to:", pingUrl);
-      
-      const response = await fetch(pingUrl);
-      if (response.ok) {
-        const data = await response.json();
-        console.log("✅ Chatbot API is reachable:", data);
-      } else {
-        console.warn("⚠️ Chatbot API returned status:", response.status);
-      }
-    } catch (err) {
-      console.warn("⚠️ Chatbot API not reachable yet:", err.message);
-      console.log("💡 The API is likely still starting. Please wait a moment and try again.");
-    }
+    // Test connection is no longer needed - errors will be handled when user sends a message
   };
 
   // Scroll to bottom of messages
