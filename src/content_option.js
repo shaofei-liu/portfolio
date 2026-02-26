@@ -174,7 +174,7 @@ const dataportfolio = [
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
         type: "personal",
-        projectUrl: "https://williamcass-rag-chatbot.hf.space",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/rag-chatbot",
     },
     {
         id: "project4",
