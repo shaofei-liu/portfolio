@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { dataportfolio, projectDetails, contactConfig, translations } from "../../content_option";
 import DogBreedClassifier from "../../components/DogBreedClassifier";
 import VoiceSynthesis from "../../components/VoiceSynthesis";
+import RAGChatbot from "../../components/RAGChatbot";
 import RejectionLetters from "../../components/RejectionLetters";
 
 export default function ProjectView() {
@@ -330,9 +331,6 @@ export default function ProjectView() {
 
   // Project 3: RAG Chatbot
   if (project.id === "project3") {
-    const iframeUrl = project.projectUrl;
-    const fullScreenUrl = project.projectUrl.split("?")[0];
-    
     return (
       <div className="project-view" style={{ padding: 16 }}>
         <h2 style={{ marginBottom: 8 }}>{(lang === 'en' && project.description_en) ? project.description_en : project.description}</h2>
@@ -379,26 +377,12 @@ export default function ProjectView() {
           </div>
         </div>
 
-        {/* Chatbot Container with iframe */}
+        {/* Chatbot Container */}
         <div style={{ 
           margin: "0 0 24px 0",
-          border: "1px solid #2a3f5a",
-          borderRadius: "12px",
-          overflow: "hidden",
           backgroundColor: "#0f1419",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
         }}>
-          <iframe 
-            src={iframeUrl}
-            style={{
-              width: "100%",
-              height: "600px",
-              border: "none",
-              borderRadius: "12px"
-            }}
-            title="RAG Chatbot"
-            allow="microphone; camera"
-          />
+          <RAGChatbot />
         </div>
 
         {/* Features List */}
