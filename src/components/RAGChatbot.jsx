@@ -3,7 +3,7 @@ import "./RAGChatbot.css";
 
 const RAG_CHATBOT_API = process.env.NODE_ENV === 'development'
   ? 'http://localhost:7860'
-  : 'https://williamcass-rag-chatbot.hf.space';
+  : 'https://huggingface.co/spaces/WilliamCass/rag-chatbot';
 
 // Cache buster for forced reload
 const API_VERSION = '2.0.0';
