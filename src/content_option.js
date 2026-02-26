@@ -1,4 +1,4 @@
-﻿import background from './assets/images/background.jpg';
+﻿import background from './assets/images/background.png';
 import dogBreedImg from './assets/images/dog-breed-classifier.png';
 import chatbotImg from './assets/images/chatbot.jpg';
 import voiceSynthesisImg from './assets/images/voice-synthesis.png';
