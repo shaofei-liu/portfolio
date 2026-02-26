@@ -65,7 +65,7 @@ export default function RAGChatbot() {
     try {
       const pingUrl = process.env.NODE_ENV === 'development'
         ? 'http://localhost:7860/ping'
-        : 'https://huggingface.co/spaces/WilliamCass/rag-chatbot/ping';
+        : `${RAG_CHATBOT_API}/ping`;
       
       console.log("🔍 Testing connection to:", pingUrl);
       
