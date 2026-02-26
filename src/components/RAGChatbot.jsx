@@ -63,19 +63,22 @@ export default function RAGChatbot() {
 
   const testConnection = async () => {
     try {
-      const testUrl = process.env.NODE_ENV === 'development'
-        ? 'http://localhost:7860/health'
-        : 'https://huggingface.co/spaces/WilliamCass/rag-chatbot/health';
+      const pingUrl = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:7860/ping'
+        : 'https://huggingface.co/spaces/WilliamCass/rag-chatbot/ping';
       
-      const response = await fetch(testUrl);
+      console.log("🔍 Testing connection to:", pingUrl);
+      
+      const response = await fetch(pingUrl);
       if (response.ok) {
-        console.log("✅ Chatbot API is reachable");
+        const data = await response.json();
+        console.log("✅ Chatbot API is reachable:", data);
       } else {
         console.warn("⚠️ Chatbot API returned status:", response.status);
       }
     } catch (err) {
-      console.warn("⚠️ Chatbot API not reachable:", err.message);
-      // Don't show error yet - wait for user to send message
+      console.warn("⚠️ Chatbot API not reachable yet:", err.message);
+      console.log("💡 The API is likely still starting. Please wait a moment and try again.");
     }
   };
 
