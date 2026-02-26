@@ -19,8 +19,8 @@ export default function RAGChatbot() {
 
   const t = {
     de: {
-      title: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
-      placeholder: "Stellen Sie eine Frage zu Shaofeis Hintergrund, Fähigkeiten oder Erfahrung...",
+      title: "💼 Shaofei's Portfolio",
+      placeholder: "Ask me... / Frag mich...",
       send: "Senden",
       sending: "Wird gesendet...",
       connecting: "Verbindung wird hergestellt...",
@@ -32,10 +32,13 @@ export default function RAGChatbot() {
       german: "Deutsch",
       clearChat: "Chat löschen",
       noConnection: "Konnte keine Verbindung zum Chatbot herstellen",
+      welcomeTitle: "👋 Hallo! Ich bin Shaofeis KI-Assistent.",
+      welcomeText: "Ich werde von fortschrittlichen KI-Modellen und einem Retrieval-Augmented Generation-System betrieben. Ich kann Fragen zu Shaofeis beruflichem Hintergrund, technischen Fähigkeiten, Bildung und Erfahrung beantworten. Frag mich gerne alles!",
+      welcomeExample: "Beispiel: Was hast Du studiert? Welche Sportarten magst Du?",
     },
     en: {
-      title: "RAG Chatbot - AI-powered Q&A System",
-      placeholder: "Ask questions about Shaofei's background, skills, or professional experience...",
+      title: "💼 Shaofei's Portfolio",
+      placeholder: "Ask me... / Frag mich...",
       send: "Send",
       sending: "Sending...",
       connecting: "Connecting...",
@@ -47,6 +50,9 @@ export default function RAGChatbot() {
       german: "Deutsch",
       clearChat: "Clear Chat",
       noConnection: "Could not connect to chatbot",
+      welcomeTitle: "👋 Hello! I'm Shaofei's AI Assistant.",
+      welcomeText: "I'm powered by advanced AI models and a Retrieval-Augmented Generation system. I can answer questions about Shaofei's professional background, technical skills, education, and experience. Feel free to ask me anything!",
+      welcomeExample: "Example: What did you study? What sports do you like?",
     },
   };
 
@@ -179,11 +185,14 @@ export default function RAGChatbot() {
       <div className="rag-messages-container">
         {messages.length === 0 && (
           <div className="rag-welcome-message">
-            <p>🤖 {language === "de" ? "Willkommen!" : "Welcome!"}</p>
-            <p style={{ fontSize: "14px", opacity: 0.7, marginTop: "8px" }}>
-              {language === "de"
-                ? "Stellen Sie Fragen zu Shaofei, und der Chatbot wird basierend auf seiner Erfahrung antworten."
-                : "Ask questions about Shaofei, and the chatbot will answer based on his experience."}
+            <p style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "12px" }}>
+              {labels.welcomeTitle}
+            </p>
+            <p style={{ fontSize: "14px", lineHeight: "1.6", marginBottom: "12px" }}>
+              {labels.welcomeText}
+            </p>
+            <p style={{ fontSize: "14px", color: "#666", fontStyle: "italic" }}>
+              {labels.welcomeExample}
             </p>
           </div>
         )}
