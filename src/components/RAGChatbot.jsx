@@ -6,7 +6,7 @@ const RAG_CHATBOT_API = process.env.NODE_ENV === 'development'
   : 'https://williamcass-rag-chatbot.hf.space';
 
 // Cache buster for forced reload
-const API_VERSION = '2.0.0';
+const API_VERSION = '2.0.1';
 
 export default function RAGChatbot() {
   const [language, setLanguage] = useState(localStorage.getItem("lang") || "de");
