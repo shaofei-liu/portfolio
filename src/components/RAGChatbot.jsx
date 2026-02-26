@@ -5,6 +5,9 @@ const RAG_CHATBOT_API = process.env.NODE_ENV === 'development'
   ? 'http://localhost:7860'
   : 'https://huggingface.co/spaces/WilliamCass/rag-chatbot';
 
+// Cache buster for forced reload
+const API_VERSION = '2.0.0';
+
 export default function RAGChatbot() {
   const [language, setLanguage] = useState(localStorage.getItem("lang") || "de");
   const [messages, setMessages] = useState([]);
