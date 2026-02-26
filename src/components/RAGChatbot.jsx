@@ -64,8 +64,8 @@ export default function RAGChatbot() {
   const testConnection = async () => {
     try {
       const pingUrl = process.env.NODE_ENV === 'development'
-        ? 'http://localhost:7860/ping'
-        : `${RAG_CHATBOT_API}/ping`;
+        ? 'http://localhost:7860/'
+        : `${RAG_CHATBOT_API}/`;
       
       console.log("🔍 Testing connection to:", pingUrl);
       
