@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./VoiceSynthesis.css";
 
+const MIN_CHARS = 30;
+const MAX_CHARS = 600;
+
 export default function VoiceSynthesis() {
   const [language, setLanguage] = useState("en");
   const [text, setText] = useState("");
@@ -230,13 +233,22 @@ export default function VoiceSynthesis() {
           <label>{texts.text}</label>
           <textarea
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              let newText = e.target.value;
+              if (newText.length > MAX_CHARS) {
+                newText = newText.substring(0, MAX_CHARS);
+              }
+              setText(newText);
+            }}
+            maxLength={MAX_CHARS}
             placeholder={texts.text}
             className="vs-textarea"
             rows="5"
           />
-          <div className="vs-char-count">
-            {text.length} {texts.characterCount}
+          <div className={`vs-char-count ${text.length < MIN_CHARS ? 'vs-char-warning' : text.length >= MIN_CHARS && text.length <= MAX_CHARS ? 'vs-char-ok' : 'vs-char-error'}`}>
+            {text.length} / {MAX_CHARS} {texts.characterCount}
+            {text.length < MIN_CHARS && <span style={{marginLeft: '10px'}}>- {MIN_CHARS - text.length} {language === 'de' ? 'weitere Zeichen erforderlich' : 'more characters needed'}</span>}
+            {text.length >= MIN_CHARS && text.length <= MAX_CHARS && <span style={{marginLeft: '10px', color: '#388e3c'}}>✓ {language === 'de' ? 'Bereit zum Synthetisieren' : 'Ready to synthesize'}</span>}
           </div>
         </div>
 
@@ -351,8 +363,9 @@ export default function VoiceSynthesis() {
         {/* Synthesize Button */}
         <button
           onClick={handleSynthesize}
-          disabled={loading}
+          disabled={loading || text.length < MIN_CHARS || text.length > MAX_CHARS}
           className="vs-synthesize-btn"
+          title={text.length < MIN_CHARS ? `Minimum ${MIN_CHARS} characters required` : text.length > MAX_CHARS ? `Maximum ${MAX_CHARS} characters allowed` : ''}
         >
           {loading ? texts.synthesizing : texts.synthesize}
         </button>
