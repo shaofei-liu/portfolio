@@ -92,21 +92,22 @@ export default function RAGChatbot() {
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
 
     try {
-      const apiUrl = `${RAG_CHATBOT_API}/chat`;
+      // Use /api/chat with JSON payload for better cross-origin compatibility
+      const apiUrl = `${RAG_CHATBOT_API}/api/chat`;
       console.log("📤 Sending request to:", apiUrl);
 
-      const formData = new FormData();
-      formData.append("session_id", sessionId);
-      formData.append("message", userMessage);
-      formData.append("language", language === "de" ? "de" : "en");
-      formData.append("use_streaming", "false");
+      const payload = {
+        session_id: sessionId,
+        message: userMessage,
+        language: language === "de" ? "de" : "en",
+      };
 
       const response = await fetch(apiUrl, {
         method: "POST",
-        body: formData,
         headers: {
-          // Don't set Content-Type, let browser set it with boundary for FormData
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify(payload),
       });
 
       console.log("📨 Response status:", response.status);
@@ -115,7 +116,7 @@ export default function RAGChatbot() {
         const errorText = await response.text();
         console.error("❌ API Error:", response.status, errorText);
         throw new Error(
-          `API Error ${response.status}: ${response.statusText}\n${errorText}`
+          `API Error ${response.status}: ${response.statusText}`
         );
       }
 
@@ -131,7 +132,7 @@ export default function RAGChatbot() {
       let errorMsg = labels.errorMessage;
       
       if (err.message.includes("Failed to fetch")) {
-        errorMsg = "❌ 无法连接到 Chatbot API - 请检查 HuggingFace Space 是否在运行 (CORS 或网络问题)";
+        errorMsg = "❌ 无法连接到 Chatbot API - CORS 或网络问题";
       } else if (err.message.includes("JSON")) {
         errorMsg = "❌ API 返回了无效的 JSON 响应";
       } else {
