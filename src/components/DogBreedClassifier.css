@@ -3,7 +3,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
-  background-color: #0f1419;
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
 }
 
 .dog-breed-classifier-header {
