@@ -19,6 +19,7 @@ export default function VoiceSynthesis() {
   const [samplesLoading, setSamplesLoading] = useState(true);
   const audioRef = useRef(null);
   const fileInputRef = useRef(null);
+  const prevBlobUrlRef = useRef(null);
 
   // Fetch available sample voices on component mount
   useEffect(() => {
@@ -110,21 +111,28 @@ export default function VoiceSynthesis() {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
       }
-      // Revoke blob URL to free memory
-      if (result && typeof result === 'string' && result.startsWith('blob:')) {
-        URL.revokeObjectURL(result);
+      // Revoke any tracked blob URL to free memory
+      if (prevBlobUrlRef.current && prevBlobUrlRef.current.startsWith('blob:')) {
+        URL.revokeObjectURL(prevBlobUrlRef.current);
       }
     };
   }, []);
 
-  // Revoke old object URL when result changes to avoid memory leaks
+  // Revoke old object URL and update ref when result changes
   useEffect(() => {
-    return () => {
-      if (result && typeof result === 'string' && result.startsWith('blob:')) {
-        setTimeout(() => {
-          URL.revokeObjectURL(result);
-        }, 500);
+    // If we have a new result, revoke the previous one
+    if (result && typeof result === 'string' && result.startsWith('blob:')) {
+      // Revoke previous URL if it exists and is different
+      if (prevBlobUrlRef.current && prevBlobUrlRef.current !== result) {
+        URL.revokeObjectURL(prevBlobUrlRef.current);
       }
+      // Update the ref with the new URL
+      prevBlobUrlRef.current = result;
+    }
+    
+    return () => {
+      // This cleanup will only run when component unmounts or before result changes
+      // We don't revoke here to keep current URL alive during playback
     };
   }, [result]);
 
@@ -170,6 +178,12 @@ export default function VoiceSynthesis() {
 
     setLoading(true);
     setError(null);
+    
+    // Cleanup previous result and revoke its blob URL before starting new synthesis
+    if (result && prevBlobUrlRef.current && prevBlobUrlRef.current.startsWith('blob:')) {
+      URL.revokeObjectURL(prevBlobUrlRef.current);
+      prevBlobUrlRef.current = null;
+    }
     setResult(null);
 
     try {
@@ -180,6 +194,10 @@ export default function VoiceSynthesis() {
       const formData = new FormData();
       formData.append('text', text);
       formData.append('language', language);
+      
+      // Add stability parameter for better audio quality and reduce artifacts
+      formData.append('stability', '0.7');
+      formData.append('similarity_boost', '0.75');
 
       if (selectedVoice === "sample") {
         // For sample voices, pass the actual filename
@@ -201,8 +219,16 @@ export default function VoiceSynthesis() {
       }
 
       const audioBlob = await response.blob();
-      const audioUrl = URL.createObjectURL(audioBlob);
-      setResult(audioUrl);
+      
+      // Ensure proper audio format and prevent any artifacts
+      // Only process if blob is valid audio
+      if (audioBlob.type === 'audio/wav' || audioBlob.type === 'audio/mpeg' || audioBlob.type.startsWith('audio/')) {
+        const audioUrl = URL.createObjectURL(audioBlob);
+        prevBlobUrlRef.current = audioUrl; // Track the new URL
+        setResult(audioUrl);
+      } else {
+        throw new Error('Invalid audio format received from server');
+      }
     } catch (err) {
       console.error('Synthesis error:', err);
       setError(err.message || texts.errorMessage);
