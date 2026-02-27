@@ -1,12 +1,9 @@
 ﻿.dog-breed-classifier-container {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 30px;
-  background: transparent;
-  border-radius: 0;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--bg-color);
 }
 
 .dog-breed-classifier-header {
@@ -15,13 +12,13 @@
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #1a2a3a;
+  border-bottom: 2px solid var(--input-border);
 }
 
 .dog-breed-classifier-title {
   font-size: 28px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-color);
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -33,9 +30,9 @@
 
 .lang-btn {
   padding: 8px 16px;
-  border: 2px solid #1a2a3a;
-  background: #0f1419;
-  color: #aaa;
+  border: 2px solid var(--input-border);
+  background: var(--button-bg);
+  color: var(--label-text);
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
@@ -44,14 +41,14 @@
 }
 
 .lang-btn:hover {
-  border-color: #3a4a5a;
-  color: #fff;
+  border-color: var(--link-color);
+  color: var(--text-color);
 }
 
 .lang-btn.active {
-  background: #fff;
+  background: var(--button-text);
   color: #0a1628;
-  border-color: #fff;
+  border-color: var(--button-text);
 }
 
 .dog-breed-classifier-content {
@@ -65,13 +62,13 @@
 }
 
 .upload-area {
-  border: 2px dashed #1a2a3a;
+  border: 2px dashed var(--input-border);
   border-radius: 12px;
   padding: 40px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: #0f1419;
+  background: var(--button-bg);
   min-height: 250px;
   display: flex;
   align-items: center;
@@ -79,8 +76,18 @@
 }
 
 .upload-area:hover {
-  border-color: #3a4a5a;
-  background: #142038;
+  border-color: var(--link-color);
+  background: var(--button-hover-bg);
+}
+
+[data-theme="light"] .upload-area {
+  background: #f5f5f5;
+  border-color: #bcc0c8;
+}
+
+[data-theme="light"] .upload-area:hover {
+  border-color: #0066cc;
+  background: #f0f0f0;
 }
 
 .preview-image {
@@ -102,10 +109,14 @@
 }
 
 .upload-placeholder p {
-  color: #aaa;
+  color: var(--label-text);
   font-size: 16px;
   margin: 0;
   font-family: "Poppins", sans-serif;
+}
+
+[data-theme="light"] .upload-placeholder p {
+  color: #666;
 }
 
 .button-group {
@@ -138,6 +149,18 @@
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
+[data-theme="light"] .btn-primary {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: #0052a3;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
 .btn-secondary {
   background: #4285f4;
   color: #fff;
@@ -155,9 +178,9 @@
 }
 
 .btn-tertiary {
-  background: #0f1419;
-  color: #aaa;
-  border: 1px solid #1a2a3a;
+  background: var(--button-bg);
+  color: var(--label-text);
+  border: 1px solid var(--input-border);
 }
 
 .btn-tertiary:hover {
@@ -169,62 +192,18 @@
 .error-message {
   margin-top: 15px;
   padding: 12px 16px;
-  background: rgba(211, 47, 47, 0.12);
-  color: #d32f2f;
+  background: #2a1a1a;
+  color: #ff6b6b;
   border-radius: 8px;
-  border-left: 4px solid #d32f2f;
+  border-left: 4px solid #ff6b6b;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
 
-.error-message {
-  margin-top: 15px;
-  padding: 12px 16px;
-  background: rgba(211, 47, 47, 0.12);
-  color: #d32f2f;
-  border-radius: 8px;
-  border-left: 4px solid #d32f2f;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-}
-
-/* Input Mode Toggle Buttons */
-.input-mode-toggle {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-  justify-content: center;
-}
-
-.mode-btn {
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
-  border: 1px solid var(--project-input-border, #ccc);
-  background: var(--project-input-bg, #f5f5f5);
-  color: var(--project-text-color, #666);
-  transition: all 0.2s ease;
-}
-
-.mode-btn.active {
-  border: 2px solid #0066cc;
-  background: #e6f0ff;
-  color: #0066cc;
-  font-weight: 600;
-}
-
-[data-theme="light"] .mode-btn {
-  border-color: var(--project-input-border, #ccc);
-  background: var(--project-input-bg, #f5f5f5);
-  color: var(--project-text-color, #666);
-}
-
-[data-theme="light"] .mode-btn.active {
-  border: 2px solid #0066cc;
-  background: #e6f0ff;
-  color: #0066cc;
+[data-theme="light"] .error-message {
+  background: rgba(211, 47, 47, 0.08);
+  color: #c62828;
+  border-left-color: #c62828;
 }
 
 .result-section {
@@ -257,6 +236,11 @@
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
+}
+
+[data-theme="light"] .result-card {
+  background: #f5f5f5;
+  border-color: #bcc0c8;
 }
 
 .breed-info,
