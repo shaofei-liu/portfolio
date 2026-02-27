@@ -66,10 +66,23 @@
   border-color: #3b82f6;
 }
 
+.voice-synthesis-container .vs-radio-label {
+  color: var(--project-text-color);
+}
+
+.voice-synthesis-container .vs-radio-label:hover {
+  background: var(--project-input-border);
+}
+
 [data-theme="light"] .voice-synthesis-container .vs-lang-btn.active {
   background: #0066cc;
   border-color: #0066cc;
   color: #fff;
+}
+
+[data-theme="light"] .voice-synthesis-container .vs-lang-btn:hover {
+  border-color: #0066cc;
+  background: var(--project-input-border);
 }
 
 /* DogBreedClassifier Theme */
@@ -192,5 +205,34 @@
 }
 
 .rag-message-content {
+  color: var(--project-text-color);
+}
+
+/* Error Message Theme */
+.rag-error-message {
+  color: #d32f2f;
+  background: rgba(211, 47, 47, 0.05);
+}
+
+[data-theme="light"] .rag-error-message {
+  background: rgba(211, 47, 47, 0.1);
+  color: #c62828;
+}
+
+/* Additional Light Theme Overrides */
+[data-theme="light"] .rag-welcome-message p {
+  color: var(--project-text-color);
+}
+
+[data-theme="light"] .voice-synthesis-container .vs-char-count {
+  color: var(--project-text-secondary);
+}
+
+[data-theme="light"] .voice-synthesis-container .vs-input-error {
+  color: #c62828;
+  background: rgba(211, 47, 47, 0.08);
+}
+
+[data-theme="light"] .dog-breed-classifier-container .upload-placeholder {
   color: var(--project-text-color);
 }
