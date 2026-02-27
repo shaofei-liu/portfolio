@@ -551,6 +551,7 @@ const projectDetails = {
             "Docker + HuggingFace Spaces",
             "Python 3.9+"
         ],
+        github: "https://github.com/shaofei-liu/rag-chatbot",
         projectUrl: "https://williamcass-rag-chatbot.hf.space/",
         fileInfo: {
             pages: "",

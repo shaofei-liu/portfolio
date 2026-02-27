@@ -286,7 +286,7 @@ export default function ProjectView() {
         {/* Links */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <a
-            href="https://github.com/shaofei-liu/dog-breed-classifier-github"
+            href="https://github.com/shaofei-liu/dog-breed-classifier"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -449,7 +449,7 @@ export default function ProjectView() {
           flexWrap: "wrap"
         }}>
           <a
-            href="https://github.com/shaofei-liu/rag-chatbot-github"
+            href="https://github.com/shaofei-liu/rag-chatbot"
             target="_blank"
             rel="noopener noreferrer"
             style={{
