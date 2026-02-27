@@ -184,10 +184,10 @@ export default function RAGChatbot() {
             <p style={{ fontSize: "20px", fontWeight: "600", marginBottom: "16px", fontFamily: '"Poppins", sans-serif' }}>
               {labels.welcomeTitle}
             </p>
-            <p style={{ fontSize: "15px", lineHeight: "1.7", marginBottom: "16px", fontFamily: '"Poppins", sans-serif', color: "#e0e0e0" }}>
+            <p style={{ fontSize: "15px", lineHeight: "1.7", marginBottom: "16px", fontFamily: '"Poppins", sans-serif', color: document.documentElement.getAttribute('data-theme') === 'light' ? "#000000" : "#e0e0e0" }}>
               {labels.welcomeText}
             </p>
-            <p style={{ fontSize: "14px", color: "#a0a0a0", fontStyle: "italic", fontFamily: '"Poppins", sans-serif' }}>
+            <p style={{ fontSize: "14px", color: document.documentElement.getAttribute('data-theme') === 'light' ? "#1a1a1a" : "#a0a0a0", fontStyle: "italic", fontFamily: '"Poppins", sans-serif' }}>
               {labels.welcomeExample}
             </p>
           </div>
