@@ -11,8 +11,8 @@ export default function DogBreedClassifier() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [inputMode, setInputMode] = useState("file"); // "file" or "url"
-  const [webpageImages, setWebpageImages] = useState([]); // 从网页提取的图片列表
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null); // 用户选择的图片索引
+  const [webpageImages, setWebpageImages] = useState([]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const fileInputRef = React.useRef(null);
 
   const t = dogBreedLang[language];
@@ -64,9 +64,7 @@ export default function DogBreedClassifier() {
     setWebpageImages([]);
 
     try {
-      // 不做前端验证，所有URL都发送到后端处理
-
-      // 开发环境使用本地 API，生产环境使用 Hugging Face Spaces
+      // Development uses local API, production uses Hugging Face Spaces
       let apiUrl = process.env.NODE_ENV === 'development' 
         ? 'http://localhost:7860/api/predict'
         : 'https://williamcass-dog-breed-classification.hf.space/api/predict';
@@ -123,7 +121,7 @@ export default function DogBreedClassifier() {
   };
 
   const handleResponseData = async (data) => {
-    // 检查是否是网页图片选择响应
+    // Check if response is webpage image selection
     if (data.type === "image_selection") {
       setWebpageImages(data.images);
       setError(null);
@@ -132,7 +130,7 @@ export default function DogBreedClassifier() {
     }
 
     if (!data.success) {
-      // 后端返回的错误信息
+      // Backend error message
       const errorMsg = data.error || t.predictError;
       throw new Error(errorMsg);
     }
@@ -150,6 +148,7 @@ export default function DogBreedClassifier() {
     }
 
     setResult(localizedResult);
+  };
 
   const predictSelectedImage = async (imageUrl) => {
     // 预测网页中选择的特定图片
@@ -373,7 +372,7 @@ export default function DogBreedClassifier() {
                 />
               </div>
 
-              {/* 网页图片选择网格 */}
+              {/* Webpage image selection grid */}
               {webpageImages.length > 0 && (
                 <div style={{
                   marginBottom: "16px",
