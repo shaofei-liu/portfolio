@@ -33,7 +33,7 @@ export default function RAGChatbot() {
       clearChat: "Chat löschen",
       noConnection: "Konnte keine Verbindung zum Chatbot herstellen",
       welcomeTitle: "👋 Hallo! Ich bin Shaofeis KI-Assistent.",
-      welcomeText: "Ich werde von fortschrittlichen KI-Modellen und einem Retrieval-Augmented Generation-System betrieben. Ich kann Fragen zu Shaofeis beruflichem Hintergrund, technischen Fähigkeiten, Bildung und Erfahrung beantworten. Frag mich gerne alles!",
+      welcomeText: "Ich werde von fortschrittlichen KI-Modellen und Retrieval-Augmented Generation betrieben. Frag mich über Shaofeis Karriere, Ausbildung, technische Fähigkeiten und vielfältige Interessen!",
       welcomeExample: "Beispiel: Was hast Du studiert? Welche Sportarten magst Du?",
     },
     en: {
@@ -51,7 +51,7 @@ export default function RAGChatbot() {
       clearChat: "Clear Chat",
       noConnection: "Could not connect to chatbot",
       welcomeTitle: "👋 Hello! I'm Shaofei's AI Assistant.",
-      welcomeText: "I'm powered by advanced AI models and a Retrieval-Augmented Generation system. I can answer questions about Shaofei's professional background, technical skills, education, and experience. Feel free to ask me anything!",
+      welcomeText: "I'm powered by advanced AI models and Retrieval-Augmented Generation. Ask me about Shaofei's career, education, technical skills, and diverse interests!",
       welcomeExample: "Example: What did you study? What sports do you like?",
     },
   };
