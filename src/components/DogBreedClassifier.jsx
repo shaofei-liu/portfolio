@@ -13,8 +13,13 @@ export default function DogBreedClassifier() {
   const [inputMode, setInputMode] = useState("file"); // "file" or "url"
   const [webpageImages, setWebpageImages] = useState([]); // 从网页提取的图片列表
   const [selectedImageIndex, setSelectedImageIndex] = useState(null); // 用户选择的图片索引
+  const fileInputRef = React.useRef(null);
 
   const t = dogBreedLang[language];
+
+  const openFileDialog = () => {
+    fileInputRef.current?.click();
+  };
 
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
@@ -281,6 +286,7 @@ export default function DogBreedClassifier() {
                 className="upload-area"
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
+                onClick={openFileDialog}
               >
                 {preview ? (
                   <img src={preview} alt="Preview" className="preview-image" />
@@ -293,6 +299,7 @@ export default function DogBreedClassifier() {
               </div>
 
               <input
+                ref={fileInputRef}
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}

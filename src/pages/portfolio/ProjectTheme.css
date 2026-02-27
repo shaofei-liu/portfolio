@@ -71,6 +71,64 @@
   border-color: var(--project-input-border);
 }
 
+.dog-breed-classifier-container .btn {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.dog-breed-classifier-container .btn-primary {
+  background: var(--project-input-bg);
+  color: var(--project-text-color);
+  border: 2px solid var(--project-input-border);
+}
+
+.dog-breed-classifier-container .btn-primary:hover {
+  background: var(--project-input-border);
+  color: var(--project-text-color);
+  transform: translateY(-2px);
+}
+
+.dog-breed-classifier-container .btn-secondary {
+  background: #4285f4;
+  color: #fff;
+}
+
+.dog-breed-classifier-container .btn-secondary:hover:not(:disabled) {
+  background: #357ae8;
+}
+
+.dog-breed-classifier-container .btn-tertiary {
+  background: transparent;
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.dog-breed-classifier-container .btn-tertiary:hover {
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.dog-breed-classifier-container .upload-area {
+  background: var(--project-input-bg);
+  border-color: var(--project-input-border);
+}
+
+.dog-breed-classifier-container .upload-area:hover {
+  border-color: var(--project-border-color);
+  background: var(--project-header-bg);
+}
+
+.dog-breed-classifier-container .upload-placeholder {
+  color: var(--project-text-secondary);
+}
+
+.dog-breed-classifier-container .upload-placeholder p {
+  color: var(--project-text-secondary);
+}
+
+.dog-breed-classifier-container .mode-btn {
+  cursor: pointer;
+}
+
 /* RAGChatbot Theme */
 .rag-chatbot-container {
   color: var(--project-text-color);
