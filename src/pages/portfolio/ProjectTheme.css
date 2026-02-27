@@ -53,8 +53,23 @@
   border-color: var(--project-input-border);
 }
 
+.voice-synthesis-container .vs-textarea::placeholder {
+  color: var(--project-text-secondary);
+}
+
 .voice-synthesis-container .vs-char-count {
   color: var(--project-text-secondary);
+}
+
+.voice-synthesis-container .vs-lang-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+[data-theme="light"] .voice-synthesis-container .vs-lang-btn.active {
+  background: #0066cc;
+  border-color: #0066cc;
+  color: #fff;
 }
 
 /* DogBreedClassifier Theme */
@@ -170,6 +185,10 @@
   color: var(--project-text-color);
   background: var(--project-input-bg);
   border-color: var(--project-input-border);
+}
+
+.rag-input-field::placeholder {
+  color: var(--project-text-secondary);
 }
 
 .rag-message-content {
