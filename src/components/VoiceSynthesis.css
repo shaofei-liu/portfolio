@@ -382,6 +382,23 @@
   border-radius: 6px;
 }
 
+.vs-disclaimer {
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 4px solid #22c55e;
+  padding: 12px;
+  margin: 16px 0;
+  border-radius: 3px;
+  color: #16a34a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+[data-theme="light"] .vs-disclaimer {
+  background: rgba(34, 197, 94, 0.15);
+  border-left-color: #15803d;
+  color: #15803d;
+}
+
 .vs-download-btn {
   display: inline-block;
   padding: 10px 20px;
@@ -392,6 +409,7 @@
   font-weight: 600;
   transition: all 0.2s ease;
   font-size: 14px;
+  margin-top: 20px;
 }
 
 [data-theme="light"] .vs-download-btn {

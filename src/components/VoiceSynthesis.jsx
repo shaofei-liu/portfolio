@@ -455,6 +455,11 @@ export default function VoiceSynthesis() {
               style={{ width: '100%' }}
             />
           </div>
+          <div className="vs-disclaimer">
+            {language === 'en' 
+              ? "✅ Speech synthesis completed successfully. Please note: Due to model limitations, the generated voice may not perfectly match the original speaker's voice characteristics."
+              : "✅ Sprachsynthese erfolgreich abgeschlossen. Hinweis: Aufgrund von Modellbeschränkungen entspricht die generierte Stimme möglicherweise nicht perfekt den Stimmmerkmalen des ursprünglichen Sprechers."}
+          </div>
           <a
             href={result}
             download="synthesized_speech.wav"
