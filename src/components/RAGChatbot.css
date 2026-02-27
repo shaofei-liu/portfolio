@@ -171,10 +171,34 @@
   color: var(--project-text-color, #999);
 }
 
+.rag-welcome-title {
+  color: var(--text-color) !important;
+}
+
+.rag-welcome-text {
+  color: var(--text-color) !important;
+}
+
+.rag-welcome-example {
+  color: var(--label-text, #a0a0a0) !important;
+}
+
 [data-theme="light"] .rag-welcome-message,
 [data-theme="light"] .rag-welcome-message h2,
 [data-theme="light"] .rag-welcome-message p {
   color: #000000;
+}
+
+[data-theme="light"] .rag-welcome-title {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .rag-welcome-text {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .rag-welcome-example {
+  color: #1a1a1a !important;
 }
 
 [data-theme="light"] .rag-welcome-message p:last-child {
