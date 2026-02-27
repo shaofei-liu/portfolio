@@ -4,7 +4,6 @@ import { dataportfolio, projectDetails, contactConfig, translations } from "../.
 import DogBreedClassifier from "../../components/DogBreedClassifier";
 import VoiceSynthesis from "../../components/VoiceSynthesis";
 import RAGChatbot from "../../components/RAGChatbot";
-import RejectionLetters from "../../components/RejectionLetters";
 import "./ProjectTheme.css";
 
 export default function ProjectView() {
