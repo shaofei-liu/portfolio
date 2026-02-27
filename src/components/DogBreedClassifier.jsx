@@ -323,59 +323,35 @@ export default function DogBreedClassifier() {
             </>
           ) : (
             <>
-              <div style={{
-                marginBottom: "16px"
-              }}>
-                <input
-                  type="url"
-                  value={imageUrl}
-                  onChange={(e) => {
-                    const url = e.target.value;
-                    setImageUrl(url);
-                    // 只有直接图片URL才显示预览
-                    if (isImageUrl(url)) {
-                      setPreview(url);
-                    } else {
-                      setPreview(null);
-                    }
-                    setResult(null);
-                    setError(null);
-                    setWebpageImages([]);
-                  }}
-                  placeholder={language === "en" ? "Enter image URL..." : "URL eingeben..."}
-                  style={{
-                    width: "100%",
-                    padding: "10px",
-                    borderRadius: "6px",
-                    border: "1px solid #ddd",
-                    fontSize: "14px",
-                    boxSizing: "border-box"
-                  }}
-                />
-              </div>
+              <input
+                type="url"
+                className="url-input"
+                value={imageUrl}
+                onChange={(e) => {
+                  const url = e.target.value;
+                  setImageUrl(url);
+                  // 只有直接图片URL才显示预览
+                  if (isImageUrl(url)) {
+                    setPreview(url);
+                  } else {
+                    setPreview(null);
+                  }
+                  setResult(null);
+                  setError(null);
+                  setWebpageImages([]);
+                }}
+                placeholder={language === "en" ? "Enter image URL..." : "URL eingeben..."}
+              />
+
+
 
               {/* Webpage image selection grid */}
               {webpageImages.length > 0 && (
-                <div style={{
-                  marginBottom: "16px",
-                  padding: "12px",
-                  backgroundColor: "#f9f9f9",
-                  borderRadius: "8px",
-                  border: "1px solid #e0e0e0"
-                }}>
-                  <div style={{
-                    fontSize: "12px",
-                    fontWeight: "600",
-                    marginBottom: "12px",
-                    color: "#333"
-                  }}>
+                <div className="webpage-images-container">
+                  <div className="webpage-images-label">
                     {language === "en" ? `Found ${webpageImages.length} images on the webpage:` : `${webpageImages.length} Bilder auf der Webseite gefunden:`}
                   </div>
-                  <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
-                    gap: "8px"
-                  }}>
+                  <div className="webpage-images-grid">
                     {webpageImages.map((imgUrl, idx) => (
                       <div
                         key={idx}
@@ -414,31 +390,19 @@ export default function DogBreedClassifier() {
               )}
 
               {preview && !webpageImages.length && (
-                <div style={{
-                  marginBottom: "16px",
-                  textAlign: "center"
-                }}>
+                <div className="url-preview">
                   <img
                     src={preview}
                     alt="URL Preview"
                     className="preview-image"
                     onError={() => setError(language === "en" ? "Failed to load image from URL" : "Fehler beim Laden des Bildes von der URL")}
-                    style={{ maxHeight: "300px", maxWidth: "100%", borderRadius: "6px" }}
                   />
                 </div>
               )}
 
               {/* 显示网页URL输入状态 */}
               {imageUrl && !isImageUrl(imageUrl) && !webpageImages.length && (
-                <div style={{
-                  marginBottom: "16px",
-                  padding: "12px",
-                  backgroundColor: "#e3f2fd",
-                  borderRadius: "6px",
-                  border: "1px solid #90caf9",
-                  color: "#1976d2",
-                  fontSize: "13px"
-                }}>
+                <div className="webpage-url-status">
                   {loading ? (
                     <>⏳ {language === "en" ? "Extracting images from webpage..." : "Bilder von der Webseite extrahieren..."}</>
                   ) : (
