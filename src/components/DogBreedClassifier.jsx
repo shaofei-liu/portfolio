@@ -492,6 +492,15 @@ export default function DogBreedClassifier() {
               </div>
             </div>
 
+            <div className="model-disclaimer">
+              <span className="disclaimer-icon">ℹ️</span>
+              <div className="disclaimer-text">
+                {language === "en" 
+                  ? "The model is trained on 120 dog breeds. For dog breeds not included in the database, the classification may be inaccurate. The model will attempt to find the closest match among known breeds."
+                  : "Das Modell wurde mit 120 Hunderassen trainiert. Für Hunderassen, die nicht in der Datenbank enthalten sind, kann die Klassifizierung ungenau sein. Das Modell versucht, die beste Übereinstimmung unter den bekannten Rassen zu finden."}
+              </div>
+            </div>
+
             {result.top_5 && Object.keys(result.top_5).length > 0 && (
               <div className="top5-section">
                 <h4>{t.top5Title}</h4>
@@ -506,15 +515,6 @@ export default function DogBreedClassifier() {
                 </div>
               </div>
             )}
-
-            <div className="model-disclaimer">
-              <span className="disclaimer-icon">ℹ️</span>
-              <div className="disclaimer-text">
-                {language === "en" 
-                  ? "The model is trained on 120 dog breeds. For dog breeds not included in the database, the classification may be inaccurate. The model will attempt to find the closest match among known breeds."
-                  : "Das Modell wurde mit 120 Hunderassen trainiert. Für Hunderassen, die nicht in der Datenbank enthalten sind, kann die Klassifizierung ungenau sein. Das Modell versucht, die beste Übereinstimmung unter den bekannten Rassen zu finden."}
-              </div>
-            </div>
           </div>
         )}
       </div>
