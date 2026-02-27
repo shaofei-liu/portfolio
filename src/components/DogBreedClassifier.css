@@ -1,9 +1,12 @@
 ﻿.dog-breed-classifier-container {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0;
-  background-color: #0f1419;
+  max-width: 100%;
+  margin: 0;
+  padding: 30px;
+  background: transparent;
+  border-radius: 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
 }
 
 .dog-breed-classifier-header {
