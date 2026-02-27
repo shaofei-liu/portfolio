@@ -102,6 +102,32 @@ export default function VoiceSynthesis() {
     }
   };
 
+  // Cleanup function for Object URLs and audio playback
+  useEffect(() => {
+    return () => {
+      // Stop audio on unmount
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      // Revoke blob URL to free memory
+      if (result && typeof result === 'string' && result.startsWith('blob:')) {
+        URL.revokeObjectURL(result);
+      }
+    };
+  }, []);
+
+  // Revoke old object URL when result changes to avoid memory leaks
+  useEffect(() => {
+    return () => {
+      if (result && typeof result === 'string' && result.startsWith('blob:')) {
+        setTimeout(() => {
+          URL.revokeObjectURL(result);
+        }, 500);
+      }
+    };
+  }, [result]);
+
   const texts = t[language];
 
   const handleFileUpload = (e) => {
@@ -136,6 +162,12 @@ export default function VoiceSynthesis() {
       }
     }
 
+    // Stop any currently playing audio
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
     setLoading(true);
     setError(null);
     setResult(null);
@@ -160,9 +192,7 @@ export default function VoiceSynthesis() {
       const response = await fetch(apiUrl, {
         method: 'POST',
         body: formData,
-        headers: {
-          // Don't set Content-Type, let browser set it for FormData
-        }
+        // Don't set Content-Type, let browser set it for FormData
       });
 
       if (!response.ok) {

@@ -78,59 +78,42 @@ export default function DogBreedClassifier() {
         const urlParams = new URLSearchParams();
         urlParams.append('url', imageUrl);
         apiUrl += '?' + urlParams.toString();
-      } else if (inputMode === "file" && image) {
-        formData.append("file", image);
-      }
+        
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          body: null,
+          headers: {
+            Accept: "application/json",
+          },
+        });
 
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        body: inputMode === "file" ? formData : null,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        const errorData = await response.text();
-        console.error("API Error:", errorData);
-        // 后端返回错误 -> 用户提供的URL不是有效的图片
-        throw new Error(language === "en" ? "No image found at this URL. Please provide a valid image URL." : "Keine Bilder gefunden. Bitte geben Sie eine gültige Bild-URL ein.");
-      }
-
-      const data = await response.json();
-
-      // 检查是否是网页图片选择响应
-      if (data.type === "image_selection") {
-        setWebpageImages(data.images);
-        setError(null);
-        setLoading(false); // 重要：设置加载状态为false
-        // 不自动选择第一个图片，让用户自己点击选择
-        return;
-      }
-
-      if (!data.success) {
-        // 后端返回的错误信息
-        const errorMsg = data.error || t.predictError;
-        // 如果是"未找到图片"类型的错误，用用户选择的语言提示
-        if (errorMsg.toLowerCase().includes("no image") || errorMsg.toLowerCase().includes("not_image") || errorMsg.toLowerCase().includes("keine bilder")) {
+        if (!response.ok) {
+          const errorData = await response.text();
+          console.error("API Error:", errorData);
           throw new Error(language === "en" ? "No image found at this URL. Please provide a valid image URL." : "Keine Bilder gefunden. Bitte geben Sie eine gültige Bild-URL ein.");
         }
-        throw new Error(errorMsg);
-      }
 
-      const localizedResult = {
-        breed: getBreedName(data.breed, language),
-        confidence: data.confidence,
-        top_5: {},
-      };
+        const data = await response.json();
+        await handleResponseData(data);
+      } else if (inputMode === "file" && image) {
+        // For file upload, send FormData without query parameters
+        formData.append("file", image);
+        
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          body: formData,
+          // Don't set Content-Type for FormData, let browser handle it
+        });
 
-      if (data.top_5) {
-        for (const [breed, conf] of Object.entries(data.top_5)) {
-          localizedResult.top_5[getBreedName(breed, language)] = conf;
+        if (!response.ok) {
+          const errorData = await response.text();
+          console.error("API Error:", errorData);
+          throw new Error(language === "en" ? "Failed to predict. Please try again." : "Fehler bei der Vorhersage. Bitte versuchen Sie es erneut.");
         }
-      }
 
-      setResult(localizedResult);
+        const data = await response.json();
+        await handleResponseData(data);
+      }
     } catch (err) {
       console.error("Prediction error:", err);
       setError(err.message || t.predictError);
@@ -138,6 +121,35 @@ export default function DogBreedClassifier() {
       setLoading(false);
     }
   };
+
+  const handleResponseData = async (data) => {
+    // 检查是否是网页图片选择响应
+    if (data.type === "image_selection") {
+      setWebpageImages(data.images);
+      setError(null);
+      // 不自动选择第一个图片，让用户自己点击选择
+      return;
+    }
+
+    if (!data.success) {
+      // 后端返回的错误信息
+      const errorMsg = data.error || t.predictError;
+      throw new Error(errorMsg);
+    }
+
+    const localizedResult = {
+      breed: getBreedName(data.breed, language),
+      confidence: data.confidence,
+      top_5: {},
+    };
+
+    if (data.top_5) {
+      for (const [breed, conf] of Object.entries(data.top_5)) {
+        localizedResult.top_5[getBreedName(breed, language)] = conf;
+      }
+    }
+
+    setResult(localizedResult);
 
   const predictSelectedImage = async (imageUrl) => {
     // 预测网页中选择的特定图片
