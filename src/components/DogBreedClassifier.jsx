@@ -17,6 +17,34 @@ export default function DogBreedClassifier() {
 
   const t = dogBreedLang[language];
 
+  // Valid image formats
+  const VALID_IMAGE_FORMATS = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/bmp', 'image/tiff'];
+  const VALID_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.tiff', '.tif'];
+
+  const validateImageFile = (file) => {
+    // Check MIME type
+    if (file.type && !VALID_IMAGE_FORMATS.includes(file.type)) {
+      const lang = language === 'en' 
+        ? `Unsupported file format: ${file.type}. Please upload: JPEG, PNG, GIF, WebP, or BMP.`
+        : `Nicht unterstütztes Dateiformat: ${file.type}. Bitte laden Sie hoch: JPEG, PNG, GIF, WebP oder BMP.`;
+      setError(lang);
+      return false;
+    }
+
+    // Check extension
+    const fileName = file.name.toLowerCase();
+    const hasValidExtension = VALID_EXTENSIONS.some(ext => fileName.endsWith(ext));
+    if (!hasValidExtension) {
+      const lang = language === 'en' 
+        ? `Invalid file extension: ${file.name}. Please use: .jpg, .png, .gif, .webp, .bmp, or .tiff`
+        : `Ungültige Dateierweiterung: ${file.name}. Bitte verwenden Sie: .jpg, .png, .gif, .webp, .bmp oder .tiff`;
+      setError(lang);
+      return false;
+    }
+
+    return true;
+  };
+
   const openFileDialog = () => {
     fileInputRef.current?.click();
   };
@@ -24,6 +52,10 @@ export default function DogBreedClassifier() {
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Validate image format
+      if (!validateImageFile(file)) {
+        return;
+      }
       setImage(file);
       const reader = new FileReader();
       reader.onloadend = () => setPreview(reader.result);
@@ -43,6 +75,10 @@ export default function DogBreedClassifier() {
     e.stopPropagation();
     const file = e.dataTransfer.files?.[0];
     if (file) {
+      // Validate image format
+      if (!validateImageFile(file)) {
+        return;
+      }
       setImage(file);
       const reader = new FileReader();
       reader.onloadend = () => setPreview(reader.result);
@@ -303,7 +339,7 @@ export default function DogBreedClassifier() {
               <input
                 ref={fileInputRef}
                 type="file"
-                accept="image/*"
+                accept=".jpg,.jpeg,.png,.gif,.webp,.bmp,.tiff,.tif,image/jpeg,image/png,image/gif,image/webp,image/bmp,image/tiff"
                 onChange={handleImageChange}
                 className="file-input"
                 id="image-input"
