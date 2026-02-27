@@ -298,8 +298,8 @@
 
 [data-theme="light"] .rag-error-message {
   background: rgba(211, 47, 47, 0.15);
-  color: #c62828;
-  border-color: rgba(211, 47, 47, 0.4);
+  color: #b71c1c;
+  border-color: rgba(211, 47, 47, 0.5);
 }
 
 /* Input Area */
@@ -402,7 +402,7 @@
 }
 
 [data-theme="light"] .rag-reconnect-notice {
-  color: #f57c00;
+  color: #d84315;
 }
 
 /* Mobile Responsive */
