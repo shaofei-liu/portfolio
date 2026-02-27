@@ -3,7 +3,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
-  background-color: var(--bg-color);
+  background-color: #0f1419;
 }
 
 .dog-breed-classifier-header {
@@ -12,13 +12,13 @@
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border-bottom: 2px solid var(--input-border);
+  border-bottom: 2px solid #1a2a3a;
 }
 
 .dog-breed-classifier-title {
   font-size: 28px;
   font-weight: 600;
-  color: var(--text-color);
+  color: #fff;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -30,9 +30,9 @@
 
 .lang-btn {
   padding: 8px 16px;
-  border: 2px solid var(--input-border);
-  background: var(--button-bg);
-  color: var(--label-text);
+  border: 2px solid #1a2a3a;
+  background: #0f1419;
+  color: #aaa;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
@@ -41,14 +41,14 @@
 }
 
 .lang-btn:hover {
-  border-color: var(--link-color);
-  color: var(--text-color);
+  border-color: #3a4a5a;
+  color: #fff;
 }
 
 .lang-btn.active {
-  background: var(--button-text);
+  background: #fff;
   color: #0a1628;
-  border-color: var(--button-text);
+  border-color: #fff;
 }
 
 .dog-breed-classifier-content {
@@ -62,13 +62,13 @@
 }
 
 .upload-area {
-  border: 2px dashed var(--input-border);
+  border: 2px dashed #1a2a3a;
   border-radius: 12px;
   padding: 40px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: var(--button-bg);
+  background: #0f1419;
   min-height: 250px;
   display: flex;
   align-items: center;
@@ -76,8 +76,8 @@
 }
 
 .upload-area:hover {
-  border-color: var(--link-color);
-  background: var(--button-hover-bg);
+  border-color: #3a4a5a;
+  background: #142038;
 }
 
 [data-theme="light"] .upload-area {
@@ -109,7 +109,7 @@
 }
 
 .upload-placeholder p {
-  color: var(--label-text);
+  color: #aaa;
   font-size: 16px;
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -178,9 +178,9 @@
 }
 
 .btn-tertiary {
-  background: var(--button-bg);
-  color: var(--label-text);
-  border: 1px solid var(--input-border);
+  background: #0f1419;
+  color: #aaa;
+  border: 1px solid #1a2a3a;
 }
 
 .btn-tertiary:hover {
