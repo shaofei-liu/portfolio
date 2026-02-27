@@ -108,6 +108,9 @@ export default function DogBreedClassifier() {
           method: "POST",
           body: formData,
           // Don't set Content-Type for FormData, let browser handle it
+          headers: {
+            "Accept": "application/json"
+          }
         });
 
         if (!response.ok) {
@@ -120,7 +123,13 @@ export default function DogBreedClassifier() {
         await handleResponseData(data);
       }
     } catch (err) {
-      console.error("Prediction error:", err);
+      console.error("Prediction error details:", {
+        message: err.message,
+        stack: err.stack,
+        inputMode: inputMode,
+        hasImage: !!image,
+        hasImageUrl: !!imageUrl,
+      });
       setError(err.message || t.predictError);
     } finally {
       setLoading(false);
