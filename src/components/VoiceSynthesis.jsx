@@ -304,7 +304,7 @@ export default function VoiceSynthesis() {
           <div className={`vs-char-count ${text.length < MIN_CHARS ? 'vs-char-warning' : text.length >= MIN_CHARS && text.length <= MAX_CHARS ? 'vs-char-ok' : 'vs-char-error'}`}>
             {text.length} / {MAX_CHARS} {texts.characterCount}
             {text.length < MIN_CHARS && <span style={{marginLeft: '10px'}}>- {MIN_CHARS - text.length} {language === 'de' ? 'weitere Zeichen erforderlich' : 'more characters needed'}</span>}
-            {text.length >= MIN_CHARS && text.length <= MAX_CHARS && <span style={{marginLeft: '10px', color: '#388e3c'}}>✓ {language === 'de' ? 'Bereit zum Synthetisieren' : 'Ready to synthesize'}</span>}
+            {text.length >= MIN_CHARS && text.length <= MAX_CHARS && <span className="vs-ready-text">✓ {language === 'de' ? 'Bereit zum Synthetisieren' : 'Ready to synthesize'}</span>}
           </div>
         </div>
 

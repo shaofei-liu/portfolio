@@ -95,6 +95,13 @@ export default function DogBreedClassifier() {
         await handleResponseData(data);
       } else if (inputMode === "file" && image) {
         // For file upload, send FormData without query parameters
+        console.log("File upload debug:", {
+          fileName: image.name,
+          fileSize: image.size,
+          fileType: image.type,
+          isFile: image instanceof File,
+        });
+        
         formData.append("file", image);
         
         const response = await fetch(apiUrl, {
@@ -251,41 +258,16 @@ export default function DogBreedClassifier() {
       <div className="dog-breed-classifier-content">
         <div className="upload-section">
           {/* Input Mode Toggle */}
-          <div className="input-mode-toggle" style={{
-            display: "flex",
-            gap: "10px",
-            marginBottom: "16px",
-            justifyContent: "center"
-          }}>
+          <div className="input-mode-toggle">
             <button
               onClick={() => setInputMode("file")}
               className={`mode-btn ${inputMode === "file" ? "active" : ""}`}
-              style={{
-                padding: "8px 16px",
-                border: inputMode === "file" ? "2px solid #0066cc" : "1px solid #ccc",
-                backgroundColor: inputMode === "file" ? "#e6f0ff" : "#f5f5f5",
-                borderRadius: "6px",
-                cursor: "pointer",
-                fontSize: "14px",
-                fontWeight: inputMode === "file" ? "600" : "400",
-                color: inputMode === "file" ? "#0066cc" : "#666"
-              }}
             >
               {language === "en" ? "📁 Upload" : "📁 Hochladen"}
             </button>
             <button
               onClick={() => setInputMode("url")}
               className={`mode-btn ${inputMode === "url" ? "active" : ""}`}
-              style={{
-                padding: "8px 16px",
-                border: inputMode === "url" ? "2px solid #0066cc" : "1px solid #ccc",
-                backgroundColor: inputMode === "url" ? "#e6f0ff" : "#f5f5f5",
-                borderRadius: "6px",
-                cursor: "pointer",
-                fontSize: "14px",
-                fontWeight: inputMode === "url" ? "600" : "400",
-                color: inputMode === "url" ? "#0066cc" : "#666"
-              }}
             >
               {language === "en" ? "🔗 URL" : "🔗 URL"}
             </button>

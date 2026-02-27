@@ -27,7 +27,7 @@
 .rag-title {
   margin: 0;
   font-size: 24px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
@@ -42,13 +42,19 @@
   padding: 6px 10px;
   background: rgba(0, 102, 204, 0.2);
   border: 1px solid rgba(0, 102, 204, 0.5);
-  color: #fff;
+  color: var(--text-color);
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
   min-width: 80px;
   transition: all 0.2s;
   font-family: "Poppins", sans-serif;
+}
+
+[data-theme="light"] .rag-language-select {
+  background: rgba(0, 102, 204, 0.1);
+  border-color: rgba(0, 102, 204, 0.3);
+  color: #000;
 }
 
 .rag-language-select:hover {
@@ -60,12 +66,18 @@
   padding: 6px 10px;
   background: rgba(211, 47, 47, 0.2);
   border: 1px solid rgba(211, 47, 47, 0.5);
-  color: #fff;
+  color: var(--text-color);
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
   font-family: "Poppins", sans-serif;
+}
+
+[data-theme="light"] .rag-clear-btn {
+  background: rgba(211, 47, 47, 0.1);
+  border-color: rgba(211, 47, 47, 0.3);
+  color: #c62828;
 }
 
 .rag-clear-btn:hover {
@@ -81,6 +93,10 @@
   color: #999;
 }
 
+[data-theme="light"] .rag-connection-status {
+  color: #666;
+}
+
 .rag-connection-status.connected {
   color: #4caf50;
 }
@@ -91,6 +107,10 @@
   border-radius: 50%;
   background: #999;
   animation: pulse 2s infinite;
+}
+
+[data-theme="light"] .rag-status-indicator {
+  background: #ccc;
 }
 
 .rag-connection-status.connected .rag-status-indicator {
@@ -138,7 +158,7 @@
 
 .rag-welcome-message {
   text-align: center;
-  color: #999;
+  color: var(--project-text-color, #999);
   padding: 24px 16px;
   font-size: 14px;
 }
@@ -195,6 +215,12 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+[data-theme="light"] .rag-message-assistant .rag-message-content {
+  background: #f0f0f0;
+  color: #333;
+  border-color: #ddd;
+}
+
 /* Typing Indicator */
 .rag-typing-indicator {
   display: flex;
@@ -208,6 +234,10 @@
   border-radius: 50%;
   background: #999;
   animation: typing 1.4s infinite;
+}
+
+[data-theme="light"] .rag-typing-indicator span {
+  background: #ccc;
 }
 
 .rag-typing-indicator span:nth-child(2) {
@@ -242,6 +272,12 @@
   text-align: center;
 }
 
+[data-theme="light"] .rag-error-message {
+  background: rgba(211, 47, 47, 0.15);
+  color: #c62828;
+  border-color: rgba(211, 47, 47, 0.4);
+}
+
 /* Input Area */
 .rag-input-container {
   padding: 12px 16px;
@@ -270,6 +306,12 @@
   max-height: 80px;
 }
 
+[data-theme="light"] .rag-input-field {
+  background: #f5f5f5;
+  color: #000;
+  border-color: rgba(0, 102, 204, 0.2);
+}
+
 .rag-input-field:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.12);
@@ -284,6 +326,10 @@
 
 .rag-input-field::placeholder {
   color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="light"] .rag-input-field::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .rag-send-btn {
@@ -324,6 +370,10 @@
   text-align: center;
   font-size: 12px;
   color: #ffb74d;
+}
+
+[data-theme="light"] .rag-reconnect-notice {
+  color: #f57c00;
 }
 
 /* Mobile Responsive */

@@ -117,6 +117,15 @@
   color: #388e3c !important;
 }
 
+.vs-ready-text {
+  margin-left: 10px;
+  color: #388e3c;
+}
+
+[data-theme="light"] .vs-ready-text {
+  color: #2e7d32;
+}
+
 .vs-sample-voices {
   display: flex;
   gap: 12px;
@@ -159,6 +168,10 @@
   color: #e5e7eb;
 }
 
+[data-theme="light"] .vs-voice-name {
+  color: #333;
+}
+
 .vs-file-input-wrapper {
   display: block;
   position: relative;
@@ -186,6 +199,10 @@
   font-size: 14px;
 }
 
+[data-theme="light"] .vs-file-name {
+  color: #666;
+}
+
 .vs-error {
   padding: 12px;
   background: rgba(239, 68, 68, 0.1);
@@ -196,6 +213,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+[data-theme="light"] .vs-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #c62828;
 }
 
 .vs-synthesize-btn {
@@ -209,6 +231,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 8px;
+}
+
+[data-theme="light"] .vs-synthesize-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
 }
 
 .vs-synthesize-btn:hover:not(:disabled) {
@@ -228,6 +255,11 @@
   border-radius: 6px;
   padding: 20px;
   margin-top: 12px;
+}
+
+[data-theme="light"] .vs-result {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #059669;
 }
 
 .vs-result-header {
@@ -278,6 +310,12 @@
   font-weight: 500;
   text-align: center;
   animation: pulse 1.5s ease-in-out infinite;
+}
+
+[data-theme="light"] .vs-processing-notification {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border-color: #f59e0b;
 }
 
 .vs-warning {
