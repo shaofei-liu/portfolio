@@ -54,6 +54,13 @@ export default function VoiceSynthesis() {
     fetchSamples();
   }, []);
 
+  // When language changes, update selected voice to first available in that language
+  useEffect(() => {
+    if (sampleVoices[language]?.voices?.length > 0) {
+      setSelectedSampleFile(sampleVoices[language].voices[0].filename);
+    }
+  }, [language, sampleVoices]);
+
   const t = {
     de: {
       title: "Sprachsynthese mit Stimmenklonung",
