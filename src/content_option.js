@@ -63,10 +63,10 @@ const dataabout = {
             description_en: "I compose music primarily in New Age and musical theatre styles, without the use of AI-assisted tools. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
         },
         {
-            title: "Gefühle und Motivationen",
-            title_en: "Emotions and Motivations",
-            description: "Mein Interesse gilt dem Verständnis menschlicher Gefühle und der Motivation hinter menschlichem Verhalten, insbesondere durch quantitative Methoden zur Analyse der dynamischen Veränderungen von Emotionen und Motiven. Ich habe eine Theorie mit dem Namen \"Zufriedenheit\" entwickelt und arbeite derzeit an einem Buch zu diesem Thema.",
-            description_en: "I am interested in understanding human emotions and the motivations behind behavior, especially through quantitative approaches that model the dynamic changes of feelings and motivations. I have proposed a theoretical framework called 'Satisfaction' and am currently writing a book based on this theory."
+            title: "Interesse an Psychologie und Verhaltensanalyse",
+            title_en: "Psychology and Behavioral Analysis",
+            description: "Ich bin fasziniert von Psychologie und wie menschliches Verhalten funktioniert. Mich interessiert, warum Menschen bestimmte Entscheidungen treffen und was ihre Gefühle und Motivationen beeinflusst. Ich erkunde diese Themen durch quantitative Methoden und häufig in meinen eigenen Gedanken. Als Hobby habe ich sogar eine Theorie über \"Zufriedenheit\" entwickelt und schreibe momentan ein Buch dazu.",
+            description_en: "I'm fascinated by psychology and how human behavior works. I'm curious about why people make the decisions they do and what influences their emotions and motivations. I explore these topics through quantitative methods and often in my own thoughts. As a hobby, I've even developed a theory about 'satisfaction' and I'm currently writing a book on it."
         }
     ]
 };
