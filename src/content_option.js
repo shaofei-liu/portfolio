@@ -63,8 +63,8 @@ const dataabout = {
             description_en: "I compose music primarily in New Age and musical theatre styles, without the use of AI-assisted tools. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
         },
         {
-            title: "Psychologische Forschung",
-            title_en: "Psychology Research",
+            title: "Gefühle und Motivationen",
+            title_en: "Emotions and Motivations",
             description: "Mein Interesse gilt dem Verständnis menschlicher Gefühle und der Motivation hinter menschlichem Verhalten, insbesondere durch quantitative Methoden zur Analyse der dynamischen Veränderungen von Emotionen und Motiven. Ich habe eine Theorie mit dem Namen \"Zufriedenheit\" entwickelt und arbeite derzeit an einem Buch zu diesem Thema.",
             description_en: "I am interested in understanding human emotions and the motivations behind behavior, especially through quantitative approaches that model the dynamic changes of feelings and motivations. I have proposed a theoretical framework called 'Satisfaction' and am currently writing a book based on this theory."
         }
