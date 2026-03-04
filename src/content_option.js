@@ -51,21 +51,21 @@ const dataabout = {
     ],
     hobbies: [
         {
-            title: "Historische Europäische Kampfkunst (HEMA)",
-            title_en: "Historical European Martial Arts (HEMA)",
-            description: "Ich bin leidenschaftlich an HEMA interessiert, insbesondere an Langschwertkampf. Auch Badminton, Tischtennis und modernes Fechten erfordern viel Skill und Geschick. Im Vergleich zu Mannschaftssportarten wie Fußball oder Basketball bevorzuge ich Einzelsportarten, die persönliche Fähigkeiten und direkte Konfrontation betonen.",
+            title: "Sport",
+            title_en: "Sports",
+            description: "Ich begeisterte mich für Historische Europäische Kampfkunst (HEMA), insbesondere für den Langschwertkampf. Darüber hinaus habe ich Erfahrung in Badminton, Tischtennis und modernem Fechten. Im Vergleich zu Mannschaftssportarten wie Fußball oder Basketball bevorzuge ich Einzelsportarten, die individuelle Fähigkeiten und direkte Auseinandersetzung betonen.",
             description_en: "I am passionate about Historical European Martial Arts (HEMA), particularly longsword fencing. I also have experience in badminton, table tennis, and modern fencing. Compared to team sports such as football or basketball, I prefer individual sports that emphasize personal skill and direct confrontation."
         },
         {
-            title: "Musik-Komposition und Gesang",
+            title: "Musikkomposition und Gesang",
             title_en: "Music Composition and Singing",
-            description: "Ich komponiere Musik hauptsächlich in New Age- und Musiktheater-Stilen, ohne die Nutzung von KI-gestützten Tools. Ich singe auch gerne, obwohl das verfügbare Repertoire für meinen tiefen Bariton-Stimmumfang relativ begrenzt ist.",
+            description: "Ich komponiere Musik vor allem im New-Age- und Musical-Stil, ohne den Einsatz von KI-gestützten Hilfsmitteln. Außerdem singe ich gerne, wobei das Repertoire für meine tiefe Bariton-Stimmlage vergleichsweise begrenzt ist.",
             description_en: "I compose music primarily in New Age and musical theatre styles, without the use of AI-assisted tools. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
         },
         {
-            title: "Psychologie-Forschung",
+            title: "Psychologische Forschung",
             title_en: "Psychology Research",
-            description: "Ich interessiere mich dafür, menschliche Emotionen und die Motivationen hinter Verhaltensweisen zu verstehen, besonders durch quantitative Ansätze, die die dynamischen Veränderungen von Gefühlen und Motivationen modellieren. Ich habe einen theoretischen Rahmen namens 'Satisfaction' entwickelt und schreibe derzeit ein Buch basierend auf dieser Theorie.",
+            description: "Mein Interesse gilt dem Verständnis menschlicher Gefühle und der Motivation hinter menschlichem Verhalten, insbesondere durch quantitative Methoden zur Analyse der dynamischen Veränderungen von Emotionen und Motiven. Ich habe eine Theorie mit dem Namen \"Zufriedenheit\" entwickelt und arbeite derzeit an einem Buch zu diesem Thema.",
             description_en: "I am interested in understanding human emotions and the motivations behind behavior, especially through quantitative approaches that model the dynamic changes of feelings and motivations. I have proposed a theoretical framework called 'Satisfaction' and am currently writing a book based on this theory."
         }
     ]
