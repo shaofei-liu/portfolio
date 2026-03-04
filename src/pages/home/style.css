@@ -46,7 +46,7 @@ section {
 
 .intro_sec .text,
 .intro_sec .h_bg-image {
-    width: 50%;
+    width: 40%;
 }
 
 @media (max-width:991.98px) {
