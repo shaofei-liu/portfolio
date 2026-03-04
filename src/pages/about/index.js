@@ -11,6 +11,7 @@ import {
   services,
   translations,
 } from "../../content_option";
+import aboutmeImg from "../../assets/images/aboutme.png";
 
 export const About = () => {
   const [lang, setLang] = React.useState(localStorage.getItem("lang") || "de");
@@ -35,12 +36,19 @@ export const About = () => {
           </Col>
         </Row>
         <Row className="sec_sp">
-          <Col lg="5">
+          <Col lg="5" className="d-flex flex-column align-items-center justify-content-center">
+            <div className="aboutme-image-wrapper">
+              <img src={aboutmeImg} alt="Shaofei Liu" className="aboutme-circular-image" />
+            </div>
             <h3 className="color_sec py-4">{lang === 'en' ? dataabout.title_en : dataabout.title}</h3>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div>
-              <p>{lang === 'en' && dataabout.aboutme_en ? dataabout.aboutme_en : dataabout.aboutme}</p>
+              {(lang === 'en' ? dataabout.aboutme_paragraphs_en : dataabout.aboutme_paragraphs).map((paragraph, idx) => (
+                <p key={idx} style={{ marginBottom: '16px', lineHeight: '1.7' }}>
+                  {paragraph}
+                </p>
+              ))}
               <a 
                 href="/ShaofeiLiu_Resume.pdf" 
                 target="_blank"
@@ -133,6 +141,21 @@ export const About = () => {
                 <div className="service_ py-4" key={i}>
                   <h5 className="service__title">{(lang === 'en' && data.title_en) ? data.title_en : data.title}</h5>
                   <p className="service_desc">{(lang === 'en' && data.description_en) ? data.description_en : data.description}</p>
+                </div>
+              );
+            })}
+          </Col>
+        </Row>
+        <Row className="sec_sp">
+          <Col lg="5">
+            <h3 className="color_sec py-4">{lang === 'en' ? 'Interests & Hobbies' : 'Interessen & Hobbys'}</h3>
+          </Col>
+          <Col lg="7">
+            {dataabout.hobbies && dataabout.hobbies.map((hobby, i) => {
+              return (
+                <div className="service_ py-4" key={i}>
+                  <h5 className="service__title">{(lang === 'en' && hobby.title_en) ? hobby.title_en : hobby.title}</h5>
+                  <p className="service_desc">{(lang === 'en' && hobby.description_en) ? hobby.description_en : hobby.description}</p>
                 </div>
               );
             })}

@@ -2,6 +2,37 @@
     margin-bottom: calc(3rem + 5.128vw)
 }
 
+.aboutme-image-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme-circular-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutme-circular-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+}
+
+[data-theme="light"] .aboutme-circular-image {
+    border-color: #333;
+    box-shadow: 0 4px 15px rgba(100, 100, 100, 0.15);
+}
+
+[data-theme="light"] .aboutme-circular-image:hover {
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.2);
+}
+
 .table td,
 .table th {
     color: var(--text-color);

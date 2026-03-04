@@ -33,8 +33,42 @@ const introdata = {
 const dataabout = {
     title: "Über mich",
     title_en: "About me",
-    aboutme: "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik. Fundierte Kenntnisse in Künstlicher Intelligenz, Sensorfusion und Signalverarbeitung mit Erfahrung in der Entwicklung und Simulation intelligenter Systeme im Bereich Radar, Embedded Systems und Robotik. Internationale Ausbildung (Deutschland/China) mit Fokus auf datengetriebene Methoden und modellbasierte Ansätze für adaptive technische Systeme. Spezialisiert auf die Entwicklung prototypischer Anwendungen zur Datenverarbeitung und Machine-Learning-Integration mit Python, PyTorch und C++. Ich schaffe intelligente Lösungen, die reale Auswirkungen haben.",
-    aboutme_en: "AI Engineer with research-oriented background in robotics and mechatronics. Proficient in Artificial Intelligence, sensor fusion and signal processing with experience developing and simulating intelligent systems in radar, embedded systems and robotics. International education (Germany/China) with focus on data-driven methods and model-based approaches for adaptive technical systems. Specialized in developing prototypical applications for data processing and machine learning integration with Python, PyTorch and C++. I create intelligent solutions with real-world impact.",
+    aboutme: "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik.",
+    aboutme_en: "AI Engineer with research-oriented background in robotics and mechatronics.",
+    aboutme_paragraphs: [
+        "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik.",
+        "Fundierte Kenntnisse in Künstlicher Intelligenz, Sensorfusion und Signalverarbeitung mit Erfahrung in der Entwicklung und Simulation intelligenter Systeme im Bereich Radar, Embedded Systems und Robotik.",
+        "Internationale Ausbildung (Deutschland/China) mit Fokus auf datengetriebene Methoden und modellbasierte Ansätze für adaptive technische Systeme.",
+        "Spezialisiert auf die Entwicklung prototypischer Anwendungen zur Datenverarbeitung und Machine-Learning-Integration mit Python, PyTorch und C++.",
+        "Ich schaffe intelligente Lösungen, die reale Auswirkungen haben."
+    ],
+    aboutme_paragraphs_en: [
+        "AI Engineer with research-oriented background in robotics and mechatronics.",
+        "Proficient in Artificial Intelligence, sensor fusion and signal processing with experience developing and simulating intelligent systems in the radar, embedded systems and robotics domains.",
+        "International education (Germany/China) with focus on data-driven methods and model-based approaches for adaptive technical systems.",
+        "Specialized in developing prototypical applications for data processing and machine learning integration with Python, PyTorch and C++.",
+        "I create intelligent solutions with real-world impact."
+    ],
+    hobbies: [
+        {
+            title: "Historische Europäische Kampfkunst (HEMA)",
+            title_en: "Historical European Martial Arts (HEMA)",
+            description: "Ich bin leidenschaftlich an HEMA interessiert, insbesondere an Langschwertkampf. Auch Badminton, Tischtennis und modernes Fechten erfordern viel Skill und Geschick. Im Vergleich zu Mannschaftssportarten wie Fußball oder Basketball bevorzuge ich Einzelsportarten, die persönliche Fähigkeiten und direkte Konfrontation betonen.",
+            description_en: "I am passionate about Historical European Martial Arts (HEMA), particularly longsword fencing. I also have experience in badminton, table tennis, and modern fencing. Compared to team sports such as football or basketball, I prefer individual sports that emphasize personal skill and direct confrontation."
+        },
+        {
+            title: "Musik-Komposition und Gesang",
+            title_en: "Music Composition and Singing",
+            description: "Ich komponiere Musik hauptsächlich in New Age- und Musiktheater-Stilen, ohne die Nutzung von KI-gestützten Tools. Ich singe auch gerne, obwohl das verfügbare Repertoire für meinen tiefen Bariton-Stimmumfang relativ begrenzt ist.",
+            description_en: "I compose music primarily in New Age and musical theatre styles, without the use of AI-assisted tools. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
+        },
+        {
+            title: "Psychologie-Forschung",
+            title_en: "Psychology Research",
+            description: "Ich interessiere mich dafür, menschliche Emotionen und die Motivationen hinter Verhaltensweisen zu verstehen, besonders durch quantitative Ansätze, die die dynamischen Veränderungen von Gefühlen und Motivationen modellieren. Ich habe einen theoretischen Rahmen namens 'Satisfaction' entwickelt und schreibe derzeit ein Buch basierend auf dieser Theorie.",
+            description_en: "I am interested in understanding human emotions and the motivations behind behavior, especially through quantitative approaches that model the dynamic changes of feelings and motivations. I have proposed a theoretical framework called 'Satisfaction' and am currently writing a book based on this theory."
+        }
+    ]
 };
 const worktimeline = [{
         jobtitle: "KI-Softwareentwickler (projektbasiert)",
