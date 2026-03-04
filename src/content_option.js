@@ -59,8 +59,8 @@ const dataabout = {
         {
             title: "Musikkomposition und Gesang",
             title_en: "Music Composition and Singing",
-            description: "Ich komponiere Musik vor allem im New-Age- und Musical-Stil, ohne den Einsatz von KI-gestützten Hilfsmitteln. Außerdem singe ich gerne, wobei das Repertoire für meine tiefe Bariton-Stimmlage vergleichsweise begrenzt ist.",
-            description_en: "I compose music primarily in New Age and musical theatre styles, without the use of AI-assisted tools. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
+            description: "Ich komponiere Musik vor allem im New-Age- und Musical-Stil mit Notationssoftware wie Sibelius sowie mit DAWs wie Cubase. Außerdem singe ich gerne, wobei das Repertoire für meine tiefe Bariton-Stimmlage vergleichsweise begrenzt ist.",
+            description_en: "I compose music primarily in New Age and musical theatre styles using notation software like Sibelius and DAWs like Cubase. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
         },
         {
             title: "Interesse an Psychologie und Verhaltensanalyse",
