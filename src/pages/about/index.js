@@ -44,11 +44,7 @@ export const About = () => {
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div>
-              {(lang === 'en' ? dataabout.aboutme_paragraphs_en : dataabout.aboutme_paragraphs).map((paragraph, idx) => (
-                <p key={idx} style={{ marginBottom: '16px', lineHeight: '1.7' }}>
-                  {paragraph}
-                </p>
-              ))}
+              <p style={{ marginBottom: '16px', lineHeight: '1.7' }} dangerouslySetInnerHTML={{ __html: lang === 'en' ? dataabout.aboutme_en : dataabout.aboutme }} />
               <a 
                 href="/ShaofeiLiu_Resume.pdf" 
                 target="_blank"

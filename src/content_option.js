@@ -31,10 +31,10 @@ const introdata = {
 };
 
 const dataabout = {
-    title: "Über mich",
-    title_en: "About me",
-    aboutme: "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik.",
-    aboutme_en: "AI Engineer with research-oriented background in robotics and mechatronics.",
+    title: "Shaofei Liu",
+    title_en: "Shaofei Liu",
+    aboutme: "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik. <strong>Fundierte Kenntnisse in Künstlicher Intelligenz, Sensorfusion und Signalverarbeitung</strong> mit Erfahrung in der Entwicklung und Simulation intelligenter Systeme im Bereich <strong>Radar, Embedded Systems und Robotik</strong>. <strong>Internationale Ausbildung (Deutschland/China)</strong> mit Fokus auf <strong>datengetriebene Methoden und modellbasierte Ansätze</strong> für adaptive technische Systeme. Spezialisiert auf die Entwicklung prototypischer Anwendungen zur Datenverarbeitung und <strong>Machine-Learning-Integration mit Python, PyTorch und C++</strong>. Ich schaffe intelligente Lösungen, die reale Auswirkungen haben.",
+    aboutme_en: "AI Engineer with <strong>research-oriented background in robotics and mechatronics</strong>. Proficient in <strong>Artificial Intelligence, sensor fusion and signal processing</strong> with experience developing and simulating intelligent systems in the <strong>radar, embedded systems and robotics</strong> domains. <strong>International education (Germany/China)</strong> with focus on <strong>data-driven methods and model-based approaches</strong> for adaptive technical systems. Specialized in developing prototypical applications for data processing and <strong>machine learning integration with Python, PyTorch and C++</strong>. I create intelligent solutions with real-world impact.",
     aboutme_paragraphs: [
         "KI-Ingenieur mit forschungsorientiertem Hintergrund in Robotik und Mechatronik.",
         "Fundierte Kenntnisse in Künstlicher Intelligenz, Sensorfusion und Signalverarbeitung mit Erfahrung in der Entwicklung und Simulation intelligenter Systeme im Bereich Radar, Embedded Systems und Robotik.",
