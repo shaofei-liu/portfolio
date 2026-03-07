@@ -1,14 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.e9f91acd.css",
-    "main.js": "/static/js/main.b000358b.js",
-    "static/media/dog-breed-recognition.png": "/static/media/dog-breed-recognition.333732e99f395dc8ce26.png",
-    "static/media/chatbot.jpg": "/static/media/chatbot.9314070c80b3e4944842.jpg",
-    "static/media/background.jpg": "/static/media/background.d7f819b3b5e6cedca5dc.jpg",
+    "main.css": "/static/css/main.9493b4e9.css",
+    "main.js": "/static/js/main.f721417a.js",
+    "static/media/background.png": "/static/media/background.f131213f6264aafe41c7.png",
+    "static/media/digital-twin.png": "/static/media/digital-twin.ea25d31c4c3ac91cdffa.png",
+    "static/media/aboutme.png": "/static/media/aboutme.a4812425bc12b1083778.png",
+    "static/media/radar.png": "/static/media/radar.65a577c8048ad965ebad.png",
+    "static/media/radar-1.png": "/static/media/radar-1.107fe1e918fb6161eafb.png",
+    "static/media/voice-synthesis.png": "/static/media/voice-synthesis.9785be87d5d59fc650bc.png",
+    "static/media/museum.png": "/static/media/museum.807e8f47ced38aeade6c.png",
+    "static/media/museum-1.png": "/static/media/museum-1.f069ac63ea39412eae13.png",
+    "static/media/dog-breed-classifier.png": "/static/media/dog-breed-classifier.32a18d59185961c793c4.png",
+    "static/media/cooker.png": "/static/media/cooker.d578aeea64f2c2f7f13d.png",
+    "static/media/cooker-1.png": "/static/media/cooker-1.7641ec1d229a7f1a4e83.png",
+    "static/media/digital-twin-1.png": "/static/media/digital-twin-1.f49c4b210ae83e2a373e.png",
+    "static/media/office.jpg": "/static/media/office.51d0e3dc2626856fc586.jpg",
+    "static/media/chatbot.jpg": "/static/media/chatbot.82201c40da07ca7f09b8.jpg",
+    "static/media/irevrnn.jpg": "/static/media/irevrnn.dce37b3d2d890f3aa119.jpg",
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.e9f91acd.css",
-    "static/js/main.b000358b.js"
+    "static/css/main.9493b4e9.css",
+    "static/js/main.f721417a.js"
   ]
 }
