@@ -46,7 +46,7 @@ export const About = () => {
             <div>
               <p style={{ marginBottom: '16px', lineHeight: '1.7' }} dangerouslySetInnerHTML={{ __html: lang === 'en' ? dataabout.aboutme_en : dataabout.aboutme }} />
               <a 
-                href="/ShaofeiLiu_Resume.pdf" 
+                href={lang === 'en' ? '/ShaofeiLiu_Resume.pdf' : '/ShaofeiLiu_Lebenslauf.pdf'} 
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
