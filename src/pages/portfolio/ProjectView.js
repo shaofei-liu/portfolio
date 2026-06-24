@@ -1018,7 +1018,7 @@ export default function ProjectView() {
             borderLeft: "4px solid #f59e0b"
           }}>
             <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "System Components" : "Systemkomponenten"}
+              {lang === 'en' ? "Implementation Details" : "Implementierungsdetails"}
             </h4>
             <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
               {codeFeatures.map((feature, idx) => (
@@ -1150,7 +1150,7 @@ export default function ProjectView() {
             borderLeft: "4px solid #f59e0b"
           }}>
             <h4 style={{ margin: "0 0 12px 0", color: "#f59e0b", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
-              {lang === 'en' ? "System Components" : "Systemkomponenten"}
+              {lang === 'en' ? "Implementation Details" : "Implementierungsdetails"}
             </h4>
             <ul style={{ margin: 0, paddingLeft: "20px", color: "#333", fontSize: "14px", lineHeight: "1.8" }}>
               {codeFeatures.map((feature, idx) => (

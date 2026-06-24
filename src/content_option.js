@@ -843,10 +843,10 @@ const projectDetails = {
     }
     ,
     project9: {
-        title_de: "Integrierte Systeme - Einführung und Überblick",
-        title_en: "Integrated Systems - Introduction and Overview",
-        subtitle_de: "Einführung in die kombinierten Projekte: Museum Intelligence, SmartCooker, Digital Twin und Radar-Hinderniserkennung.",
-        subtitle_en: "Introduction to combined projects: Museum Intelligence, SmartCooker, Digital Twin and Radar Obstacle Detection.",
+        title_de: "Eine mehrschichtige dynamische Motivationstheorie: Integration psychologischer Bedürfnisse, Valenz–Erregungs-Repräsentation und Verhaltensdynamik",
+        title_en: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
+        subtitle_de: "Kurzbeschreibung der Forschung: Entwicklung eines dynamischen, mehrschichtigen Modells, das subjektive motivational Zustände mit Verhaltensentscheidungen verknüpft.",
+        subtitle_en: "Research summary: developing a dynamic multi-layer model that links subjective motivational states to behavioral decision-making.",
         description_de: "Theoretisches Papier, das eine mehrschichtige, dynamische Theorie der Motivation vorschlägt und psychologische Bedürfnisse, Valenz–Erregungs-Repräsentation sowie zeitliche Verläufe integriert, um subjektive Motivation mit beobachtbarem Verhalten zu verbinden.",
         description_en: "A theoretical manuscript proposing a multi-layer dynamic theory of motivation that integrates psychological needs, valence–arousal representations, and temporal dynamics to link subjective motivation to observable behavior.",
         introduction_de: "Motivation wird zunehmend als dynamischer, kontextabhängiger Prozess verstanden, der Initiation, anhaltende Beteiligung und Lernleistung beeinflusst. Diese Arbeit verschiebt den Fokus von statischen Modellen hin zu einer integrativen Darstellung, in der motivationsrelevante Faktoren (z. B. Erwartung, Wert, Kosten, Autonomie) in einem mehrschichtigen Modell zusammengeführt werden. Wir rekonzeptualisieren grundlegende psychologische Bedürfnisse in vier Kategorien (instinktiv, erfahrungsbezogen, zustandsbezogen, interaktiv), verwenden ein Valenz–Erregungs-Schema als Repräsentationsraum für motivationale Erfahrungen und betten diese Repräsentationen in einen zeitlichen Dynamikprozess ein. Die resultierenden Trajektorien werden mit Entscheidungsprozessen verknüpft, sodass Veränderungen im subjektiven Erleben in konkrete Verhaltensentscheidungen überführt werden.",
@@ -869,15 +869,13 @@ const projectDetails = {
             "Mathematische Modellierung von Valenz–Erregungs-Trajektorien und ihre zeitliche Integration",
             "Simulations- und Parameter-Schätzungs-Frameworks für dynamische Motivationsmodelle",
             "Implementierung von Entscheidungsregeln zur Abbildung motivierter Verhaltenswahl",
-            "Prototypen in Python (NumPy, SciPy), Visualisierung mit Matplotlib/Plotly",
-            "Optionale Integration in Microservice-Architekturen (FastAPI) für Online-Simulationen"
+            "Prototypen in Python (NumPy, SciPy), Visualisierung mit Matplotlib/Plotly"
         ],
         codeFeatures_en: [
             "Mathematical modeling of valence–arousal trajectories and their temporal integration",
             "Simulation and parameter-estimation frameworks for dynamic motivation models",
             "Implementation of decision rules mapping motivational states to behavioral choices",
-            "Prototypes in Python (NumPy, SciPy), visualization with Matplotlib/Plotly",
-            "Optional integration into microservice architectures (FastAPI) for online simulations"
+            "Prototypes in Python (NumPy, SciPy), visualization with Matplotlib/Plotly"
         ],
         techStack_de: [
             "Python 3.9+",
@@ -903,8 +901,8 @@ const projectDetails = {
         paperDescription_en: "Unpublished manuscript (May 15, 2026). Open the PDF for the full text describing theory, methodology and implications.",
         fileInfo: {
             pages: "",
-            description: "Ein kombinierendes Einführungspapier, das Motivation, Systemkomponenten und Evaluationsprotokolle beschreibt.",
-            description_en: "A combined introduction paper describing motivation, system components and evaluation protocols."
+            description: "Ein kombinierendes Einführungspapier, das Motivation, Implementierungsdetails und Evaluationsprotokolle beschreibt.",
+            description_en: "A combined introduction paper describing motivation, implementation details and evaluation protocols."
         }
     }
 };
