@@ -182,6 +182,21 @@ const services = [{
 ];
 
 const dataportfolio = [
+    // Introduction combined project
+    {
+        id: "project9",
+        img: officeImg,
+        description: "Integrated Systems Overview - Introduction and highlights of ongoing collaborative projects",
+        description_en: "Integrated Systems Overview - Introduction and highlights of ongoing collaborative projects",
+        link: "#",
+        type: "collaboration",
+        projectUrl: "/introduction.pdf",
+        fileInfo: {
+            pages: "",
+            description: "Introduction document combining Museum Intelligence, SmartCooker, Digital Twin and Radar projects",
+            description_en: "Introduction document combining Museum Intelligence, SmartCooker, Digital Twin and Radar projects"
+        }
+    },
     // Personal Projects
     {
         id: "project1",
