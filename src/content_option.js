@@ -259,13 +259,13 @@ const dataportfolio = [
     {
         id: "project9",
         img: psychologyImg,
-        description: "Integrated Systems Overview - Introduction and highlights of ongoing collaborative projects",
-        description_en: "Integrated Systems Overview - Introduction and highlights of ongoing collaborative projects",
+        description: "Unpublished manuscript: A Multi-Layer Dynamic Theory of Motivation",
+        description_en: "Unpublished manuscript: A Multi-Layer Dynamic Theory of Motivation",
         link: "#",
         type: "collaboration",
         projectUrl: "/introduction.pdf",
         thesis: true,
-        paperTitle_de: "Eine mehrschichtige dynamische Motivationstheorie",
+        paperTitle_de: "A Multi-Layer Dynamic Theory of Motivation",
         paperTitle_en: "A Multi-Layer Dynamic Theory of Motivation",
         paperUrl: "/introduction.pdf",
         fileInfo: {
