@@ -264,6 +264,10 @@ const dataportfolio = [
         link: "#",
         type: "collaboration",
         projectUrl: "/introduction.pdf",
+        thesis: true,
+        paperTitle_de: "Eine mehrschichtige dynamische Motivationstheorie",
+        paperTitle_en: "A Multi-Layer Dynamic Theory of Motivation",
+        paperUrl: "/introduction.pdf",
         fileInfo: {
             pages: "",
             description: "Introduction document combining Museum Intelligence, SmartCooker, Digital Twin and Radar projects",
