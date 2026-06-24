@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9493b4e9.css",
-    "main.js": "/static/js/main.faadf021.js",
+    "main.js": "/static/js/main.cb195ecc.js",
     "static/media/psychology-1.png": "/static/media/psychology-1.125c91f8c0262fa8b3a1.png",
     "static/media/psychology.png": "/static/media/psychology.4a01fdaeef4b9277a437.png",
     "static/media/background.png": "/static/media/background.f131213f6264aafe41c7.png",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.9493b4e9.css",
-    "static/js/main.faadf021.js"
+    "static/js/main.cb195ecc.js"
   ]
 }
