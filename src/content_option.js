@@ -847,37 +847,37 @@ const projectDetails = {
         title_en: "Integrated Systems - Introduction and Overview",
         subtitle_de: "Einführung in die kombinierten Projekte: Museum Intelligence, SmartCooker, Digital Twin und Radar-Hinderniserkennung.",
         subtitle_en: "Introduction to combined projects: Museum Intelligence, SmartCooker, Digital Twin and Radar Obstacle Detection.",
-        description_de: "",
-        description_en: "",
-        introduction_de: "Dieses Einführungsdokument fasst zentrale Konzepte und Systemarchitekturen der kooperativen Projekte zusammen. Es beschreibt die Motivation, Anwendungsfälle und die übergeordneten Designprinzipien zur Integration von KI-gestützten Komponenten in realen Systemen.",
-        introduction_en: "This introduction document summarizes the core concepts and system architectures of the collaborative projects. It outlines motivation, use cases, and high-level design principles for integrating AI-powered components into real-world systems.",
+        description_de: "Theoretisches Papier, das eine mehrschichtige, dynamische Theorie der Motivation vorschlägt und psychologische Bedürfnisse, Valenz–Erregungs-Repräsentation sowie zeitliche Verläufe integriert, um subjektive Motivation mit beobachtbarem Verhalten zu verbinden.",
+        description_en: "A theoretical manuscript proposing a multi-layer dynamic theory of motivation that integrates psychological needs, valence–arousal representations, and temporal dynamics to link subjective motivation to observable behavior.",
+        introduction_de: "Motivation wird zunehmend als dynamischer, kontextabhängiger Prozess verstanden, der Initiation, anhaltende Beteiligung und Lernleistung beeinflusst. Diese Arbeit verschiebt den Fokus von statischen Modellen hin zu einer integrativen Darstellung, in der motivationsrelevante Faktoren (z. B. Erwartung, Wert, Kosten, Autonomie) in einem mehrschichtigen Modell zusammengeführt werden. Wir rekonzeptualisieren grundlegende psychologische Bedürfnisse in vier Kategorien (instinktiv, erfahrungsbezogen, zustandsbezogen, interaktiv), verwenden ein Valenz–Erregungs-Schema als Repräsentationsraum für motivationale Erfahrungen und betten diese Repräsentationen in einen zeitlichen Dynamikprozess ein. Die resultierenden Trajektorien werden mit Entscheidungsprozessen verknüpft, sodass Veränderungen im subjektiven Erleben in konkrete Verhaltensentscheidungen überführt werden.",
+        introduction_en: "Motivation is increasingly viewed as a dynamic, context-integrated process affecting initiation, sustained engagement, and learning performance. This manuscript moves beyond static explanatory frameworks by integrating motivational factors (e.g., expectancy, value, cost, autonomy) into a multi-layer model. Basic psychological needs are reconceptualized into four categories (instinctual, experiential, state, interactive). Valence–arousal is treated as a representational space for motivational experience, and these representations are embedded into temporal dynamics. The resulting trajectories are linked to decision-making, specifying how shifts in subjective motivational states translate into observable behavioral choices.",
         keyFeatures_de: [
-            "Überblick über Anwendungsfälle und Zielsetzungen der kombinierten Projekte",
-            "Architekturdiagramme und Systemkomponenten mit Schnittstellenbeschreibung",
-            "Datenerfassungs- und Verarbeitungs-Pipelines für Sensordaten und Benutzerinteraktionen",
-            "Skalierbare Deploymentszenarien (Edge, Cloud, Hybrid)",
-            "Sicherheits- und Datenschutzaspekte bei klinischen und nutzerbezogenen Daten",
-            "Evaluationsmetrik und Validierungsprotokolle für Performance-Messungen"
+            "Mehrschichtige Rekonstruktion psychologischer Bedürfnisse (instinktiv, erfahrungsbezogen, zustandsbasiert und interaktiv)",
+            "Valenz–Erregungs-Repräsentation als Raum für motivationale Erfahrungen (Richtung + Ressourcenbedarf)",
+            "Zeitliche Trajektorien motivatonaler Zustände und deren Kopplung an Entscheidungsprozesse",
+            "Integrationsrahmen für situative und individuelle Unterschiede in realen Anwendungsszenarien",
+            "Vorschläge für Evaluationsmetriken und Validierungsprotokolle zur Prüfung dynamischer Vorhersagen"
         ],
         keyFeatures_en: [
-            "Overview of use cases and goals across the combined projects",
-            "Architecture diagrams and system components with interface descriptions",
-            "Data acquisition and processing pipelines for sensor and user data",
-            "Scalable deployment scenarios (Edge, Cloud, Hybrid)",
-            "Security and privacy considerations for clinical and user-related data",
-            "Evaluation metrics and validation protocols for performance measurements"
+            "Multi-layer reconstruction of psychological needs: instinctual, experiential, state, and interactive",
+            "Valence–arousal representation as a space for motivational experience (direction + resource demand)",
+            "Temporal trajectories of motivational states linked to decision-making processes",
+            "Framework for integrating situational and individual differences in real-world scenarios",
+            "Proposed evaluation metrics and validation protocols for testing dynamic predictions"
         ],
         codeFeatures_de: [
-            "Modulare Microservice-Architektur mit REST/WS-Schnittstellen",
-            "Daten-Pipelines für Embeddings, Preprocessing und Feature-Engineering",
-            "Containerisierung (Docker) und Orchestrierungsempfehlungen",
-            "Prototypische Implementierungen in Python (FastAPI), Streamlit und React"
+            "Mathematische Modellierung von Valenz–Erregungs-Trajektorien und ihre zeitliche Integration",
+            "Simulations- und Parameter-Schätzungs-Frameworks für dynamische Motivationsmodelle",
+            "Implementierung von Entscheidungsregeln zur Abbildung motivierter Verhaltenswahl",
+            "Prototypen in Python (NumPy, SciPy), Visualisierung mit Matplotlib/Plotly",
+            "Optionale Integration in Microservice-Architekturen (FastAPI) für Online-Simulationen"
         ],
         codeFeatures_en: [
-            "Modular microservice architecture with REST/WebSocket interfaces",
-            "Data pipelines for embeddings, preprocessing and feature engineering",
-            "Containerization (Docker) and orchestration recommendations",
-            "Prototype implementations in Python (FastAPI), Streamlit and React"
+            "Mathematical modeling of valence–arousal trajectories and their temporal integration",
+            "Simulation and parameter-estimation frameworks for dynamic motivation models",
+            "Implementation of decision rules mapping motivational states to behavioral choices",
+            "Prototypes in Python (NumPy, SciPy), visualization with Matplotlib/Plotly",
+            "Optional integration into microservice architectures (FastAPI) for online simulations"
         ],
         techStack_de: [
             "Python 3.9+",
@@ -896,6 +896,11 @@ const projectDetails = {
         internalImg: psychology1Img,
         github: "",
         projectUrl: "/introduction.pdf",
+        paperUrl: "/introduction.pdf",
+        paperTitle_de: "Eine mehrschichtige dynamische Motivationstheorie: Integration psychologischer Bedürfnisse, Valenz–Erregungs-Repräsentation und Verhaltensdynamik",
+        paperTitle_en: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
+        paperDescription_de: "Unveröffentlichtes Manuskript (15. Mai 2026). Öffnen Sie das PDF für den vollständigen Text zur Theorie, Methodik und Implikationen.",
+        paperDescription_en: "Unpublished manuscript (May 15, 2026). Open the PDF for the full text describing theory, methodology and implications.",
         fileInfo: {
             pages: "",
             description: "Ein kombinierendes Einführungspapier, das Motivation, Systemkomponenten und Evaluationsprotokolle beschreibt.",
