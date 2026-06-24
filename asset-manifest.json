@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.9493b4e9.css",
-    "main.js": "/static/js/main.cb195ecc.js",
-    "static/media/psychology-1.png": "/static/media/psychology-1.125c91f8c0262fa8b3a1.png",
-    "static/media/psychology.png": "/static/media/psychology.4a01fdaeef4b9277a437.png",
+    "main.js": "/static/js/main.08848b88.js",
     "static/media/background.png": "/static/media/background.f131213f6264aafe41c7.png",
     "static/media/digital-twin.png": "/static/media/digital-twin.ea25d31c4c3ac91cdffa.png",
     "static/media/aboutme.png": "/static/media/aboutme.a4812425bc12b1083778.png",
+    "static/media/psychology-1.png": "/static/media/psychology-1.f2488850de9b74aeef79.png",
+    "static/media/psychology.png": "/static/media/psychology.a82cd78fc66d3af0357c.png",
     "static/media/radar.png": "/static/media/radar.65a577c8048ad965ebad.png",
     "static/media/radar-1.png": "/static/media/radar-1.107fe1e918fb6161eafb.png",
     "static/media/voice-synthesis.png": "/static/media/voice-synthesis.9785be87d5d59fc650bc.png",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.9493b4e9.css",
-    "static/js/main.cb195ecc.js"
+    "static/js/main.08848b88.js"
   ]
 }
