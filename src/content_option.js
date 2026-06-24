@@ -12,6 +12,8 @@ import digitalTwinImg from './assets/images/digital-twin.png';
 import digitalTwin1Img from './assets/images/digital-twin-1.png';
 import radarImg from './assets/images/radar.png';
 import radar1Img from './assets/images/radar-1.png';
+import psychologyImg from './assets/images/psychology.png';
+import psychology1Img from './assets/images/psychology-1.png';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -185,7 +187,7 @@ const dataportfolio = [
     // Introduction combined project
     {
         id: "project9",
-        img: officeImg,
+        img: psychologyImg,
         description: "Integrated Systems Overview - Introduction and highlights of ongoing collaborative projects",
         description_en: "Integrated Systems Overview - Introduction and highlights of ongoing collaborative projects",
         link: "#",
@@ -837,6 +839,67 @@ const projectDetails = {
             pages: "",
             description: "Technische Details aufgrund der Zusammenarbeit nicht verfügbar",
             description_en: "Technical details not available due to partnership"
+        }
+    }
+    ,
+    project9: {
+        title_de: "Integrierte Systeme - Einführung und Überblick",
+        title_en: "Integrated Systems - Introduction and Overview",
+        subtitle_de: "Einführung in die kombinierten Projekte: Museum Intelligence, SmartCooker, Digital Twin und Radar-Hinderniserkennung.",
+        subtitle_en: "Introduction to combined projects: Museum Intelligence, SmartCooker, Digital Twin and Radar Obstacle Detection.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Dieses Einführungsdokument fasst zentrale Konzepte und Systemarchitekturen der kooperativen Projekte zusammen. Es beschreibt die Motivation, Anwendungsfälle und die übergeordneten Designprinzipien zur Integration von KI-gestützten Komponenten in realen Systemen.",
+        introduction_en: "This introduction document summarizes the core concepts and system architectures of the collaborative projects. It outlines motivation, use cases, and high-level design principles for integrating AI-powered components into real-world systems.",
+        keyFeatures_de: [
+            "Überblick über Anwendungsfälle und Zielsetzungen der kombinierten Projekte",
+            "Architekturdiagramme und Systemkomponenten mit Schnittstellenbeschreibung",
+            "Datenerfassungs- und Verarbeitungs-Pipelines für Sensordaten und Benutzerinteraktionen",
+            "Skalierbare Deploymentszenarien (Edge, Cloud, Hybrid)",
+            "Sicherheits- und Datenschutzaspekte bei klinischen und nutzerbezogenen Daten",
+            "Evaluationsmetrik und Validierungsprotokolle für Performance-Messungen"
+        ],
+        keyFeatures_en: [
+            "Overview of use cases and goals across the combined projects",
+            "Architecture diagrams and system components with interface descriptions",
+            "Data acquisition and processing pipelines for sensor and user data",
+            "Scalable deployment scenarios (Edge, Cloud, Hybrid)",
+            "Security and privacy considerations for clinical and user-related data",
+            "Evaluation metrics and validation protocols for performance measurements"
+        ],
+        codeFeatures_de: [
+            "Modulare Microservice-Architektur mit REST/WS-Schnittstellen",
+            "Daten-Pipelines für Embeddings, Preprocessing und Feature-Engineering",
+            "Containerisierung (Docker) und Orchestrierungsempfehlungen",
+            "Prototypische Implementierungen in Python (FastAPI), Streamlit und React"
+        ],
+        codeFeatures_en: [
+            "Modular microservice architecture with REST/WebSocket interfaces",
+            "Data pipelines for embeddings, preprocessing and feature engineering",
+            "Containerization (Docker) and orchestration recommendations",
+            "Prototype implementations in Python (FastAPI), Streamlit and React"
+        ],
+        techStack_de: [
+            "Python 3.9+",
+            "FastAPI / Streamlit",
+            "PyTorch / scikit-learn",
+            "Docker, Docker Compose",
+            "Chroma / LangChain (für RAG-Komponenten)"
+        ],
+        techStack_en: [
+            "Python 3.9+",
+            "FastAPI / Streamlit",
+            "PyTorch / scikit-learn",
+            "Docker, Docker Compose",
+            "Chroma / LangChain (for RAG components)"
+        ],
+        internalImg: psychology1Img,
+        github: "",
+        projectUrl: "/introduction.pdf",
+        fileInfo: {
+            pages: "",
+            description: "Ein kombinierendes Einführungspapier, das Motivation, Systemkomponenten und Evaluationsprotokolle beschreibt.",
+            description_en: "A combined introduction paper describing motivation, system components and evaluation protocols."
         }
     }
 };
