@@ -14,6 +14,8 @@ import radarImg from './assets/images/radar.png';
 import radar1Img from './assets/images/radar-1.png';
 import psychologyImg from './assets/images/psychology.png';
 import psychology1Img from './assets/images/psychology-1.png';
+import planeImg from './assets/images/plane.png';
+import plane1Img from './assets/images/plane-1.png';
 
 const logotext = "SHAOFEI";
 const meta = {
@@ -273,6 +275,14 @@ const dataportfolio = [
             description: "Introduction document combining Museum Intelligence, SmartCooker, Digital Twin and Radar projects",
             description_en: "Introduction document combining Museum Intelligence, SmartCooker, Digital Twin and Radar projects"
         }
+    },
+    {
+        id: "project10",
+        img: planeImg,
+        description: "AeroGuardian AI - KI-gestützte Flugnotfallunterstützung und Piloten-Schulung",
+        description_en: "AeroGuardian AI - AI-powered Flight Emergency Assistance and Pilot Training",
+        link: "#",
+        type: "collaboration",
     },
 ];
 
@@ -907,6 +917,54 @@ const projectDetails = {
             pages: "",
             description: "Ein kombinierendes Einführungspapier, das Motivation, Implementierungsdetails und Evaluationsprotokolle beschreibt.",
             description_en: "A combined introduction paper describing motivation, implementation details and evaluation protocols."
+        }
+    },
+    project10: {
+        title_de: "AeroGuardian AI - KI-gestützte Flugnotfallunterstützung und Piloten-Schulung",
+        title_en: "AeroGuardian AI - AI-powered Flight Emergency Assistance and Pilot Training",
+        subtitle_de: "Ein intelligentes Luftfahrtsicherheitssystem, das Flugzeugwarnungen, Sensordaten und Flugkontext analysiert, um Ausfälle zu identifizieren, sofort relevante Notfallverfahren abzurufen und adaptive Anleitung in kritischen Situationen bereitzustellen. Die Plattform dient auch als KI-gestützter Schulungsassistent, der realistische Fehlerszenarios generiert und die Pilotleistung bewertet, um die Notfallvorbereitung und Entscheidungsfindung zu verbessern.",
+        subtitle_en: "An intelligent aviation safety system that analyzes aircraft warnings, sensor data, and flight context to identify failures, instantly retrieve relevant emergency procedures, and provide adaptive guidance during critical situations. The platform also serves as an AI-powered training assistant that generates realistic fault scenarios and evaluates pilot performance to improve emergency preparedness and decision-making.",
+        description_de: "",
+        description_en: "",
+        introduction_de: "Während Flugnotfällen müssen Piloten schnell Ausfälle identifizieren, die richtigen Verfahren finden und unter intensivem Druck kritische Entscheidungen treffen. AeroGuardian AI kombiniert maschinelles Lernen, Aircraft-Systemwissensmodelle und intelligente Abruf-Verfahren, um Fehler zu diagnostizieren und kontextabhängige Betriebsanleitung innerhalb von Sekunden bereitzustellen. In Schulungsumgebungen generiert das System realistische Notfallszenarios und liefert personalisiertes Feedback, um Piloten dabei zu helfen, Vertrauen aufzubauen und die Reaktionseffektivität zu verbessern.",
+        introduction_en: "During in-flight emergencies, pilots must rapidly identify failures, locate the correct procedures, and make critical decisions under intense pressure. AeroGuardian AI combines machine learning, aircraft system knowledge models, and intelligent procedure retrieval to diagnose faults and provide context-aware operational guidance within seconds. In training environments, the system generates realistic emergency scenarios and delivers personalized feedback, helping pilots build confidence and improve response effectiveness.",
+        keyFeatures_de: [
+            "KI-gestützte Flugzeugfehler-Erkennung und -Diagnose",
+            "Intelligente Abruf von Notfallverfahren und Checklisten",
+            "Multi-System-Fehleranalyse und Fehlerursachen-Identifikation",
+            "Sprachaktivierte Piloten-Unterstützung und Verfahrensanleitung",
+            "Adaptive Notfall-Szenario-Generierung für Pilotenausbildung",
+            "Leistungsbewertung und Analyse nach der Schulung"
+        ],
+        keyFeatures_en: [
+            "AI-powered aircraft fault detection and diagnosis",
+            "Intelligent retrieval of emergency procedures and checklists",
+            "Multi-system failure analysis and root cause identification",
+            "Voice-enabled pilot assistance and procedural guidance",
+            "Adaptive emergency scenario generation for pilot training",
+            "Performance evaluation and post-training decision analysis"
+        ],
+        codeFeatures_de: [
+            "Aircraft-Sensor- und Warnungsdaten-Verarbeitungs-Pipeline",
+            "Machine Learning Modelle zur Fehlerklassifikation",
+            "Wissensgraph für Flugzeugsystem-Abhängigkeiten",
+            "Retrieval-Augmented Generation (RAG) Verfahrens-Engine",
+            "Piloten-Schulungs- und Bewertungs-Framework",
+            "Erklärbares AI Entscheidungs-Unterstützungs-Interface"
+        ],
+        codeFeatures_en: [
+            "Aircraft sensor and warning data processing pipeline",
+            "Machine learning models for fault classification",
+            "Knowledge graph for aircraft system dependencies",
+            "Retrieval-Augmented Generation (RAG) procedure engine",
+            "Pilot training and assessment framework",
+            "Explainable AI decision support interface"
+        ],
+        internalImg: plane1Img,
+        fileInfo: {
+            pages: "",
+            description: "Technische Details und proprietäre Datenquellen können nicht öffentlich geteilt werden. Das Projekt wurde in Zusammenarbeit mit Luftfahrtforschern und Industriepartnern entwickelt.",
+            description_en: "Technical implementation details and proprietary datasets cannot be shared publicly. The project is developed in collaboration with aviation researchers and industry partners."
         }
     }
 };
