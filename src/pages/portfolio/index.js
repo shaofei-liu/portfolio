@@ -75,16 +75,7 @@ export const Portfolio = () => {
             <div key={i} className="po_item">
                 <img src={data.img} alt="" />
                 <div className="content">
-                  {data.id === 'project9' && data.paperTitle_en ? (
-                    <p style={{ fontWeight: 600, marginBottom: 6 }}>{data.paperTitle_en}</p>
-                  ) : (
-                    <p>{desc}</p>
-                  )}
-                {data.id === 'project9' && (
-                  <p style={{ marginTop: 8, color: '#666', fontSize: 13 }}>
-                    {lang === 'en' ? 'Unpublished manuscript — Introduction available on request.' : 'Unveröffentlichtes Manuskript — Einführung auf Anfrage verfügbar.'}
-                  </p>
-                )}
+                  <p>{data.id === 'project9' && data.paperTitle_en ? data.paperTitle_en : desc}</p>
                 {(data.id === "project1" || data.id === "project2" || data.id === "project3" || data.id === "project4" || data.id === "project5" || data.id === "project6" || data.id === "project7" || data.id === "project8" || data.id === "project9") ? (
                   <Link to={`/portfolio/${data.id}`} className="btn">{translations[lang].portfolio.viewProject}</Link>
                 ) : (
