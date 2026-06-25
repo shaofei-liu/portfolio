@@ -847,7 +847,7 @@ const projectDetails = {
     }
     ,
     project9: {
-        title_de: "Eine mehrschichtige dynamische Motivationstheorie: Integration psychologischer Bedürfnisse, Valenz–Erregungs-Repräsentation und Verhaltensdynamik",
+        title_de: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
         title_en: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
         subtitle_de: "Kurzbeschreibung der Forschung: Entwicklung eines dynamischen, mehrschichtigen Modells, das subjektive motivational Zustände mit Verhaltensentscheidungen verknüpft.",
         subtitle_en: "Research summary: developing a dynamic multi-layer model that links subjective motivational states to behavioral decision-making.",
@@ -899,7 +899,7 @@ const projectDetails = {
         github: "",
         projectUrl: "/introduction.pdf",
         paperUrl: "/introduction.pdf",
-        paperTitle_de: "Eine mehrschichtige dynamische Motivationstheorie: Integration psychologischer Bedürfnisse, Valenz–Erregungs-Repräsentation und Verhaltensdynamik",
+        paperTitle_de: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
         paperTitle_en: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
         paperDescription_de: "Unveröffentlichtes Manuskript (15. Mai 2026). Öffnen Sie das PDF für den vollständigen Text zur Theorie, Methodik und Implikationen.",
         paperDescription_en: "Unpublished manuscript (May 15, 2026). Open the PDF for the full text describing theory, methodology and implications.",

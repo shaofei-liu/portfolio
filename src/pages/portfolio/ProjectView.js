@@ -497,7 +497,7 @@ export default function ProjectView() {
 
     return (
       <div className="project-view" style={{ padding: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>{lang === 'en' ? details.title_en : details.title_de}</h2>
+        <h2 style={{ marginBottom: 8 }}>{details.title_en}</h2>
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en' ? details.subtitle_en : details.subtitle_de}
         </p>
@@ -601,6 +601,46 @@ export default function ProjectView() {
               ? "This project was developed during my internship at Wisemed Medical Technology. Since it was developed during my internship, certain technical implementation details cannot be disclosed publicly. I am happy to discuss the project in detail during a personal meeting."
               : "Dieses Projekt wurde während meines Praktikums bei Wisemed Medical Technology entwickelt. Da es während meines Praktikums entwickelt wurde, können bestimmte technische Implementierungsdetails nicht öffentlich offengelegt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
           </p>
+        </div>
+
+        {/* Contact and Back */}
+        {/* Action Links */}
+        <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          {details.github && (
+            <a
+              href={details.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#333',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600'
+              }}
+            >
+              📊 GitHub Repository
+            </a>
+          )}
+          {details.paperUrl && (
+            <a
+              href={details.paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#667eea',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600'
+              }}
+            >
+              📄 Open Introduction
+            </a>
+          )}
+
         </div>
 
         {/* Contact and Back */}
