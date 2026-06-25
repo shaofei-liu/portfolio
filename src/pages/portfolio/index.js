@@ -76,7 +76,7 @@ export const Portfolio = () => {
                 <img src={data.img} alt="" />
                 <div className="content">
                   <p>{data.id === 'project9' && data.paperTitle_en ? data.paperTitle_en : desc}</p>
-                {(data.id === "project1" || data.id === "project2" || data.id === "project3" || data.id === "project4" || data.id === "project5" || data.id === "project6" || data.id === "project7" || data.id === "project8" || data.id === "project9") ? (
+                {(data.id === "project1" || data.id === "project2" || data.id === "project3" || data.id === "project4" || data.id === "project5" || data.id === "project6" || data.id === "project7" || data.id === "project8" || data.id === "project9" || data.id === "project10") ? (
                   <Link to={`/portfolio/${data.id}`} className="btn">{translations[lang].portfolio.viewProject}</Link>
                 ) : (
                   <a href={data.link}>{translations[lang].portfolio.viewProject}</a>
