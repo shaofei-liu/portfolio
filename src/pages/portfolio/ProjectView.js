@@ -644,7 +644,43 @@ export default function ProjectView() {
         </div>
 
         {/* Contact and Back */}
+        {/* Confidentiality / Collaboration Notice */}
+        <div style={{
+          marginBottom: "24px",
+          padding: "20px",
+          backgroundColor: "#fee2e2",
+          borderRadius: "8px",
+          borderLeft: "4px solid #ef4444"
+        }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#ef4444", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+            {lang === 'en' ? "Collaboration" : "Zusammenarbeit"}
+          </h4>
+          <p style={{ margin: 0, color: "#663", fontSize: "14px", lineHeight: "1.6" }}>
+            {lang === 'en'
+              ? "This manuscript is currently unpublished. Technical implementation details cannot be shared publicly. I am happy to discuss the paper in detail during a personal meeting."
+              : "Dieses Manuskript ist derzeit unveröffentlicht. Technische Implementierungsdetails können nicht öffentlich geteilt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
+          </p>
+        </div>
+
+        {/* Action Buttons */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          {details.paperUrl && (
+            <a
+              href={details.paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#667eea',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600'
+              }}
+            >
+              📄 Open Introduction
+            </a>
+          )}
           <Link
             to="/contact"
             style={{
