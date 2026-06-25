@@ -180,12 +180,7 @@ export default function ProjectView() {
           </Link>
         </div>
 
-        {/* Unpublished paper note (English only) */}
-        <div style={{ marginBottom: "24px", padding: "16px", backgroundColor: "#fff7f3", borderRadius: "8px", borderLeft: "4px solid #b45309" }}>
-          <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.6" }}>
-            Unpublished manuscript. Introduction available below for reference.
-          </p>
-        </div>
+        {/* End of Project 1 view */}
       </div>
     );
   }
