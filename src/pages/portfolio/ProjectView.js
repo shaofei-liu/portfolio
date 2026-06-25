@@ -1282,17 +1282,17 @@ export default function ProjectView() {
         <div style={{
           marginBottom: "24px",
           padding: "20px",
-          backgroundColor: "#f3e8ff",
+          backgroundColor: "#fee2e2",
           borderRadius: "8px",
-          borderLeft: "4px solid #a78bfa"
+          borderLeft: "4px solid #ef4444"
         }}>
-          <h4 style={{ margin: "0 0 12px 0", color: "#a78bfa", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+          <h4 style={{ margin: "0 0 12px 0", color: "#ef4444", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
             {lang === 'en' ? "Collaboration" : "Zusammenarbeit"}
           </h4>
-          <p style={{ margin: 0, color: "#5b21b6", fontSize: "14px", lineHeight: "1.6" }}>
+          <p style={{ margin: 0, color: "#663", fontSize: "14px", lineHeight: "1.6" }}>
             {lang === 'en'
-              ? "This project is developed in collaboration with aviation researchers and industry partners. Technical implementation details and proprietary datasets cannot be shared publicly. I am happy to discuss the project in detail during a personal meeting."
-              : "Dieses Projekt wird in Zusammenarbeit mit Luftfahrtforschern und Industriepartnern entwickelt. Technische Implementierungsdetails und proprietäre Datenquellen können nicht öffentlich geteilt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
+              ? "This project is developed in collaboration with partners. Technical implementation details cannot be shared publicly. I am happy to discuss the project in detail during a personal meeting."
+              : "Dieses Projekt wird in Zusammenarbeit mit Partnern entwickelt. Technische Implementierungsdetails können nicht öffentlich geteilt werden. Ich freue mich darauf, das Projekt während eines persönlichen Treffens ausführlich zu besprechen."}
           </p>
         </div>
 
