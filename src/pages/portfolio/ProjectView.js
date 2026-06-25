@@ -42,7 +42,7 @@ export default function ProjectView() {
 
     return (
       <div className="project-view" style={{ padding: 16 }}>
-        <h2 style={{ marginBottom: 8 }}>{lang === 'en' ? details.title_en : details.title_de}</h2>
+        <h2 style={{ marginBottom: 8 }}>{details.title_en}</h2>
         <p style={{ marginBottom: 24, color: "#666", fontSize: "15px", lineHeight: "1.6" }}>
           {lang === 'en' ? details.subtitle_en : details.subtitle_de}
         </p>
@@ -178,6 +178,13 @@ export default function ProjectView() {
           >
             {translations[lang].projectView.back}
           </Link>
+        </div>
+
+        {/* Unpublished paper note */}
+        <div style={{ marginBottom: "24px", padding: "16px", backgroundColor: "#fff7f3", borderRadius: "8px", borderLeft: "4px solid #b45309" }}>
+          <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.6" }}>
+            {lang === 'en' ? "Unpublished manuscript. Introduction available below for reference." : "Unveröffentlichtes Manuskript. Einführung unten zur Einsicht verfügbar."}
+          </p>
         </div>
       </div>
     );

@@ -73,9 +73,13 @@ export const Portfolio = () => {
           const desc = ( (typeof data.description_en !== 'undefined') && lang === 'en') ? data.description_en : data.description;
           return (
             <div key={i} className="po_item">
-              <img src={data.img} alt="" />
-              <div className="content">
-                <p>{desc}</p>
+                <img src={data.img} alt="" />
+                <div className="content">
+                  {data.id === 'project9' && data.paperTitle_en ? (
+                    <p style={{ fontWeight: 600, marginBottom: 6 }}>{data.paperTitle_en}</p>
+                  ) : (
+                    <p>{desc}</p>
+                  )}
                 {data.id === 'project9' && (
                   <p style={{ marginTop: 8, color: '#666', fontSize: 13 }}>
                     {lang === 'en' ? 'Unpublished manuscript — Introduction available on request.' : 'Unveröffentlichtes Manuskript — Einführung auf Anfrage verfügbar.'}
