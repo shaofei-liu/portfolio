@@ -1135,6 +1135,24 @@ export default function ProjectView() {
           </div>
         )}
 
+        {/* Unpublished Manuscript - displayed BEFORE buttons with red styling */}
+        {(details.paperDescription_en || details.paperDescription_de) && (
+          <div style={{
+            marginBottom: "24px",
+            padding: "20px",
+            backgroundColor: "#fee2e2",
+            borderRadius: "8px",
+            borderLeft: "4px solid #ef4444"
+          }}>
+            <h4 style={{ margin: "0 0 12px 0", color: "#ef4444", fontSize: "14px", fontWeight: "600", textTransform: "uppercase" }}>
+              {lang === 'en' ? "Unpublished Manuscript" : "Unveröffentlichtes Manuskript"}
+            </h4>
+            <p style={{ margin: 0, color: "#663", fontSize: "14px", lineHeight: "1.6" }}>
+              {lang === 'en' ? details.paperDescription_en : details.paperDescription_de}
+            </p>
+          </div>
+        )}
+
         {/* Action Links: Open Introduction, Contact, Back */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           {details.paperUrl && (
@@ -1187,14 +1205,7 @@ export default function ProjectView() {
           </Link>
         </div>
 
-        {/* Unpublished manuscript / Collaboration note */}
-        {(details.paperDescription_en || details.paperDescription_de) && (
-          <div style={{ marginBottom: "24px", padding: "16px", backgroundColor: "#fff7f3", borderRadius: "8px", borderLeft: "4px solid #b45309" }}>
-            <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.6" }}>
-              {lang === 'en' ? details.paperDescription_en : details.paperDescription_de}
-            </p>
-          </div>
-        )}
+
       </div>
     );
   }

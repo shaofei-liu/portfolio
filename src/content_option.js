@@ -901,8 +901,8 @@ const projectDetails = {
         paperUrl: "/introduction.pdf",
         paperTitle_de: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
         paperTitle_en: "A Multi-Layer Dynamic Theory of Motivation: Integrating Psychological Needs, Valence–Arousal Representation, and Behavioral Dynamics",
-        paperDescription_de: "Unveröffentlichtes Manuskript (15. Mai 2026). Öffnen Sie das PDF für den vollständigen Text zur Theorie, Methodik und Implikationen.",
-        paperDescription_en: "Unpublished manuscript (May 15, 2026). Open the PDF for the full text describing theory, methodology and implications.",
+        paperDescription_de: "Dies ist ein unveröffentlichtes Manuskript. Öffnen Sie bitte das PDF unten für den vollständigen Text zur Theorie, Methodik und Implikationen. Ich freue mich darauf, den Inhalt während eines persönlichen Treffens ausführlich zu besprechen.",
+        paperDescription_en: "This is an unpublished manuscript. Please open the PDF below for the full text describing theory, methodology and implications. I am happy to discuss the content in detail during a personal meeting.",
         fileInfo: {
             pages: "",
             description: "Ein kombinierendes Einführungspapier, das Motivation, Implementierungsdetails und Evaluationsprotokolle beschreibt.",
