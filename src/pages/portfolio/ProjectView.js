@@ -1135,8 +1135,28 @@ export default function ProjectView() {
           </div>
         )}
 
-        {/* Contact and Back */}
+        {/* Action Links: Open Introduction, Contact, Back */}
         <div style={{ marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          {details.paperUrl && (
+            <a
+              href={details.paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#b45309',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#8a3910'}
+              onMouseOut={(e) => e.target.style.backgroundColor = '#b45309'}
+            >
+              📄 {lang === 'en' ? "Open Introduction" : "Einführung öffnen"}
+            </a>
+          )}
           <Link
             to="/contact"
             style={{
@@ -1166,6 +1186,15 @@ export default function ProjectView() {
             {translations[lang].projectView.back}
           </Link>
         </div>
+
+        {/* Unpublished manuscript / Collaboration note */}
+        {(details.paperDescription_en || details.paperDescription_de) && (
+          <div style={{ marginBottom: "24px", padding: "16px", backgroundColor: "#fff7f3", borderRadius: "8px", borderLeft: "4px solid #b45309" }}>
+            <p style={{ margin: 0, color: "#5a4a3a", fontSize: "14px", lineHeight: "1.6" }}>
+              {lang === 'en' ? details.paperDescription_en : details.paperDescription_de}
+            </p>
+          </div>
+        )}
       </div>
     );
   }
