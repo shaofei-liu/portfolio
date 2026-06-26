@@ -67,10 +67,10 @@ const dataabout = {
             description_en: "I compose music primarily in New Age and musical theatre styles using notation software like Sibelius and DAWs like Cubase. I also enjoy singing, although suitable repertoire for my low baritone vocal range is relatively limited."
         },
         {
-            title: "Interesse an Psychologie und Verhaltensanalyse",
-            title_en: "Psychology and Behavioral Analysis",
-            description: "Ich bin fasziniert von Psychologie und wie menschliches Verhalten funktioniert. Mich interessiert, warum Menschen bestimmte Entscheidungen treffen und was ihre Gefühle und Motivationen beeinflusst. Ich erkunde diese Themen durch quantitative Methoden und häufig in meinen eigenen Gedanken. Als Hobby habe ich sogar eine Theorie über \"Zufriedenheit\" entwickelt und schreibe momentan ein Buch dazu.",
-            description_en: "I'm fascinated by psychology and how human behavior works. I'm curious about why people make the decisions they do and what influences their emotions and motivations. I explore these topics through quantitative methods and often in my own thoughts. As a hobby, I've even developed a theory about 'satisfaction' and I'm currently writing a book on it."
+            title: "Motivations- und Verhaltensdynamik",
+            title_en: "Motivation and Behavioral Dynamics",
+            description: "Ich bin fasziniert von einer mehrschichtigen dynamischen Theorie der Motivation – wie psychologische Bedürfnisse, Valenz und Erregung subjektive motivationale Zustände formen und in beobachtbare Verhaltensentscheidungen übergehen. Mich interessieren quantitative Methoden zur Modellierung dieser Dynamik und deren Anwendung auf reale Szenarien. Dies hat mich bewogen, ein theoretisches Manuskript zu entwickeln, das psychologische Grundlagen, Valenz–Erregungs-Repräsentationen und zeitliche Trajektorien mit Entscheidungsprozessen verknüpft.",
+            description_en: "I'm fascinated by a multi-layer dynamic theory of motivation – how psychological needs, valence, and arousal shape subjective motivational states and translate into observable behavioral choices. I'm interested in quantitative methods for modeling these dynamics and their application to real-world scenarios. This motivated me to develop a theoretical framework linking psychological foundations, valence–arousal representations, and temporal trajectories to decision-making processes."
         }
     ]
 };
