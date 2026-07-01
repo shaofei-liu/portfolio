@@ -16,11 +16,16 @@
     border: 1px solid var(--secondary-color);
     transition: 0.3s ease;
     font-size: 0;
-    min-height: 300px;
+    height: 300px;
+    aspect-ratio: 1;
+    overflow: hidden;
 }
 
 .po_item img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .po_item .content {

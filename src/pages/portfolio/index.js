@@ -108,7 +108,7 @@ export const Portfolio = () => {
         
         {/* Employment Projects Section */}
         {employmentProjects.length > 0 && renderProjectSection(
-          lang === 'en' ? "Employment" : "Beschäftigung",
+          lang === 'en' ? "Professional Projects" : "Berufliche Projekte",
           employmentProjects
         )}
         
@@ -120,7 +120,7 @@ export const Portfolio = () => {
         
         {/* Research Projects Section */}
         {researchProjects.length > 0 && renderProjectSection(
-          lang === 'en' ? "Research" : "Forschung",
+          lang === 'en' ? "Research Projects" : "Forschungsprojekte",
           researchProjects
         )}
         
