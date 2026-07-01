@@ -51,9 +51,11 @@ export const Portfolio = () => {
     setTimeout(() => setSaved((s) => ({ ...s, [key]: false })), 1500);
   };
 
-  // Separate projects by type
-  const personalProjects = dataportfolio.filter(p => p.type === "personal");
-  const collaborativeProjects = dataportfolio.filter(p => p.type === "collaboration" || p.type === "work");
+  // Separate projects by category
+  const employmentProjects = dataportfolio.filter(p => p.category === "employment");
+  const collaborativeProjects = dataportfolio.filter(p => p.category === "collaborative");
+  const researchProjects = dataportfolio.filter(p => p.category === "research");
+  const personalProjects = dataportfolio.filter(p => p.category === "personal");
 
   const renderProjectSection = (title, projects) => (
     <div key={title} style={{ marginBottom: "60px" }}>
@@ -104,16 +106,28 @@ export const Portfolio = () => {
           </Col>
         </Row>
         
-        {/* Personal Projects Section */}
-        {renderProjectSection(
-          lang === 'en' ? "Personal & Interest Projects" : "Persönliche und Interessenprojekte",
-          personalProjects
+        {/* Employment Projects Section */}
+        {employmentProjects.length > 0 && renderProjectSection(
+          lang === 'en' ? "Employment" : "Beschäftigung",
+          employmentProjects
         )}
         
-        {/* Collaborative and Work Projects Section */}
+        {/* Collaborative Projects Section */}
         {collaborativeProjects.length > 0 && renderProjectSection(
-          lang === 'en' ? "Collaborative & Work Projects" : "Kooperations- und Arbeitsprojekte",
+          lang === 'en' ? "Collaborative Projects" : "Kooperationsprojekte",
           collaborativeProjects
+        )}
+        
+        {/* Research Projects Section */}
+        {researchProjects.length > 0 && renderProjectSection(
+          lang === 'en' ? "Research" : "Forschung",
+          researchProjects
+        )}
+        
+        {/* Personal & Showcase Projects Section */}
+        {personalProjects.length > 0 && renderProjectSection(
+          lang === 'en' ? "Personal & Interest Projects" : "Persönliche und Interessenprojekte",
+          personalProjects
         )}
       </Container>
     </HelmetProvider>

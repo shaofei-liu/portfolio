@@ -194,6 +194,7 @@ const dataportfolio = [
         description_en: "SmartCooker - AI-powered Pet Food Cooking Machine with 20+ Functions",
         link: "#",
         type: "work",
+        category: "employment",
     },
     {
         id: "project7",
@@ -202,6 +203,7 @@ const dataportfolio = [
         description_en: "Digital Twin - AI-powered Medical Diagnosis System and Patient Data Analytics",
         link: "#",
         type: "work",
+        category: "employment",
     },
     {
         id: "project8",
@@ -210,6 +212,7 @@ const dataportfolio = [
         description_en: "Radar Obstacle Detection - MIMO FMCW Radar Algorithm Development",
         link: "#",
         type: "work",
+        category: "employment",
     },
     
     // Collaborative Projects - 协作项目
@@ -220,6 +223,7 @@ const dataportfolio = [
         description_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",
         link: "#",
         type: "collaboration",
+        category: "collaborative",
     },
     {
         id: "project10",
@@ -228,6 +232,7 @@ const dataportfolio = [
         description_en: "AeroGuardian AI - AI-powered Flight Emergency Assistance and Pilot Training",
         link: "#",
         type: "collaboration",
+        category: "collaborative",
     },
     
     // Research Projects - 研究项目
@@ -238,6 +243,7 @@ const dataportfolio = [
         description_en: "Master's Thesis: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
         link: "#",
         type: "personal",
+        category: "research",
         thesis: true,
     },
     {
@@ -247,6 +253,7 @@ const dataportfolio = [
         description_en: "Unpublished manuscript: A Multi-Layer Dynamic Theory of Motivation",
         link: "#",
         type: "collaboration",
+        category: "research",
         projectUrl: "/introduction.pdf",
         thesis: true,
         paperTitle_de: "A Multi-Layer Dynamic Theory of Motivation",
@@ -267,6 +274,7 @@ const dataportfolio = [
         description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
         type: "personal",
+        category: "personal",
         projectUrl: "https://williamcass-rag-chatbot.hf.space/",
     },
     {
@@ -276,6 +284,7 @@ const dataportfolio = [
         description_en: "Voice Synthesis - AI-powered Text-to-Speech with Voice Cloning",
         link: "#",
         type: "personal",
+        category: "personal",
         projectUrl: "https://huggingface.co/spaces/WilliamCass/voice-synthesis?embedded=true",
     },
     {
@@ -285,6 +294,7 @@ const dataportfolio = [
         description_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
         link: "#",
         type: "personal",
+        category: "personal",
         projectUrl: "https://huggingface.co/spaces/WilliamCass/dog-breed-classifier?embedded=true",
     },
 ];
