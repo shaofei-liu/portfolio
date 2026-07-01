@@ -186,53 +186,7 @@ const services = [{
 ];
 
 const dataportfolio = [
-    // Personal Projects
-    {
-        id: "project1",
-        img: voiceSynthesisImg,
-        description: "Voice Synthesis - KI-gestützte Sprachsynthese mit Stimmenklonung",
-        description_en: "Voice Synthesis - AI-powered Text-to-Speech with Voice Cloning",
-        link: "#",
-        type: "personal",
-        projectUrl: "https://huggingface.co/spaces/WilliamCass/voice-synthesis?embedded=true",
-    },
-    {
-        id: "project2",
-        img: dogBreedImg,
-        description: "Dog Breed Classifier - KI-gestützte Hunderassenidentifikation",
-        description_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
-        link: "#",
-        type: "personal",
-        projectUrl: "https://huggingface.co/spaces/WilliamCass/dog-breed-classifier?embedded=true",
-    },
-    {
-        id: "project3",
-        img: chatbotImg,
-        description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
-        description_en: "RAG Chatbot - AI-powered Q&A System",
-        link: "#",
-        type: "personal",
-        projectUrl: "https://williamcass-rag-chatbot.hf.space/",
-    },
-    {
-        id: "project4",
-        img: irevrnnImg,
-        description: "Masterarbeit: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
-        description_en: "Master's Thesis: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
-        link: "#",
-        type: "personal",
-        thesis: true,
-    },
-    
-    // Collaborative and Work Projects
-    {
-        id: "project5",
-        img: museumImg,
-        description: "Museum Intelligence - KI-gestützte Optimierung von Ausstellungsanordnung und Besuchererlebnis",
-        description_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",
-        link: "#",
-        type: "collaboration",
-    },
+    // Employment Projects - 就业项目
     {
         id: "project6",
         img: cookerImg,
@@ -257,7 +211,35 @@ const dataportfolio = [
         link: "#",
         type: "work",
     },
-    // Introduction combined project (placed after project8)
+    
+    // Collaborative Projects - 协作项目
+    {
+        id: "project5",
+        img: museumImg,
+        description: "Museum Intelligence - KI-gestützte Optimierung von Ausstellungsanordnung und Besuchererlebnis",
+        description_en: "Museum Intelligence - AI-powered Exhibit Placement and Visitor Experience Optimization",
+        link: "#",
+        type: "collaboration",
+    },
+    {
+        id: "project10",
+        img: planeImg,
+        description: "AeroGuardian AI - KI-gestützte Flugnotfallunterstützung und Piloten-Schulung",
+        description_en: "AeroGuardian AI - AI-powered Flight Emergency Assistance and Pilot Training",
+        link: "#",
+        type: "collaboration",
+    },
+    
+    // Research Projects - 研究项目
+    {
+        id: "project4",
+        img: irevrnnImg,
+        description: "Masterarbeit: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
+        description_en: "Master's Thesis: RNNs with Independency Assumptions - Scalable and Efficient Sequence Learning",
+        link: "#",
+        type: "personal",
+        thesis: true,
+    },
     {
         id: "project9",
         img: psychologyImg,
@@ -276,13 +258,34 @@ const dataportfolio = [
             description_en: "Introduction document combining Museum Intelligence, SmartCooker, Digital Twin and Radar projects"
         }
     },
+    
+    // Personal & Showcase Projects - 个人展示与兴趣项目
     {
-        id: "project10",
-        img: planeImg,
-        description: "AeroGuardian AI - KI-gestützte Flugnotfallunterstützung und Piloten-Schulung",
-        description_en: "AeroGuardian AI - AI-powered Flight Emergency Assistance and Pilot Training",
+        id: "project3",
+        img: chatbotImg,
+        description: "RAG Chatbot - KI-gestütztes Frage-Antwort-System",
+        description_en: "RAG Chatbot - AI-powered Q&A System",
         link: "#",
-        type: "collaboration",
+        type: "personal",
+        projectUrl: "https://williamcass-rag-chatbot.hf.space/",
+    },
+    {
+        id: "project1",
+        img: voiceSynthesisImg,
+        description: "Voice Synthesis - KI-gestützte Sprachsynthese mit Stimmenklonung",
+        description_en: "Voice Synthesis - AI-powered Text-to-Speech with Voice Cloning",
+        link: "#",
+        type: "personal",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/voice-synthesis?embedded=true",
+    },
+    {
+        id: "project2",
+        img: dogBreedImg,
+        description: "Dog Breed Classifier - KI-gestützte Hunderassenidentifikation",
+        description_en: "Dog Breed Classifier - AI-powered Dog Breed Identification",
+        link: "#",
+        type: "personal",
+        projectUrl: "https://huggingface.co/spaces/WilliamCass/dog-breed-classifier?embedded=true",
     },
 ];
 
