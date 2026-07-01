@@ -1,8 +1,20 @@
 .po_items_ho {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 0 1rem;
+}
+
+@media (max-width: 1024px) {
+    .po_items_ho {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .po_items_ho {
+        grid-template-columns: 1fr;
+    }
 }
 
 .po_item {
@@ -16,8 +28,7 @@
     border: 1px solid var(--secondary-color);
     transition: 0.3s ease;
     font-size: 0;
-    height: 300px;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
 }
 
