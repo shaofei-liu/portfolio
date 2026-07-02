@@ -75,8 +75,8 @@ const dataabout = {
     ]
 };
 const worktimeline = [{
-        jobtitle: "KI-Softwareentwickler (projektbasiert)",
-        jobtitle_en: "AI Software Developer (Project-based)",
+        jobtitle: "KI-Ingenieur (projektbasiert)",
+        jobtitle_en: "AI Engineer (Project-based)",
         where: "München, Deutschland",
         where_en: "Munich, Germany",
         date: "05/2025 – heute",
