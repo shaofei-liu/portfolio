@@ -695,28 +695,34 @@ const projectDetails = {
             "Benutzerfreundliche mobile und Web-Oberfläche",
             "OTA-Update-Funktionalität für kontinuierliche Verbesserungen",
             "Sichere IoT-Kommunikation für Geräteverwaltung",
-            "Erweiterte Sensoren für präzise Kontrolle"
+            "Erweiterte Sensoren für präzise Kontrolle",
+            "KI-gesteuerte Kundenservice-Chatbots für Kundenunterstützung"
         ],
         keyFeatures_en: [
             "Over 20 intelligent functions for flexible recipes",
             "User-friendly mobile and web interface",
             "OTA update functionality for continuous improvements",
             "Secure IoT communication for device management",
-            "Advanced sensors for precise control"
+            "Advanced sensors for precise control",
+            "AI-powered customer service chatbots for customer support"
         ],
         codeFeatures_de: [
             "Responsive UI mit React für iOS/Android Anwendungen",
             "Cloud-basierte OTA-Update-Verwaltung und Versionskontrolle",
             "Echtzeit-Gerätesteuerung und Datenerfassung",
             "Sichere Authentifizierung und verschlüsselte Kommunikation",
-            "Benutzerfreundliche Rezeptverwaltung und Erfolgsloggen"
+            "Benutzerfreundliche Rezeptverwaltung und Erfolgsloggen",
+            "KI-gesteuerte Kundenservice-Chatbots für automatisierte Kundenbetreuung",
+            "Automatisierte Inhaltserstellung für Rezepte und Produktinformationen"
         ],
         codeFeatures_en: [
             "Responsive UI with React for iOS/Android applications",
             "Cloud-based OTA update management and version control",
             "Real-time device control and data collection",
             "Secure authentication and encrypted communication",
-            "User-friendly recipe management and success logging"
+            "User-friendly recipe management and success logging",
+            "AI-powered customer service chatbots for automated customer support",
+            "Automated content generation for recipes and product information"
         ],
         internalImg: cooker1Img,
         fileInfo: {
